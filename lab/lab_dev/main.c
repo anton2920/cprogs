@@ -1,30 +1,49 @@
 #include <stdio.h>
-#include <math.h>
+
+/* Function declaration */
+long int fact(long int n);
 
 /* Sum of number sequence */
 main() {
 
     /* Initializing variables */
-    float sum, x, x2;
-    int n, counter, mn_one = 1;
+    float sum, e, x2, slog;
+    long int i, x, fac;
     sum = 0;
 
-    /* I/O flow && VarCheck*/
-    do {
-        printf("Type N: ");
-        scanf("%d", &n);
-    } while (n <= 0);
+    /* I/O flow */
     printf("Type X: ");
-    scanf("%f", &x);
+    scanf("%ld", &x);
+    printf("Type accuracy: ");
+    scanf("%f", &e);
 
 
     /* Main part */
-    for (counter = 1, x2 = x; counter <= n; ++counter) {
-        sum += mn_one * sin(counter * x2);
-        mn_one *= -1;
-        x2 *= x;
-    }
+    x2 = x * x;
+    fac = fact(x);
+    do {
+        slog = fac * x2;
+        x2 *= x * x;
+        sum += slog;
+    } while (slog >= e);
 
     /* Final output */
     printf("Sum = %f\n", sum);
+}
+
+long int fact(long int n) {
+
+    /* Initializing variables */
+    long int fact;
+    int counter;
+    fact = 1;
+
+    /* Main part */
+    for (counter = 1; counter <= n; ++counter) {
+        fact = fact * counter;
+    }
+
+    /* Returning value */
+    return fact;
+
 }

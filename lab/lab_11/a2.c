@@ -1,39 +1,37 @@
 #include <stdio.h>
-#include <math.h>
 
-float f(float x, int i);
-long int fact(int n);
+/* Function declaration */
+long int fact(long int n);
 
 /* Sum of number sequence */
 main() {
 
     /* Initializing variables */
-    float sum, x, e;
-    int counter;
+    float sum, e, x2, slog;
+    long int i, x, fac;
     sum = 0;
 
     /* I/O flow */
     printf("Type X: ");
-    scanf("%f", &x);
+    scanf("%ld", &x);
     printf("Type accuracy: ");
     scanf("%f", &e);
 
 
     /* Main part */
-    for (counter = 1; f(x, counter) > e; ++counter) {
-        printf("Element %d = %f\n", counter, f(x, counter));
-        sum = sum + f(x, counter);
-    }
+    x2 = x * x;
+    fac = fact(x);
+    do {
+        slog = fac * x2;
+        x2 *= x * x;
+        sum += slog;
+    } while (slog >= e);
 
     /* Final output */
     printf("Sum = %f\n", sum);
 }
 
-float f(float x, int i) {
-    return 3 * pow(x, i) / fact(x + 2);
-}
-
-long int fact(int n) {
+long int fact(long int n) {
 
     /* Initializing variables */
     long int fact;
@@ -45,6 +43,7 @@ long int fact(int n) {
         fact = fact * counter;
     }
 
+    /* Returning value */
     return fact;
 
 }
