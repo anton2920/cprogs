@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /* Number sequence */
 main() {
@@ -29,5 +28,4 @@ main() {
 
 	} while (mem != 0);
 
-	system("pause");
 }
