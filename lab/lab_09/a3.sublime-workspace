@@ -1,0 +1,468 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prog",
+				"program\tdeclaration"
+			],
+			[
+				"fin",
+				"finput"
+			],
+			[
+				"mu",
+				"multiplier2"
+			],
+			[
+				"ans",
+				"ans\t(a5.c)"
+			],
+			[
+				"flag",
+				"flag"
+			],
+			[
+				"to",
+				"to_dec"
+			],
+			[
+				"p",
+				"phib"
+			],
+			[
+				"re",
+				"return\t(a3.c)"
+			],
+			[
+				"st",
+				"stdio.h\t(a1.c)"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"std",
+				"stdio.h\tstandard header"
+			],
+			[
+				"de",
+				"default\t(a1.c)"
+			],
+			[
+				"r",
+				"r"
+			],
+			[
+				"ma",
+				"main\t(a3.c)"
+			],
+			[
+				"in",
+				"include\t(a3.c)"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"sum",
+				"summin"
+			],
+			[
+				"su",
+				"summin"
+			],
+			[
+				"write",
+				"writeln"
+			],
+			[
+				"ou",
+				"output.txt\t(a1.pas)"
+			],
+			[
+				"inp",
+				"input.txt\t(a1.pas)"
+			],
+			[
+				"out",
+				"outputs"
+			],
+			[
+				"str",
+				"strtoint\t(a3.pas)"
+			],
+			[
+				"res",
+				"reset\t(a1.pas)"
+			],
+			[
+				"pro",
+				"program\t(a1.pas)"
+			],
+			[
+				"I",
+				"IntToStr"
+			],
+			[
+				"di",
+				"divisor"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"tru",
+				"true"
+			],
+			[
+				"i",
+				"i"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"INstal",
+				"Package Control: Install Package"
+			],
+			[
+				"Remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Instal",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"while True:",
+			"2+2",
+			"ver",
+			"ls",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/anton/C/lab/lab_09/a3.c",
+		"/home/anton/C/lab/lab_09/a2.c",
+		"/home/anton/C/lab/lab_09/a1.c",
+		"/home/anton/C/lab/lab_wrong/lab_09/a2.c",
+		"/home/anton/C/lab/lab_07/a1.c",
+		"/home/anton/C/lab/lab_07/a2.c",
+		"/home/anton/C/lab/lab_07/a3.c",
+		"/home/anton/C/lab/lab_07/a4.c",
+		"/home/anton/C/lab/lab_07/a5.c",
+		"/home/anton/C/lab/lab_07/a51.c",
+		"/home/anton/C/experiments/IntVarCheck/test.c",
+		"/home/anton/C/experiments/IntVarCheck/input.h",
+		"/home/anton/C/experiments/IntVarCheck/input.c",
+		"/home/anton/C/lab/lab_07/a11.c",
+		"/home/anton/C/experiments/ifbool/void.c",
+		"/home/anton/C/lab/lab_12/a1.c",
+		"/home/anton/C/lab/lab.sublime-project",
+		"/home/anton/C/lab/lab_13/a1.c",
+		"/home/anton/C/lab/lab_11/a1.c",
+		"/home/anton/C/lab/lab_11/a2.c",
+		"/home/anton/C/lab/lab_11/a3.c",
+		"/home/anton/C/lab/lab_10/a1.c",
+		"/home/anton/C/lab/lab_09/input.h",
+		"/home/anton/C/lab/lab_09/check.c",
+		"/home/anton/C/lab/lab_09/input.c",
+		"/home/anton/C/lab/lab_09/ForSanya.c",
+		"/home/anton/C/lab/lab_05/a2.c",
+		"/home/anton/C/lab/lab_08/a2.c",
+		"/home/anton/C/lab/lab_08/a1.c",
+		"/home/anton/C/lab/lab_07/a52.c",
+		"/home/anton/PY/Calc.py",
+		"/home/anton/C/lab/lab_06/a6.c",
+		"/home/anton/C/lab/lab_06/a5.c",
+		"/home/anton/C/lab/lab_06/a4.c",
+		"/home/anton/C/lab/lab_06/a3.c",
+		"/home/anton/C/lab/lab_06/a2.c",
+		"/home/anton/C/lab/lab_06/a1.c",
+		"/home/anton/C/lab/lab_04/a1.c",
+		"/home/anton/C/lab/lab_04/a2.c",
+		"/home/anton/C/lab/lab_04/a3.c",
+		"/home/anton/C/lab/lab_04/a4.c",
+		"/home/anton/C/lab/lab_04/a5.c",
+		"/home/anton/C/lab/lab_05/a1.c",
+		"/home/anton/C/lab/lab_03/a4f.c",
+		"/home/anton/C/lab/lab_03/a4e.c",
+		"/home/anton/C/lab/lab_03/a4d.c",
+		"/home/anton/C/lab/lab_03/a4c.c",
+		"/home/anton/C/lab/lab_03/a4b.c",
+		"/home/anton/C/lab/lab_03/a4a.c",
+		"/home/anton/C/lab/lab_03/a31.c",
+		"/home/anton/C/lab/lab_03/a3.c",
+		"/home/anton/C/lab/lab_03/a21.c",
+		"/home/anton/C/lab/lab_03/a2.c",
+		"/home/anton/C/lab/lab_03/a1.c",
+		"/home/anton/PABC/liza/a1.pas",
+		"/home/anton/PABC/school/11b/a3.pas",
+		"/home/anton/PY/CTE/a1.py",
+		"/home/anton/PABC/school/a24.pas",
+		"/home/anton/PABC/Stepen x v y.pas",
+		"/home/anton/PABC/Test.pas",
+		"/home/anton/PABC/a6.pas",
+		"/home/anton/PABC/a5.pas",
+		"/home/anton/PABC/olympic/a5.pas",
+		"/home/anton/PABC/olympic/a4.pas",
+		"/home/anton/PABC/Zadacha3.pas",
+		"/home/anton/PABC/home/technocup/a1.pas",
+		"/home/anton/CPP/home/schoolOlympic/a1.cpp",
+		"/home/anton/PABC/home/schoolOlympic/output.txt",
+		"/home/anton/PABC/home/schoolOlympic/a1.pas",
+		"/home/anton/PABC/home/schoolOlympic/input.txt",
+		"/home/anton/PABC/home/schoolOlympic/a2.pas",
+		"/home/anton/PABC/home/schoolOlympic/a3.pas",
+		"/home/anton/PABC/home/schoolOlympic/a4.pas",
+		"/home/anton/PABC/home/schoolOlympic/a5.pas",
+		"/home/anton/PABC/school/11b/a2.pas",
+		"/home/anton/PABC/school/11b/a1.pas",
+		"/home/anton/PABC/olya/a1.pas",
+		"/home/anton/PABC/Calc.pas",
+		"/home/anton/Файлы/Python/training/Calc.py",
+		"/home/anton/PABC/home/tasks10rub/3part/c11.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c10.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c9.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c8.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c7.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c6.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c5.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c4.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c3.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c2.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c19.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c20.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c21.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c22.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c24.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c23.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c26.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c25.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c28.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c27.pas",
+		"/home/anton/Файлы/GAMES/GAM_VIST/BALDAWIN/WORDSRUS.TXT",
+		"/home/anton/PABC/olympic2/a4.pas",
+		"/home/anton/.config/sublime-text-3/Packages/BracketHighlighter/bh_core.sublime-settings",
+		"/home/anton/PABC/home/tasks10rub/3part/с29.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/с19.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b7.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b6.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b53.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b52.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b51.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b5.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b4.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b3.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b2.pas",
+		"/home/anton/PABC/home/tasks10rub/2part/b1.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a5.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a4.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a3.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a2.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a1.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/c26.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/c27.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/с28.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c18.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c17.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c16.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c13.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c12.pas",
+		"/home/anton/PABC/school/a20.pas"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "a3.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/PABC/Calc.pas"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
