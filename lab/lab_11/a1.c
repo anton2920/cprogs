@@ -19,7 +19,7 @@ main() {
 
 
     /* Main part */
-    for (counter = 1; counter <= n; ++counter) {
+    for (counter = 1, x2 = x; counter <= n; ++counter) {
         sum += mn_one * sin(counter * x2);
         mn_one *= -1;
         x2 *= x;

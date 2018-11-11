@@ -1,45 +1,30 @@
 #include <stdio.h>
+#include <math.h>
 
-float func1 (float x, float y);
-float func2 (float x, float y);
-
+/* Sum of number sequence */
 main() {
 
     /* Initializing variables */
-    int func;
-    float x, y, leftx, rightx, lefty, righty, stepx, stepy;
+    float sum, x, x2;
+    int n, counter, mn_one = 1;
+    sum = 0;
 
-    /* I/O flow && VarCheck */
+    /* I/O flow && VarCheck*/
     do {
-        printf("Which function you want to work with [1/2]: ");
-        scanf("%d", &func);
-    } while (func != 1 || func != 2);
-    printf("Type left border of X: ");
-    scanf("%f", &leftx);
-    do {
-        printf("Type step: ");
-        scanf("&f", &stepx);
-    } while (stepx == 0);
-    do {
-        printf("Type right border of X: ");
-        scanf("%f", &rightx);
-    } while ((stepx > 0) ? rightx < leftx : leftx < rightx);
-    printf("Type left border of Y: ");
-    scanf("%f", &lefty);
-    do {
-        printf("Type step: ");
-        scanf("&f", &stepy);
-    } while (stepx == 0);
-    do {
-        printf("Type right border of Y: ");
-        scanf("%f", &righty);
-    } while ((stepy > 0) ? righty < lefty : lefty < righty);
+        printf("Type N: ");
+        scanf("%d", &n);
+    } while (n <= 0);
+    printf("Type X: ");
+    scanf("%f", &x);
+
 
     /* Main part */
+    for (counter = 1, x2 = x; counter <= n; ++counter) {
+        sum += mn_one * sin(counter * x2);
+        mn_one *= -1;
+        x2 *= x;
+    }
 
-}
-
-void func1 (float x, float y) {
-
-    printf("%.0f%s", (2 * x + 7 * y) > 0 ? 1 / (2 * x + 7 * y) + 3 * y * y, "" : "—");
+    /* Final output */
+    printf("Sum = %f\n", sum);
 }
