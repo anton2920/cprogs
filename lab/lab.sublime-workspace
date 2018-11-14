@@ -4,38 +4,6 @@
 		"selected_items":
 		[
 			[
-				"ste",
-				"stepx"
-			],
-			[
-				"ri",
-				"rightx"
-			],
-			[
-				"le",
-				"leftx"
-			],
-			[
-				"fin",
-				"finput"
-			],
-			[
-				"mu",
-				"multiplier2"
-			],
-			[
-				"ans",
-				"ans\t(a5.c)"
-			],
-			[
-				"flag",
-				"flag"
-			],
-			[
-				"to",
-				"to_dec"
-			],
-			[
 				"p",
 				"phib"
 			],
@@ -106,6 +74,10 @@
 			[
 				"str",
 				"strtoint\t(a3.pas)"
+			],
+			[
+				"to",
+				"tobin"
 			],
 			[
 				"res",
@@ -184,12 +156,12 @@
 		"selected_items":
 		[
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"Package Control: ",
 				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"insta",
@@ -231,10 +203,6 @@
 		"height": 139.0,
 		"history":
 		[
-			"while True:",
-			"2+2",
-			"ver",
-			"ls",
 			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
 			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
 			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
@@ -252,47 +220,24 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_dev"
+		"/home/anton/C/lab"
 	],
 	"file_history":
 	[
-		"/home/anton/C/lab/lab_09/a1.c",
-		"/home/anton/C/lab/lab_09/a2.c",
-		"/home/anton/C/lab/lab_09/a3.c",
-		"/home/anton/C/lab/lab.sublime-project",
-		"/home/anton/C/lab/lab_10/a3.c",
-		"/home/anton/C/lab/lab_10/a2.c",
-		"/home/anton/C/experiments/SanyaEbet/arrayequasion.c",
-		"/home/anton/C/lab/lab_wrong/lab_11/a1.c",
-		"/home/anton/C/lab/lab_wrong/lab_11/a2.c",
-		"/home/anton/C/lab/lab_10/a1.c",
-		"/home/anton/C/experiments/SanyaEbet/shoulders.h",
-		"/home/anton/C/experiments/IntVarCheck/input.c",
-		"/home/anton/C/experiments/SanyaEbet/shoulders.c",
-		"/home/anton/C/experiments/SanyaEbet/main.c",
-		"/home/anton/C/experiments/pic/main.c",
-		"/home/anton/C/experiments/pic/main,c",
-		"/home/anton/C/experiments/SanyaEbet/main,c",
-		"/home/anton/C/experiments/SanyaEbet/a2.c",
-		"/home/anton/C/experiments/locale/a1.c",
-		"/home/anton/C/lab/lab_07/a1.c",
-		"/home/anton/C/lab/lab_07/a11.c",
-		"/home/anton/C/lab/lab_07/a2.c",
 		"/home/anton/C/lab/lab_07/a3.c",
 		"/home/anton/C/lab/lab_07/a4.c",
 		"/home/anton/C/lab/lab_07/a5.c",
-		"/home/anton/C/lab/lab_07/a51.c",
-		"/home/anton/C/experiments/IntVarCheck/test.c",
-		"/home/anton/C/experiments/IntVarCheck/input.h",
-		"/home/anton/C/lab/lab_wrong/lab_11/a3.c",
-		"/home/anton/C/lab/lab_wrong/lab_09/a2.c",
-		"/home/anton/C/experiments/ifbool/void.c",
-		"/home/anton/C/lab/lab_12/a1.c",
+		"/home/anton/C/lab/lab.sublime-project",
+		"/home/anton/C/lab/lab_07/a5",
+		"/home/anton/C/lab/lab_03/a1.c",
 		"/home/anton/C/lab/lab_13/a1.c",
+		"/home/anton/C/lab/lab_12/a1.c",
 		"/home/anton/C/lab/lab_11/a1.c",
 		"/home/anton/C/lab/lab_11/a2.c",
 		"/home/anton/C/lab/lab_11/a3.c",
+		"/home/anton/C/lab/lab_10/a1.c",
+		"/home/anton/C/lab/lab_09/a1.c",
+		"/home/anton/C/lab/lab_09/a2.c",
 		"/home/anton/C/lab/lab_09/input.h",
 		"/home/anton/C/lab/lab_09/check.c",
 		"/home/anton/C/lab/lab_09/input.c",
@@ -300,6 +245,10 @@
 		"/home/anton/C/lab/lab_05/a2.c",
 		"/home/anton/C/lab/lab_08/a2.c",
 		"/home/anton/C/lab/lab_08/a1.c",
+		"/home/anton/C/lab/lab_07/a51.c",
+		"/home/anton/C/lab/lab_07/a2.c",
+		"/home/anton/C/lab/lab_07/a11.c",
+		"/home/anton/C/lab/lab_07/a1.c",
 		"/home/anton/C/lab/lab_07/a52.c",
 		"/home/anton/PY/Calc.py",
 		"/home/anton/C/lab/lab_06/a6.c",
@@ -324,7 +273,6 @@
 		"/home/anton/C/lab/lab_03/a3.c",
 		"/home/anton/C/lab/lab_03/a21.c",
 		"/home/anton/C/lab/lab_03/a2.c",
-		"/home/anton/C/lab/lab_03/a1.c",
 		"/home/anton/PABC/liza/a1.pas",
 		"/home/anton/PABC/school/11b/a3.pas",
 		"/home/anton/PY/CTE/a1.py",
@@ -384,11 +332,30 @@
 		"/home/anton/PABC/home/tasks10rub/2part/b4.pas",
 		"/home/anton/PABC/home/tasks10rub/2part/b3.pas",
 		"/home/anton/PABC/home/tasks10rub/2part/b2.pas",
-		"/home/anton/PABC/home/tasks10rub/2part/b1.pas"
+		"/home/anton/PABC/home/tasks10rub/2part/b1.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a5.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a4.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a3.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a2.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/a1.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/c26.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/c27.pas",
+		"/home/anton/PABC/home/tasks10rub/1part/с28.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c18.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c17.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c16.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c13.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c12.pas",
+		"/home/anton/PABC/school/a20.pas",
+		"/home/anton/PABC/school/a16.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c1.pas",
+		"/home/anton/PABC/school/a23.pas",
+		"/home/anton/PABC/school/a22.pas",
+		"/home/anton/PABC/school/a21.pas"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -402,9 +369,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"stepx",
-			"rightx",
-			"leftx",
 			"a",
 			"897",
 			"do",
@@ -418,9 +382,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			"c",
-			"b",
-			"a",
 			"ch",
 			"sch1"
 		],
@@ -440,11 +401,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 26.0
 	},
 	"input":
 	{
-		"height": 42.0
+		"height": 39.0
 	},
 	"layout":
 	{
@@ -485,7 +446,7 @@
 	"project": "lab.sublime-project",
 	"replace":
 	{
-		"height": 54.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
