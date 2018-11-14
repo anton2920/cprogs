@@ -56,7 +56,7 @@ int main() {
     if (flag != -1) {
         printf("%s", (flag == 1) ? "The sequence in an ascending order\n" : (flag == 2) ? "The sequence in an descending order" : "All members of the sequence are equal");
     } else {
-        printf("The distance between two local lows (%d and %d):  %d\n", min1, min2, max_dist - 1);
+        printf("The biggest distance between two local lows (%d and %d):  %d\n", min1, min2, max_dist - 1);
     }
 
     /* Returning value */
