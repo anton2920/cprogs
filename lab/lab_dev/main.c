@@ -1,34 +1,64 @@
 #include <stdio.h>
 
-/* Logo (loop version) */
-main() {
+/* Number sequence */
+int main() {
 
     /* Initializing variables */
-    int i, j;
+    int mem, min1 = 0, min2 = 0, dist = 0, max_dist = 0, flag = 0, prev_mem, next_mem = 0, min_flag = 0;
 
     /* Main part */
-    for (i = 0; i < 18; ++i) {
-        for (j = 0; j < 46; ++j) {
-            if ((j == 0) || ((!i || i == 17) && (j >= 1 && j < 15)) || ((i >= 4 && i <= 13) && j == 6) || ((i == 3 || i == 14) && (j > 6 && j <= 13))) {
-                printf("[");
-            } else if (j == 45) {
-                printf("]\n");
-            } else if (((i != 0 && i != 17) && (j < 6 || j > 39)) || (((i >= 1 && i <= 2) || (i >= 15 && i <= 16)) && ((j >= 6 && j <= 13) || (j > 31 && j <= 39))) || ((i == 3 || i == 14) && (j == 6 || j == 39)) || (((i >= 1 && i <= 3) || (i >= 14 && i <= 16)) && (j == 14 || j == 31))) {
-                printf(":");
-            } else if (((i >= 4 && i <= 13) && j == 39) || ((i == 3 || i == 14) && (j > 31 && j < 39)) || ((!i || i == 17) && (j >= 31 && j <= 44))) {
-                printf("]");
-            } else if (i == 7 && j == 21) {
-                printf("BSTU");
-                j += 3;
-            } else if (i == 8 && j == 20) {
-                printf("18-SWE");
-                j += 5;
-            } else if (i == 9 && j == 10) {
-                printf("Pavlovsky Anton Evgenevich");
-                j += 25;
-            } else {
-                printf(" ");
+    printf("Type a sequence member (zero for exit): ");
+    scanf("%d", &prev_mem);
+    if (!prev_mem) {
+        return 0;
+    }
+    printf("Type a sequence member (zero for exit): ");
+    scanf("%d", &mem);
+    if (!mem) {
+        return 0;
+    } else if (mem > prev_mem) {
+        flag = 1;
+    } else if (mem < prev_mem) {
+        flag = 2;
+    }
+    do {
+        printf("Type a sequence member (zero for exit): ");
+        scanf("%d", &next_mem);
+        if (!next_mem) {
+            break;
+        }
+        if ((next_mem > mem && flag == 2) || (next_mem < mem && flag == 1) || next_mem == mem) {
+            flag = -1;
+        } else if (next_mem > mem && flag != -1) {
+            flag = 1;
+        } else if (next_mem < mem && flag != -1) {
+            flag = 2;
+        }
+        if (min_flag) {
+            ++dist;
+        }
+        if (mem < prev_mem && mem < next_mem && !min_flag) {
+            min1 = mem;
+            min_flag = 1;
+        } else if (mem < prev_mem && mem < next_mem && min_flag) {
+            min2 = mem;
+            if (dist > max_dist) {
+                max_dist = dist;
             }
         }
+
+        prev_mem = mem;
+        mem = next_mem;
+
+    } while (1);
+
+    /* Final output */
+    if (flag != -1) {
+        printf("%s", (flag == 1) ? "The sequence in an ascending order\n" : (flag == 2) ? "The sequence in an descending order" : "All members of the sequence are equal");
+    } else {
+        printf("The distance between two local lows (%d and %d):  %d\n", min1, min2, max_dist - 1);
     }
+
+    /* Returning value */
+    return 0;
 }
