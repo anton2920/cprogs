@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* Logo (loop version) */
+/* Logo (loop version #2) */
 main() {
 
     /* Initializing variables */

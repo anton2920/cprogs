@@ -4,12 +4,12 @@
 main() {
 
     /* Initializing variables */
-    int a;
+    int a = 1;
 
-    /* I/O flow */
-    printf("Type A: ");
-    getint(&a);
-
-    /* Final output */
-    printf("The number is %d\n", a);
+    /* Main part */
+    printf("Type numbers: ");
+    for ( ; a; ) {
+        getint(&a);
+        printf("The number is %d\n", a);
+    }
 }
