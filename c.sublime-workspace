@@ -140,10 +140,10 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_11/a2.c",
+			"file": "lab/lab_10/a2.c",
 			"settings":
 			{
-				"buffer_size": 811,
+				"buffer_size": 1160,
 				"line_ending": "Unix"
 			}
 		}
@@ -192,16 +192,24 @@
 		"selected_items":
 		[
 			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
 				"Package Control: Remove Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"list",
@@ -267,6 +275,7 @@
 	],
 	"file_history":
 	[
+		"/home/anton/.config/sublime-text-3/Packages/QuickThemes/QuickThemes.sublime-settings",
 		"/home/anton/C/lab/lab_10/a22.c",
 		"/home/anton/C/lab/lab_10/a1.c",
 		"/home/anton/C/lab/lab_11/a2.c",
@@ -393,8 +402,7 @@
 		"/home/anton/PABC/home/tasks10rub/2part/b53.pas",
 		"/home/anton/PABC/home/tasks10rub/2part/b52.pas",
 		"/home/anton/PABC/home/tasks10rub/2part/b51.pas",
-		"/home/anton/PABC/home/tasks10rub/2part/b5.pas",
-		"/home/anton/PABC/home/tasks10rub/2part/b4.pas"
+		"/home/anton/PABC/home/tasks10rub/2part/b5.pas"
 	],
 	"find":
 	{
@@ -448,11 +456,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_11/a2.c",
+					"file": "lab/lab_10/a2.c",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 811,
+						"buffer_size": 1160,
 						"regions":
 						{
 						},
@@ -466,7 +474,7 @@
 						"settings":
 						{
 							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": 39,
+							"bracket_highlighter.clone": 18,
 							"bracket_highlighter.clone_locations":
 							{
 								"close":
@@ -484,11 +492,6 @@
 							},
 							"bracket_highlighter.clone_regions":
 							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -524,6 +527,11 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -557,11 +565,6 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -597,6 +600,11 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -614,7 +622,7 @@
 								"bh_angle_content"
 							],
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
