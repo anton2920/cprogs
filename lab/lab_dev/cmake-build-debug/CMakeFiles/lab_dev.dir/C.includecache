@@ -17,4 +17,8 @@ input.h
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
+stdlib.h
+-
+time.h
+-
 
