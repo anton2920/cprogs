@@ -5,14 +5,14 @@
 #define MAXSIZ 100
 
 /* Functions declaration */
-void read_key(int *, int *);
-void read_rand(int *, int *);
-void read_file(int *, int *);
-void read_bfile(int *, int *);
-float a_mean (int *, int *, int *);
-void write_scr(int *, int *, float *);
-void write_file(int *, int *, float *);
-void write_bfile(int *, int *, float *);
+void read_key(int *, const int *);
+void read_rand(int *, const int *);
+void read_file(int *, const int *);
+void read_bfile(int *, const int *);
+float a_mean (const int *, const int *, int *);
+void write_scr(const int *, const int *, const float *);
+void write_file(const int *, const int *, const float *);
+void write_bfile(const int *, const int *, const float *);
 
 /* Array: arithmetic mean of even odd-positioned numbers */
 main() {
@@ -74,8 +74,8 @@ main() {
     }
 }
 
-/* Functions defenitions */
-void read_key(int *mas, int *n) {
+/* Functions definitions */
+void read_key(int *mas, const int *n) {
 
     /* Initializing variables */
     int i;
@@ -87,7 +87,7 @@ void read_key(int *mas, int *n) {
     }
 }
 
-void read_rand(int *mas, int *n) {
+void read_rand(int *mas, const int *n) {
 
     /* Initializing variables */
     int i, a, b, temp;
@@ -107,7 +107,7 @@ void read_rand(int *mas, int *n) {
     }
 }
 
-void read_file(int *mas, int *n) {
+void read_file(int *mas, const int *n) {
 
     /* Initializing variables */
     int i;
@@ -125,7 +125,7 @@ void read_file(int *mas, int *n) {
     fclose(inputs);
 }
 
-void read_bfile(int *mas, int *n) {
+void read_bfile(int *mas, const int *n) {
 
     /* Initializing variables */
     int i;
@@ -143,9 +143,9 @@ void read_bfile(int *mas, int *n) {
     fclose(inputs);
 }
 
-float a_mean(int *mas, int *n, int *func) {
+float a_mean(const int *mas, const int *n, int *func) {
 
-    /* Intializing variables */
+    /* Initializing variables */
     int i, sum = 0, count = 0;
     float ar_mean = 0;
 
@@ -168,9 +168,9 @@ float a_mean(int *mas, int *n, int *func) {
 
 }
 
-void write_scr(int *mas, int *n, float *ar_mean) {
+void write_scr(const int *mas, const int *n, const float *ar_mean) {
 
-    /* Initializing varialbes */
+    /* Initializing variables */
     int i;
 
     /* Main part */
@@ -184,7 +184,7 @@ void write_scr(int *mas, int *n, float *ar_mean) {
     printf("\n");
 }
 
-void write_file(int *mas, int *n, float *ar_mean) {
+void write_file(const int *mas, const int *n, const float *ar_mean) {
 
     /* Initializing variables */
     int i;
@@ -200,16 +200,15 @@ void write_file(int *mas, int *n, float *ar_mean) {
     }
 }
 
-void write_bfile(int *mas, int *n, float *ar_mean) {
+void write_bfile(const int *mas, const int *n, const float *ar_mean) {
 
-    /* Initializing varialbes */
+    /* Initializing variables */
     int i;
     FILE *outputs;
 
     /* Main part */
     outputs = fopen("a1out.bin", "wb");
     fwrite(&ar_mean, sizeof(float), 1, outputs);
-    /* fwrite("\n", sizeof(char), 1, outputs); */
     for (i = 0; i < *n; i += 2) {
         if (*(mas + i) > *ar_mean && *(mas + i) % 2 == 0) {
             fwrite(mas + i, sizeof(int), 1, outputs);
