@@ -33,22 +33,22 @@ main() {
 	do {
 		printf("Type step: ");
 		scanf("%f", &stepy);
-	} while (stepx == 0);
+	} while (stepy == 0);
 	do {
 		printf("Type right border of Y: ");
 		scanf("%f", &righty);
 	} while ((stepy > 0) ? righty < lefty : lefty < righty);
 
 	/* Main part */
-	printf("–––––––––––––––––––––––––––––––––––––––––––––––––\n");
-	printf("|\tx\t|\ty\t|\tf(x, y)\t|\n");
-	printf("–––––––––––––––––––––––––––––––––––––––––––––––––\n");
+	printf("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+	printf("|\tx\t|\ty\t|\t\tf(x, y)\t\t|\n");
+	printf("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
 	for (x = leftx; (stepx > 0) ? x <= rightx : x >= rightx; x += stepx) {
 		for (y = lefty; (stepy > 0) ? y <= righty : y >= righty; y += stepy) {
-			printf("|\t%.2f\t|\t%.2f\t|\t", x, y);
+			printf("|\t%.2f\t|\t%.2f\t|\t\t", x, y);
 			(func == 1) ? func1(x, y) : func2(x, y);
-			printf("\t|\n");
-			printf("–––––––––––––––––––––––––––––––––––––––––––––––––\n");
+			printf("\t\t|\n");
+			printf("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
 		}
 	}
 }

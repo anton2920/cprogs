@@ -18,7 +18,7 @@ main() {
     do {
         printf("Type the number of elements: ");
         scanf("%d", &n);
-    } while (n > MAXSIZ);
+    } while (n > MAXSIZ || n <= 0);
     do {
         printf("Fill array with… [1 — keyboard-typed numbers, 2 — pseudo-random generated numbers, 3 — text file, 4 — binary file]: ");
         scanf("%d", &func);
