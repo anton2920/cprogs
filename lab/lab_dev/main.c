@@ -82,6 +82,12 @@ int main() {
                     write_scr(mas, &n, &ar_mean);
                     write_bfile(mas, &n, &ar_mean);
                     break;
+                case 12: case 21:
+                    write_all_scr(mas, &n);
+                    write_scr(mas, &n, &ar_mean);
+                    write_file(mas, &n, &ar_mean);
+                    write_bfile(mas, &n, &ar_mean);
+                    break;
                 default:
                     break;
             }
@@ -149,6 +155,7 @@ void to_bin(void) {
     do {
         printf("| Type the name of a text file: ");
         scanf("%s", name);
+        prt_ln();
         if ((inputs = fopen(name, "r")) == NULL) {
             prt_ln();
             printf("| to_bin: error, no file found!\n");
@@ -166,6 +173,11 @@ void to_bin(void) {
     name2[++i] = '\0';
 
     outputs = fopen(name2, "wb");
+    if (outputs == NULL) {
+        printf("| to_bin: error, couldn't open file!                        |\n");
+        prt_ln();
+        return;
+    }
 
     /* Main part */
     for (i = 0; i < n; ++i) {
@@ -176,8 +188,7 @@ void to_bin(void) {
     fclose(outputs);
 
     /* Final output */
-    prt_ln();
-    printf("| The \"%s\" file was created successfully!\n", name2);
+    printf("| The «%s» file was created successfully!\n", name2);
     prt_ln();
 }
 
@@ -281,7 +292,7 @@ void read_file(int *mas, const int *n) {
     do {
         printf("| Type the name of a text file: ");
         scanf("%s", name);
-    } while ((inputs = fopen(name, "r")) == NULL);
+    } while (!(inputs = fopen(name, "r")));
     for (i = 0; i < *n; ++i) {
         fscanf(inputs, "%d", mas + i);
     }
@@ -302,7 +313,7 @@ void read_bfile(int *mas, const int *n) {
     do {
         printf("| Type the name of a binary file: ");
         scanf("%s", name);
-    } while ((inputs = fopen(name, "rb")) == NULL);
+    } while (!(inputs = fopen(name, "rb")));
     for (i = 0; i < *n; ++i) {
         fread(mas + i, sizeof(int), 1, inputs);
     }
@@ -336,10 +347,20 @@ int menu3(void) {
         printf("| Answer: ");
         func = getchar();
         prt_ln();
-        if (isdigit(func) && func >= '0' && func <= '3') {
+        if (isdigit(func) && func >= '0' && func <= '2') {
             func -= '0';
-            while ((junk = getchar()) != '\n')
-                ;
+            if ((junk = getchar()) != '\n') {
+                if ((junk == '1' && func == 2) || (junk == '2' && func == 1)) {
+                    func = (func * 10) + (junk - '0');
+                    if ((junk = getchar()) != '\n') {
+                        while ((junk = getchar()) != '\n');
+                        return -1;
+                    }
+                } else {
+                    while ((junk = getchar()) != '\n')
+                        ;
+                }
+            }
             return func;
         } else if (func == 'q') {
             while ((junk = getchar()) != '\n')
@@ -420,6 +441,11 @@ void write_file(const int *mas, const int *n, const float *ar_mean) {
 
     /* Main part */
     outputs = fopen("a1out.txt", "w");
+    if (outputs == NULL) {
+        printf("| txt: error, couldn't open file!                            |\n");
+        prt_ln();
+        return;
+    }
     fprintf(outputs, "%.2f\n", *ar_mean);
     for (i = 0; i < *n; i += 2) {
         if (*(mas + i) > *ar_mean && *(mas + i) % 2 == 0) {
@@ -429,7 +455,7 @@ void write_file(const int *mas, const int *n, const float *ar_mean) {
     fclose(outputs);
 
     /* Final output */
-    printf("| The information was stored successfully!                   |\n");
+    printf("| txt: the information was stored successfully!              |\n");
     prt_ln();
 }
 
@@ -441,6 +467,11 @@ void write_bfile(const int *mas, const int *n, const float *ar_mean) {
 
     /* Main part */
     outputs = fopen("a1out.bin", "wb");
+    if (outputs == NULL) {
+        printf("| bin: error, couldn't open file!                            |\n");
+        prt_ln();
+        return;
+    }
     fwrite(&ar_mean, sizeof(float), 1, outputs);
     for (i = 0; i < *n; i += 2) {
         if (*(mas + i) > *ar_mean && *(mas + i) % 2 == 0) {
@@ -450,7 +481,7 @@ void write_bfile(const int *mas, const int *n, const float *ar_mean) {
     fclose(outputs);
 
     /* Final output */
-    printf("| The information was stored successfully!                   |\n");
+    printf("| bin: the information was stored successfully!              |\n");
     prt_ln();
 }
 
