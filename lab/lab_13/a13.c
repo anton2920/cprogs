@@ -7,6 +7,7 @@
 
 /* Functions declarations */
 int menu1(void);
+void prt_ln(void);
 void to_bin(void);
 int menu2(int *);
 void menu2_5(int *);
@@ -16,6 +17,7 @@ void read_file(int *, const int *);
 void read_bfile(int *, const int *);
 int menu3(void);
 float a_mean (const int *, const int *, int *);
+void write_all_scr(const int *, const int *);
 void write_scr(const int *, const int *, const float *);
 void write_file(const int *, const int *, const float *);
 void write_bfile(const int *, const int *, const float *);
@@ -67,13 +69,16 @@ int main() {
                 case -1:
                     return 0;
                 case 0:
+                    write_all_scr(mas, &n);
                     write_scr(mas, &n, &ar_mean);
                     break;
                 case 1:
+                    write_all_scr(mas, &n);
                     write_scr(mas, &n, &ar_mean);
                     write_file(mas, &n, &ar_mean);
                     break;
                 case 2:
+                    write_all_scr(mas, &n);
                     write_scr(mas, &n, &ar_mean);
                     write_bfile(mas, &n, &ar_mean);
                     break;
@@ -109,7 +114,7 @@ int menu1(void) {
 "|                                                            |\n");
         printf("| Answer: ");
         func = getchar();
-        printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+        prt_ln();
         if (isdigit(func) && func >= '1' && func <= '2') {
             func -= '0';
             while ((junk = getchar()) != '\n')
@@ -126,6 +131,12 @@ int menu1(void) {
     }
 }
 
+void prt_ln(void) {
+
+    /* Final output */
+    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+}
+
 void to_bin(void) {
 
     /* Initializing variables */
@@ -139,7 +150,9 @@ void to_bin(void) {
         printf("| Type the name of a text file: ");
         scanf("%s", name);
         if ((inputs = fopen(name, "r")) == NULL) {
-            printf("|| to_bin: error, no file found!\n");
+            prt_ln();
+            printf("| to_bin: error, no file found!\n");
+            prt_ln();
         } else {
             break;
         }
@@ -163,9 +176,9 @@ void to_bin(void) {
     fclose(outputs);
 
     /* Final output */
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
     printf("| The \"%s\" file was created successfully!\n", name2);
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 int menu2(int *n) {
@@ -190,7 +203,7 @@ int menu2(int *n) {
 "|                                                            |\n");
         printf("| Answer: ");
         func = getchar();
-        printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+        prt_ln();
         if (isdigit(func) && func >= '1' && func <= '4') {
             func -= '0';
             while ((junk = getchar()) != '\n')
@@ -216,7 +229,7 @@ void menu2_5(int *n) {
     /* I/O flow */
     printf("| Type the number of elements: ");
     scanf("%d", n);
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 void read_key(int *mas, const int *n) {
@@ -231,7 +244,7 @@ void read_key(int *mas, const int *n) {
     }
 
     /* Final output */
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 void read_rand(int *mas, const int *n) {
@@ -254,7 +267,7 @@ void read_rand(int *mas, const int *n) {
     }
 
     /* Final output */
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 void read_file(int *mas, const int *n) {
@@ -275,7 +288,7 @@ void read_file(int *mas, const int *n) {
     fclose(inputs);
 
     /* Final output */
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 void read_bfile(int *mas, const int *n) {
@@ -291,12 +304,12 @@ void read_bfile(int *mas, const int *n) {
         scanf("%s", name);
     } while ((inputs = fopen(name, "rb")) == NULL);
     for (i = 0; i < *n; ++i) {
-        fread(mas + i, sizeof(int), (size_t) *n, inputs);
+        fread(mas + i, sizeof(int), 1, inputs);
     }
     fclose(inputs);
 
     /* Final output */
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 int menu3(void) {
@@ -322,7 +335,7 @@ int menu3(void) {
 "|                                                            |\n");
         printf("| Answer: ");
         func = getchar();
-        printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+        prt_ln();
         if (isdigit(func) && func >= '0' && func <= '3') {
             func -= '0';
             while ((junk = getchar()) != '\n')
@@ -357,7 +370,7 @@ float a_mean(const int *mas, const int *n, int *func) {
     }
 
     if (count == 0) {
-        *func = 0;
+        *func = -2;
     } else {
         ar_mean = sum * 1.0 / count * 1.0;
     }
@@ -365,6 +378,22 @@ float a_mean(const int *mas, const int *n, int *func) {
     /* Returning value */
     return ar_mean;
 
+}
+
+void write_all_scr(const int *mas, const int *n) {
+
+    /* Initializing variables */
+    int i;
+
+    /* I/O flow */
+    printf("| Full array: ");
+    for (i = 0; i < *n; ++i) {
+        printf("%d ", *(mas + i));
+    }
+
+    /* Final output */
+    printf("\n");
+    prt_ln();
 }
 
 void write_scr(const int *mas, const int *n, const float *ar_mean) {
@@ -401,7 +430,7 @@ void write_file(const int *mas, const int *n, const float *ar_mean) {
 
     /* Final output */
     printf("| The information was stored successfully!                   |\n");
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 void write_bfile(const int *mas, const int *n, const float *ar_mean) {
@@ -422,7 +451,7 @@ void write_bfile(const int *mas, const int *n, const float *ar_mean) {
 
     /* Final output */
     printf("| The information was stored successfully!                   |\n");
-    printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+    prt_ln();
 }
 
 int menu4(void) {
@@ -437,15 +466,15 @@ int menu4(void) {
             case 'y': case 'Y':
                 while ((junk = getchar()) != '\n')
                     ;
-                printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+                prt_ln();
                 return 1;
             case 'n': case 'N': case '\n':
-                printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+                prt_ln();
                 return 0;
             default:
                 while ((junk = getchar()) != '\n')
                     ;
-                printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n");
+                prt_ln();
                 continue;
         }
     }
