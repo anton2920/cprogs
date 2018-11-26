@@ -425,8 +425,8 @@ void write_scr(const int *mas, const int *n, const float *ar_mean) {
     /* Main part */
     printf("| Arithmetic mean: %6.2f                                    |\n", *ar_mean);
     printf("| Array: ");
-    for (i = 0; i < *n; i += 2) {
-        if (*(mas + i) > *ar_mean && *(mas + i) % 2 == 0) {
+    for (i = 0; i < *n; ++i) {
+        if (*(mas + i) > *ar_mean) {
             printf("%d ", *(mas + i));
         }
     }
@@ -447,8 +447,8 @@ void write_file(const int *mas, const int *n, const float *ar_mean) {
         return;
     }
     fprintf(outputs, "%.2f\n", *ar_mean);
-    for (i = 0; i < *n; i += 2) {
-        if (*(mas + i) > *ar_mean && *(mas + i) % 2 == 0) {
+    for (i = 0; i < *n; ++i) {
+        if (*(mas + i) > *ar_mean) {
             fprintf(outputs, "%d ", *(mas + i));
         }
     }
@@ -473,8 +473,8 @@ void write_bfile(const int *mas, const int *n, const float *ar_mean) {
         return;
     }
     fwrite(&ar_mean, sizeof(float), 1, outputs);
-    for (i = 0; i < *n; i += 2) {
-        if (*(mas + i) > *ar_mean && *(mas + i) % 2 == 0) {
+    for (i = 0; i < *n; ++i) {
+        if (*(mas + i) > *ar_mean) {
             fwrite(mas + i, sizeof(int), 1, outputs);
         }
     }

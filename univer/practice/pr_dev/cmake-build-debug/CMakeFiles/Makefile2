@@ -54,10 +54,10 @@ RM = /home/anton/Загрузки/clion-2017.2.3/bin/cmake/bin/cmake -E remove -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/anton/C/practice/pr_dev
+CMAKE_SOURCE_DIR = /home/anton/C/univer/practice/pr_dev
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/anton/C/practice/pr_dev/cmake-build-debug
+CMAKE_BINARY_DIR = /home/anton/C/univer/practice/pr_dev/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/pr_dev.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/anton/C/practice/pr_dev/cmake-build-debug
 CMakeFiles/pr_dev.dir/all:
 	$(MAKE) -f CMakeFiles/pr_dev.dir/build.make CMakeFiles/pr_dev.dir/depend
 	$(MAKE) -f CMakeFiles/pr_dev.dir/build.make CMakeFiles/pr_dev.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/practice/pr_dev/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target pr_dev"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/univer/practice/pr_dev/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target pr_dev"
 .PHONY : CMakeFiles/pr_dev.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/pr_dev.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pr_dev.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/practice/pr_dev/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/univer/practice/pr_dev/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pr_dev.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/practice/pr_dev/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/univer/practice/pr_dev/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/pr_dev.dir/rule
 
 # Convenience name for target.

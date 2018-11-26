@@ -1,3 +1,3 @@
-/home/anton/C/practice/pr_dev/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/anton/C/practice/pr_dev/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/anton/C/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir
+/home/anton/C/univer/practice/pr_dev/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/anton/C/univer/practice/pr_dev/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/anton/C/univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir
