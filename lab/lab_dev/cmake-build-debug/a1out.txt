@@ -1,2 +1,2 @@
-Calc	39
-TV	969
+Book 5
+Computer 500
