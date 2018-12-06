@@ -1,11 +1,13 @@
 #ifndef HEADER_FILE_GETS
 #define HEADER_FILE_GETS
 
-#if SYSTEM == LINUX
-#include <zconf.h>
-#elif SYSTEM == WINDOWS
-#include <Windows.h>
+#if SYSTEM == _WIN32 || SYSTEM == OS_Windows
+	#define SYSCALLS <Windows.h>
+#elif SYSTEM == __unix__
+	#define SYSCALLS <zconf.h>
 #endif
+#include SYSCALLS
+
 #define SIZE_BUF_GETS 1024
 
 int lgets(char *);
