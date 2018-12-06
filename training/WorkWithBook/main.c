@@ -5,10 +5,9 @@
 main() {
 
     int n, buf[SIZE];
-    int *bufp = buf;
 
+    write(1, "Type string: ", 13);
     n = (int) read(0, buf, SIZE);
-    while (--n) {
-        write(1, bufp++, 1);
-    }
+    write(1, "Your string: ", 13);
+    write(1, buf, n);
 }

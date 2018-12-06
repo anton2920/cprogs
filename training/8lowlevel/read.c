@@ -1,9 +1,15 @@
-#define SIZE 100
+#include "gets.h"
+#include <stdio.h>
 
 main() {
 
-	int n, buf[SIZE];
+    int n;
+    char buf[SIZE_BUF_GETS];
 
-	if ((n = read(0, buf, SIZE)) == '\n')
-		write(1, buf, SIZE);
+    write(1, "Type string: ", 13);
+    n = gets(buf);
+    /* write(1, "Your string: ", 13);
+    * write(1, buf, n);
+    */
+    printf("Your string: %s\n", buf);
 }
