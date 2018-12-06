@@ -13,5 +13,4 @@ main() {
 	* write(1, buf, n);
 	*/
 	printf("Your string: %s\n", buf);
-	system("pause");
 }
