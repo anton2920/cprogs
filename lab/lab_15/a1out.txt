@@ -1,2 +1,2 @@
-Calc	34
-TV	500
+Calc 5
+TV 500

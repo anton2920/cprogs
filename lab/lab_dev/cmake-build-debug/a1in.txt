@@ -1,5 +1,0 @@
-Washer 299
-Computer 500
-Book 5
-Toy 25
-Camera 300

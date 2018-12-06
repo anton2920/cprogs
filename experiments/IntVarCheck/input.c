@@ -49,7 +49,7 @@ long int linput(const char *out, long int *res) {
                 counter = 0;
                 multiplier = 1;
             } else if (a == '\n') { /* Detects End-Of-Line char */
-                break; /* End-Of-Line («Enter button usually) is the only way to finish a number */
+                break; /* End-Of-Line («Enter» button usually) is the only way to finish a number */
             }
         }
         if (flag == 1) { /* Checks whether only digits were typed */
@@ -90,7 +90,7 @@ int input(const char *out, int *res) {
                 counter = 0;
                 multiplier = 1;
             } else if (a == '\n') { /* Detects End-Of-Line char */
-                break; /* End-Of-Line («Enter button usually) is the only way to finish a number */
+                break; /* End-Of-Line («Enter» button usually) is the only way to finish a number */
             }
         }
         if (flag == 1) { /* Checks whether only digits were typed */
@@ -155,7 +155,7 @@ double lfinput(const char *out, double *res) {
                 multiplier = 1;
                 multiplier2 = 1;
             } else if (a == '\n') { /* Detects End-Of-Line char */
-                break; /* End-Of-Line («Enter button usually) is the only way to finish a number */
+                break; /* End-Of-Line («Enter» button usually) is the only way to finish a number */
             }
 
 
@@ -225,7 +225,7 @@ float finput(const char *out, float *res) {
                 multiplier = 1;
                 multiplier2 = 1;
             } else if (a == '\n') { /* Detects End-Of-Line char */
-                break; /* End-Of-Line («Enter button usually) is the only way to finish a number */
+                break; /* End-Of-Line («Enter» button usually) is the only way to finish a number */
             }
 
 

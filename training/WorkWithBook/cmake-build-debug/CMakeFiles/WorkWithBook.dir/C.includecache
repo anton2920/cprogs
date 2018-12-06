@@ -7,6 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/anton/C/training/WorkWithBook/main.c
-stdio.h
+zconf.h
 -
 
