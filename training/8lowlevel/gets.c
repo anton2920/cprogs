@@ -1,6 +1,6 @@
 #include "gets.h"
 
-int gets(char *str) {
+int lgets(char *str) {
 
 	/* Initializing variables */
 	int n;
