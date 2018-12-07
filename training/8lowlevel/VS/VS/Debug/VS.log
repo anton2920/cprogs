@@ -1,6 +1,4 @@
 ﻿  gets.c
-c:\users\anton\c\training\8lowlevel\vs\vs\gets.c(9): warning C4013: 'read' undefined; assuming extern returning int
   main.c
-c:\users\anton\c\training\8lowlevel\vs\vs\main.c(11): warning C4013: 'lgets' undefined; assuming extern returning int
   Generating Code...
-  VS.vcxproj -> C:\Users\Anton\C\training\8lowlevel\VS\Debug\VS.exe
+  VS.vcxproj -> C:\Users\anton\C\training\8lowlevel\VS\Debug\VS.exe
