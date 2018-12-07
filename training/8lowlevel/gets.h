@@ -2,7 +2,7 @@
 #define HEADER_FILE_GETS
 
 #ifdef _WIN32
-	#include <Windows.h>
+	#include <io.h>
 #endif
 
 #ifdef __unix__
