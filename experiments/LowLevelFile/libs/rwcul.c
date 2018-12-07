@@ -35,7 +35,7 @@ int lisspace(int n) {
     return (n == ' ' || n == '\t') ? 1 : 0;
 }
 
-int linput(const char *str, const int n, int *res) {
+int linput(const char *str, const int n, long int *res) {
 
     /* This function allows you to assign some integer value to a variable. If you type something but integer,
      * the program asks you to type proper value. It's an endless loop, so you must type an integer */
@@ -76,6 +76,12 @@ int linput(const char *str, const int n, int *res) {
     return counter; /* Returns a number of successfully scanned digits */
 }
 
+int input(const char *str, const int n, int *res) {
+
+    /* Returning value */
+    return linput(str, n, (long *) res);
+}
+
 void read_mas_key(int *mas, int *n) {
 
     /* Initializing variables */
@@ -83,7 +89,7 @@ void read_mas_key(int *mas, int *n) {
 
     /* I/O flow */
     for (i = 0; i < *n; ++i) {
-        linput("Type array element: ", sizeof("Type array element: ") - 1, mas + i);
+        input("Type array element: ", sizeof("Type array element: ") - 1, mas + i);
     }
 }
 
@@ -111,6 +117,7 @@ char *reverse(int num, int len) {
     char mas[33];
     int i;
     char sign = (num >= 0) ? 1 : -1;
+    char *ptr = mas;
 
     /* Main part */
     num *= sign;
@@ -120,7 +127,7 @@ char *reverse(int num, int len) {
     }
     *mas = (sign == 1) ? '+' : '-';
 
-    return mas;
+    return ptr;
 }
 
 int write_int_scr(const int *num) {
