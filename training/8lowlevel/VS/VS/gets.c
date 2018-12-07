@@ -6,7 +6,13 @@ int lgets(char *str) {
 	int n;
 
 	/* I/O flow */
-	n = read(0, str, SIZE_BUF_GETS);
+	#ifdef _WIN32
+		n = _read(0, str, SIZE_BUF_GETS);
+	#endif // _WIN32
+	#ifdef __unix__
+		n = read(0, str, SIZE_BUF_GETS);
+	#endif // __unix__
+
 	*(str + (n - 1)) = '\0';
 
 	/* Returning value */
