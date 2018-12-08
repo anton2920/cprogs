@@ -9,4 +9,5 @@ main() {
 
     /* I/O flow */
     func = set_sets(a, b, c);
+	printf("%d", func);
 }

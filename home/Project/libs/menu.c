@@ -6,7 +6,7 @@ int set_sets(char *a, char *b, char *c) {
 
     /* Initializing variables */
     int func;
-    char *list[3] = {"{}", "{}", "{}"};
+    char *list[] = {"A =", "{}", "B =", "{}", "C =", "{}"};
     dialog_vars.input_menu = 1;
 
     /* I/O flow */
