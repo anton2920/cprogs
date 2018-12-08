@@ -4,20 +4,16 @@
 		"selected_items":
 		[
 			[
-				"in",
-				"include\t(read.c)"
-			],
-			[
-				"st",
-				"string"
-			],
-			[
 				"inc",
 				"include"
 			],
 			[
-				"d",
-				"define\t(read.c)"
+				"fl",
+				"fclose"
+			],
+			[
+				"in",
+				"inputs"
 			],
 			[
 				"ste",
@@ -58,6 +54,10 @@
 			[
 				"re",
 				"return\t(a3.c)"
+			],
+			[
+				"st",
+				"stdio.h\t(a1.c)"
 			],
 			[
 				"n",
@@ -192,16 +192,28 @@
 		"selected_items":
 		[
 			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"col",
+				"UI: Select Color Scheme"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
 				"Package Control: Remove Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"list",
@@ -236,7 +248,7 @@
 	},
 	"console":
 	{
-		"height": 139.0,
+		"height": 412.0,
 		"history":
 		[
 			"while True:",
@@ -261,39 +273,55 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
-		"/home/anton/C/training",
-		"/home/anton/C/training/8lowlevel"
+		"/home/anton/C/experiments",
+		"/home/anton/C/experiments/IntVarCheck"
 	],
 	"file_history":
 	[
-		"/home/anton/C/training/8lowlevel/gets.h",
+		"/home/anton/C/univer/study/MRecursion/a5.c",
+		"/home/anton/C/univer/study/MRecursion/a4.c",
+		"/home/anton/C/univer/study/MRecursion/a3.c",
+		"/home/anton/C/univer/study/MRecursion/a1.c",
+		"/home/anton/C/univer/study/MRecursion/a2.c",
+		"/home/anton/C/lab/lab_15/a1.c",
+		"/home/anton/C/lab/lab_15/a1.h",
+		"/home/anton/C/lab/lab_15/menu.c",
+		"/home/anton/C/lab/lab_15/rwr.c",
+		"/home/anton/C/lab/lab_15/struct.c",
 		"/home/anton/C/training/8lowlevel/read.c",
-		"/home/anton/C/training/8lowlevel/gets.c",
-		"/home/anton/C/experiments/LowLevelFile/header.h",
-		"/home/anton/C/experiments/LowLevelFile/rw.c",
-		"/home/anton/C/experiments/LowLevelFile/main.c",
-		"/home/anton/C/lab/lab_13/a1in.txt",
-		"/home/anton/C/lab/lab_13/a13.c",
-		"/home/anton/C/lab/lab_13/a12.c",
-		"/home/anton/C/lab/lab_13/a1.c",
-		"/home/anton/PY/Calc.py",
-		"/home/anton/C/lab/lab_10/a2.c",
-		"/home/anton/C/lab/lab_10/a21.c",
-		"/home/anton/C/lab/lab_10/a22.c",
-		"/home/anton/C/lab/lab_10/a4.c",
-		"/home/anton/C/experiments/SanyaEbet/arrayequasion.c",
 		"/home/anton/C/experiments/IntVarCheck/input.c",
 		"/home/anton/C/experiments/IntVarCheck/test.c",
 		"/home/anton/C/experiments/IntVarCheck/input.h",
+		"/home/anton/C/lab/lab_15/a1in.txt",
+		"/home/anton/C/lab/lab_13/a13.c",
+		"/home/anton/C/univer/practice/pr_02/28.c",
+		"/home/anton/C/univer/practice/pr_02/15.c",
+		"/home/anton/C/univer/practice/pr_02/8.c",
+		"/home/anton/C/lab/lab_13/a1.c",
+		"/home/anton/C/lab/lab_13/a12.c",
+		"/home/anton/C/lab/lab_10/a3.c",
+		"/home/anton/C/lab/lab_13/tobin.c",
+		"/home/anton/C/lab/lab_13/a1in.txt",
+		"/home/anton/C/lab/lab_13/a1in.bin",
+		"/home/anton/C/lab/lab_13/a1out.txt",
+		"/home/anton/C/lab/lab_13/a1out.bin",
 		"/home/anton/C/c.sublime-project",
+		"/home/anton/C/experiments/dialog.c",
+		"/home/anton/C/experiments/clock.c",
+		"/home/anton/.config/sublime-text-3/Packages/QuickThemes/QuickThemes.sublime-settings",
+		"/home/anton/C/lab/lab_10/a22.c",
+		"/home/anton/C/lab/lab_10/a1.c",
+		"/home/anton/C/lab/lab_11/a2.c",
+		"/home/anton/C/lab/lab_11/a1.c",
+		"/home/anton/C/lab/lab_10/a2.c",
+		"/home/anton/C/experiments/SanyaEbet/struct.c",
+		"/home/anton/C/experiments/SanyaEbet/arrayequasion.c",
 		"/home/anton/C/lab/lab_09/a1.c",
 		"/home/anton/C/lab/lab_09/a2.c",
 		"/home/anton/C/lab/lab_09/a3.c",
 		"/home/anton/C/lab/lab.sublime-project",
-		"/home/anton/C/lab/lab_10/a3.c",
 		"/home/anton/C/lab/lab_wrong/lab_11/a1.c",
 		"/home/anton/C/lab/lab_wrong/lab_11/a2.c",
-		"/home/anton/C/lab/lab_10/a1.c",
 		"/home/anton/C/experiments/SanyaEbet/shoulders.h",
 		"/home/anton/C/experiments/SanyaEbet/shoulders.c",
 		"/home/anton/C/experiments/SanyaEbet/main.c",
@@ -313,8 +341,6 @@
 		"/home/anton/C/lab/lab_wrong/lab_09/a2.c",
 		"/home/anton/C/experiments/ifbool/void.c",
 		"/home/anton/C/lab/lab_12/a1.c",
-		"/home/anton/C/lab/lab_11/a1.c",
-		"/home/anton/C/lab/lab_11/a2.c",
 		"/home/anton/C/lab/lab_11/a3.c",
 		"/home/anton/C/lab/lab_09/input.h",
 		"/home/anton/C/lab/lab_09/check.c",
@@ -324,6 +350,7 @@
 		"/home/anton/C/lab/lab_08/a2.c",
 		"/home/anton/C/lab/lab_08/a1.c",
 		"/home/anton/C/lab/lab_07/a52.c",
+		"/home/anton/PY/Calc.py",
 		"/home/anton/C/lab/lab_06/a6.c",
 		"/home/anton/C/lab/lab_06/a5.c",
 		"/home/anton/C/lab/lab_06/a4.c",
@@ -378,26 +405,11 @@
 		"/home/anton/PABC/home/tasks10rub/3part/c8.pas",
 		"/home/anton/PABC/home/tasks10rub/3part/c7.pas",
 		"/home/anton/PABC/home/tasks10rub/3part/c6.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c5.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c4.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c3.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c2.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c19.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c20.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c21.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c22.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c24.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c23.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c26.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c25.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c28.pas",
-		"/home/anton/PABC/home/tasks10rub/3part/c27.pas",
-		"/home/anton/Файлы/GAMES/GAM_VIST/BALDAWIN/WORDSRUS.TXT",
-		"/home/anton/PABC/olympic2/a4.pas"
+		"/home/anton/PABC/home/tasks10rub/3part/c5.pas"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -449,11 +461,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 29.0
 	},
 	"input":
 	{
-		"height": 42.0
+		"height": 208.0
 	},
 	"layout":
 	{
@@ -494,7 +506,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":

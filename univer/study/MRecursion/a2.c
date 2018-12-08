@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #define ABS(X) ((X) < 0) ? (-X) : (X)
-#define EPS 0.001
+#define EPS 0.00001
 
 double f(double);
 double dih(double, double);
@@ -9,7 +9,7 @@ double dih(double, double);
 main() {
 
     /* Initializing variables */
-    double a = -1.2, b = 100;
+    double a = -100, b = 100;
 
     /* Final output */
     if (f(a) * f(b) > 0) {
@@ -29,18 +29,8 @@ double f(double x) {
 double dih(double a, double b) {
 
     /* Initializing variables */
-    double c = (a + b) / 2;
-
-    /* Main part */
-    if (f(c) == 0)
-    return c;
-    if (ABS(b - a) < EPS)
-        return c;
-    if (f(a) * f(c) < 0)
-        return dih(a, c);
-    else
-        return dih(c, b);
+    double c = (a + b) / 2, d = b - a;
 
     /* Returning value */
-    /*return (f(c) == 0 || ABS(a - b) < EPS) ? c : (f(a) * f(c) < 0) ? dih(a, c) : dih(c, b);*/
+    return (f(c) == 0 || ABS(d) < EPS) ? c : (f(a) * f(c) < 0) ? dih(a, c) : dih(c, b);
 }
