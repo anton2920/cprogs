@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/C/home/Project/headers/project.h
+
+/home/anton/C/home/Project/libs/menu.c
+dialog.h
+-
+curses.h
+-
+../headers/project.h
+/home/anton/C/home/Project/headers/project.h
+
+/home/anton/C/home/Project/main.c
+stdio.h
+-
+headers/project.h
+/home/anton/C/home/Project/headers/project.h
+
