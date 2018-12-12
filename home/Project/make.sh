@@ -1,1 +1,1 @@
-cc -std=c90 -Wall -c libs/menu.c && cc -std=c90 -Wall -c libs/menu2.c && cc -std=c90 -Wall -c main.c && cc -std=c90 -Wall main.o menu.o menu2.o -o main -ldialog -lcursesw
+cc -std=c90 -Wall -c libs/menu.c && cc -std=c90 -Wall -c libs/menu2.c && cc -std=c90 -Wall -c libs/menu3.c && cc -std=c90 -Wall -c main.c && cc -std=c90 -Wall main.o menu.o menu2.o menu3.o -o main -ldialog -lcursesw
