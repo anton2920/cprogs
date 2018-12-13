@@ -9,7 +9,12 @@ int set_sets(char *a, char *b, char *c) {
 	extern int func_err;
     char *list[] = {"A =", a, "B =", b, "C =", c};
 	char change[NAME];
+	FILE *help;
     dialog_vars.input_menu = 1;
+	if ((help = fopen(HELP_FILE, "r"))) {
+		dialog_vars.help_file = HELP_FILE;
+		fclose(help);
+	}
 	dialog_vars.help_line = "Ctrl + U to clear field";
 	dialog_vars.extra_button = 1;
 	dialog_vars.extra_label = "Change";
@@ -20,13 +25,17 @@ int set_sets(char *a, char *b, char *c) {
 	dialog_vars.input_result = change;
     init_dialog(stdin, stdout);
     func = dialog_menu(TITLE, "===> Type sets: ", 0, 0, 10, 3, list);
-    end_dialog();
-	if (func == 1)
+	if (func == 1) {
+		end_dialog();
 		return func;
-	else if (!func && !func_err)
+	}
+	else if (!func && !func_err) {
+		end_dialog();
 		return func;
+	}
 	else if (!func && func_err) {
 		str_err(ERROR_MSG);
+		end_dialog();
 		return 4;
 	}
 	if (*(change + 8) == 'A') {
@@ -37,6 +46,8 @@ int set_sets(char *a, char *b, char *c) {
 		output(c, change, a, b);
 	}
 	
+	end_dialog();
+
     /* Returning value */
     return func;
 }
@@ -68,7 +79,7 @@ int check(char *str) {
 	if (!strncmp(str, "NATURAL(", 8)) {
 		if (strstr(str, ",") && strstr(str, ")") && strchr(str, '(') == strrchr(str, '(') && strchr(str, ',') == strrchr(str, ',') && strchr(str, ')') == strrchr(str, ')')) {
 			for (i = 8; i < len - 1; ++i)
-				if (!isdigit(*(str + i)) && *(str + i) != ',')
+				if (!isdigit(*(str + i)) && *(str + i) != ',' && *(str + i) != '-')
 					return 0;
 			return 3;
 		} else
@@ -194,7 +205,9 @@ void output (char *str, const char *change, const char *str1, const char *str2) 
 		}
 	}
 
-
+	if (ch != 4 && ch != 'A' && ch != 'B' && ch != 'C' && !func_err) {
+		fix_str_rpt(str);
+	}
 }
 
 void str_err(const char *str) {
@@ -204,10 +217,8 @@ void str_err(const char *str) {
 	dialog_vars.extra_button = 0;
 
 	/* Main part */
-	init_dialog(stdin, stdout);
     dialog_msgbox(TITLE, str, 0, 0, 1);
 	func_err = 1;
-	end_dialog();
 
 	dialog_vars.extra_button = 1;
 }
@@ -291,13 +302,14 @@ void rand_get_str(char *str) {
 	
 	/* Initializing variables */
 	int n, a, b, i, temp;
-	char str2[NAME] = "";
+	char str2[NAME] = "", backup[NAME] = "";
 	int set[NAME] = {0};
 	extern int func_err;
 	func_err = 0;
 
 	/* I/O flow */
 	rep_str(str);
+	strcpy(backup, str);
 	strcpy(str2, str + 4);
 	n = str_get_num(str2);
 	if (n <= 0) {
@@ -313,8 +325,14 @@ void rand_get_str(char *str) {
 		b = a;
 		a = temp;
 	}
+	if (b - a < n) {
+		func_err = 1;
+		strcpy(str, backup);
+		return;
+	}
 	for (i = 0; i < n; ++i) {
-		*(set + i) = (a == b) ? a : (rand() % (b - a + 1)) + a;
+		while (find_sht(set, (*(set + i) = (rand() % (b - a + 1)) + a), i))
+			;
 	}
 	
 	qsort((int *) set, n, sizeof (int), num_cmp);
@@ -432,4 +450,60 @@ int numlen_int(int num) {
 
 	/* Returning value */
 	return len;
+}
+
+int find_sht(const int *set, int elem, int n) {
+
+	/* Initializing variables */
+	int i;
+
+	/* Main part */
+	for (i = 0; i < n; ++i) {
+		if (*(set + i) == elem) {
+			return 1;
+		}
+	}
+
+	/* Returning value */
+	return 0;
+}
+
+void fix_str_rpt(char *str) {
+
+	/* Initializing variables */
+	int i, j, set_int[NAME], test;
+	char set_str[NAME], *pset;
+
+	/* Main part */
+	if (strlen(str) == 2) {
+		return;
+	}
+	strcpy(set_str, str);
+	pset = set_str + 1;
+	for (i = 0; ; ++i) {
+			if (*(pset - 1) == '}') {
+				break;
+			}
+			*(set_int + i) = str_get_num(pset);
+			pset += numlen(*(set_int + i)) + 1;
+	}
+
+	strcpy(str, "");
+	strcat(str, "{");
+	qsort((int *) set_int, i,  sizeof(int), num_cmp);
+	for (j = 0; j < i; ++j) {
+		if ((test = find_sht(set_int, *(set_int + j), j))) {
+			continue;
+		} else {
+			strcat(str, get_elem(set_int + j));
+			if (j != i - 1) {
+				strcat(str, ",");
+			}
+		}
+	}
+	if (*(str + strlen(str) - 1) == ',') {
+		*(str + strlen(str) - 1) = '}';
+	} else {
+		strcat(str, "}");	
+	}
 }
