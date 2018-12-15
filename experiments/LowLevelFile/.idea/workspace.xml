@@ -9,17 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a969a5f2-dd8e-4e8e-88a2-960512a52b83" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir/main.c.o" afterPath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir/main.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/pr_dev" afterPath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/pr_dev" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../c.sublime-workspace" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/practice/pr_dev/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../univer/practice/pr_dev/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir/depend.internal" afterPath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir/depend.make" afterPath="$PROJECT_DIR$/../../univer/practice/pr_dev/cmake-build-debug/CMakeFiles/pr_dev.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/practice/pr_dev/main.c" afterPath="$PROJECT_DIR$/../../univer/practice/pr_dev/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../univer/study/MRecursion/a1.c" afterPath="$PROJECT_DIR$/../../univer/study/MRecursion/a1.c" />
-    </list>
+    <list default="true" id="a969a5f2-dd8e-4e8e-88a2-960512a52b83" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,6 +68,13 @@
       </branch-storage>
     </excluded-from-favorite>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main.c" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -130,7 +127,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../home/Project" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -159,20 +156,22 @@
       <workItem from="1544251119061" duration="838000" />
       <workItem from="1544269313064" duration="136000" />
       <workItem from="1544271494724" duration="580000" />
+      <workItem from="1544905958199" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1710000" />
+    <option name="totallyTimeSpent" value="1722000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="240" y="130" width="1920" height="1044" extended-state="6" />
+    <frame x="240" y="130" width="1924" height="1052" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25773746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2603834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -225,6 +224,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/rwcul.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/llfile.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
