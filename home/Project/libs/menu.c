@@ -36,7 +36,7 @@ int set_sets(char *a, char *b, char *c) {
 	else if (!func && func_err) {
 		str_err(ERROR_MSG);
 		end_dialog();
-		return 4;
+		return 3;
 	}
 	if (*(change + 8) == 'A') {
 		output(a, change, b, c);
@@ -74,9 +74,9 @@ int check(char *str) {
 	int i, len = strlen(str);
 
 	/* Main part */
-	if (!strcmp(str, "NATURAL_ALL"))
+	if (!strcmp(str, "INTEGER_ALL"))
 		return 2;
-	if (!strncmp(str, "NATURAL(", 8)) {
+	if (!strncmp(str, "INTEGER(", 8)) {
 		if (strstr(str, ",") && strstr(str, ")") && strchr(str, '(') == strrchr(str, '(') && strchr(str, ',') == strrchr(str, ',') && strchr(str, ')') == strrchr(str, ')')) {
 			for (i = 8; i < len - 1; ++i)
 				if (!isdigit(*(str + i)) && *(str + i) != ',' && *(str + i) != '-')
@@ -116,12 +116,17 @@ int check(char *str) {
 		return 0;
 	if (len == 2) 
 		return 1;
+	if (*(str + 1) == ',' || *(str + (len - 2)) == ',')
+		return 0;
 
 	for (i = 1; i < len - 1; ++i) {
 		if (!isdigit(*(str + i)) && *(str + i) != ',' && *(str + i) != '-') {
 			return 0;
 		}
 		if ((*(str + i) == '-' && *(str + (i + 1)) == '-') || (isdigit(*(str + i)) && *(str + (i + 1)) == '-') || (*(str + i) == ',' && *(str + (i + 1)) == '-' && !isdigit(*(str + (i + 2))))) {
+			return 0;
+		}
+		if (*(str + i) == ',' && *(str + (i + 1)) == ',') {
 			return 0;
 		}
 	}
@@ -149,7 +154,7 @@ void output (char *str, const char *change, const char *str1, const char *str2) 
 	/* Initializing variables */
 	extern int func_err;
 	char x[NAME] = "", y[NAME] = "", temp[NAME] = "";
-	int ch;
+	int ch, i, x_i, y_i;
 	func_err = 0;
 
 	/* I/O flow */
@@ -174,10 +179,22 @@ void output (char *str, const char *change, const char *str1, const char *str2) 
             strcpy(y, x);
             strcpy(x, temp);
         }   
-        strcpy(str, "");
+        /* strcpy(str, "");
         strcat(str, "{x ∈ N | ");
         strcat(str, strcat(x, " < x < "));
-        strcat(str, strcat(y, " }"));
+        strcat(str, strcat(y, " }")); */
+		strcpy(str, "");
+		x_i = str_get_num(x);
+		y_i = str_get_num(y);
+		strcat(str, "{");
+		for (i = x_i; i <= y_i; ++i) {
+			strcat(str, get_elem(&i));
+			if (i != y_i) {
+				strcat(str, ",");
+			} else {
+				strcat(str, "}");
+			}
+		}
 	} else if (ch == 'A') {
 		if (*(change + 8) == 'B' || *(change + 8) == 'C') {
 			strcpy(str, str1);
@@ -205,7 +222,7 @@ void output (char *str, const char *change, const char *str1, const char *str2) 
 		}
 	}
 
-	if (ch != 4 && ch != 'A' && ch != 'B' && ch != 'C' && !func_err) {
+	if (ch != 4 && ch != 'A' && ch != 'B' && ch != 'C' && !func_err && ch != 2 && ch != 3) {
 		fix_str_rpt(str);
 	}
 }
@@ -214,11 +231,11 @@ void str_err(const char *str) {
 
 	/* Initializing variables */
 	extern int func_err;
+	func_err = 1;
 	dialog_vars.extra_button = 0;
 
 	/* Main part */
     dialog_msgbox(TITLE, str, 0, 0, 1);
-	func_err = 1;
 
 	dialog_vars.extra_button = 1;
 }
@@ -481,11 +498,11 @@ void fix_str_rpt(char *str) {
 	strcpy(set_str, str);
 	pset = set_str + 1;
 	for (i = 0; ; ++i) {
-			if (*(pset - 1) == '}') {
-				break;
-			}
-			*(set_int + i) = str_get_num(pset);
-			pset += numlen(*(set_int + i)) + 1;
+		if (*(pset - 1) == '}') {
+			break;
+		}
+		*(set_int + i) = str_get_num(pset);
+		pset += numlen(*(set_int + i)) + 1;
 	}
 
 	strcpy(str, "");

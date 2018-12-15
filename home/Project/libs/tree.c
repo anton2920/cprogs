@@ -19,7 +19,7 @@ struct tnode *talloc(void) {
 	return (struct tnode *) malloc(sizeof(struct tnode));
 }
 
-struct tnode *maketree(struct tnode *p, char *expr, int *res) {
+struct tnode *maketree(struct tnode *p, char *expr) {
 
 	/* Initializing variables */
 	char *znak, exprl[NAME], exprr[NAME];
@@ -44,10 +44,10 @@ struct tnode *maketree(struct tnode *p, char *expr, int *res) {
 				sum(exprl, exprr);
 				break;
 			case "*": case "^":
-				mult(exprl, exprr);
+				mul(exprl, exprr);
 				break;
 			case "\\":
-				subt(exprl, exprr);
+				sub(exprl, exprr);
 				break;
 		}
 	} else {

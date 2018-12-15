@@ -3,7 +3,7 @@
 
 /* Definitions */
 #define TITLE ("Sets calculator")
-#define NAME (100)
+#define NAME (1024)
 #define NATURAL_ALL ("{x ∈ N | -∞ < x < +∞ }")
 #define ABS(X) ((X) < 0) ? (-(X)) : (X)
 #define ERROR_MSG ("Error! Illegal expression!")
@@ -37,7 +37,7 @@ void rep_str(char *); /* Removes white spaces from (char *) */
 int check(char *); /* Returns zero if input is invalid */
 int numcmp(char *, char *); /* Compares two (char *) numerically */
 void output(char *, const char *, const char *, const char *); /* Makes up a set */
-void str_err(const char *); /* Pops an error message */
+void str_err(const char *); /* Pops an error message with text (const char *) */
 void file_get_str(char *, const char *); /* Gets string from file. Calls str_err, if file opening error occurs or string is not valid at some point */
 char *find_str(FILE *, char *, const char *, const char *); /* Finds a first string, that contains (char *) pattern but doesn't contain (char *) and (char *) patterns */
 void rand_get_str(char *); /* Fill the set up with N pseudo-random numbers from A to B */
@@ -53,20 +53,27 @@ void fix_str_rpt(char *); /* Removes repeating elements */
 
 /* menu2.c */
 int set_expr(char *); /* Second menu. Gets a valid expression */
-int check2(char *); /* Returns zero if expression isn't valid */
+int check2(const char *); /* Returns zero if expression isn't valid */
+void expr_err(const char *); /* Pops an error message with text (const char *) */
 
 /* menu3.c */
-int prt_res(char *); /* Third menu. Outputs the result */
+int prt_res(const char *); /* Third menu. Outputs the result */
 int cont(void); /* Fourth (last) menu. «Continue» option */
 
 /* tree.c */
 struct tnode { /* Struct for binary tree */
 	char *op;
-	struct tnode *parent;
 	struct tnode *left;
 	struct tnode *right;
 };
 struct tnode *talloc(void); /* Allocates memory from heap to one node of binary tree */
 struct tnode *maketree(struct tnode *, char *, int *); /* Returns a pointer to binary tree */
+
+/* math.c */
+char *sum(const char *, const char *, int); /* Summs two sets [(const char *) and (const char *)] */
+void to_neg(char *); /* Changes (char *)'s sign from + to - or vice versa */
+void to_opp(char *, int); /* Convertes (char *) to (int) type (zero — inclusive, one — exlusive) */
+char *mul(char *, char *, int); /* Multiplies two sets [(const char *) and (const char *)] */
+char *sub(const char *, const char *, int); /* Subtracts two sets [(const char *) and (const char *)] */
 
 #endif

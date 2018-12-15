@@ -1,10 +1,14 @@
 #include "../headers/project.h"
 
+static int func_err = 0;
+
 int set_expr(char *exp) {
 	
 	/* Initializing variables */
 	int func;
-	dialog_vars.help_line = "Use: A, B, C and ^, v, -";
+	extern func_err;
+	func_err = 0;
+	dialog_vars.help_line = "Ctrl + U to clear field";
 	dialog_vars.extra_button = 0;
 	char change[NAME];
 
@@ -12,24 +16,35 @@ int set_expr(char *exp) {
 	dialog_vars.input_result = change;
 	init_dialog(stdin, stdout);
 	func = dialog_inputbox(TITLE, "===> Type expression: ", 0, 0, exp, 0);
-	end_dialog();
+
 	/* Check expr */
 	strcpy(exp, change);
 	rep_str(exp);
-	if (!check2(exp) || !strlen(exp)) {
-		strcpy(exp, "Error!");
+	if (func == 1) {
+		end_dialog();
+		return func;
+	} else if (!check2(exp) || !strlen(exp)) {
+		expr_err(ERROR_MSG);
+		func_err = 1;
+		end_dialog();
+		return 3;
 	}
+	
+	end_dialog();
 
 	/* Returning value */
 	return func;
 }
 
-int check2(char *str) {
+int check2(const char *str) {
 
 	/* Initializing variables */
 	int i, parl = 0, parr = 0, op = 0, oper = 0, diff;
 
 	/* Main part */
+	if (strlen(str) == 1) {
+		return 0;
+	}
 	for (i = 0; i < strlen(str); ++i) {
 		if (*(str + i) != 'A' && *(str + i) != 'B' && *(str + i) != 'C' && *(str + i) != 'v' && *(str + i) != '^' && *(str + i) != '-' && *(str + i) != 'V' && *(str + i) != '+' && *(str + i) != '*' && *(str + i) != '\\' && *(str + i) != '(' && *(str + i) != ')') {
 			return 0;
@@ -42,18 +57,38 @@ int check2(char *str) {
 			return 0;
 		if (*(str + i) == 'A' || *(str + i) == 'B' || *(str + i) == 'C') {
 			++op;
+			if (*(str + (i + 1)) == 'A' || *(str + (i + 1)) == 'B' || *(str + (i + 1)) == 'C') {
+				return 0;
+			}
 		} else if (*(str + i) == 'v' || *(str + i) == '^' || *(str + i) == 'V' || *(str + i) == '+' || *(str + i) == '*' || *(str + i) == '\\') {
 			++oper;
+			if (*(str + (i + 1)) == ')') {
+				return 0;
+			}
 		}
-		diff = (op >= oper) ? op - oper : oper - op;
-		if (diff > 1)
+		diff = op - oper;
+		if (*(str + i) == '(' && (*(str + (i + 1)) == ')' || *(str + (i + 1)) == '+' || *(str + (i + 1)) == '*' || *(str + (i + 1)) == '\\' || *(str + (i + 1)) == '^' || *(str + (i + 1)) == 'v' || *(str + (i + 1)) == 'V')) {
 			return 0;
+		}
 
 	}
 
 	if (parl != parr)
 		return 0;
+	if (diff != 1) {
+		return 0;
+	}
 
-	/* Returning valuse */
+	/* Returning value */
 	return 1;
+}
+
+void expr_err(const char *str) {
+	
+	/* Initializing variables */
+	extern func_err;
+	func_err = 1;
+
+	/* Main part */
+	dialog_msgbox(TITLE, str, 0, 0, 1);
 }

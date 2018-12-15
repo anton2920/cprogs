@@ -4,12 +4,12 @@ main() {
 
     /* Initializing variables */
     int func; 
-    char a[NAME] = "{}", b[NAME] = "{}", c[NAME] = "{}", expr[NAME] = "", res[NAME];
+    char a[NAME] = "{}", b[NAME] = "{}", c[NAME] = "{}", expr[NAME] = "", res[NAME] = "";
+	struct tnode *b_tree;
 
     /* Main part */
 	srand(time(NULL));
 	while (1) {
-		strcpy(res, "===> Answer: ");
 		while (1) {
     		if (!(func = set_sets(a, b, c)) && (strcmp(a, "{}") || strcmp(b, "{}") || strcmp(c, "{}"))) {
 				break;
@@ -20,23 +20,31 @@ main() {
 				continue;
 			}
 		}
-		printf("%d\n", func);
-		printf("A = %s\n", a);
-		printf("B = %s\n", b);
-		printf("C = %s\n", c);
-	
+
 		while (1) {
-			if ((func = set_expr(expr)) == 1) {
+			if (!(func = set_expr(expr))) {
+				break;
+			} else if (func == 1) {
 				lclear();
 				return 0;
-			} else if (!func && !strcmp(expr, "Error!")) {
-				continue;
 			} else {
-				break;
+				continue;
 			}
 		}
-	
-		printf("%s\n", expr);
+
+		strcpy(res, "");
+		
+		/* b_tree = maketree(b_tree, expr);
+		 * strcpy(res, b_tree->res);
+		 */
+
+		/* strcat(res, sum(a, b, 1));
+		if (*res == '-') {
+			to_opp(res, 0);
+		}
+		to_opp(res, 1); */
+
+		strcat(res, mul(a, b, 0));		
 		
 		if ((func = prt_res(res)) == 1) {
 			lclear();
