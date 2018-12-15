@@ -3,7 +3,7 @@
 char *sum(const char *a, const char *b, const int exl) {
 	
 	/* Initializing variables */
-	/* exl — zero if inclusive, 1 if exlusive A, 2 if exclusive B */
+	/* exl — zero if inclusive, 1 if exclusive A, 2 if exclusive B */
 	char a_cp[NAME], b_cp[NAME], res[NAME] = "", *res_p;
 	strcpy(a_cp, a);
 	*(a_cp + strlen(a_cp) - 1) = ',';
@@ -105,7 +105,7 @@ char *mul(char *a, char *b, int exl) {
 
 	/* Initializing variables */
 	int i, a_int[NAME], b_int[NAME], j, k, res_int[NAME], count = 0;
-	/* exl — zero if inclusive, 1 if exlusive A, 2 if exclusive B */
+	/* exl — zero if inclusive, 1 if exclusive A, 2 if exclusive B */
 	char res[NAME] = "", *res_p, *p = a + 1;
 
 	/* Main part */
@@ -153,7 +153,7 @@ char *sub(char *a, char *b, int exl) {
 
 	/* Initializing variables */
 	int i, a_int[NAME], b_int[NAME], j, k, res_int[NAME], count = 0;
-	/* exl — zero if inclusive, 1 if exlusive A, 2 if exclusive B */
+	/* exl — zero if inclusive, 1 if exclusive A, 2 if exclusive B */
 	char res[NAME] = "", *res_p, *p = a + 1;
 
 	/* Main part */
