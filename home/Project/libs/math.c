@@ -92,10 +92,9 @@ void to_opp(char *str, int param) {
 char *mul(char *a, char *b, int exl) {
 
 	/* Initializing variables */
-	int i, a_int[NAME], b_int[NAME], j, *thing = NULL, k, res_int[NAME], count = 0, *cmp = NULL;
+	int i, a_int[NAME], b_int[NAME], j, k, res_int[NAME], count = 0;
 	/* exl — zero if inclusive, 1 if exlusive A, 2 if exclusive B */
 	char res[NAME] = "", *res_p, *p = a + 1;
-	void *uni;
 
 	/* Main part */
 	for (i = 0; ; ++i) {
@@ -113,11 +112,49 @@ char *mul(char *a, char *b, int exl) {
 		*(b_int + j) = str_get_num(p);
 		p += numlen(*(b_int + j)) + 1;
 	}
-	cmp = b_int;
 	for (k = 0; k < j; ++k) {
-		if ((uni = bsearch((int *) cmp++, (int *) a_int, (int) i, sizeof(int), num_cmp))) {
-			thing = (int *) uni;
-			*(res_int + k) = *thing;
+		if (bsearch((int *) b_int + k, (int *) a_int, (int) i, sizeof(int), num_cmp)) {
+			*(res_int + count) = *(b_int + k);
+			++count;
+		}
+	}
+	get_set(res, res_int, &count);
+
+	if (exl) {
+		to_neg(res);
+	}
+	res_p = res;
+
+	/* Returning value */
+	return res_p;
+}
+
+char *sub(char *a, char *b, int exl) {
+
+	/* Initializing variables */
+	int i, a_int[NAME], b_int[NAME], j, k, res_int[NAME], count = 0;
+	/* exl — zero if inclusive, 1 if exlusive A, 2 if exclusive B */
+	char res[NAME] = "", *res_p, *p = a + 1;
+
+	/* Main part */
+	for (i = 0; ; ++i) {
+		if (*(p - 1) == '}') {
+			break;          
+		}   
+		*(a_int + i) = str_get_num(p);
+		p += numlen(*(a_int + i)) + 1;
+	}
+	p = b + 1;
+	for (j = 0; ; ++j) {
+		if (*(p - 1) == '}') {
+			break;
+		}
+		*(b_int + j) = str_get_num(p);
+		p += numlen(*(b_int + j)) + 1;
+	}
+	for (k = 0; k < i; ++k) {
+		if (!bsearch((int *) a_int + k, (int *) b_int, (int) j, sizeof(int), num_cmp)) {
+			*(res_int + count) = *(a_int + k);
 			++count;
 		}
 	}

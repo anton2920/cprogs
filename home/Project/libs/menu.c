@@ -74,11 +74,11 @@ int check(char *str) {
 	int i, len = strlen(str);
 
 	/* Main part */
-	if (!strcmp(str, "INTEGER_ALL"))
+	if (!strcmp(str, "INT_ALL"))
 		return 2;
-	if (!strncmp(str, "INTEGER(", 8)) {
+	if (!strncmp(str, "INT(", 4)) {
 		if (strstr(str, ",") && strstr(str, ")") && strchr(str, '(') == strrchr(str, '(') && strchr(str, ',') == strrchr(str, ',') && strchr(str, ')') == strrchr(str, ')')) {
-			for (i = 8; i < len - 1; ++i)
+			for (i = 4; i < len - 1; ++i)
 				if (!isdigit(*(str + i)) && *(str + i) != ',' && *(str + i) != '-')
 					return 0;
 			return 3;
@@ -170,7 +170,7 @@ void output (char *str, const char *change, const char *str1, const char *str2) 
     if (!(ch = check(str))) {
 		str_err(ERROR_MSG);
     } else if (ch == 2) {
-        strcpy(str, NATURAL_ALL);
+        strcpy(str, INT_ALL);
     } else if (ch == 3) {
         strncpy(x, strstr(str, "(") + 1, (strstr(str, ",") - (strstr(str, "(") + 1)));
         strncpy(y, strstr(str, ",") + 1, (strstr(str, ")") - (strstr(str, ",") + 1)));

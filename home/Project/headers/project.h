@@ -4,12 +4,15 @@
 /* Definitions */
 #define TITLE ("Sets calculator")
 #define NAME (1024)
-#define NATURAL_ALL ("{x ∈ N | -∞ < x < +∞ }")
+#define INT_ALL ("{x ∈ N | -∞ < x < +∞ }")
 #define ABS(X) ((X) < 0) ? (-(X)) : (X)
 #define ERROR_MSG ("Error! Illegal expression!")
 #define ERROR_MSG_FILE ("Error! Couldn\'t open file!")
+#define ERROR_TREE ("Error! Binary tree problems!")
 #define NONE_STR ("awhbfdj")
 #define HELP_FILE ("files/help.txt")
+#define LEFT_TREE (p->left = maketree(p->left, exprl, sets))
+#define RIGHT_TREE (p->right = maketree(p->right, exprr, sets))
 
 /* For correct terminal clearing */
 #ifdef _WIN32
@@ -66,14 +69,23 @@ struct tnode { /* Struct for binary tree */
 	struct tnode *left;
 	struct tnode *right;
 };
+struct set { /* Struct for sets */
+	char *a;
+	char *b;
+	char *c;
+};
 struct tnode *talloc(void); /* Allocates memory from heap to one node of binary tree */
-struct tnode *maketree(struct tnode *, char *, int *); /* Returns a pointer to binary tree */
+struct tnode *maketree(struct tnode *, char *, const struct set *); /* Returns a pointer to binary tree */
+int de_par(char *); /* Returns zero if none parentheses were removed */
+char *find_op(const char *); /* Returns (char *) to necessary operator from (const char *) */
+int isop(char); /* Returns zero if (char) isn't an operator */
+char *derefer(const char *, const struct set *); /* Returns set (const char *) */
 
 /* math.c */
 char *sum(const char *, const char *, int); /* Summs two sets [(const char *) and (const char *)] */
 void to_neg(char *); /* Changes (char *)'s sign from + to - or vice versa */
 void to_opp(char *, int); /* Convertes (char *) to (int) type (zero — inclusive, one — exlusive) */
 char *mul(char *, char *, int); /* Multiplies two sets [(const char *) and (const char *)] */
-char *sub(const char *, const char *, int); /* Subtracts two sets [(const char *) and (const char *)] */
+char *sub(char *, char *, int); /* Subtracts two sets [(const char *) and (const char *)] */
 
 #endif

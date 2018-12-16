@@ -5,7 +5,11 @@ main() {
     /* Initializing variables */
     int func; 
     char a[NAME] = "{}", b[NAME] = "{}", c[NAME] = "{}", expr[NAME] = "", res[NAME] = "";
-	struct tnode *b_tree;
+	struct tnode *b_tree = NULL;
+	struct set base_sets;
+	base_sets.a = a;
+	base_sets.b = b;
+	base_sets.c = c;
 
     /* Main part */
 	srand(time(NULL));
@@ -33,18 +37,14 @@ main() {
 		}
 
 		strcpy(res, "");
-		
-		/* b_tree = maketree(b_tree, expr);
-		 * strcpy(res, b_tree->res);
-		 */
+		b_tree = NULL;
 
-		/* strcat(res, sum(a, b, 1));
-		if (*res == '-') {
-			to_opp(res, 0);
+		if ((b_tree = maketree(b_tree, expr, &base_sets))) {
+			strcpy(res, b_tree->op);
+			free(b_tree);
+		} else {
+			strcpy(res, ERROR_TREE);
 		}
-		to_opp(res, 1); */
-
-		strcat(res, mul(a, b, 0));		
 		
 		if ((func = prt_res(res)) == 1) {
 			lclear();

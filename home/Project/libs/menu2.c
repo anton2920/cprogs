@@ -46,7 +46,7 @@ int check2(const char *str) {
 		return 0;
 	}
 	for (i = 0; i < strlen(str); ++i) {
-		if (*(str + i) != 'A' && *(str + i) != 'B' && *(str + i) != 'C' && *(str + i) != 'v' && *(str + i) != '^' && *(str + i) != '-' && *(str + i) != 'V' && *(str + i) != '+' && *(str + i) != '*' && *(str + i) != '\\' && *(str + i) != '(' && *(str + i) != ')') {
+		if (*(str + i) != 'A' && *(str + i) != 'B' && *(str + i) != 'C' && *(str + i) != '-' && *(str + i) != '(' && *(str + i) != ')' && !isop(*(str + i))) {
 			return 0;
 		}
 		if (*(str + i) == '(')
@@ -60,14 +60,14 @@ int check2(const char *str) {
 			if (*(str + (i + 1)) == 'A' || *(str + (i + 1)) == 'B' || *(str + (i + 1)) == 'C') {
 				return 0;
 			}
-		} else if (*(str + i) == 'v' || *(str + i) == '^' || *(str + i) == 'V' || *(str + i) == '+' || *(str + i) == '*' || *(str + i) == '\\') {
+		} else if (isop(*(str + i))) {
 			++oper;
 			if (*(str + (i + 1)) == ')') {
 				return 0;
 			}
 		}
 		diff = op - oper;
-		if (*(str + i) == '(' && (*(str + (i + 1)) == ')' || *(str + (i + 1)) == '+' || *(str + (i + 1)) == '*' || *(str + (i + 1)) == '\\' || *(str + (i + 1)) == '^' || *(str + (i + 1)) == 'v' || *(str + (i + 1)) == 'V')) {
+		if (*(str + i) == '(' && (*(str + (i + 1)) == ')' || isop(*(str + (i + 1))))) {
 			return 0;
 		}
 
