@@ -45,6 +45,9 @@ main() {
 		} else {
 			strcpy(res, ERROR_TREE);
 		}
+		if (*res == '-') {
+			to_opp(res, 1);
+		}
 		
 		if ((func = prt_res(res)) == 1) {
 			lclear();

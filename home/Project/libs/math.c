@@ -10,9 +10,17 @@ char *sum(const char *a, const char *b, const int exl) {
 	strcpy(b_cp, b + 1);
 
 	/* Main part */
-	strcat(res, a_cp);
-	strcat(res, b_cp);
-	fix_str_rpt(res);
+	if (!strcmp(a, INT_ALL) || !strcmp(b, INT_ALL)) {
+		strcpy(res, INT_ALL);
+	} else if (!strcmp(a, "{}")) {
+		strcpy(res, b);
+	} else if (!strcmp(b, "{}")) {
+		strcpy(res, a);
+	} else {
+		strcat(res, a_cp);
+		strcat(res, b_cp);
+		fix_str_rpt(res);
+	}
 	
 	if (exl) {
 		to_neg(res);
@@ -47,7 +55,11 @@ void to_opp(char *str, int param) {
 	char *pstr = str;
 
 	/* Main part */
-	if (!param) {
+	if (param) {
+		if (!strcmp(str, "-{}")) {
+			strcpy(str, INT_ALL);
+			return;
+		}
 		pstr += 2;
 		for (i = 0; ; ++i) {
 			if (*(pstr - 1) == '}') {
@@ -97,28 +109,36 @@ char *mul(char *a, char *b, int exl) {
 	char res[NAME] = "", *res_p, *p = a + 1;
 
 	/* Main part */
-	for (i = 0; ; ++i) {
-		if (*(p - 1) == '}') {
-			break;          
-		}   
-		*(a_int + i) = str_get_num(p);
-		p += numlen(*(a_int + i)) + 1;
-	}
-	p = b + 1;
-	for (j = 0; ; ++j) {
-		if (*(p - 1) == '}') {
-			break;
+	if (!strcmp(a, INT_ALL)) {
+		strcpy(res, b);
+	} else if (!strcmp(b, INT_ALL)) {
+		strcpy(res, a);
+	} else if (!strcmp(a, "{}") || !strcmp(b, "{}")) {
+		strcpy(res, "{}");
+	} else {
+		for (i = 0; ; ++i) {
+			if (*(p - 1) == '}') {
+				break;          
+			}   
+			*(a_int + i) = str_get_num(p);
+			p += numlen(*(a_int + i)) + 1;
 		}
-		*(b_int + j) = str_get_num(p);
-		p += numlen(*(b_int + j)) + 1;
-	}
-	for (k = 0; k < j; ++k) {
-		if (bsearch((int *) b_int + k, (int *) a_int, (int) i, sizeof(int), num_cmp)) {
-			*(res_int + count) = *(b_int + k);
-			++count;
+		p = b + 1;
+		for (j = 0; ; ++j) {
+			if (*(p - 1) == '}') {
+				break;
+			}
+			*(b_int + j) = str_get_num(p);
+			p += numlen(*(b_int + j)) + 1;
 		}
+		for (k = 0; k < j; ++k) {
+			if (bsearch((int *) b_int + k, (int *) a_int, (int) i, sizeof(int), num_cmp)) {
+				*(res_int + count) = *(b_int + k);
+				++count;
+			}
+		}
+		get_set(res, res_int, &count);
 	}
-	get_set(res, res_int, &count);
 
 	if (exl) {
 		to_neg(res);
@@ -137,28 +157,39 @@ char *sub(char *a, char *b, int exl) {
 	char res[NAME] = "", *res_p, *p = a + 1;
 
 	/* Main part */
-	for (i = 0; ; ++i) {
-		if (*(p - 1) == '}') {
-			break;          
-		}   
-		*(a_int + i) = str_get_num(p);
-		p += numlen(*(a_int + i)) + 1;
-	}
-	p = b + 1;
-	for (j = 0; ; ++j) {
-		if (*(p - 1) == '}') {
-			break;
+	if (!strcmp(a, INT_ALL)) {
+		strcpy(res, b);
+		to_neg(res);
+	} else if (!strcpy(b, INT_ALL)) {
+		strcpy(res, "{}");
+	} else if (!strcmp(a, "{}")) {
+		strcpy(res, "{}");
+	} else if (!strcmp(b, "{}")) {
+		strcpy(res, a);
+	} else {
+		for (i = 0; ; ++i) {
+			if (*(p - 1) == '}') {
+				break;          
+			}   
+			*(a_int + i) = str_get_num(p);
+			p += numlen(*(a_int + i)) + 1;
 		}
-		*(b_int + j) = str_get_num(p);
-		p += numlen(*(b_int + j)) + 1;
-	}
-	for (k = 0; k < i; ++k) {
-		if (!bsearch((int *) a_int + k, (int *) b_int, (int) j, sizeof(int), num_cmp)) {
-			*(res_int + count) = *(a_int + k);
-			++count;
+		p = b + 1;
+		for (j = 0; ; ++j) {
+			if (*(p - 1) == '}') {
+				break;
+			}
+			*(b_int + j) = str_get_num(p);
+			p += numlen(*(b_int + j)) + 1;
 		}
+		for (k = 0; k < i; ++k) {
+			if (!bsearch((int *) a_int + k, (int *) b_int, (int) j, sizeof(int), num_cmp)) {
+				*(res_int + count) = *(a_int + k);
+				++count;
+			}
+		}
+		get_set(res, res_int, &count);
 	}
-	get_set(res, res_int, &count);
 
 	if (exl) {
 		to_neg(res);

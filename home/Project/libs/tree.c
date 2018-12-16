@@ -9,78 +9,101 @@ struct tnode *talloc(void) {
 struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 
 	/* Initializing variables */
-	char exprl[NAME], exprr[NAME];
+	char exprl[NAME], exprr[NAME], *sklad; /* *slojh */
 	int len = strlen(expr), diff;
 	struct tnode *l = NULL, *r = NULL;
 
 	/* Main part */
-	printf("IN, len = %d", len);
-	getchar();
 	if (!p) {
 		p = talloc();
 		if (!p) {
 			return NULL;
 		}
-		printf("ALLOC");
-		getchar();
 		while (de_par(expr))
 			;
-		printf("de_par");
-		getchar();
 		if (len == 1 || (len == 2 && *expr == '-')) {
 			p->op = strdup(expr);
-			printf("OP = %s", p->op);
-			getchar();
 		} else {
 			p->op = strdup(find_op(expr));
-			printf("%s, znak = %c", p->op, *p->op);
-			getchar();
 		}
 		p->left = p->right = NULL;
 	}
 	
 	if (len > 2) {
-		printf("strstr = %s, %ld", strstr(expr, p->op), (strstr(expr, p->op)) - expr);
-		getchar();
 		diff = (int) (strstr(expr, p->op) - expr);
 		strcpy(exprl, expr);
 		*(exprl + diff) = '\0';
-		printf("exprl = %s", exprl);
-		getchar();
 		strcpy(exprr, strstr(expr, p->op + 1)); 
-		printf("exprr = %s", exprr);
-		getchar();
 		l = LEFT_TREE; /* #define */
-		printf("p->left = %s", l->op);
-		getchar();
+		sklad = strdup(l->op);
 		r = RIGHT_TREE; /* #define */
-		printf("l = %s, r = %s", l->op, r->op);
-		getchar();
-		if (*l->op != '-' && *r->op != '-') {
+		if (*sklad != '-' && *r->op != '-') {
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sum(l->op, r->op, 0); 
+					p->op = sum(sklad, r->op, 0); 
 					break;
 				case '*': case '^':
-					p->op = mul(l->op, r->op, 0);
+					p->op = mul(sklad, r->op, 0);
 					break;
 				case '\\':
-					p->op = sub(l->op, r->op, 0);
+					p->op = sub(sklad, r->op, 0);
+					break;
+				default:
+					break;
+			}
+		} else if (*sklad != '-' && *r->op == '-') {
+			to_neg(r->op);
+			switch (*p->op) {
+				case '+': case 'v': case 'V': 
+					p->op = sub(r->op, sklad, 1);
+					break;
+				case '*': case '^':
+					p->op = sub(sklad, r->op, 0);
+					break;
+				case '\\':
+					p->op = mul(sklad, r->op, 0);
+					break;
+				default:
+					break;
+			}
+		} else if (*sklad == '-' && *r->op != '-') {
+			to_neg(sklad);
+			switch (*p->op) {
+				case '+': case 'v': case 'V': 
+					p->op = sub(sklad, r->op, 1);
+					break;
+				case '*': case '^':
+					p->op = sub(r->op, sklad, 0);
+					break;
+				case '\\':
+					p->op = sum(sklad, r->op, 1);
+					break;
+				default:
+					break;
+			}
+		} else {
+			to_neg(sklad);
+			to_neg(r->op);
+			switch (*p->op) {
+				case '+': case 'v': case 'V': 
+					p->op = mul(sklad, r->op, 1);
+					break;
+				case '*': case '^':
+					p->op = sum(sklad, r->op, 1);
+					break;
+				case '\\':
+					p->op = sub(r->op, sklad, 0);
 					break;
 			}
 		}
 	} else {
-		p->op = derefer(p->op, sets);
-		printf("p->op = %s", p->op);
-		getchar();
+		p->op = strdup(derefer(p->op, sets));
 		if (!p->op) {
 			return NULL;
 		}
 	}
 
 	/* Returning value */
-	printf("Return!");
-	getchar();
 	return p;
 }
 
@@ -91,11 +114,7 @@ int de_par(char *str) {
 	char str2[NAME];
 
 	/* Main part */
-	printf("%s", str);
-	getchar();
 	for (i = 0; i < len - 1; ++i) {
-		printf("i = %d, level = %d", i, level);
-		getchar();
 		if (*(str + i) == '(') {
 			++level;
 		} else if (*(str + i) == ')') {
@@ -126,8 +145,6 @@ char *find_op(const char *str) {
 	
 	/* Main part */
 	for (i = 0; i < len; ++i) {
-		printf("i = %d, level = %d", i, level);
-		getchar();
 		if (*(str + i) == '(') {
 			++level;
 		} else if (*(str + i) == ')') {
