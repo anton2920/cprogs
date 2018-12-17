@@ -8,7 +8,7 @@
 /* Function declarations */
 int lpow(int power);
 
-/* Function defenitions */
+/* Function definitions */
 int lpow(int power) {
 
     /* Initializing variables */
