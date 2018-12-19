@@ -160,7 +160,7 @@ char *sub(char *a, char *b, int exl) {
 	if (!strcmp(a, INT_ALL)) {
 		strcpy(res, b);
 		to_neg(res);
-	} else if (!strcpy(b, INT_ALL)) {
+	} else if (!strcmp(b, INT_ALL)) {
 		strcpy(res, "{}");
 	} else if (!strcmp(a, "{}")) {
 		strcpy(res, "{}");
