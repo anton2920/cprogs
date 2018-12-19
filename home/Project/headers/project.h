@@ -80,6 +80,7 @@ int de_par(char *); /* Returns zero if none parentheses were removed */
 char *find_op(const char *); /* Returns (char *) to necessary operator from (const char *) */
 int isop(char); /* Returns zero if (char) isn't an operator */
 char *derefer(const char *, const struct set *); /* Returns set (const char *) */
+int check_prec(const char *); /* Returns correct operator precedence */
 
 /* math.c */
 char *sum(const char *, const char *, int); /* Sums two sets [(const char *) and (const char *)] */

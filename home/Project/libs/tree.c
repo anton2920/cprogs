@@ -149,7 +149,7 @@ int de_par(char *str) {
 char *find_op(const char *str) {
 
 	/* Initializing variables */
-	int level = 0, i, len = strlen(str);
+	int level = 0, i, len = strlen(str), prec = 10;
 	char znak;
 	
 	/* Main part */
@@ -158,8 +158,9 @@ char *find_op(const char *str) {
 			++level;
 		} else if (*(str + i) == ')') {
 			--level;
-		} else if (isop(*(str + i)) && !level) {
+		} else if (isop(*(str + i)) && !level && check_prec(str + i) <= prec) {
 			znak = *(str + i);
+			prec = check_prec(str + i);
 		}
 	}
 
@@ -204,4 +205,10 @@ char *derefer(const char *str, const struct set *sets) {
 
 	/* Returning value */
 	return NULL;
+}
+
+int check_prec(const char *znak) {
+	
+	/* Returning value */
+	return (*znak == '*' || *znak == '^') ? 2 : (*znak == '+' || *znak == 'v' || *znak == 'V' || *znak == '\\') ? 1 : 0;
 }
