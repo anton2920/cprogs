@@ -368,7 +368,7 @@ int str_chr_cnt(const char *str, const char ch) {
 		}
 	}
 
-	/* Returning valur */
+	/* Returning value */
 	return count;
 }
 

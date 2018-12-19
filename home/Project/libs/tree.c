@@ -142,7 +142,7 @@ int de_par(char *str) {
 		return 0;
 	}
 
-	/* Returninng values */
+	/* Returning value */
 	return 0;
 }
 

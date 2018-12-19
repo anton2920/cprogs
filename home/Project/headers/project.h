@@ -44,12 +44,12 @@ void str_err(const char *); /* Pops an error message with text (const char *) */
 void file_get_str(char *, const char *); /* Gets string from file. Calls str_err, if file opening error occurs or string is not valid at some point */
 char *find_str(FILE *, char *, const char *, const char *); /* Finds a first string, that contains (char *) pattern but doesn't contain (char *) and (char *) patterns */
 void rand_get_str(char *); /* Fill the set up with N pseudo-random numbers from A to B */
-int str_chr_cnt(const char *, char); /* Counts the number of occurences of (char) in (const char *) */
+int str_chr_cnt(const char *, char); /* Counts the number of occurrences of (char) in (const char *) */
 int str_get_num(const char *); /* Returns the first integer from (const char *) if (const char *) is valid*/
 int numlen(int); /* Returns length of a number. Add one, if number is negative */
 void get_set(char *, const int *, const int *); /* Gets (const int *) elements from (const int *) and puts it into (char *) */
 int num_cmp(const void *, const void *); /* Compares two integers */
-char *get_elem(const int *); /* Returns (char *) to first emlement of (const int *) */
+char *get_elem(const int *); /* Returns (char *) to first element of (const int *) */
 int numlen_int(int); /* Returns length of a number */
 int find_sht(const int *, int, int); /* Return zero if element (int) doesn't occur in (const int *) with length (int) */
 void fix_str_rpt(char *); /* Removes repeating elements */
@@ -64,12 +64,12 @@ int prt_res(const char *); /* Third menu. Outputs the result */
 int cont(void); /* Fourth (last) menu. «Continue» option */
 
 /* tree.c */
-struct tnode { /* Struct for binary tree */
+struct tnode { /* Structure for binary tree */
 	char *op;
 	struct tnode *left;
 	struct tnode *right;
 };
-struct set { /* Struct for sets */
+struct set { /* Structure for sets */
 	char *a;
 	char *b;
 	char *c;
@@ -82,9 +82,9 @@ int isop(char); /* Returns zero if (char) isn't an operator */
 char *derefer(const char *, const struct set *); /* Returns set (const char *) */
 
 /* math.c */
-char *sum(const char *, const char *, int); /* Summs two sets [(const char *) and (const char *)] */
+char *sum(const char *, const char *, int); /* Sums two sets [(const char *) and (const char *)] */
 void to_neg(char *); /* Changes (char *)'s sign from + to - or vice versa */
-void to_opp(char *, int); /* Convertes (char *) to (int) type (zero — inclusive, one — exlusive) */
+void to_opp(char *, int); /* Converts (char *) to (int) type (zero — inclusive, one — exclusive) */
 char *mul(char *, char *, int); /* Multiplies two sets [(const char *) and (const char *)] */
 char *sub(char *, char *, int); /* Subtracts two sets [(const char *) and (const char *)] */
 
