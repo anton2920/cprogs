@@ -1,8 +1,8 @@
 ===> For sets input: 
 	There are several ways to fill up the gaps:
 	⋅ {ai, ai+1, ..., an}
-	⋅ NATURAL_ALL (to fill up with all integers)
-	⋅ NATURAL(A, B) (to fill up with integers from A to B)
+	⋅ INT_ALL (to fill up with all integers)
+	⋅ INT(A, B) (to fill up with integers from A to B)
 	⋅ FILE("<path_to_file>") (to fill up with necessary set from file)
 	⋅ RAND(N, A, B) (to fill up with N random elements from A to B)
 

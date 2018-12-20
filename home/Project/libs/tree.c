@@ -10,7 +10,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 
 	/* Initializing variables */
 	char exprl[NAME], exprr[NAME], *sklad; /* *slojh */
-	int len = strlen(expr), diff, minus = 0;
+	int len = strlen(expr), diff, minus = 1;
 	struct tnode *l = NULL, *r = NULL;
 
 	/* Main part */
@@ -19,14 +19,12 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		if (!p) {
 			return NULL;
 		}
-		if (*expr == '-' && len != 2) {
-			minus = 1;
-			to_neg(expr);
-		} else {
-			minus = 0;
-		}
-		while (de_par(expr))
-			;
+		do {
+			if (*expr == '-' && len != 2) {
+				minus *= -1;
+				to_neg(expr);
+			}
+		} while (de_par(expr));
 		if (len == 1 || (len == 2 && *expr == '-')) {
 			p->op = strdup(expr);
 		} else {
@@ -102,7 +100,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 					break;
 			}
 		}
-		if (minus) {
+		if (minus == -1) {
 			to_neg(p->op);
 		}
 	} else {
