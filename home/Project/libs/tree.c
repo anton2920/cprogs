@@ -19,7 +19,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		if (!p) {
 			return NULL;
 		}
-		if (*expr == '-') {
+		if (*expr == '-' && len != 2) {
 			minus = 1;
 			to_neg(expr);
 		} else {

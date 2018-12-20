@@ -60,6 +60,9 @@ int check2(const char *str) {
 			if (*(str + (i + 1)) == 'A' || *(str + (i + 1)) == 'B' || *(str + (i + 1)) == 'C') {
 				return 0;
 			}
+			if (*(str + (i + 1)) == '-') {
+				return 0;
+			}
 		} else if (isop(*(str + i))) {
 			++oper;
 			if (*(str + (i + 1)) == ')') {
