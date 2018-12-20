@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab_17_dev.dir/main.c.o"
   "CMakeFiles/lab_17_dev.dir/libs/rwr.c.o"
   "CMakeFiles/lab_17_dev.dir/libs/menu.c.o"
+  "CMakeFiles/lab_17_dev.dir/libs/task.c.o"
   "lab_17_dev.pdb"
   "lab_17_dev"
 )

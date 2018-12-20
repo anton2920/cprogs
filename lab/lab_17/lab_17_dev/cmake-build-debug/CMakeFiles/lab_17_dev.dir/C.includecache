@@ -24,6 +24,10 @@ time.h
 ../headers/lab.h
 /home/anton/C/lab/lab_17/lab_17_dev/headers/lab.h
 
+/home/anton/C/lab/lab_17/lab_17_dev/libs/task.c
+../headers/lab.h
+/home/anton/C/lab/lab_17/lab_17_dev/headers/lab.h
+
 /home/anton/C/lab/lab_17/lab_17_dev/main.c
 headers/lab.h
 /home/anton/C/lab/lab_17/lab_17_dev/headers/lab.h

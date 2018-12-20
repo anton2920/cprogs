@@ -24,12 +24,16 @@ int menu2(void);
 void menu2_5(int *, int *);
 int menu3(void);
 
+/* task.c */
+int cal_sum(struct arr *);
+
 /* rwr.c */
 void read_key(struct arr *);
 void read_rand(struct arr *);
 void read_file(struct arr *);
 void read_formula(struct arr *);
 void write_scr(const struct arr *);
+void write_scr_ans(const int *);
 void write_file(const struct arr *);
-
+void write_file_ans(const int *);
 #endif

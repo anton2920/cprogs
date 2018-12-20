@@ -5,7 +5,7 @@ int main() {
 
     /* Initializing variables */
     struct arr mas;
-    int func, func1, func2;
+    int func, func1, func2, sum;
     srand((unsigned int) time(NULL));
 
     /* Main part */
@@ -35,7 +35,7 @@ int main() {
         func2 = (!func) ? menu2() : func;
 
         /* Main part */
-
+        sum = cal_sum(&mas);
 
         /* Final output */
         switch (func2) {
@@ -44,10 +44,12 @@ int main() {
                 return 0;
             case 0:
                 write_scr(&mas);
+                write_scr_ans(&sum);
                 break;
             case 1:
                 write_scr(&mas);
                 write_file(&mas);
+                write_file_ans(&sum);
                 break;
             default:
                 break;

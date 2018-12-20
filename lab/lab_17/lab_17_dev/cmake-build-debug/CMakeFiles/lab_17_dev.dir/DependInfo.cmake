@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/anton/C/lab/lab_17/lab_17_dev/libs/menu.c" "/home/anton/C/lab/lab_17/lab_17_dev/cmake-build-debug/CMakeFiles/lab_17_dev.dir/libs/menu.c.o"
   "/home/anton/C/lab/lab_17/lab_17_dev/libs/rwr.c" "/home/anton/C/lab/lab_17/lab_17_dev/cmake-build-debug/CMakeFiles/lab_17_dev.dir/libs/rwr.c.o"
+  "/home/anton/C/lab/lab_17/lab_17_dev/libs/task.c" "/home/anton/C/lab/lab_17/lab_17_dev/cmake-build-debug/CMakeFiles/lab_17_dev.dir/libs/task.c.o"
   "/home/anton/C/lab/lab_17/lab_17_dev/main.c" "/home/anton/C/lab/lab_17/lab_17_dev/cmake-build-debug/CMakeFiles/lab_17_dev.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

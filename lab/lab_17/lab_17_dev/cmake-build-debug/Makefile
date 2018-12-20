@@ -177,6 +177,33 @@ libs/rwr.c.s:
 	$(MAKE) -f CMakeFiles/lab_17_dev.dir/build.make CMakeFiles/lab_17_dev.dir/libs/rwr.c.s
 .PHONY : libs/rwr.c.s
 
+libs/task.o: libs/task.c.o
+
+.PHONY : libs/task.o
+
+# target to build an object file
+libs/task.c.o:
+	$(MAKE) -f CMakeFiles/lab_17_dev.dir/build.make CMakeFiles/lab_17_dev.dir/libs/task.c.o
+.PHONY : libs/task.c.o
+
+libs/task.i: libs/task.c.i
+
+.PHONY : libs/task.i
+
+# target to preprocess a source file
+libs/task.c.i:
+	$(MAKE) -f CMakeFiles/lab_17_dev.dir/build.make CMakeFiles/lab_17_dev.dir/libs/task.c.i
+.PHONY : libs/task.c.i
+
+libs/task.s: libs/task.c.s
+
+.PHONY : libs/task.s
+
+# target to generate assembly for a file
+libs/task.c.s:
+	$(MAKE) -f CMakeFiles/lab_17_dev.dir/build.make CMakeFiles/lab_17_dev.dir/libs/task.c.s
+.PHONY : libs/task.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -219,6 +246,9 @@ help:
 	@echo "... libs/rwr.o"
 	@echo "... libs/rwr.i"
 	@echo "... libs/rwr.s"
+	@echo "... libs/task.o"
+	@echo "... libs/task.i"
+	@echo "... libs/task.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

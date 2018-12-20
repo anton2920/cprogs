@@ -114,6 +114,13 @@ void write_scr(const struct arr *mas) {
     prt_ln();
 }
 
+void write_scr_ans(const int *sum) {
+
+    /* I/O flow */
+    printf("Sum = %d\n", *sum);
+    prt_ln();
+}
+
 void write_file(const struct arr *mas) {
 
     /* Initializing variables */
@@ -140,4 +147,20 @@ void write_file(const struct arr *mas) {
     /* Final output */
     printf("| txt: the information was stored successfully!              |\n");
     prt_ln();
+}
+
+void write_file_ans(const int *sum) {
+
+    /* Initializing variables */
+    FILE *outputs;
+
+    /* Main part */
+    outputs = fopen("a1out.txt", "w");
+    if (outputs == NULL) {
+        return;
+    }
+
+    fprintf(outputs, "%d", *sum);
+
+    fclose(outputs);
 }
