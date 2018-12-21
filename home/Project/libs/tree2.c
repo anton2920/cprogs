@@ -10,7 +10,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 
 	/* Initializing variables */
 	char exprl[NAME], exprr[NAME], *sklad; /* *slojh */
-	int len = strlen(expr), diff, minus = 0;
+	int len = strlen(expr), diff, minus = 1;
 	struct tnode *l = NULL, *r = NULL;
 
 	/* Main part */
@@ -23,16 +23,14 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		}
 		printf("ALLOC");
 		getchar();
-		if (*expr == '-' && len != 2) {
-			minus = 1;
-			to_neg(expr);
-		} else {
-			minus = 0;
-		}
+		do {
+			if (*expr == '-' && len != 2) {
+				minus *= -1;
+				to_neg(expr);
+			}
+		} while (de_par(expr)); 
 		printf("Minus = %d", minus);
 		getchar();
-		while (de_par(expr))
-			;
 		printf("de_par");
 		getchar();
 		if (len == 1 || (len == 2 && *expr == '-')) {
@@ -124,7 +122,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 					break;
 			}
 		}
-		if (minus) {
+		if (minus == -1) {
 			to_neg(p->op);
 		}
 	} else {

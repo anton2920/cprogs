@@ -73,6 +73,9 @@ int check2(const char *str) {
 		if (*(str + i) == '(' && (*(str + (i + 1)) == ')' || isop(*(str + (i + 1))))) {
 			return 0;
 		}
+		if (*(str + i) == '-' && *(str + (i + 1)) == '-') {
+			return 0;
+		}
 
 	}
 

@@ -29,11 +29,13 @@ int set_sets(char *a, char *b, char *c) {
 		end_dialog();
 		return func;
 	}
-	else if (!func && !func_err) {
+	else if (!func && check(a) && check(b) && check(c)) {
+		func_err = 0;
 		end_dialog();
 		return func;
 	}
 	else if (!func && func_err) {
+		func_err = 1;
 		str_err(ERROR_MSG);
 		end_dialog();
 		return 3;
@@ -155,7 +157,6 @@ void output (char *str, const char *change, const char *str1, const char *str2) 
 	extern int func_err;
 	char x[NAME] = "", y[NAME] = "", temp[NAME] = "";
 	int ch, i, x_i, y_i;
-	func_err = 0;
 
 	/* I/O flow */
 	strcpy(str, change + 12);
