@@ -3,7 +3,7 @@
 	[
 		{
 			"path": ".",
-			"file_include_patterns": ["*.c", "*.h", "*.txt", "*.bin"],
+			"file_include_patterns": ["*.c", "*.h", "*.txt", "*.bin", "*.asm"],
 		}
 	]
 }
