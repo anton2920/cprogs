@@ -21,7 +21,7 @@ alloc_init:
     # Initializing function's stack frame
     pushl %ebp
     movl %esp, %ebp
-
+    
     # Main part
     movl $SYS_BRK, %eax # BRK syscall
     movl $0x0, %ebx # We want to know current position
@@ -38,7 +38,7 @@ alloc_init:
 
 .globl allocate
 .type allocate, @function
-allocate:
+allocate: 
 	# Initializing function's stack frame
 	pushl %ebp
 	movl %esp, %ebp
@@ -66,7 +66,7 @@ alloc_get_more:
 	addl %ecx, %ebx # Adding requested to current position
 
 	pushl %eax # Saving
-	pushl %ecx # our
+	pushl %ecx # our 
 	pushl %ebx # registers
 	movl $SYS_BRK, %eax # BRK syscall
 	int $0x80 # 0x80's interrupt

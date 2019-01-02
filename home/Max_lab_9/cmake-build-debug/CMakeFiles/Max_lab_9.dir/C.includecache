@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/experiments/asm/asm_dev/libs/test.c
-
-/home/anton/C/experiments/asm/asm_dev/main.c
+/home/anton/C/home/Max_lab_9/main.c
 stdio.h
 -
 string.h
