@@ -4,48 +4,20 @@
 		"selected_items":
 		[
 			[
-				"HD",
-				"HD_FLAG_OFFSET"
+				"in",
+				"include\t(read.c)"
 			],
 			[
-				"A",
-				"AVAIL"
-			],
-			[
-				"equ",
-				"equals"
-			],
-			[
-				"all",
-				"alloc_here"
-			],
-			[
-				"al",
-				"alloc_next_pos"
-			],
-			[
-				"cu",
-				"current"
-			],
-			[
-				"e",
-				"ebx"
-			],
-			[
-				"d",
-				"d"
+				"st",
+				"string"
 			],
 			[
 				"inc",
 				"include"
 			],
 			[
-				"fl",
-				"fclose"
-			],
-			[
-				"in",
-				"inputs"
+				"d",
+				"define\t(read.c)"
 			],
 			[
 				"ste",
@@ -86,10 +58,6 @@
 			[
 				"re",
 				"return\t(a3.c)"
-			],
-			[
-				"st",
-				"stdio.h\t(a1.c)"
 			],
 			[
 				"n",
@@ -224,36 +192,16 @@
 		"selected_items":
 		[
 			[
-				"remo",
-				"Package Control: Remove Package"
-			],
-			[
 				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"color ",
-				"UI: Select Color Scheme"
-			],
-			[
-				"colo",
-				"Code Folding: Fold Tag Attributes"
-			],
-			[
-				"col",
-				"UI: Select Color Scheme"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"insta",
 				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
 				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
 			],
 			[
 				"list",
@@ -288,7 +236,7 @@
 	},
 	"console":
 	{
-		"height": 412.0,
+		"height": 139.0,
 		"history":
 		[
 			"while True:",
@@ -313,77 +261,49 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
-		"/home/anton/C/experiments",
-		"/home/anton/C/home",
-		"/home/anton/C/home/Max_lab_9",
-		"/home/anton/C/home/Max_lab_9/cmake-build-debug"
+		"/home/anton/C/lab",
+		"/home/anton/C/lab/lab_17"
 	],
 	"file_history":
 	[
-		"/home/anton/C/experiments/asm/c5.c",
-		"/home/anton/C/experiments/asm/asm5.asm",
-		"/home/anton/C/experiments/asm/asm6.asm",
-		"/home/anton/C/experiments/asm/c1.c",
-		"/home/anton/C/experiments/asm/asm1.asm",
-		"/home/anton/C/experiments/asm/c2.c",
-		"/home/anton/C/experiments/asm/asm2.asm",
-		"/home/anton/C/experiments/asm/c3.c",
-		"/home/anton/C/experiments/asm/asm3.asm",
-		"/home/anton/C/experiments/asm/c4.c",
-		"/home/anton/C/experiments/asm/asm4.asm",
-		"/home/anton/C/home/Max_lab_9/cmake-build-debug/rec.dat",
-		"/home/anton/C/c.sublime-project",
-		"/home/anton/C/lab/lab_13/a1out.bin",
-		"/home/anton/C/lab/lab_17/lab.h",
-		"/home/anton/C/lab/lab_17/rwr.c",
-		"/home/anton/C/lab/lab_17/task.c",
 		"/home/anton/C/lab/lab_17/main.c",
-		"/home/anton/C/lab/lab_15/rwr.c",
-		"/home/anton/C/home/Project/libs/menu2.c",
-		"/home/anton/C/home/Project/libs/menu.c",
-		"/home/anton/C/home/Project/main.c",
-		"/home/anton/C/home/Project/headers/project.h",
-		"/home/anton/C/univer/study/MRecursion/a5.c",
-		"/home/anton/C/univer/study/MRecursion/a4.c",
-		"/home/anton/C/univer/study/MRecursion/a3.c",
-		"/home/anton/C/univer/study/MRecursion/a1.c",
-		"/home/anton/C/univer/study/MRecursion/a2.c",
-		"/home/anton/C/lab/lab_15/a1.c",
+		"/home/anton/C/lab/lab_17/lab.h",
+		"/home/anton/C/lab/lab_17/menu.c",
+		"/home/anton/C/lab/lab_17/rwr.c",
 		"/home/anton/C/lab/lab_15/a1.h",
+		"/home/anton/C/lab/lab_15/a1.c",
 		"/home/anton/C/lab/lab_15/menu.c",
-		"/home/anton/C/lab/lab_15/struct.c",
+		"/home/anton/C/lab/lab_15/rwr.c",
+		"/home/anton/C/lab/lab_17/task.c",
+		"/home/anton/C/lab/lab_12/a1.c",
+		"/home/anton/C/training/8lowlevel/gets.h",
 		"/home/anton/C/training/8lowlevel/read.c",
+		"/home/anton/C/training/8lowlevel/gets.c",
+		"/home/anton/C/experiments/LowLevelFile/header.h",
+		"/home/anton/C/experiments/LowLevelFile/rw.c",
+		"/home/anton/C/experiments/LowLevelFile/main.c",
+		"/home/anton/C/lab/lab_13/a1in.txt",
+		"/home/anton/C/lab/lab_13/a13.c",
+		"/home/anton/C/lab/lab_13/a12.c",
+		"/home/anton/C/lab/lab_13/a1.c",
+		"/home/anton/PY/Calc.py",
+		"/home/anton/C/lab/lab_10/a2.c",
+		"/home/anton/C/lab/lab_10/a21.c",
+		"/home/anton/C/lab/lab_10/a22.c",
+		"/home/anton/C/lab/lab_10/a4.c",
+		"/home/anton/C/experiments/SanyaEbet/arrayequasion.c",
 		"/home/anton/C/experiments/IntVarCheck/input.c",
 		"/home/anton/C/experiments/IntVarCheck/test.c",
 		"/home/anton/C/experiments/IntVarCheck/input.h",
-		"/home/anton/C/lab/lab_15/a1in.txt",
-		"/home/anton/C/lab/lab_13/a13.c",
-		"/home/anton/C/univer/practice/pr_02/28.c",
-		"/home/anton/C/univer/practice/pr_02/15.c",
-		"/home/anton/C/univer/practice/pr_02/8.c",
-		"/home/anton/C/lab/lab_13/a1.c",
-		"/home/anton/C/lab/lab_13/a12.c",
-		"/home/anton/C/lab/lab_10/a3.c",
-		"/home/anton/C/lab/lab_13/tobin.c",
-		"/home/anton/C/lab/lab_13/a1in.txt",
-		"/home/anton/C/lab/lab_13/a1in.bin",
-		"/home/anton/C/lab/lab_13/a1out.txt",
-		"/home/anton/C/experiments/dialog.c",
-		"/home/anton/C/experiments/clock.c",
-		"/home/anton/.config/sublime-text-3/Packages/QuickThemes/QuickThemes.sublime-settings",
-		"/home/anton/C/lab/lab_10/a22.c",
-		"/home/anton/C/lab/lab_10/a1.c",
-		"/home/anton/C/lab/lab_11/a2.c",
-		"/home/anton/C/lab/lab_11/a1.c",
-		"/home/anton/C/lab/lab_10/a2.c",
-		"/home/anton/C/experiments/SanyaEbet/struct.c",
-		"/home/anton/C/experiments/SanyaEbet/arrayequasion.c",
+		"/home/anton/C/c.sublime-project",
 		"/home/anton/C/lab/lab_09/a1.c",
 		"/home/anton/C/lab/lab_09/a2.c",
 		"/home/anton/C/lab/lab_09/a3.c",
 		"/home/anton/C/lab/lab.sublime-project",
+		"/home/anton/C/lab/lab_10/a3.c",
 		"/home/anton/C/lab/lab_wrong/lab_11/a1.c",
 		"/home/anton/C/lab/lab_wrong/lab_11/a2.c",
+		"/home/anton/C/lab/lab_10/a1.c",
 		"/home/anton/C/experiments/SanyaEbet/shoulders.h",
 		"/home/anton/C/experiments/SanyaEbet/shoulders.c",
 		"/home/anton/C/experiments/SanyaEbet/main.c",
@@ -402,7 +322,8 @@
 		"/home/anton/C/lab/lab_wrong/lab_11/a3.c",
 		"/home/anton/C/lab/lab_wrong/lab_09/a2.c",
 		"/home/anton/C/experiments/ifbool/void.c",
-		"/home/anton/C/lab/lab_12/a1.c",
+		"/home/anton/C/lab/lab_11/a1.c",
+		"/home/anton/C/lab/lab_11/a2.c",
 		"/home/anton/C/lab/lab_11/a3.c",
 		"/home/anton/C/lab/lab_09/input.h",
 		"/home/anton/C/lab/lab_09/check.c",
@@ -412,7 +333,6 @@
 		"/home/anton/C/lab/lab_08/a2.c",
 		"/home/anton/C/lab/lab_08/a1.c",
 		"/home/anton/C/lab/lab_07/a52.c",
-		"/home/anton/PY/Calc.py",
 		"/home/anton/C/lab/lab_06/a6.c",
 		"/home/anton/C/lab/lab_06/a5.c",
 		"/home/anton/C/lab/lab_06/a4.c",
@@ -447,11 +367,37 @@
 		"/home/anton/PABC/olympic/a5.pas",
 		"/home/anton/PABC/olympic/a4.pas",
 		"/home/anton/PABC/Zadacha3.pas",
-		"/home/anton/PABC/home/technocup/a1.pas"
+		"/home/anton/PABC/home/technocup/a1.pas",
+		"/home/anton/CPP/home/schoolOlympic/a1.cpp",
+		"/home/anton/PABC/home/schoolOlympic/output.txt",
+		"/home/anton/PABC/home/schoolOlympic/a1.pas",
+		"/home/anton/PABC/home/schoolOlympic/input.txt",
+		"/home/anton/PABC/home/schoolOlympic/a2.pas",
+		"/home/anton/PABC/home/schoolOlympic/a3.pas",
+		"/home/anton/PABC/home/schoolOlympic/a4.pas",
+		"/home/anton/PABC/home/schoolOlympic/a5.pas",
+		"/home/anton/PABC/school/11b/a2.pas",
+		"/home/anton/PABC/school/11b/a1.pas",
+		"/home/anton/PABC/olya/a1.pas",
+		"/home/anton/PABC/Calc.pas",
+		"/home/anton/Файлы/Python/training/Calc.py",
+		"/home/anton/PABC/home/tasks10rub/3part/c11.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c10.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c9.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c8.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c7.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c6.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c5.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c4.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c3.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c2.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c19.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c20.pas",
+		"/home/anton/PABC/home/tasks10rub/3part/c21.pas"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -503,7 +449,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -548,7 +494,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 54.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
