@@ -123,6 +123,168 @@ Project/fast:
 	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
 .PHONY : Project/fast
 
+libs/math.o: libs/math.c.o
+
+.PHONY : libs/math.o
+
+# target to build an object file
+libs/math.c.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/math.c.o
+.PHONY : libs/math.c.o
+
+libs/math.i: libs/math.c.i
+
+.PHONY : libs/math.i
+
+# target to preprocess a source file
+libs/math.c.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/math.c.i
+.PHONY : libs/math.c.i
+
+libs/math.s: libs/math.c.s
+
+.PHONY : libs/math.s
+
+# target to generate assembly for a file
+libs/math.c.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/math.c.s
+.PHONY : libs/math.c.s
+
+libs/menu.o: libs/menu.c.o
+
+.PHONY : libs/menu.o
+
+# target to build an object file
+libs/menu.c.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu.c.o
+.PHONY : libs/menu.c.o
+
+libs/menu.i: libs/menu.c.i
+
+.PHONY : libs/menu.i
+
+# target to preprocess a source file
+libs/menu.c.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu.c.i
+.PHONY : libs/menu.c.i
+
+libs/menu.s: libs/menu.c.s
+
+.PHONY : libs/menu.s
+
+# target to generate assembly for a file
+libs/menu.c.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu.c.s
+.PHONY : libs/menu.c.s
+
+libs/menu2.o: libs/menu2.c.o
+
+.PHONY : libs/menu2.o
+
+# target to build an object file
+libs/menu2.c.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu2.c.o
+.PHONY : libs/menu2.c.o
+
+libs/menu2.i: libs/menu2.c.i
+
+.PHONY : libs/menu2.i
+
+# target to preprocess a source file
+libs/menu2.c.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu2.c.i
+.PHONY : libs/menu2.c.i
+
+libs/menu2.s: libs/menu2.c.s
+
+.PHONY : libs/menu2.s
+
+# target to generate assembly for a file
+libs/menu2.c.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu2.c.s
+.PHONY : libs/menu2.c.s
+
+libs/menu3.o: libs/menu3.c.o
+
+.PHONY : libs/menu3.o
+
+# target to build an object file
+libs/menu3.c.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu3.c.o
+.PHONY : libs/menu3.c.o
+
+libs/menu3.i: libs/menu3.c.i
+
+.PHONY : libs/menu3.i
+
+# target to preprocess a source file
+libs/menu3.c.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu3.c.i
+.PHONY : libs/menu3.c.i
+
+libs/menu3.s: libs/menu3.c.s
+
+.PHONY : libs/menu3.s
+
+# target to generate assembly for a file
+libs/menu3.c.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu3.c.s
+.PHONY : libs/menu3.c.s
+
+libs/tree.o: libs/tree.c.o
+
+.PHONY : libs/tree.o
+
+# target to build an object file
+libs/tree.c.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/tree.c.o
+.PHONY : libs/tree.c.o
+
+libs/tree.i: libs/tree.c.i
+
+.PHONY : libs/tree.i
+
+# target to preprocess a source file
+libs/tree.c.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/tree.c.i
+.PHONY : libs/tree.c.i
+
+libs/tree.s: libs/tree.c.s
+
+.PHONY : libs/tree.s
+
+# target to generate assembly for a file
+libs/tree.c.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/tree.c.s
+.PHONY : libs/tree.c.s
+
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.s
+.PHONY : main.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Project"
+	@echo "... libs/math.o"
+	@echo "... libs/math.i"
+	@echo "... libs/math.s"
+	@echo "... libs/menu.o"
+	@echo "... libs/menu.i"
+	@echo "... libs/menu.s"
+	@echo "... libs/menu2.o"
+	@echo "... libs/menu2.i"
+	@echo "... libs/menu2.s"
+	@echo "... libs/menu3.o"
+	@echo "... libs/menu3.i"
+	@echo "... libs/menu3.s"
+	@echo "... libs/tree.o"
+	@echo "... libs/tree.i"
+	@echo "... libs/tree.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

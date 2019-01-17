@@ -7,18 +7,42 @@
 #IncludeRegexTransform: 
 
 /home/anton/C/home/Project/headers/project.h
-
-/home/anton/C/home/Project/libs/menu.c
+stdio.h
+-
 dialog.h
 -
 curses.h
 -
+string.h
+-
+stdlib.h
+-
+ctype.h
+-
+time.h
+-
+
+/home/anton/C/home/Project/libs/math.c
+../headers/project.h
+/home/anton/C/home/Project/headers/project.h
+
+/home/anton/C/home/Project/libs/menu.c
+../headers/project.h
+/home/anton/C/home/Project/headers/project.h
+
+/home/anton/C/home/Project/libs/menu2.c
+../headers/project.h
+/home/anton/C/home/Project/headers/project.h
+
+/home/anton/C/home/Project/libs/menu3.c
+../headers/project.h
+/home/anton/C/home/Project/headers/project.h
+
+/home/anton/C/home/Project/libs/tree.c
 ../headers/project.h
 /home/anton/C/home/Project/headers/project.h
 
 /home/anton/C/home/Project/main.c
-stdio.h
--
 headers/project.h
 /home/anton/C/home/Project/headers/project.h
 

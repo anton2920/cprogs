@@ -1,16 +1,4 @@
 /home/anton/Загрузки/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/anton/C/home/Project
 -- Configuring done
-CMake Error at CMakeLists.txt:7 (add_executable):
-  Cannot find source file:
-
-    /usr/lib/x86_64-linux-gnu/libdialog.a
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp
-  .hxx .in .txx
-
-
-CMake Error: CMake can not determine linker language for target: Project
-CMake Error: Cannot determine link language for target "Project".
 -- Generating done
 -- Build files have been written to: /home/anton/C/home/Project/cmake-build-debug
-Unable to determine product file path for target Project (Debug). Running and debugging will be unavailable.

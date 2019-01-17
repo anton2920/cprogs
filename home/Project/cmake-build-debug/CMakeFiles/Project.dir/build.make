@@ -57,7 +57,184 @@ include CMakeFiles/Project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Project.dir/flags.make
 
-CMakeFiles/Project.dir/requires:
+CMakeFiles/Project.dir/main.c.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Project.dir/main.c.o   -c /home/anton/C/home/Project/main.c
+
+CMakeFiles/Project.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project.dir/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/home/Project/main.c > CMakeFiles/Project.dir/main.c.i
+
+CMakeFiles/Project.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project.dir/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/home/Project/main.c -o CMakeFiles/Project.dir/main.c.s
+
+CMakeFiles/Project.dir/main.c.o.requires:
+
+.PHONY : CMakeFiles/Project.dir/main.c.o.requires
+
+CMakeFiles/Project.dir/main.c.o.provides: CMakeFiles/Project.dir/main.c.o.requires
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.o.provides.build
+.PHONY : CMakeFiles/Project.dir/main.c.o.provides
+
+CMakeFiles/Project.dir/main.c.o.provides.build: CMakeFiles/Project.dir/main.c.o
+
+
+CMakeFiles/Project.dir/libs/menu.c.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/libs/menu.c.o: ../libs/menu.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Project.dir/libs/menu.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Project.dir/libs/menu.c.o   -c /home/anton/C/home/Project/libs/menu.c
+
+CMakeFiles/Project.dir/libs/menu.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project.dir/libs/menu.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/home/Project/libs/menu.c > CMakeFiles/Project.dir/libs/menu.c.i
+
+CMakeFiles/Project.dir/libs/menu.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project.dir/libs/menu.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/home/Project/libs/menu.c -o CMakeFiles/Project.dir/libs/menu.c.s
+
+CMakeFiles/Project.dir/libs/menu.c.o.requires:
+
+.PHONY : CMakeFiles/Project.dir/libs/menu.c.o.requires
+
+CMakeFiles/Project.dir/libs/menu.c.o.provides: CMakeFiles/Project.dir/libs/menu.c.o.requires
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu.c.o.provides.build
+.PHONY : CMakeFiles/Project.dir/libs/menu.c.o.provides
+
+CMakeFiles/Project.dir/libs/menu.c.o.provides.build: CMakeFiles/Project.dir/libs/menu.c.o
+
+
+CMakeFiles/Project.dir/libs/menu2.c.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/libs/menu2.c.o: ../libs/menu2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Project.dir/libs/menu2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Project.dir/libs/menu2.c.o   -c /home/anton/C/home/Project/libs/menu2.c
+
+CMakeFiles/Project.dir/libs/menu2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project.dir/libs/menu2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/home/Project/libs/menu2.c > CMakeFiles/Project.dir/libs/menu2.c.i
+
+CMakeFiles/Project.dir/libs/menu2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project.dir/libs/menu2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/home/Project/libs/menu2.c -o CMakeFiles/Project.dir/libs/menu2.c.s
+
+CMakeFiles/Project.dir/libs/menu2.c.o.requires:
+
+.PHONY : CMakeFiles/Project.dir/libs/menu2.c.o.requires
+
+CMakeFiles/Project.dir/libs/menu2.c.o.provides: CMakeFiles/Project.dir/libs/menu2.c.o.requires
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu2.c.o.provides.build
+.PHONY : CMakeFiles/Project.dir/libs/menu2.c.o.provides
+
+CMakeFiles/Project.dir/libs/menu2.c.o.provides.build: CMakeFiles/Project.dir/libs/menu2.c.o
+
+
+CMakeFiles/Project.dir/libs/menu3.c.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/libs/menu3.c.o: ../libs/menu3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Project.dir/libs/menu3.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Project.dir/libs/menu3.c.o   -c /home/anton/C/home/Project/libs/menu3.c
+
+CMakeFiles/Project.dir/libs/menu3.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project.dir/libs/menu3.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/home/Project/libs/menu3.c > CMakeFiles/Project.dir/libs/menu3.c.i
+
+CMakeFiles/Project.dir/libs/menu3.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project.dir/libs/menu3.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/home/Project/libs/menu3.c -o CMakeFiles/Project.dir/libs/menu3.c.s
+
+CMakeFiles/Project.dir/libs/menu3.c.o.requires:
+
+.PHONY : CMakeFiles/Project.dir/libs/menu3.c.o.requires
+
+CMakeFiles/Project.dir/libs/menu3.c.o.provides: CMakeFiles/Project.dir/libs/menu3.c.o.requires
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/menu3.c.o.provides.build
+.PHONY : CMakeFiles/Project.dir/libs/menu3.c.o.provides
+
+CMakeFiles/Project.dir/libs/menu3.c.o.provides.build: CMakeFiles/Project.dir/libs/menu3.c.o
+
+
+CMakeFiles/Project.dir/libs/tree.c.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/libs/tree.c.o: ../libs/tree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Project.dir/libs/tree.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Project.dir/libs/tree.c.o   -c /home/anton/C/home/Project/libs/tree.c
+
+CMakeFiles/Project.dir/libs/tree.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project.dir/libs/tree.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/home/Project/libs/tree.c > CMakeFiles/Project.dir/libs/tree.c.i
+
+CMakeFiles/Project.dir/libs/tree.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project.dir/libs/tree.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/home/Project/libs/tree.c -o CMakeFiles/Project.dir/libs/tree.c.s
+
+CMakeFiles/Project.dir/libs/tree.c.o.requires:
+
+.PHONY : CMakeFiles/Project.dir/libs/tree.c.o.requires
+
+CMakeFiles/Project.dir/libs/tree.c.o.provides: CMakeFiles/Project.dir/libs/tree.c.o.requires
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/tree.c.o.provides.build
+.PHONY : CMakeFiles/Project.dir/libs/tree.c.o.provides
+
+CMakeFiles/Project.dir/libs/tree.c.o.provides.build: CMakeFiles/Project.dir/libs/tree.c.o
+
+
+CMakeFiles/Project.dir/libs/math.c.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/libs/math.c.o: ../libs/math.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Project.dir/libs/math.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Project.dir/libs/math.c.o   -c /home/anton/C/home/Project/libs/math.c
+
+CMakeFiles/Project.dir/libs/math.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Project.dir/libs/math.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/home/Project/libs/math.c > CMakeFiles/Project.dir/libs/math.c.i
+
+CMakeFiles/Project.dir/libs/math.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Project.dir/libs/math.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/home/Project/libs/math.c -o CMakeFiles/Project.dir/libs/math.c.s
+
+CMakeFiles/Project.dir/libs/math.c.o.requires:
+
+.PHONY : CMakeFiles/Project.dir/libs/math.c.o.requires
+
+CMakeFiles/Project.dir/libs/math.c.o.provides: CMakeFiles/Project.dir/libs/math.c.o.requires
+	$(MAKE) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/libs/math.c.o.provides.build
+.PHONY : CMakeFiles/Project.dir/libs/math.c.o.provides
+
+CMakeFiles/Project.dir/libs/math.c.o.provides.build: CMakeFiles/Project.dir/libs/math.c.o
+
+
+# Object files for target Project
+Project_OBJECTS = \
+"CMakeFiles/Project.dir/main.c.o" \
+"CMakeFiles/Project.dir/libs/menu.c.o" \
+"CMakeFiles/Project.dir/libs/menu2.c.o" \
+"CMakeFiles/Project.dir/libs/menu3.c.o" \
+"CMakeFiles/Project.dir/libs/tree.c.o" \
+"CMakeFiles/Project.dir/libs/math.c.o"
+
+# External object files for target Project
+Project_EXTERNAL_OBJECTS =
+
+Project: CMakeFiles/Project.dir/main.c.o
+Project: CMakeFiles/Project.dir/libs/menu.c.o
+Project: CMakeFiles/Project.dir/libs/menu2.c.o
+Project: CMakeFiles/Project.dir/libs/menu3.c.o
+Project: CMakeFiles/Project.dir/libs/tree.c.o
+Project: CMakeFiles/Project.dir/libs/math.c.o
+Project: CMakeFiles/Project.dir/build.make
+Project: CMakeFiles/Project.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anton/C/home/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Project"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+CMakeFiles/Project.dir/build: Project
+
+.PHONY : CMakeFiles/Project.dir/build
+
+CMakeFiles/Project.dir/requires: CMakeFiles/Project.dir/main.c.o.requires
+CMakeFiles/Project.dir/requires: CMakeFiles/Project.dir/libs/menu.c.o.requires
+CMakeFiles/Project.dir/requires: CMakeFiles/Project.dir/libs/menu2.c.o.requires
+CMakeFiles/Project.dir/requires: CMakeFiles/Project.dir/libs/menu3.c.o.requires
+CMakeFiles/Project.dir/requires: CMakeFiles/Project.dir/libs/tree.c.o.requires
+CMakeFiles/Project.dir/requires: CMakeFiles/Project.dir/libs/math.c.o.requires
 
 .PHONY : CMakeFiles/Project.dir/requires
 

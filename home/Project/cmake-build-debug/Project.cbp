@@ -84,6 +84,27 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/anton/C/home/Project/headers/project.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Project/libs/math.c">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Project/libs/menu.c">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Project/libs/menu2.c">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Project/libs/menu3.c">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Project/libs/tree.c">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Project/main.c">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/home/anton/C/home/Project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
