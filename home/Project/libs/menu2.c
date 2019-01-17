@@ -6,7 +6,7 @@ int set_expr(char *exp) {
 	
 	/* Initializing variables */
 	int func;
-	extern func_err;
+	extern int func_err;
 	func_err = 0;
 	dialog_vars.help_line = "Ctrl + U to clear field";
 	dialog_vars.extra_button = 0;
@@ -92,7 +92,7 @@ int check2(const char *str) {
 void expr_err(const char *str) {
 	
 	/* Initializing variables */
-	extern func_err;
+	extern int func_err;
 	func_err = 1;
 
 	/* Main part */

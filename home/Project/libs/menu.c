@@ -244,7 +244,7 @@ void str_err(const char *str) {
 void file_get_str(char *str, const char *change) {
 
 	/* Initializing variables */
-	extern func_err;
+	extern int func_err;
 	FILE *inputs = NULL;
 	char name[NAME] = "", str2[NAME];
 	func_err = 0;
