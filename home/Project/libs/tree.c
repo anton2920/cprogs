@@ -37,7 +37,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		diff = (int) (strstr(expr, p->op) - expr);
 		strcpy(exprl, expr);
 		*(exprl + diff) = '\0';
-		strcpy(exprr, strstr(expr, p->op + 1)); 
+		strcpy(exprr, p->op + 1); 
 		l = LEFT_TREE; /* #define */
 		sklad = strdup(l->op);
 		r = RIGHT_TREE; /* #define */

@@ -53,7 +53,9 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		*(exprl + diff) = '\0';
 		printf("exprl = %s", exprl);
 		getchar();
-		strcpy(exprr, strstr(expr, p->op + 1)); 
+		printf("p->op = %s, p->op + 1 = %s", p->op, p->op + 1);
+		getchar();
+		strcpy(exprr, p->op + 1); 
 		printf("exprr = %s", exprr);
 		getchar();
 		l = LEFT_TREE; /* #define */
