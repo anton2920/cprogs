@@ -4,7 +4,7 @@ main() {
 
     /* Initializing variables */
     int func; 
-    char a[NAME] = "{}", b[NAME] = "{}", c[NAME] = "{}", expr[NAME] = "", res[NAME] = "";
+    char a[NAME] = "{}", b[NAME] = "{}", c[NAME] = "{}", expr[NAME] = "", expr_cpy[NAME] = "", res[NAME] = "";
 	struct tnode *b_tree = NULL;
 	struct set base_sets;
 	base_sets.a = a;
@@ -35,11 +35,12 @@ main() {
 				continue;
 			}
 		}
-
+		
+		strcpy(expr_cpy, expr);
 		strcpy(res, "");
 		b_tree = NULL;
 
-		if ((b_tree = maketree(b_tree, expr, &base_sets))) {
+		if ((b_tree = maketree(b_tree, expr_cpy, &base_sets))) {
 			strcpy(res, b_tree->op);
 			free(b_tree);
 		} else {

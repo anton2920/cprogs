@@ -24,7 +24,7 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 				minus *= -1;
 				to_neg(expr);
 			}
-		} while (de_par(expr));
+		} while (de_par(expr)); 
 		if (len == 1 || (len == 2 && *expr == '-')) {
 			p->op = strdup(expr);
 		} else {
@@ -44,13 +44,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		if (*sklad != '-' && *r->op != '-') {
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sum(sklad, r->op, 0); 
+					p->op = strdup(sum(sklad, r->op, 0)); 
 					break;
 				case '*': case '^':
-					p->op = mul(sklad, r->op, 0);
+					p->op = strdup(mul(sklad, r->op, 0));
 					break;
 				case '\\':
-					p->op = sub(sklad, r->op, 0);
+					p->op = strdup(sub(sklad, r->op, 0));
 					break;
 				default:
 					break;
@@ -59,13 +59,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 			to_neg(r->op);
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sub(r->op, sklad, 1);
+					p->op = strdup(sub(r->op, sklad, 1));
 					break;
 				case '*': case '^':
-					p->op = sub(sklad, r->op, 0);
+					p->op = strdup(sub(sklad, r->op, 0));
 					break;
 				case '\\':
-					p->op = mul(sklad, r->op, 0);
+					p->op = strdup(mul(sklad, r->op, 0));
 					break;
 				default:
 					break;
@@ -74,13 +74,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 			to_neg(sklad);
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sub(sklad, r->op, 1);
+					p->op = strdup(sub(sklad, r->op, 1));
 					break;
 				case '*': case '^':
-					p->op = sub(r->op, sklad, 0);
+					p->op = strdup(sub(r->op, sklad, 0));
 					break;
 				case '\\':
-					p->op = sum(sklad, r->op, 1);
+					p->op = strdup(sum(sklad, r->op, 1));
 					break;
 				default:
 					break;
@@ -90,13 +90,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 			to_neg(r->op);
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = mul(sklad, r->op, 1);
+					p->op = strdup(mul(sklad, r->op, 1));
 					break;
 				case '*': case '^':
-					p->op = sum(sklad, r->op, 1);
+					p->op = strdup(sum(sklad, r->op, 1));
 					break;
 				case '\\':
-					p->op = sub(r->op, sklad, 0);
+					p->op = strdup(sub(r->op, sklad, 0));
 					break;
 			}
 		}
@@ -147,7 +147,7 @@ int de_par(char *str) {
 char *find_op(const char *str) {
 
 	/* Initializing variables */
-	int level = 0, i, len = strlen(str), prec = 10;
+	int level = 0, i, len = strlen(str);
 	char znak;
 	
 	/* Main part */
@@ -156,9 +156,8 @@ char *find_op(const char *str) {
 			++level;
 		} else if (*(str + i) == ')') {
 			--level;
-		} else if (isop(*(str + i)) && !level && check_prec(str + i) <= prec) {
+		} else if (isop(*(str + i)) && !level) {
 			znak = *(str + i);
-			prec = check_prec(str + i);
 		}
 	}
 
@@ -203,10 +202,4 @@ char *derefer(const char *str, const struct set *sets) {
 
 	/* Returning value */
 	return NULL;
-}
-
-int check_prec(const char *znak) {
-	
-	/* Returning value */
-	return (*znak == '*' || *znak == '^') ? 2 : (*znak == '+' || *znak == 'v' || *znak == 'V' || *znak == '\\') ? 1 : 0;
 }

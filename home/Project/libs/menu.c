@@ -34,8 +34,7 @@ int set_sets(char *a, char *b, char *c) {
 		end_dialog();
 		return func;
 	}
-	else if (!func && func_err) {
-		func_err = 1;
+	else if (!func) {
 		str_err(ERROR_MSG);
 		end_dialog();
 		return 3;
@@ -151,10 +150,11 @@ int numcmp(char *s1, char *s2) {
 		return 0;
 }
 
-void output (char *str, const char *change, const char *str1, const char *str2) {
+void output(char *str, const char *change, const char *str1, const char *str2) {
 
 	/* Initializing variables */
 	extern int func_err;
+	func_err = 0;
 	char x[NAME] = "", y[NAME] = "", temp[NAME] = "";
 	int ch, i, x_i, y_i;
 

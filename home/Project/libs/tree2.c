@@ -68,13 +68,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 		if (*sklad != '-' && *r->op != '-') {
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sum(sklad, r->op, 0); 
+					p->op = strdup(sum(sklad, r->op, 0)); 
 					break;
 				case '*': case '^':
-					p->op = mul(sklad, r->op, 0);
+					p->op = strdup(mul(sklad, r->op, 0));
 					break;
 				case '\\':
-					p->op = sub(sklad, r->op, 0);
+					p->op = strdup(sub(sklad, r->op, 0));
 					break;
 				default:
 					break;
@@ -83,13 +83,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 			to_neg(r->op);
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sub(r->op, sklad, 1);
+					p->op = strdup(sub(r->op, sklad, 1));
 					break;
 				case '*': case '^':
-					p->op = sub(sklad, r->op, 0);
+					p->op = strdup(sub(sklad, r->op, 0));
 					break;
 				case '\\':
-					p->op = mul(sklad, r->op, 0);
+					p->op = strdup(mul(sklad, r->op, 0));
 					break;
 				default:
 					break;
@@ -98,13 +98,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 			to_neg(sklad);
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = sub(sklad, r->op, 1);
+					p->op = strdup(sub(sklad, r->op, 1));
 					break;
 				case '*': case '^':
-					p->op = sub(r->op, sklad, 0);
+					p->op = strdup(sub(r->op, sklad, 0));
 					break;
 				case '\\':
-					p->op = sum(sklad, r->op, 1);
+					p->op = strdup(sum(sklad, r->op, 1));
 					break;
 				default:
 					break;
@@ -114,13 +114,13 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 			to_neg(r->op);
 			switch (*p->op) {
 				case '+': case 'v': case 'V': 
-					p->op = mul(sklad, r->op, 1);
+					p->op = strdup(mul(sklad, r->op, 1));
 					break;
 				case '*': case '^':
-					p->op = sum(sklad, r->op, 1);
+					p->op = strdup(sum(sklad, r->op, 1));
 					break;
 				case '\\':
-					p->op = sub(r->op, sklad, 0);
+					p->op = strdup(sub(r->op, sklad, 0));
 					break;
 			}
 		}
@@ -137,6 +137,8 @@ struct tnode *maketree(struct tnode *p, char *expr, const struct set *sets) {
 	}
 
 	/* Returning value */
+	printf("final = %s", p->op);
+	getchar();
 	printf("Return!");
 	getchar();
 	return p;
