@@ -30,7 +30,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
-/* #include "../../config.h" */
+#include "../../config.h"
 
 /* main.c */
 void lclear(void); /* Clears console after completing */

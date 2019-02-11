@@ -62,7 +62,7 @@ src/main.o: src/main.c /usr/include/stdc-predef.h src/headers/project.h \
  /usr/include/ncursesw/unctrl.h /usr/include/ncursesw/curses.h \
  /usr/include/libintl.h /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/langinfo.h \
- /usr/include/nl_types.h /usr/include/curses.h
+ /usr/include/nl_types.h /usr/include/curses.h src/headers/../../config.h
 
 /usr/include/stdc-predef.h:
 
@@ -235,3 +235,5 @@ src/headers/project.h:
 /usr/include/nl_types.h:
 
 /usr/include/curses.h:
+
+src/headers/../../config.h:
