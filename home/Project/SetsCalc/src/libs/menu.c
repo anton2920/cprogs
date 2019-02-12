@@ -266,7 +266,7 @@ void file_get_str(char *str, const char *change) {
 	/* Initializing variables */
 	extern int func_err;
 	FILE *inputs = NULL;
-	char name[NAME] = "", str2[NAME];
+	char name[NAME] = "", str2[NAME], *p_temp;
 	func_err = 0;
 	
 	/* I/O flow */
@@ -278,26 +278,38 @@ void file_get_str(char *str, const char *change) {
 	if (strlen(name)) {
 		if ((inputs = fopen(name, "r"))) {
 			if (*(change + 8) == 'A') {
-				if (find_str(inputs, "A = {", NONE_STR, NONE_STR)) {
-					strcpy(str, find_str(inputs, "A = {", NONE_STR, NONE_STR));
-				} else if (find_str(inputs, "{", "B = {", "C = {")) {
-					strcpy(str, find_str(inputs, "{", "B = {", "C = {"));
+				if ((p_temp = find_str(inputs, "A = {", NONE_STR, NONE_STR))) {
+					/* strcpy(str, find_str(inputs, "A = {", NONE_STR, NONE_STR)); */
+					strcpy(str, p_temp);
+					free(p_temp);
+				} else if ((p_temp = find_str(inputs, "{", "B = {", "C = {"))) {
+					/* strcpy(str, find_str(inputs, "{", "B = {", "C = {")); */
+					strcpy(str, p_temp);
+					free(p_temp);
 				} else {
 					func_err = 1;
 				}
 			} else if (*(change + 8) == 'B') {
-				if (find_str(inputs, "B = {", NONE_STR, NONE_STR)) {
-					strcpy(str, find_str(inputs, "B = {", NONE_STR, NONE_STR));
-				} else if (find_str(inputs, "{", "A = {", "C = {")) {
-					strcpy(str, find_str(inputs, "{", "A = {", "C = {"));
+				if ((p_temp = find_str(inputs, "B = {", NONE_STR, NONE_STR))) {
+					/* strcpy(str, find_str(inputs, "B = {", NONE_STR, NONE_STR)); */
+					strcpy(str, p_temp);
+					free(p_temp);
+				} else if ((p_temp = find_str(inputs, "{", "A = {", "C = {"))) {
+					/* strcpy(str, find_str(inputs, "{", "A = {", "C = {")); */
+					strcpy(str, p_temp);
+					free(p_temp);
 				} else {
 					func_err = 1;
 				}
 			} else {
-				if (find_str(inputs, "C = {", NONE_STR, NONE_STR)) {
-					strcpy(str, find_str(inputs, "C = {", NONE_STR, NONE_STR));
-				} else if (find_str(inputs, "{", "A = {", "B = {")) {
-					strcpy(str, find_str(inputs, "{", "A = {", "B = {"));
+				if ((p_temp = find_str(inputs, "C = {", NONE_STR, NONE_STR))) {
+					/* strcpy(str, find_str(inputs, "C = {", NONE_STR, NONE_STR)); */
+					strcpy(str, p_temp);
+					free(p_temp);
+				} else if ((p_temp = find_str(inputs, "{", "A = {", "B = {"))) {
+					/* cpy(str, find_str(inputs, "{", "A = {", "B = {")); */
+					strcpy(str, p_temp);
+					free(p_temp);
 				} else {
 					func_err = 1;
 				}
@@ -318,7 +330,6 @@ void file_get_str(char *str, const char *change) {
 
 	if (inputs)
 		fclose(inputs);
-
 }
 
 char *find_str(FILE *f, char *ch, const char *exl, const char *exl2) {
@@ -333,7 +344,7 @@ char *find_str(FILE *f, char *ch, const char *exl, const char *exl2) {
 	} while (!strstr((ppstr = (pstr = fgets(str, NAME, f)) ? pstr : ch), ch) || strstr(ppstr, exl) || strstr(ppstr, exl2));
 
 	/* Returning value */
-	return pstr;
+	return strdup(pstr);
 }
 
 void rand_get_str(char *str) {
@@ -431,11 +442,13 @@ void get_set(char *str, const int *set, const int *n) {
 	/* Initializing variables */
 	strcpy(str, "");
 	int i;
+	char *p_temp;
 
 	/* Main part */
 	strcat(str, "{");
 	for (i = 0; i < *n; ++i, ++set) {
-		strcat(str, get_elem(set));
+		strcat(str, (p_temp = get_elem(set)));
+		free(p_temp);
 		if (i != *n - 1) {
 			strcat(str, ",");
 		}
@@ -472,7 +485,7 @@ char *get_elem(const int *num) {
 
 	}
 	/* Returning value */
-	return pelem;
+	return strdup(pelem);
 }
 
 int numlen_int(int num) {
@@ -510,7 +523,7 @@ void fix_str_rpt(char *str) {
 
 	/* Initializing variables */
 	int i, j, set_int[NAME], test;
-	char set_str[NAME], *pset;
+	char set_str[NAME], *pset, *p_temp;
 
 	/* Main part */
 	if (strlen(str) == 2) {
@@ -533,7 +546,8 @@ void fix_str_rpt(char *str) {
 		if ((test = find_sht(set_int, *(set_int + j), j))) {
 			continue;
 		} else {
-			strcat(str, get_elem(set_int + j));
+			strcat(str, (p_temp = get_elem(set_int + j)));
+			free(p_temp);
 			if (j != i - 1) {
 				strcat(str, ",");
 			}
