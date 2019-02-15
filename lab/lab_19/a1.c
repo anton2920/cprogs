@@ -12,7 +12,7 @@ main(int argc, const char *argv[]) {
     /* Initializing variables */
     struct SDL_Window *fortochka = NULL;
     struct SDL_Surface *screenSurface = NULL;
-    struct SDL_Surface *picture = IMG_Load("../pictures/vegetables.png");
+    struct SDL_Surface *picture = IMG_Load("vegetables.png");
     assert(picture != NULL);
     struct SDL_Rect dest;
     dest.x = 0;

@@ -13,7 +13,7 @@ void vvod_user(int num[M][N], int m, int n)
 	for (i = 0; i < m; i++)
 		for (t = 0; t < n; t++)
 		{
-			scanf_s("%d", &num[i][t]);
+			scanf("%d", &num[i][t]);
 		}
 }
 
@@ -40,12 +40,12 @@ int main()
 	do
 	{
 		printf("Количество строк в матрице=");
-		scanf_s("%d", &m);
+		scanf("%d", &m);
 	} while (m <= 0);
 	do
 	{
 		printf("Количество столбцов в матрице=");
-		scanf_s("%d", &n);
+		scanf("%d", &n);
 	} while (n <= 0);
 	vvod_user(num, m, n);
 	function(num, m, n);

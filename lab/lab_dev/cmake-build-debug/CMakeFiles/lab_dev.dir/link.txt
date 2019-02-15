@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/lab_dev.dir/main.c.o CMakeFiles/lab_dev.dir/input/input.c.o  -o lab_dev -lm 
+/usr/bin/cc -g   CMakeFiles/lab_dev.dir/main.c.o CMakeFiles/lab_dev.dir/input/input.c.o  -o lab_dev -lm -lSDL2_image /usr/lib/x86_64-linux-gnu/libSDL2main.a /usr/lib/x86_64-linux-gnu/libSDL2.so -lpthread 
