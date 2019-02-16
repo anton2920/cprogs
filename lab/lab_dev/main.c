@@ -32,6 +32,7 @@ main(int argc, const char *argv[]) {
             SDL_BlitSurface(picture, NULL, screenSurface, &dest);
             SDL_SetColorKey(picture, SDL_TRUE, SDL_MapRGB(picture->format, 0xFF, 0xFF, 0xFF));
 
+            SDL_Delay(200);
             SDL_UpdateWindowSurface(fortochka);
             SDL_Delay(DELAY);
         }
