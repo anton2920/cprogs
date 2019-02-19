@@ -1,20 +1,20 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/local/bin/gmake" "cmTC_0ef95/fast"
-/usr/local/bin/gmake -f CMakeFiles/cmTC_0ef95.dir/build.make CMakeFiles/cmTC_0ef95.dir/build
-gmake[1]: Entering directory '/usr/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0ef95.dir/CheckSymbolExists.c.o
-/usr/bin/cc   -std=gnu90 -o CMakeFiles/cmTC_0ef95.dir/CheckSymbolExists.c.o   -c /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_0ef95
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ef95.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_0ef95.dir/CheckSymbolExists.c.o  -o cmTC_0ef95 
-CMakeFiles/cmTC_0ef95.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x19): undefined reference to `pthread_create'
-cc: error: linker command failed with exit code 1 (use -v to see invocation)
-gmake[1]: *** [CMakeFiles/cmTC_0ef95.dir/build.make:87: cmTC_0ef95] Error 1
-gmake[1]: Leaving directory '/usr/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
-gmake: *** [Makefile:121: cmTC_0ef95/fast] Error 2
+Run Build Command:"/usr/bin/make" "cmTC_1a8b0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1a8b0.dir/build.make CMakeFiles/cmTC_1a8b0.dir/build
+make[1]: Вход в каталог `/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1a8b0.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -std=gnu90 -o CMakeFiles/cmTC_1a8b0.dir/CheckSymbolExists.c.o   -c /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_1a8b0
+/home/anton/Загрузки/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a8b0.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_1a8b0.dir/CheckSymbolExists.c.o  -o cmTC_1a8b0 
+CMakeFiles/cmTC_1a8b0.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_1a8b0] Ошибка 1
+make[1]: Выход из каталога `/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [cmTC_1a8b0/fast] Ошибка 2
 
 File /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -34,18 +34,18 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/local/bin/gmake" "cmTC_3ff15/fast"
-/usr/local/bin/gmake -f CMakeFiles/cmTC_3ff15.dir/build.make CMakeFiles/cmTC_3ff15.dir/build
-gmake[1]: Entering directory '/usr/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3ff15.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu90 -o CMakeFiles/cmTC_3ff15.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_3ff15
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ff15.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_3ff15.dir/CheckFunctionExists.c.o  -o cmTC_3ff15 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_e715b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e715b.dir/build.make CMakeFiles/cmTC_e715b.dir/build
+make[1]: Вход в каталог `/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e715b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu90 -o CMakeFiles/cmTC_e715b.dir/CheckFunctionExists.c.o   -c /home/anton/Загрузки/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e715b
+/home/anton/Загрузки/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e715b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e715b.dir/CheckFunctionExists.c.o  -o cmTC_e715b -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
-cc: error: linker command failed with exit code 1 (use -v to see invocation)
-gmake[1]: *** [CMakeFiles/cmTC_3ff15.dir/build.make:87: cmTC_3ff15] Error 1
-gmake[1]: Leaving directory '/usr/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
-gmake: *** [Makefile:121: cmTC_3ff15/fast] Error 2
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_e715b] Ошибка 1
+make[1]: Выход из каталога `/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/CMakeTmp'
+make: *** [cmTC_e715b/fast] Ошибка 2
 
 

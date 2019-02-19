@@ -7,11 +7,11 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/anton/C/lab/lab_dev/input/input.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/input/input.c.o"
   "/home/anton/C/lab/lab_dev/main.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "Clang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/usr/local/include/SDL2"
+  "/usr/include/SDL2"
   )
 
 # Targets to which this target links.
