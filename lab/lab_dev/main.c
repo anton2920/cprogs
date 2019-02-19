@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <SDL.h>
+#include <SDL_image.h>
 #include <assert.h>
 
 #define WIDTH (600)
@@ -16,7 +16,6 @@ main(int argc, const char *argv[]) {
     struct SDL_Window *fortochka = NULL;
     struct SDL_Surface *screenSurface = NULL;
     struct SDL_Surface *picture = NULL;
-    assert(picture != NULL);
     struct SDL_Rect dest;
     dest.x = X_POS;
     dest.y = Y_POS;
@@ -32,8 +31,8 @@ main(int argc, const char *argv[]) {
             screenSurface = SDL_GetWindowSurface(fortochka); /* Getting surface */
             SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xA9, 0xD1, 0x8E));
 
-            /* if ((picture = SDL_LoadBMP("../pictures/vegetables.bmp"))) */
-            if ((picture = IMG_Load("../pictures/vegetables.png"))) {
+            /* if ((picture = SDL_LoadBMP("../pictures/vegetables.bmp"))) { */
+             if ((picture = IMG_Load("../pictures/vegetables.png"))) {
                 SDL_BlitSurface(picture, NULL, screenSurface, &dest);
                 SDL_SetColorKey(picture, SDL_TRUE, SDL_MapRGB(picture->format, 0xFF, 0xFF, 0xFF));
             }
