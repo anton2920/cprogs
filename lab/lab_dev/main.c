@@ -1,49 +1,52 @@
 #include <stdio.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <assert.h>
 
-#define WIDTH (600)
-#define HEIGHT (600)
-#define DELAY (1000 * 5)
-#define X_POS (0)
-#define Y_POS (0)
-#define HEADER ("Pavlovsky")
+int sum_of_elem(char **, int);
+int latoi(const char *);
 
-main(int argc, const char *argv[]) {
+main(int argc, char *argv[]) {
 
     /* Initializing variables */
-    struct SDL_Window *fortochka = NULL;
-    struct SDL_Surface *screenSurface = NULL;
-    struct SDL_Surface *picture = NULL;
-    assert(picture != NULL);
-    struct SDL_Rect dest;
-    dest.x = X_POS;
-    dest.y = Y_POS;
+    char **p;
+    int c, a;
 
-    /* SDL2 */
-    if (SDL_Init(SDL_INIT_VIDEO) == -1) {
-        printf("Error! %s\n", SDL_GetError());
-    } else {
-        fortochka = SDL_CreateWindow(HEADER, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
-        if (fortochka == NULL) {
-            printf("Error #2! %s\n", SDL_GetError());
-        } else {
-            screenSurface = SDL_GetWindowSurface(fortochka); /* Getting surface */
-            SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xA9, 0xD1, 0x8E));
+    /* Main part */
+    c = argc - 1;
+    p = argv + 1;
 
-            /* if ((picture = SDL_LoadBMP("../pictures/vegetables.bmp"))) */
-            if ((picture = IMG_Load("../pictures/vegetables.png"))) {
-                SDL_BlitSurface(picture, NULL, screenSurface, &dest);
-                SDL_SetColorKey(picture, SDL_TRUE, SDL_MapRGB(picture->format, 0xFF, 0xFF, 0xFF));
-            }
+    /* Sum of elements */
+    printf("Sum of the elements equals to ");
+    a = sum_of_elem(p, c);
+    printf("%d\n", a);
+}
 
-			SDL_Delay(200);
-            SDL_UpdateWindowSurface(fortochka);
-            SDL_Delay(DELAY);
+int sum_of_elem(char *a[], int b) {
 
-            SDL_DestroyWindow(fortochka);
-        }
-        SDL_Quit();
+    /* Initializing variables */
+    int d; /* sum */
+
+    /* Main part */
+    for (d = 0, --b; b >= 0; --b) {
+        d += latoi(*(a + b));
     }
+
+    /* Returning value */
+    return d;
+}
+
+int latoi(const char *b) {
+
+    /* Initializing variables */
+    int a = 0, c;
+    char d;
+
+    /* Main part */
+    for (c = 0; *(b + c); ++c) {
+        d = *(b + c);
+        d -= '0';
+        a *= 0xA;
+        a += d;
+    }
+
+    /* Returning value */
+    return a;
 }

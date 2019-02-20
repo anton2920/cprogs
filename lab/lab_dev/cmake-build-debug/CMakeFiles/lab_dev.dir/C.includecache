@@ -17,10 +17,4 @@ input.h
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-assert.h
--
 
