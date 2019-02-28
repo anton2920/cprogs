@@ -10,6 +10,7 @@
 #define HEIGHT (800)
 #define CENTER_X (WIDTH / 2)
 #define CENTER_Y (HEIGHT / 2)
+#define MULTIPLIER (4)
 
 struct point {
     int x;

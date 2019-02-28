@@ -73,15 +73,19 @@ void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, int a, int c) {
     SDL_RenderDrawLine(*renderer, WIDTH / 2, 0, WIDTH / 2, HEIGHT);
     SDL_RenderDrawLine(*renderer, 0, HEIGHT / 2, WIDTH, HEIGHT / 2);
 
-    SDL_RenderDrawLine(*renderer, WIDTH / 2, 0, WIDTH / 2 - 10, 10);
-    SDL_RenderDrawLine(*renderer, WIDTH / 2, 0, WIDTH / 2 + 10, 10);
-    SDL_RenderDrawLine(*renderer, WIDTH, HEIGHT / 2, WIDTH - 10, HEIGHT / 2 - 10);
-    SDL_RenderDrawLine(*renderer, WIDTH, HEIGHT / 2, WIDTH - 10, HEIGHT / 2 + 10);
+    SDL_RenderDrawLine(*renderer, CENTER_X, 0, CENTER_X - 10, 10);
+    SDL_RenderDrawLine(*renderer, CENTER_X, 0, CENTER_X + 10, 10);
+    SDL_RenderDrawLine(*renderer, WIDTH, CENTER_Y, WIDTH - 10, CENTER_Y - 10);
+    SDL_RenderDrawLine(*renderer, WIDTH, CENTER_Y, WIDTH - 10, CENTER_Y + 10);
 
+    SDL_SetRenderDrawColor(*renderer, 0x01, 0x01, 0x01, 200);
+    for (x = 0; x * MULTIPLIER < WIDTH - 10; ++x) {
+    	SDL_RenderDrawLine(*renderer, x * MULTIPLIER, CENTER_Y + 3, x * MULTIPLIER, CENTER_Y - 3);
+    }
 
     SDL_SetRenderDrawColor(*renderer, 0xFF, 0x00, 0x00, 0);
     for (x = dn1->left_x + 1; x <= dn1->right_x; ++x) {
-        SDL_RenderDrawLine(*renderer, CENTER_X + (x * 2) - 1, CENTER_Y - func(x - 1, a, c), CENTER_X + (x * 2), CENTER_Y - func(x, a, c));
+        SDL_RenderDrawLine(*renderer, CENTER_X + (x * MULTIPLIER) - 1, CENTER_Y - func(x - 1, a, c), CENTER_X + (x * MULTIPLIER), CENTER_Y - func(x, a, c));
     }
 
     SDL_Delay(500);

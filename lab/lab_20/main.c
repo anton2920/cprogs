@@ -10,6 +10,11 @@ int main(int argc, const char *argv[]) {
     struct SDL_Renderer *renderer = NULL;
     struct diapazon dn1;
 
+    if (argc == 1 || argc > 2) {
+        printf("Error! Problem with arguments!\n");
+        return 0;
+    }
+
     if (**(argv + 1) == '3') {
         /* I/O flow && VarCheck */
         do {
@@ -20,7 +25,7 @@ int main(int argc, const char *argv[]) {
         do {
             printf("Type right border: ");
             scanf("%d", &dn1.right_x);
-        } while (dn1.right_x > 20);
+        } while (dn1.right_x > 20 && dn1.right_x > dn1.left_x);
 
         printf("Type A: ");
         scanf("%d", &a);
