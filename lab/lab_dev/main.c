@@ -7,6 +7,7 @@
 #define HEIGHT (800)
 #define CENTER_X (WIDTH / 2)
 #define CENTER_Y (HEIGHT / 2)
+#define MULTIPLIER (15)
 
 struct point {
     int x;
@@ -14,43 +15,48 @@ struct point {
 };
 
 struct diapazon {
-    int left_x;
-    int right_x;
+    double left_x;
+    double right_x;
 };
 
 int SDL_Init_All(struct SDL_Window **, struct SDL_Renderer **);
 void sub_1(struct SDL_Renderer **);
 void sub_2(struct SDL_Renderer **);
 void rand_clr(int *, int *, int *);
-void sub_3(struct SDL_Renderer **, struct diapazon *, int, int);
-int func(int, int, int);
+void sub_3(struct SDL_Renderer **, struct diapazon *, double, double);
+double func(double, double, double);
 
 int main(int argc, const char *argv[]) {
 
     /* Initializing variables */
-    int a, c;
+    double a, c;
     srand((unsigned int) time(NULL));
     Uint32 delay = 1000 * 5;
     struct SDL_Window *window = NULL;
     struct SDL_Renderer *renderer = NULL;
     struct diapazon dn1;
 
+    if (argc == 1 || argc > 2) {
+        printf("Error! Problem with arguments!\n");
+        return 0;
+    }
+
     if (**(argv + 1) == '3') {
         /* I/O flow && VarCheck */
         do {
             printf("Type left border: ");
-            scanf("%d", &dn1.left_x);
+            scanf("%lf", &dn1.left_x);
         } while (dn1.left_x < -10);
 
         do {
             printf("Type right border: ");
-            scanf("%d", &dn1.right_x);
+            scanf("%lf", &dn1.right_x);
         } while (dn1.right_x > 20);
 
         printf("Type A: ");
-        scanf("%d", &a);
+        scanf("%lf", &a);
         printf("Type C: ");
-        scanf("%d", &c);
+        scanf("%lf", &c);
     }
 
     /* SDL2 */
@@ -169,10 +175,11 @@ void rand_clr(int *red, int *green, int *blue) {
     }
 }
 
-void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, int a, int c) {
+void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, double a, double c) {
 
     /* Initializing variables */
-    int x;
+    int i;
+    double x;
 
     /* SDL2 */
     SDL_SetRenderDrawColor(*renderer, 0xFF, 0xFF, 0xFF, 0);
@@ -183,15 +190,19 @@ void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, int a, int c) {
     SDL_RenderDrawLine(*renderer, WIDTH / 2, 0, WIDTH / 2, HEIGHT);
     SDL_RenderDrawLine(*renderer, 0, HEIGHT / 2, WIDTH, HEIGHT / 2);
 
-    SDL_RenderDrawLine(*renderer, WIDTH / 2, 0, WIDTH / 2 - 10, 10);
-    SDL_RenderDrawLine(*renderer, WIDTH / 2, 0, WIDTH / 2 + 10, 10);
-    SDL_RenderDrawLine(*renderer, WIDTH, HEIGHT / 2, WIDTH - 10, HEIGHT / 2 - 10);
-    SDL_RenderDrawLine(*renderer, WIDTH, HEIGHT / 2, WIDTH - 10, HEIGHT / 2 + 10);
+    SDL_RenderDrawLine(*renderer, CENTER_X, 0, CENTER_X - 10, 10);
+    SDL_RenderDrawLine(*renderer, CENTER_X, 0, CENTER_X + 10, 10);
+    SDL_RenderDrawLine(*renderer, WIDTH, CENTER_Y, WIDTH - 10, CENTER_Y - 10);
+    SDL_RenderDrawLine(*renderer, WIDTH, CENTER_Y, WIDTH - 10, CENTER_Y + 10);
 
+    SDL_SetRenderDrawColor(*renderer, 0x01, 0x01, 0x01, 200);
+    for (i = 0; i * MULTIPLIER < WIDTH - 10; ++i) {
+        SDL_RenderDrawLine(*renderer, i * MULTIPLIER, CENTER_Y + 3, i * MULTIPLIER, CENTER_Y - 3);
+    }
 
     SDL_SetRenderDrawColor(*renderer, 0xFF, 0x00, 0x00, 0);
-    for (x = dn1->left_x + 1; x <= dn1->right_x; ++x) {
-        SDL_RenderDrawLine(*renderer, CENTER_X + (x * 2) - 1, CENTER_Y - func(x - 1, a, c), CENTER_X + (x * 2), CENTER_Y - func(x, a, c));
+    for (x = dn1->left_x; x <= dn1->right_x; x += 0.01) {
+        SDL_RenderDrawPoint(*renderer, CENTER_X + x * MULTIPLIER, CENTER_Y - func(x, a, c));
     }
 
     SDL_Delay(500);
@@ -199,7 +210,7 @@ void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, int a, int c) {
 
 }
 
-int func(int x, int a, int c) {
+double func(double x, double a, double c) {
 
     /* Returning value */
     return a * x * x * x + c;

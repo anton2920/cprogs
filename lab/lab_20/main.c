@@ -3,7 +3,7 @@
 int main(int argc, const char *argv[]) {
 
     /* Initializing variables */
-    int a, c;
+    double a, c;
     srand((unsigned int) time(NULL));
     Uint32 delay = 1000 * 5;
     struct SDL_Window *window = NULL;
@@ -19,18 +19,18 @@ int main(int argc, const char *argv[]) {
         /* I/O flow && VarCheck */
         do {
             printf("Type left border: ");
-            scanf("%d", &dn1.left_x);
+            scanf("%lf", &dn1.left_x);
         } while (dn1.left_x < -10);
 
         do {
             printf("Type right border: ");
-            scanf("%d", &dn1.right_x);
-        } while (dn1.right_x > 20 && dn1.right_x > dn1.left_x);
+            scanf("%lf", &dn1.right_x);
+        } while (dn1.right_x > 20);
 
         printf("Type A: ");
-        scanf("%d", &a);
+        scanf("%lf", &a);
         printf("Type C: ");
-        scanf("%d", &c);
+        scanf("%lf", &c);
     }
 
     /* SDL2 */

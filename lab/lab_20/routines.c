@@ -26,7 +26,7 @@ void rand_clr(int *red, int *green, int *blue) {
     }
 }
 
-int func(int x, int a, int c) {
+double func(double x, double a, double c) {
 
     /* Returning value */
     return a * x * x * x + c;
