@@ -1,102 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <SDL2/SDL.h>
-
-#define WIDTH (800)
-#define HEIGHT (800)
-#define CENTER_X (WIDTH / 2)
-#define CENTER_Y (HEIGHT / 2)
-
-struct point {
-    int x;
-    int y;
-};
-
-struct diapazon {
-    int left_x;
-    int right_x;
-};
-
-int SDL_Init_All(struct SDL_Window **, struct SDL_Renderer **);
-void sub_1(struct SDL_Renderer **);
-void sub_2(struct SDL_Renderer **);
-void rand_clr(int *, int *, int *);
-void sub_3(struct SDL_Renderer **, struct diapazon *, int, int);
-int func(int, int, int);
-
-int main(int argc, const char *argv[]) {
-
-    /* Initializing variables */
-    int a, c;
-    srand((unsigned int) time(NULL));
-    Uint32 delay = 1000 * 5;
-    struct SDL_Window *window = NULL;
-    struct SDL_Renderer *renderer = NULL;
-    struct diapazon dn1;
-
-    if (**(argv + 1) == '3') {
-        /* I/O flow && VarCheck */
-        do {
-            printf("Type left border: ");
-            scanf("%d", &dn1.left_x);
-        } while (dn1.left_x < -10);
-
-        do {
-            printf("Type right border: ");
-            scanf("%d", &dn1.right_x);
-        } while (dn1.right_x > 20);
-
-        printf("Type A: ");
-        scanf("%d", &a);
-        printf("Type C: ");
-        scanf("%d", &c);
-    }
-
-    /* SDL2 */
-    if (!(SDL_Init_All(&window, &renderer))) {
-        printf("Error! Code: %s\n", SDL_GetError());
-    } else {
-        switch (**(argv + 1)) {
-            case '1':
-                sub_1(&renderer);
-                break;
-            case '2':
-                sub_2(&renderer);
-                break;
-            case '3':
-                sub_3(&renderer, &dn1, a, c);
-                break;
-            default:
-                printf("Error! Usage: name of sub-task\n");
-                delay = 0;
-        }
-
-        SDL_Delay(delay);
-        SDL_DestroyRenderer(renderer);
-        SDL_DestroyWindow(window);
-    }
-
-    SDL_Quit();
-
-    /* Returning value */
-    return 0;
-
-}
-
-int SDL_Init_All(struct SDL_Window **window, struct SDL_Renderer **renderer) {
-
-    /* SDL2 */
-    SDL_Init(SDL_INIT_VIDEO);
-    if ((*window = SDL_CreateWindow("lab_20", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN)) < 0) {
-        return 0;
-    } else if (!(*renderer = SDL_CreateRenderer(*window, -1, 0))) {
-        return 0;
-    }
-
-    /* Returning value */
-    return 1;
-}
+#include "main.h"
 
 void sub_1(struct SDL_Renderer **renderer) {
 
@@ -157,18 +59,6 @@ void sub_2(struct SDL_Renderer **renderer) {
     SDL_RenderPresent(*renderer);
 }
 
-void rand_clr(int *red, int *green, int *blue) {
-
-    /* Main part */
-    *red = rand() % 256;
-    *green = rand() % 256;
-    *blue = rand() % 256;
-
-    if (*red == 0xFF && *green == 0xFF && *blue == 0xFF) {
-        rand_clr(red, green, blue);
-    }
-}
-
 void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, int a, int c) {
 
     /* Initializing variables */
@@ -197,10 +87,4 @@ void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, int a, int c) {
     SDL_Delay(500);
     SDL_RenderPresent(*renderer);
 
-}
-
-int func(int x, int a, int c) {
-
-    /* Returning value */
-    return a * x * x * x + c;
 }
