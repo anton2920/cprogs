@@ -35,7 +35,7 @@ void sub_1(struct SDL_Renderer **renderer) {
 void sub_2(struct SDL_Renderer **renderer) {
 
     /* Initializing variables */
-    int i, r, g, b;
+    int i, r, g, b, j;
     struct point pt1 = { 0, 10 };
     struct point pt2 = { 10, 0 };
 
@@ -43,20 +43,22 @@ void sub_2(struct SDL_Renderer **renderer) {
     SDL_SetRenderDrawColor(*renderer, 0xFF, 0xFF, 0xFF, 0);
     SDL_RenderClear(*renderer);
 
-    for (i = 0; i <= 780; i += 20) {
+    for (i = 0, j = 0; i <= 780; i += 20, j += 2) {
         rand_clr(&r, &g, &b);
         SDL_SetRenderDrawColor(*renderer, r ,g, b, 0);
         SDL_RenderDrawLine(*renderer, pt1.x, pt1.y + i, pt2.x + i, pt2.y);
+    	SDL_Delay(100 + j);
+	    SDL_RenderPresent(*renderer);
     }
 
-    for (i = 0; i <= 780; i += 20) {
+    for (i = 10; i <= 780; i += 20) {
         rand_clr(&r, &g, &b);
         SDL_SetRenderDrawColor(*renderer, r ,g, b, 0);
         SDL_RenderDrawLine(*renderer, pt1.x + i, 800, 800, pt2.y + i);
+    	SDL_Delay(200);
+	    SDL_RenderPresent(*renderer);
     }
 
-    SDL_Delay(500);
-    SDL_RenderPresent(*renderer);
 }
 
 void sub_3(struct SDL_Renderer **renderer, struct diapazon *dn1, double a, double c) {
