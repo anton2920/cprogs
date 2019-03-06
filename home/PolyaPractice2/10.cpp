@@ -1,17 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale>
+#include <limits.h>
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
 	double chislo;
 	int a, b, i;
 	do
 	{
 		i = 0;
-		printf("¬ведите число = ");
-		scanf_s("%lf", &chislo);
+		printf("Type a number: ");
+		scanf("%lf", &chislo);
 		if (chislo - int(chislo) != 0) i = 1;
 	} while ((chislo < 2)||(i==1)||(chislo>INT_MAX));
 
@@ -24,6 +23,5 @@ int main()
 		printf("%d\n", b);
 	}
 
-	system("pause");
 	return 0;
 }
