@@ -3,14 +3,19 @@
 #include <time.h>
 #include <SDL2/SDL.h>
 
+#define TITLE ("lab_21")
 #define WIDTH (800)
 #define HEIGHT (800)
-#define DELAY (10)
+
+#define DELAY (16)
+#define ITER (500)
 #define SIZE (200)
+
 #define MAX_VEL_X (1)
 #define MIN_VEL_X (0)
-#define MAX_VEL_Y (7)
-#define MIN_VEL_Y (5)
+#define MAX_VEL_Y (6)
+#define MIN_VEL_Y (4)
+
 #define RECT_W (3)
 #define RECT_H (3)
 
@@ -27,12 +32,8 @@ struct dva_mas {
     struct SDL_Rect snow[WIDTH];
 };
 
-struct point2 {
-    int is_on;
-};
-
 int SDL_Init_All(struct SDL_Window **, struct SDL_Renderer **);
-void set_coord(struct dva_mas *, int);
+void set_coord(struct dva_mas *, int, int);
 
 int main(int argc, const char *argv[]) {
 
@@ -44,20 +45,26 @@ int main(int argc, const char *argv[]) {
     struct point *mas_p;
     struct dva_mas dva = {};
     struct SDL_Rect rect;
-    set_coord(&dva, 1);
+    set_coord(&dva, 1, argc - 1);
+
+    /* VarCheck */
+    if (argc > 2 || (argc == 2 && **(argv + 1) != '1')) {
+        printf("Error! Problems with arguments!\n");
+        return 0;
+    }
 
     /* SDL2 */
     if (!(SDL_Init_All(&window, &renderer))) {
         printf("Error! Code: %s\n", SDL_GetError());
     } else {
-        for (iter = 0; iter < 100000000; ++iter) {
+        for (iter = 0; iter < ITER; ++iter) {
 
             /* Background */
             SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
             SDL_RenderClear(renderer);
 
             /* Flakes */
-            set_coord(&dva, 0);
+            set_coord(&dva, 0, argc - 1);
             SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
             for (i = 0, mas_p = dva.mas; i < SIZE; ++i, ++mas_p) {
                 rect.x = mas_p->x;
@@ -65,9 +72,11 @@ int main(int argc, const char *argv[]) {
                 rect.h = RECT_H;
                 rect.w = RECT_W;
                 SDL_RenderFillRect(renderer, &rect);
-                for (j = 0; j < WIDTH; ++j) {
-                    if (dva.snow[j].y) {
-                        SDL_RenderFillRect(renderer, &dva.snow[j]);
+                if (argc == 2 && **(argv + 1) == '1') {
+                    for (j = 0; j < WIDTH; ++j) {
+                        if (dva.snow[j].y) {
+                            SDL_RenderFillRect(renderer, &dva.snow[j]);
+                        }
                     }
                 }
                 /* SDL_RenderDrawPoint(renderer, mas_p->x, mas_p->y); */
@@ -77,7 +86,7 @@ int main(int argc, const char *argv[]) {
             SDL_RenderPresent(renderer);
             SDL_Delay(DELAY);
         }
-
+        
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);
     }
@@ -93,7 +102,7 @@ int SDL_Init_All(struct SDL_Window **window, struct SDL_Renderer **renderer) {
 
     /* SDL2 */
     SDL_Init(SDL_INIT_VIDEO);
-    if ((*window = SDL_CreateWindow("lab_20", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN)) < 0) {
+    if ((*window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN)) < 0) {
         return 0;
     } else if (!(*renderer = SDL_CreateRenderer(*window, -1, 0))) {
         return 0;
@@ -103,7 +112,7 @@ int SDL_Init_All(struct SDL_Window **window, struct SDL_Renderer **renderer) {
     return 1;
 }
 
-void set_coord(struct dva_mas *dva, int init) {
+void set_coord(struct dva_mas *dva, int init, int argc) {
 
     /* Initializing variables */
     int i;
@@ -128,17 +137,23 @@ void set_coord(struct dva_mas *dva, int init) {
                 dva->mas[i].x += WIDTH;
             }
 
-            if (dva->mas[i].y > HEIGHT - dva->snow[dva->mas[i].x].h) {
-                dva->mas[i].y -= HEIGHT - RECT_H;
+            if (argc) {
+                if (dva->mas[i].y > HEIGHT - dva->snow[dva->mas[i].x].h) {
+                    dva->mas[i].y -= HEIGHT;
 
-                if (!dva->snow[dva->mas[i].x].y) {
-                    dva->snow[dva->mas[i].x].x = dva->mas[i].x;
-                    dva->snow[dva->mas[i].x].y = HEIGHT - RECT_H;
-                    dva->snow[dva->mas[i].x].w = RECT_W;
-                } else {
-                    dva->snow[dva->mas[i].x].y -= RECT_H;
+                    if (!dva->snow[dva->mas[i].x].y) {
+                        dva->snow[dva->mas[i].x].x = dva->mas[i].x;
+                        dva->snow[dva->mas[i].x].y = HEIGHT - RECT_H;
+                        dva->snow[dva->mas[i].x].w = RECT_W;
+                    } else {
+                        dva->snow[dva->mas[i].x].y -= RECT_H;
+                    }
+                    dva->snow[dva->mas[i].x].h += RECT_H;
                 }
-                dva->snow[dva->mas[i].x].h += RECT_H;
+            } else {
+                if (dva->mas[i].y > HEIGHT) {
+                    dva->mas[i].y -= HEIGHT;
+                }
             }
         }
     }
