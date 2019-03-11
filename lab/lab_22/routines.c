@@ -69,7 +69,18 @@ void draw_squares(struct SDL_Renderer *renderer, struct square *mas_small, struc
     SDL_RenderPresent(renderer);
 }
 
-struct square *delete_square(struct square *item) {
+void delete_square_queue(struct square *mas, struct square *item) {
+
+    /* Initializing variables */
+
+    /* Main part */
+    for ( ; item >= mas; ++mas) {
+        *mas = *(mas + 1);
+    }
+
+}
+
+struct square *delete_square_stack(struct square *item) {
 
     /* Initializing variables */
     item->size = DELETE;

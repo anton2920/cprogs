@@ -20,26 +20,38 @@ int main(int argc, const char *argv[]) {
                 quit = true;
                 continue;
             }
-            if (i + j < SIZE) {
+            if (i + j < SIZE - 1) {
                 if (event.type == SDL_MOUSEBUTTONDOWN) {
                     if (event.button.button == SDL_BUTTON_LEFT) {
-                        last_small = add_square(mas_small + i++, event.button.x - SMALL / 2, event.button.y - SMALL / 2, SMALL);
+                        last_small = add_square(mas_small + i++, event.button.x - SMALL_RECT / 2, event.button.y - SMALL_RECT / 2, SMALL);
                     }
 
                     if (event.button.button == SDL_BUTTON_RIGHT) {
-                        last_big = add_square(mas_big + j++, event.button.x - BIG / 2, event.button.y - BIG / 2, BIG);
+                        last_big = add_square(mas_big + j++, event.button.x - BIG_RECT / 2, event.button.y - BIG_RECT / 2, BIG);
                     }
                 }
             }
 
             if (event.type == SDL_KEYDOWN) {
                 if (event.key.keysym.sym == SDLK_q && last_small >= mas_small) {
-                    last_small = delete_square(last_small);
+                    delete_square_queue(mas_small, last_small);
+                    --last_small;
+                    --i;
+                }
+
+                if (event.key.keysym.sym == SDLK_a && last_small >= mas_small) {
+                    last_small = delete_square_stack(last_small);
                     --i;
                 }
 
                 if (event.key.keysym.sym == SDLK_e && last_big >= mas_big) {
-                    last_big = delete_square(last_big);
+                    delete_square_queue(mas_big, last_big);
+                    --last_big;
+                    --j;
+                }
+
+                if (event.key.keysym.sym == SDLK_d && last_big >= mas_big) {
+                    last_big = delete_square_stack(last_big);
                     --j;
                 }
 
