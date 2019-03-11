@@ -69,13 +69,11 @@ void draw_squares(struct SDL_Renderer *renderer, struct square *mas_small, struc
     SDL_RenderPresent(renderer);
 }
 
-void delete_square_queue(struct square *mas, struct square *item) {
-
-    /* Initializing variables */
+void delete_square_queue(struct square *item, struct square *last) {
 
     /* Main part */
-    for ( ; item >= mas; ++mas) {
-        *mas = *(mas + 1);
+    for ( ; last >= item; ++item) {
+        *item = *(item + 1);
     }
 
 }
@@ -98,4 +96,26 @@ void delete_all(struct square *mas) {
     for (i = 0; i < SIZE || mas->size != DELETE; ++i, ++mas) {
         mas->size = DELETE;
     }
+}
+
+struct square *find_square(struct square *mas_small, struct square *mas_big, int x, int y) {
+
+    /* Initializing variables */
+    struct square *ans = NULL;
+
+    /* Main part */
+    for ( ; mas_big->size != DELETE && ans == NULL; ++mas_big) {
+        if (x >= mas_big->rect.x && x <= mas_big->rect.x + BIG_RECT && y >= mas_big->rect.y && y <= mas_big->rect.y + BIG_RECT) {
+            ans = mas_big;
+        }
+    }
+
+    for ( ; mas_small->size != DELETE && ans == NULL; ++mas_small) {
+        if (x >= mas_small->rect.x && x <= mas_small->rect.x + SMALL_RECT && y >= mas_small->rect.y && y <= mas_small->rect.y + SMALL_RECT) {
+            ans = mas_small;
+        }
+    }
+
+    /* Returning value */
+    return ans;
 }

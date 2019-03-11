@@ -14,9 +14,11 @@
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab_22/main" afterPath="$PROJECT_DIR$/../lab_22/main" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab_22/main.o" afterPath="$PROJECT_DIR$/../lab_22/main.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab_22/routines.o" afterPath="$PROJECT_DIR$/../lab_22/routines.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab_22/main.c" afterPath="$PROJECT_DIR$/../lab_22/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab_22/main.h" afterPath="$PROJECT_DIR$/../lab_22/main.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lab_22/routines.c" afterPath="$PROJECT_DIR$/../lab_22/routines.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
@@ -44,8 +46,8 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+            <state relative-caret-position="59">
+              <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="252" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -69,6 +71,7 @@
       <find>%d</find>
       <find>mas</find>
       <find>dva-&gt;mas-&gt;</find>
+      <find>mas_big</find>
     </findStrings>
     <replaceStrings>
       <replace>outputs</replace>
@@ -82,6 +85,7 @@
       <replace>%lf</replace>
       <replace>dva-&gt;mas</replace>
       <replace>dva-&gt;mas[i].</replace>
+      <replace>mas_small</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -262,7 +266,7 @@
       <workItem from="1552294600950" duration="4565000" />
       <workItem from="1552305798117" duration="442000" />
       <workItem from="1552306479332" duration="1488000" />
-      <workItem from="1552322135636" duration="9271000" />
+      <workItem from="1552322135636" duration="11599000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -289,7 +293,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167328000" />
+    <option name="totallyTimeSpent" value="169656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,8 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        <state relative-caret-position="59">
+          <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="252" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

@@ -31,11 +31,13 @@ enum bool {
     true = TRUE
 };
 
+/* routines.c */
 int SDL_Init_All(struct SDL_Window **, struct SDL_Renderer **);
 struct square *add_square(struct square *, int, int, int);
 void draw_squares(struct SDL_Renderer *, struct square *, struct square *);
 void delete_square_queue(struct square *, struct square *);
 struct square *delete_square_stack(struct square *);
 void delete_all(struct square *);
+struct square *find_square(struct square *, struct square *, int, int);
 
 #endif
