@@ -8,6 +8,7 @@ int main(int argc, const char *argv[]) {
     struct SDL_Window *window = NULL;
     struct SDL_Renderer *renderer = NULL;
     struct point mas[SIZE], *mas_p;
+	struct SDL_Rect rect;
     set_coord(mas, 1);
 
     /* SDL2 */
@@ -23,9 +24,14 @@ int main(int argc, const char *argv[]) {
             /* Flakes */
             set_coord(mas, 0);
             SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-            for (i = 0, mas_p = mas; i < SIZE; ++i, ++mas_p) {
-                SDL_RenderDrawPoint(renderer, mas_p->x, mas_p->y);
-            }
+			for (i = 0, mas_p = mas; i < SIZE; ++i, ++mas_p) {
+			    rect.x = mas_p->x;
+				rect.y = mas_p->y;
+				rect.h = RECT_H;
+				rect.w = RECT_W;
+				SDL_RenderFillRect(renderer, &rect);
+				/* SDL_RenderDrawPoint(renderer, mas_p->x, mas_p->y); */
+			}
 
             /* Ending */
             SDL_RenderPresent(renderer);

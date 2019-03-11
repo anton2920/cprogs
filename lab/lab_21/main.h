@@ -12,8 +12,10 @@
 #define SIZE (200)
 #define MAX_VEL_X (5)
 #define MIN_VEL_X (0)
-#define MAX_VEL_Y (20)
+#define MAX_VEL_Y (15)
 #define MIN_VEL_Y (10)
+#define RECT_W (4)
+#define RECT_H (4)
 
 struct point {
     int x;
