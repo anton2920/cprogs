@@ -3,8 +3,8 @@
 #include <SDL2/SDL_image.h>
 #include <assert.h>
 
-#define WIDTH (600)
-#define HEIGHT (600)
+#define WIDTH (1200)
+#define HEIGHT (1200)
 #define DELAY (1000 * 5)
 
 main(int argc, const char *argv[]) {

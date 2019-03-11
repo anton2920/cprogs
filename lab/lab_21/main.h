@@ -8,14 +8,14 @@
 
 #define WIDTH (800)
 #define HEIGHT (800)
-#define DELAY (20)
+#define DELAY (15)
 #define SIZE (200)
-#define MAX_VEL_X (5)
+#define MAX_VEL_X (1)
 #define MIN_VEL_X (0)
-#define MAX_VEL_Y (15)
-#define MIN_VEL_Y (10)
-#define RECT_W (4)
-#define RECT_H (4)
+#define MAX_VEL_Y (6)
+#define MIN_VEL_Y (5)
+#define RECT_W (3)
+#define RECT_H (3)
 
 struct point {
     int x;
