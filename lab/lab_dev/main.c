@@ -86,7 +86,7 @@ int main(int argc, const char *argv[]) {
             SDL_RenderPresent(renderer);
             SDL_Delay(DELAY);
         }
-        
+
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);
     }
