@@ -177,6 +177,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
 .PHONY : main.c.s
 
+proj_folder/source.o: proj_folder/source.c.o
+
+.PHONY : proj_folder/source.o
+
+# target to build an object file
+proj_folder/source.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/proj_folder/source.c.o
+.PHONY : proj_folder/source.c.o
+
+proj_folder/source.i: proj_folder/source.c.i
+
+.PHONY : proj_folder/source.i
+
+# target to preprocess a source file
+proj_folder/source.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/proj_folder/source.c.i
+.PHONY : proj_folder/source.c.i
+
+proj_folder/source.s: proj_folder/source.c.s
+
+.PHONY : proj_folder/source.s
+
+# target to generate assembly for a file
+proj_folder/source.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/proj_folder/source.c.s
+.PHONY : proj_folder/source.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... proj_folder/source.o"
+	@echo "... proj_folder/source.i"
+	@echo "... proj_folder/source.s"
 .PHONY : help
 
 

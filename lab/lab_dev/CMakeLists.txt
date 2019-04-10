@@ -3,9 +3,9 @@ project(lab_dev)
 
 set(CMAKE_C_STANDARD 90)
 
-
-set(SOURCE_FILES main.c input/input.c input/input.h)
-add_executable(lab_dev ${SOURCE_FILES} input/input.c input/input.h)
+set(HEADER_FILES input/input.h proj_folder/source.h)
+set(SOURCE_FILES main.c input/input.c proj_folder/source.c)
+add_executable(lab_dev ${HEADER_FILES} ${SOURCE_FILES})
 
 target_link_libraries(lab_dev m SDL2_image)
 

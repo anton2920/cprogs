@@ -15,8 +15,16 @@ input.h
 /home/anton/C/lab/lab_dev/input/input.h
 
 /home/anton/C/lab/lab_dev/main.c
+proj_folder/source.h
+/home/anton/C/lab/lab_dev/proj_folder/source.h
+
+/home/anton/C/lab/lab_dev/proj_folder/source.c
+source.h
+/home/anton/C/lab/lab_dev/proj_folder/source.h
+
+/home/anton/C/lab/lab_dev/proj_folder/source.h
 stdio.h
 -
-SDL2/SDL.h
+stdlib.h
 -
 
