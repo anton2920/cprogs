@@ -47,7 +47,7 @@ bool create_array(struct array *array1) {
             }
         case int_pp:
             if ((array1->mas.i_pp = (int **) malloc(array1->rows * sizeof(int *))) != NULL) {
-                for (i = 0; i < array1->columns; ++i) {
+                for (i = 0; i < array1->rows; ++i) {
                     if ((array1->mas.i_pp[i] = (int *) malloc(array1->columns * sizeof(int))) == NULL) {
                         return false;
                     }
@@ -56,7 +56,7 @@ bool create_array(struct array *array1) {
             return true;
         case double_pp:
             if ((array1->mas.d_pp = (double **) malloc(array1->rows * sizeof(double *))) != NULL) {
-                for (i = 0; i < array1->columns; ++i) {
+                for (i = 0; i < array1->rows; ++i) {
                     if ((array1->mas.d_pp[i] = (double *) malloc(array1->columns * sizeof(double))) == NULL) {
                         return false;
                     }
@@ -65,7 +65,7 @@ bool create_array(struct array *array1) {
             return true;
         case char_pp:
             if ((array1->mas.c_pp = (char **) malloc(array1->rows * sizeof(char *))) != NULL) {
-                for (i = 0; i < array1->columns; ++i) {
+                for (i = 0; i < array1->rows; ++i) {
                     if ((array1->mas.c_pp[i] = (char *) malloc(array1->columns * sizeof(char))) == NULL) {
                         return false;
                     }
@@ -74,7 +74,7 @@ bool create_array(struct array *array1) {
             return true;
         case void_pp:
             if ((array1->mas.vd_pp = (void **) malloc(array1->rows * sizeof(void *))) != NULL) {
-                for (i = 0; i < array1->columns; ++i) {
+                for (i = 0; i < array1->rows; ++i) {
                     if ((array1->mas.vd_pp[i] = malloc(array1->columns * array1->size_of_elem)) == NULL) {
                         return false;
                     }
@@ -384,21 +384,25 @@ void delete_array(struct array *array1) {
             for (i = 0; i < array1->columns; ++i) {
                 free(array1->mas.i_pp[i]);
             }
+            free(array1->mas.i_pp);
             break;
         case double_pp:
             for (i = 0; i < array1->columns; ++i) {
                 free(array1->mas.d_pp[i]);
             }
+            free(array1->mas.d_pp);
             break;
         case char_pp:
             for (i = 0; i < array1->columns; ++i) {
                 free(array1->mas.d_pp[i]);
             }
+            free(array1->mas.c_pp);
             break;
         case void_pp:
             for (i = 0; i < array1->columns; ++i) {
                 free(array1->mas.vd_pp[i]);
             }
+            free(array1->mas.vs_pp);
             break;
         default:
             break;
