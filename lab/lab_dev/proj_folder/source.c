@@ -1,150 +1,192 @@
 #include "source.h"
 
-bool create_st_l(struct group_l *arr) {
+/* task #7 */
+bool check_args(int argc, char *argv[]) {
 
-    /* Initializing variables */
-    register int i;
-
-    /* I/O flow */
-    if ((arr->mas = (struct student **) malloc(arr->number * sizeof(struct student *))) != NULL) {
-        for (i = 0; i < arr->number; ++i) {
-            if ((arr->mas[i] = (struct student *) malloc(sizeof(struct student))) != NULL) {
-                if ((arr->mas[i]->mks_pt = (int *) malloc(INT_MAX)) == NULL) {
-                    return false;
-                }
-            } else {
-                return false;
-            }
+    /* VarCheck */
+    if (argc == 2) {
+        if (**(argv + 1) == '1' || **(argv + 1) == '2' || **(argv + 1) == '3') {
+            return true;
         }
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-bool read_stuff(struct group_l *arr) {
-
-    /* Initializing variables */
-
-    /* I/O flow */
-    do {
-        printf("Type the number of students: ");
-        scanf("%d", &arr->number);
-    } while (arr->number <= 0);
-
-    if (create_st_l(arr) == true) {
-        read_arr(arr);
-    } else {
-        arr_err();
-        return false;
     }
 
     /* Returning value */
-    return true;
+    return false;
 }
 
-void arr_err(void) {
+bool create_string(char **a) {
 
-    /* Final output */
-    fprintf(stderr, "Error! Allocating problems!");
+    /* Main part */
+     if ((*a = (char *) malloc(INT_MAX))) {
+        return true;
+     }
+
+    /* Returning value */
+    return false;
 }
 
-void read_arr(struct group_l *arr) {
+void read_text(struct string *a) {
 
     /* Initializing variables */
-    register int i, j;
+    register int i;
 
     /* I/O flow */
-    for (i = 0; i < arr->number; ++i) {
-        printf("Type marks of a %d%s student: ", i, (i == 1) ? "st" : (i == 2) ? "nd" : (i == 3) ? "rd" : "th");
-        arr->mas[i]->gs_mks = true;
-        arr->mas[i]->ar_mean = 0;
-        for (j = 0; ; ++j) {
-            do {
-                scanf("%d", &arr->mas[i]->mks_pt[j]);
-                if (!arr->mas[i]->mks_pt[j]) {
-                    break;
-                }
-                if (arr->mas[i]->mks_pt[j] < 2 || arr->mas[i]->mks_pt[j] > 5) {
-                    printf("Error! Wrong mark!\n");
-                }
-            } while (arr->mas[i]->mks_pt[j] < 2 || arr->mas[i]->mks_pt[j] > 5);
-            if (!arr->mas[i]->mks_pt[j]) {
-                break;
-            } else {
-                arr->mas[i]->ar_mean += arr->mas[i]->mks_pt[j];
-                if (arr->mas[i]->mks_pt[j] < 4) {
-                    arr->mas[i]->gs_mks = false;
-                }
+    puts("Type text [«0» to finish]: ");
+    for (i = 0; (a->str[i] = (char) getchar()) != '0'; ++i)
+        ;
+
+    /* Main part */
+    a->str[i] = '\0';
+    if ((a->str = realloc(a->str, (i + 1) * sizeof(char))) == NULL) {
+        exit(1);
+    }
+
+}
+
+void find_digits(struct string *a) {
+
+    /* Initializing variables */
+    register int i;
+
+    /* Main part */
+    for (i = 0; i < strlen(a->str); ++i) {
+        if (isdigit(a->str[i])) {
+            rm_ch(a->str, i);
+            ++a->num_num;
+            --i;
+        }
+    }
+}
+
+void rm_ch(char *str, int ch_n) {
+
+    /* Initializing variables */
+    register int i;
+
+    /* Main part */
+    for (i = ch_n; i < strlen(str) || *(str + i) != '\0'; ++i) {
+        *(str + i) = *(str + (i + 1));
+    }
+}
+
+void print_text(char *a) {
+
+    /* Initializing variables */
+    register int i;
+
+    /* I/O flow */
+    puts("\nYour text: ");
+    for (i = 0; i < strlen(a); ++i) {
+        putchar(*(a + i));
+    }
+}
+
+void print_num_num(int num) {
+
+    /* Final output */
+    printf("\nThe number of removed digits: %d\n", num);
+}
+
+void delete_string(char *a) {
+
+    /* Main part */
+    free(a);
+}
+
+/* task #16 */
+void read_str(char **a) {
+
+    /* Initializing variables */
+    char *n_l;
+
+    /* I/O flow */
+    puts("Type string: ");
+    fgets(*a, INT_MAX, stdin);
+
+    /* Main part */
+    n_l = strstr(*a, "\n");
+    *n_l = '\0';
+    *a = realloc(*a, strlen(*a));
+}
+
+void rm_sp(char *a) {
+
+    /* Initializing variables */
+    register int i;
+
+    /* Main part */
+    for (i = 1; i < strlen(a); ++i) {
+        if (*(a + (i - 1)) == ' ' && *(a + i) == ' ') {
+            rm_ch(a, i);
+            --i;
+        }
+    }
+
+    if (*(a + (i - 1)) == ' ') {
+        *(a + (i - 1)) = '\0';
+    }
+}
+
+void print_str(char *a) {
+
+    /* I/O flow */
+    puts("Your string: ");
+    puts(a);
+}
+
+/* task #25 */
+int find_occ(char *sent, struct word *word) {
+
+    /* Initializing variables */
+    register int i;
+    struct word *curr_word = NULL;
+    int num_of_occ = 0;
+
+    /* Main part */
+    for (i = 0; i < strlen(sent); ++i) {
+        if ((curr_word = get_word(sent, curr_word)) == NULL) {
+            break;
+        } else {
+            if (!strncmp(word->str, curr_word->str, (size_t) word->wd_len)) {
+                ++num_of_occ;
             }
         }
-        arr->mas[i]->num_of_mks = j;
-        arr->mas[i]->mks_pt = realloc(arr->mas[i]->mks_pt, j * sizeof(int));
-        arr->mas[i]->lt3 = (arr->mas[i]->num_of_mks < 3) ? true : false;
-        arr->mas[i]->ar_mean /= arr->mas[i]->num_of_mks;
-
     }
 
-    /* Final output */
-    printf("\n");
+    /* Returning value */
+    return num_of_occ;
 }
 
-void find_ar_mean(struct group_l *arr) {
+struct word *get_word(char *sent, struct word *curr_word) {
 
     /* Initializing variables */
-    register int i;
-    double ar_m = 0;
+    char *c_w = (curr_word == NULL) ? sent : curr_word;
+
+    for ( ; isalpha(*c_w); ++c_w) {
+        if (*c_w == '\0') {
+            return NULL;
+        }
+    }
+
+    for ( ; !isalpha(*c_w); ++c_w) {
+        if (*c_w == '\0') {
+            return NULL;
+        }
+    }
+
+    /* Returning value */
+    return c_w;
+}
+
+void find_sht(char *sent1, char *sent2) {
+
+    /* Initializing variables */
+    struct word wd = { NULL, 0};
+    int n;
 
     /* Main part */
-    for (i = 0; i < arr->number; ++i) {
-        ar_m += arr->mas[i]->ar_mean;
+    for ( ; (wd = get_word(sent1, &wd)) != NULL; ) {
+        n = find_occ(sent2, &wd);
+        printf("The number of occurrences of «%s» = %d\n", wd.str, n);
     }
-
-    ar_m /= arr->number;
-
-    /* Final output */
-    printf("Arithmetic mean: %.2lf\n", ar_m);
-}
-
-void find_lt3(struct group_l *arr) {
-
-    /* Initializing variables */
-    register int i;
-    int lt3_num = 0;
-
-    for (i = 0; i < arr->number; ++i) {
-        lt3_num += (arr->mas[i]->lt3 == true) ? 1 : 0;
-    }
-
-    /* Final output */
-    printf("The number of students with less than three marks: %d\n", lt3_num);
-}
-
-void find_gs_mks(struct group_l *arr) {
-
-    /* Initializing variables */
-    register int i;
-    int gs_mks_num = 0;
-
-    /* Main part */
-    for (i = 0; i < arr->number; ++i) {
-        gs_mks_num += (arr->mas[i]->gs_mks == true) ? 1 : 0;
-    }
-
-    /* Final output */
-    printf("The number of students with «positive» marks: %d\n", gs_mks_num);
-}
-
-void delete_arr(struct group_l *arr) {
-
-    /* Initializing variables */
-    register int i;
-
-    /* Main part */
-    for (i = 0; i < arr->number; ++i) {
-        free(arr->mas[i]->mks_pt);
-        free(arr->mas[i]);
-    }
-    free(arr->mas);
 }

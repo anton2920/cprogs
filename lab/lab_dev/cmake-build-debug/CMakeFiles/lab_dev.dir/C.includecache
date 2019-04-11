@@ -29,4 +29,8 @@ stdlib.h
 -
 limits.h
 -
+ctype.h
+-
+string.h
+-
 

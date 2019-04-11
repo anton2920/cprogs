@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <ctype.h>
+#include <string.h>
 
 /* Types */
 typedef enum {
@@ -12,27 +14,36 @@ typedef enum {
     true
 } bool;
 
-struct student {
-    int num_of_mks;
-    int *mks_pt;
-    double ar_mean;
-    bool lt3;
-    bool gs_mks;
+struct string {
+    char *str;
+    int num_num;
 };
 
-struct group_l {
-    int number;
-    struct student **mas;
+struct word {
+    char *str;
+    int wd_len;
 };
 
 /* source.c */
-bool create_st_l(struct group_l *);
-bool read_stuff(struct group_l *);
-void arr_err(void);
-void read_arr(struct group_l *);
-void find_ar_mean(struct group_l *);
-void find_lt3(struct group_l *);
-void find_gs_mks(struct group_l *);
-void delete_arr(struct group_l *);
+
+/* task #7 */
+bool check_args(int, char *[]);
+bool create_string(char **);
+void read_text(struct string *);
+void find_digits(struct string *);
+void rm_ch(char *, int);
+void print_text(char *);
+void print_num_num(int);
+void delete_string(char *);
+
+/* task #16 */
+void read_str(char **);
+void rm_sp(char *);
+void print_str(char *);
+
+/* task #25 */
+int find_occ(char *, struct word *);
+struct word *get_word(char *, struct word *);
+void find_sht(char *, char *);
 
 #endif //LAB_DEV_SOURCE_H
