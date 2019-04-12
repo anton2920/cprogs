@@ -24,7 +24,7 @@ void read_text(struct string *a) {
 
     /* I/O flow */
     puts("Type text [Ctrl + D (i.e EOF) to finish]: ");
-    for (i = 0; (a->str[i] = (char) getchar()) != '0'; ++i)
+    for (i = 0; (a->str[i] = (char) getchar()) != EOF; ++i)
         ;
 
     /* Main part */
@@ -42,7 +42,6 @@ char read_letter(void) {
 
     /* I/O flow && VarCheck */
     putchar(10);
-    getchar();
     do {
         printf("Type letter: ");
         scanf("%c", &letter);

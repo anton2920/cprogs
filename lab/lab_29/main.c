@@ -1,6 +1,6 @@
-#include "proj_folder/source.h"
+#include "source.h"
 
-int main(int argc, char *argv[]) {
+main() {
 
     /* Initializing variables */
     struct string s = { NULL, 0 };
@@ -16,7 +16,4 @@ int main(int argc, char *argv[]) {
     } else {
         str_err();
     }
-
-    /* Returning value */
-    return 0;
 }
