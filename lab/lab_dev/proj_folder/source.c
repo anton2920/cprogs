@@ -144,7 +144,7 @@ int find_occ(char *sent, struct word *word) {
 
     /* Main part */
     for (i = 0; i < strlen(sent); ++i) {
-        if ((curr_word = get_word(sent, curr_word)) == NULL) {
+        if ((curr_word = get_next_word(sent, curr_word)) == NULL) {
             break;
         } else {
             if (!strncmp(word->str, curr_word->str, (size_t) word->wd_len)) {
@@ -157,21 +157,11 @@ int find_occ(char *sent, struct word *word) {
     return num_of_occ;
 }
 
-struct word *get_word(char *sent, struct word *curr_word) {
+struct word get_next_word(struct word *curr_word) {
 
     /* Initializing variables */
     register int i;
-    struct word c_w = { NULL, 0 };
-    c_w.str = (curr_word == NULL) ? sent : curr_word->str;
 
-    /* Main part */
-    if (c_w->str == sent) {
-        for (i = 0; c_w.str[i] != ' ' && c_w.str[i] != ',' && c_w.str[i] != '.'; ++i)
-            ;
-
-    } else {
-
-    }
 
     /* Returning value */
     return c_w;
@@ -184,8 +174,8 @@ void find_sht(char *sent1, char *sent2) {
     int n;
 
     /* Main part */
-    for ( ; (wd = get_word(sent1, wd)) != NULL; ) {
+    for ( ; (; ) {
         n = find_occ(sent2, wd);
-        printf("The number of occurrences of «%s» = %d\n", wd->str, n);
+        printf("The number of occurrences of «%s» = %d\n", , n);
     }
 }

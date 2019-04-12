@@ -43,7 +43,7 @@ void print_str(char *);
 
 /* task #25 */
 int find_occ(char *, struct word *);
-struct word *get_word(char *, struct word *);
+struct word get_next_word(struct word *);
 void find_sht(char *, char *);
 
 #endif //LAB_DEV_SOURCE_H
