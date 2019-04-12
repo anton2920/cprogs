@@ -139,17 +139,18 @@ int find_occ(char *sent, struct word *word) {
 
     /* Initializing variables */
     register int i;
-    struct word *curr_word = NULL;
+    struct word curr_word = { sent, 0 };
     int num_of_occ = 0;
 
     /* Main part */
     for (i = 0; i < strlen(sent); ++i) {
-        if ((curr_word = get_next_word(sent, curr_word)) == NULL) {
+        if ((curr_word = get_next_word(&curr_word)).str == NULL) {
             break;
         } else {
-            if (!strncmp(word->str, curr_word->str, (size_t) word->wd_len)) {
+            if (!strncmp(word->str, curr_word.str, (size_t) word->wd_len) && word->wd_len == curr_word.wd_len) {
                 ++num_of_occ;
             }
+            curr_word.str += curr_word.wd_len;
         }
     }
 
@@ -157,11 +158,35 @@ int find_occ(char *sent, struct word *word) {
     return num_of_occ;
 }
 
-struct word get_next_word(struct word *curr_word) {
+struct word get_next_word(struct word *c_word) {
 
     /* Initializing variables */
     register int i;
+    struct word c_w = *c_word;
 
+    /* Main part */
+    for ( ; !isalpha(*c_w.str); ++c_w.str) {
+        if (*c_w.str == '\0') {
+            c_w.str = NULL;
+            c_w.wd_len = 0;
+            return c_w;
+        }
+    }
+
+    for (i = 0; c_w.str[i] != ' ' && c_w.str[i] != ',' && c_w.str[i] != '.' && c_w.str[i] != '?' && c_w.str[i] != '!'; ++i) {
+        if (c_w.str[i] == '\0') {
+            c_w.str = NULL;
+            c_w.wd_len = 0;
+            return c_w;
+        }
+    }
+
+
+    /* if (*(c_w.str + i) == ',') {
+        --i;
+    } */
+
+    c_w.wd_len = i;
 
     /* Returning value */
     return c_w;
@@ -170,12 +195,16 @@ struct word get_next_word(struct word *curr_word) {
 void find_sht(char *sent1, char *sent2) {
 
     /* Initializing variables */
-    struct word *wd = NULL;
+    struct word wd = { sent1, 0 };
     int n;
 
     /* Main part */
-    for ( ; (; ) {
-        n = find_occ(sent2, wd);
-        printf("The number of occurrences of «%s» = %d\n", , n);
+    putchar(10);
+    for ( ; (wd = get_next_word(&wd)).str != NULL; ) {
+        n = find_occ(sent2, &wd);
+        printf("The number of occurrences of «");
+        fwrite(wd.str, sizeof(char), (size_t) wd.wd_len, stdout);
+        printf("» = %d\n", n);
+        wd.str += wd.wd_len;
     }
 }
