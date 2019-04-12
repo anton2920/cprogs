@@ -9,7 +9,7 @@ bool check_args(int argc, char *argv[]) {
             return true;
         }
     }
-
+    
     fprintf(stderr, "Error! Arguments problem!\n");
 
     /* Returning value */
@@ -33,8 +33,8 @@ void read_text(struct string *a) {
     register int i;
 
     /* I/O flow */
-    puts("Type text [«0» to finish]: ");
-    for (i = 0; (a->str[i] = (char) getchar()) != '0'; ++i)
+    puts("Type text [Ctrl + D (i.e EOF) to finish]: ");
+    for (i = 0; (a->str[i] = (char) getchar()) != EOF; ++i)
         ;
 
     /* Main part */
