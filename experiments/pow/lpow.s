@@ -14,7 +14,7 @@ lpow:
 
 	fld %st(0)
 	frndint
-	fsub %st(0), %st(1)
+	fsubr %st(0), %st(1)
 	fxch %st(1)
 	f2xm1
 	fld1

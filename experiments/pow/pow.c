@@ -10,7 +10,7 @@ int main(int argc, const char *argv[]) {
 
 	/* Initializing variables */
 	register int i;
-	double a = 1024.0, b = 0.5, c = 0;
+	double a = 1024, b = 0.5, c = 0;
 	struct timeval stop, start;
 
 	/* Main part */
@@ -20,7 +20,7 @@ int main(int argc, const char *argv[]) {
 			c += pow(a, b);
 		}
 		gettimeofday(&stop, NULL);
-	} else if (**(argv + 1)) {
+	} else if (**(argv + 1) == '2') {
 		gettimeofday(&start, NULL);
 		for (i = 0; i < LOOP; ++i) {
 			c += lpow(a, b);
