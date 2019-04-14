@@ -20,7 +20,7 @@ int main() {
 	B = (int **) malloc(10 * sizeof(int *));
 
 	for (i = 0; i < 10 ; ++i) {
-		B[i] = (int *) malloc(INT_MAX);
+		B[i] = (int *) malloc(n * sizeof(int));
 	}
 
 	for (i = 0; i < 10; ++i) {
@@ -35,7 +35,7 @@ int main() {
 
 	for (i = 0; i < 10; i++) {
 		printf("Ends with %d: ", i);
-		
+
 		for (j = 0; j < C[i]; j++) {
 			printf("%d%s", B[i][j], (j == C[i] - 1) ? "" : ", ");
 		}
