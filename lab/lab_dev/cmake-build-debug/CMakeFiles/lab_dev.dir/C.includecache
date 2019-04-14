@@ -27,10 +27,12 @@ stdio.h
 -
 stdlib.h
 -
-limits.h
+assert.h
 -
-ctype.h
+SDL2/SDL.h
 -
-string.h
+SDL2/SDL_image.h
+-
+SDL2/SDL_ttf.h
 -
 
