@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
             assert(my_font != NULL);
             struct SDL_Texture *textTexture;
             struct SDL_Rect main_rect = { 0, 0, 70, 200 };
+            struct SDL_Rect *curr_ball = NULL;
 
             struct SDL_Color fore_color = { 130, 140, 50, 0 };
             struct SDL_Color back_color = { 188, 155, 166, 0 };
@@ -39,8 +40,15 @@ int main(int argc, char *argv[]) {
             assert(ballTexture != NULL);
             SDL_FreeSurface(ballImage);
 
+            struct SDL_Surface *ballImage1 = IMG_Load(BLUE_PIC_PATH);
+            assert(ballImage != NULL); /* Debugging sh*t */
+            SDL_SetColorKey(ballImage, SDL_TRUE, SDL_MapRGB(ballImage1->format, 255, 255, 255));
+            struct SDL_Texture *ballTexture1 = SDL_CreateTextureFromSurface(renderer, ballImage1);
+            assert(ballTexture != NULL);
+            SDL_FreeSurface(ballImage1);
+
             /* Audio */
-            struct SDL_AudioSpec wavSpec;
+            /*struct SDL_AudioSpec wavSpec;
             Uint32 wavLength;
             Uint8 *wavBuffer;
             SDL_LoadWAV(MUS_PATH, &wavSpec, &wavBuffer, &wavLength);
@@ -53,30 +61,52 @@ int main(int argc, char *argv[]) {
             }
             if (!success) {
                 SDL_PauseAudioDevice(deviceId, 0);
-            }
+            }*/
 
             /* Audio. SDL_Mixer approach */
             struct Mix_Chunk *Sound = NULL;
-            /* Mix_Music *fon = NULL; */
+            Mix_Music *fon = NULL;
             Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 1024);
 
             /* Main part. SDL2 */
-            /* loadmusic(fon); */
-            if (**(argv + 1) == '1') {
+            /*loadmusic(fon);*/
+            if (**(argv + 1) != '3') {
                 while (!quit) {
                     while (SDL_PollEvent(&event)) {
                         if (event.type == SDL_QUIT) {
                             quit = true;
                         }
-                        if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) {
-                            for (i = 0; i < BALL_C; i++) {
-                                if (is_ball_hit(balls + i, event.button.x, event.button.y)) {
-                                    balls[i].w = balls[i].h = 0;
-                                    k += ball_cost[i];
-                                    sound(Sound, SND_PATH);
-                                    sprintf(text, "%d", k);
-                                    SDL_DestroyTexture(textTexture);
-                                    textTexture = get_text_texture(renderer, text, my_font, &fore_color, &back_color, shaded);
+                        if (**(argv + 1) == '1') {
+                            if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) {
+                                for (i = 0; i < BALL_C; i++) {
+                                    if (is_ball_hit(balls + i, event.button.x, event.button.y)) {
+                                        balls[i].w = balls[i].h = 0;
+                                        k += ball_cost[i];
+                                        sound(Sound, SND_PATH);
+                                        sprintf(text, "%d", k);
+                                        SDL_DestroyTexture(textTexture);
+                                        textTexture = get_text_texture(renderer, text, my_font, &fore_color,
+                                                                       &back_color, shaded);
+                                    }
+                                }
+                            }
+                        } else {
+                            if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) {
+                                for (i = 0; i < BALL_C; i++) {
+                                    if (is_ball_hit(balls + i, event.button.x, event.button.y)) {
+                                        curr_ball = (balls + i);
+                                        break;
+                                    }
+                                }
+                            } else if (event.type == SDL_KEYDOWN && curr_ball != NULL) {
+                                if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_w) {
+                                    curr_ball->y -= up_speed;
+                                } else if (event.key.keysym.sym == SDLK_DOWN || event.key.keysym.sym == SDLK_s) {
+                                    curr_ball->y += down_speed;
+                                } else if (event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_a) {
+                                    curr_ball->x -= left_speed;
+                                } else if (event.key.keysym.sym == SDLK_RIGHT || event.key.keysym.sym == SDLK_d) {
+                                    curr_ball->x += right_speed;
                                 }
                             }
                         }
@@ -84,13 +114,13 @@ int main(int argc, char *argv[]) {
                     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
                     SDL_RenderClear(renderer);
                     draw_text(renderer, textTexture, &main_rect);
-                    draw_balls(renderer, balls, BALL_C, ballTexture, ball_cost, my_font);
+                    draw_balls(renderer, balls, BALL_C, ballTexture, ballTexture1, ball_cost, my_font, curr_ball);
                     SDL_RenderPresent(renderer);
                 }
 
-                SDL_CloseAudioDevice(deviceId);
-                SDL_FreeWAV(wavBuffer);
-                /* Mix_FreeMusic(fon); */
+                /*SDL_CloseAudioDevice(deviceId);
+                SDL_FreeWAV(wavBuffer);*/
+                Mix_FreeMusic(fon);
                 Mix_FreeChunk(Sound);
                 Mix_CloseAudio();
                 SDL_DestroyTexture(textTexture);
@@ -100,9 +130,7 @@ int main(int argc, char *argv[]) {
                 SDL_DestroyRenderer(renderer);
                 SDL_DestroyWindow(window);
                 SDL_Quit();
-            } else if (**(argv + 1) == '2') {
-
-            } else if (**(argv + 1) == '3') {
+            } else {
 
             }
         } else {
