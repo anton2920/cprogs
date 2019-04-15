@@ -39,4 +39,6 @@ SDL2/SDL_mixer.h
 -
 time.h
 -
+math.h
+-
 

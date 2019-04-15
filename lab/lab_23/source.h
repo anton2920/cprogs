@@ -10,6 +10,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_mixer.h>
 #include <time.h>
+#include <math.h>
 
 /* Macros */
 #define TITLE ("lab_23")

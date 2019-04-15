@@ -63,7 +63,10 @@ void draw_text(struct SDL_Renderer *renderer, struct SDL_Texture *texture, struc
 void init_balls(SDL_Rect *balls, int count, int *ball_cost) {
 
     /* Initializing variables */
-    int i;
+    int i, j;
+    int cX, cX_C;
+    int cY, cY_C;
+    int r, r_C;
 
     /* Main part */
     for (i = 0; i < count; i++) {
@@ -72,11 +75,26 @@ void init_balls(SDL_Rect *balls, int count, int *ball_cost) {
          * (balls + i)->w = 50 + 10 * i;
          * (balls + i)->h = 50 + 10 * i;
          */
+        
         (balls + i)->x = (rand() % (700 - 110 + 1)) + 110;
         (balls + i)->y = (rand() & (700 - 10 + 1)) + 10;
         (balls + i)->w = (rand() % (150 - 50 + 1)) + 50;
         (balls + i)->h = (balls + i)->w;
+
+        cX = (balls + i)->x + (balls + i)->w / 2;
+        cY = (balls + i)->y + (balls + i)->h / 2;
+        r = (balls + i)->w / 2;
+
         *(ball_cost + i) = (balls + i)->w / RND_COST;
+        for (j = 0; j < i; ++j) {
+            cX_C = (balls + j)->x + (balls + j)->w / 2;
+            cY_C = (balls + j)->y + (balls + j)->h / 2;
+            r_C = (balls + j)->w / 2;
+            if (sqrt((cX_C - cX) * (cX_C - cX) + (cY_C - cY) * (cY_C - cY)) <= r + r_C) {
+                --i;
+                continue;
+            }
+        }
     }
 }
 
