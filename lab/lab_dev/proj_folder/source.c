@@ -216,6 +216,10 @@ void ball_touch_another_ball(struct pro_balls *all, struct SDL_Rect *curr_ball) 
 
     /* Initializing variables */
     register int i, j;
+    enum directions dir;
+    struct pro_balls *base, *an;
+    auto int cX_base, cX_an, cY_base, cY_an, r_base, r_an;
+    auto int base_x_spd, an_x_spd, base_y_spd, an_y_spd, base_mass, an_mass;
 
     /* Main part */
     for (i = 0; i < BALL_C; ++i) {
@@ -224,63 +228,154 @@ void ball_touch_another_ball(struct pro_balls *all, struct SDL_Rect *curr_ball) 
                 continue;
             }
             if (is_ball_collapse((all + i)->ball, (all + j)->ball) == true && (all + i)->ball->w != 0 && (all + j)->ball->w != 0) {
-                if ((all + i)->x_d == (all + j)->x_d) {
-                    if ((all + i)->ball->x < (all + j)->ball->x) {
 
-                    } else {
+                /* Bogdan's simple approach */
+                /*dir = (all + i)->x_d;
+                (all + i)->x_d = (all + j)->x_d;
+                (all + j)->x_d = dir;
 
-                    }
-                }
-                (all + i)->x_spd =
-                (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
+                dir = (all + i)->y_d;
+                (all + i)->y_d = (all + j)->y_d;
+                (all + j)->y_d = dir;*/
+
+
+                /* My original approach */
+                /*(all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
                 (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
 
-
                 (all + j)->x_d = ((all + j)->x_d == x_pos) ? x_neg : x_pos;
-                (all + j)->y_d = ((all + j)->y_d == y_pos) ? y_neg : y_pos;
+                (all + j)->y_d = ((all + j)->y_d == y_pos) ? y_neg : y_pos;*/
 
-                move_ball(all + i);
-                move_ball(all + j);
+                base = all + i;
+                an = all + j;
+
+                /* Wall-corner approach */
+                r_base = (base->ball->w / 2 > an->ball->h / 2) ? base->ball->w / 2 : an->ball->h / 2;
+
+                if (r_base == base->ball->w) {
+                    cX_base = base->ball->x + base->ball->w / 2;
+                    cX_an = an->ball->x + an->ball->w / 2;
+                    cY_base = base->ball->y + base->ball->h / 2;
+                    cY_an = an->ball->y + an->ball->h / 2;
+                    r_an = an->ball->h / 2;
+                } else {
+                    cX_an = base->ball->x + base->ball->w / 2;
+                    cX_base = an->ball->x + an->ball->w / 2;
+                    cY_an = base->ball->y + base->ball->h / 2;
+                    cY_base = an->ball->y + an->ball->h / 2;
+                    r_an = base->ball->h / 2;
+                }
+
+                if (cX_an < cX_base && cY_an >= cY_base - r_base && cY_an <= cY_base + r_base) { /* Small to left wall */
+                    if (base->x_d != an->x_d) {
+                        base->x_d = (base->x_d == x_pos) ? x_neg : x_pos;
+                    }
+                        an->x_d = (an->x_d == x_pos) ? x_neg : x_pos;
+                } else if (cX_an > cX_base && cY_an >= cY_base - r_base && cY_an <= cY_base + r_base) { /* Small to right wall */
+                    if (base->x_d != an->x_d) {
+                        base->x_d = (base->x_d == x_pos) ? x_neg : x_pos;
+                    }
+                    an->x_d = (an->x_d == x_pos) ? x_neg : x_pos;
+                } else if (cY_an < cY_base && cX_an >= cX_base - r_base && cX_an <= cX_base + r_base) { /* Small to topper wall */
+                    if (base->y_d != an->y_d) {
+                        base->y_d = (base->y_d == y_pos) ? y_neg : y_pos;
+                    }
+                    an->y_d = (an->y_d == y_pos) ? y_neg : y_pos;
+                } else if (cY_an > cY_base && cX_an >= cX_base - r_base && cX_an <= cX_base + r_base) { /* Small to lower wall */
+                    if (base->y_d != an->y_d) {
+                        base->y_d = (base->y_d == y_pos) ? y_neg : y_pos;
+                    }
+                    an->y_d = (an->y_d == y_pos) ? y_neg : y_pos;
+                } else {
+                    /*dir = base->x_d;
+                    base->x_d = an->x_d;
+                    an->x_d = dir;
+
+                    dir = base->y_d;
+                    base->y_d = an->y_d;
+                    an->y_d = dir;*/
+
+                    (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
+                    (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
+
+                    (all + j)->x_d = ((all + j)->x_d == x_pos) ? x_neg : x_pos;
+                    (all + j)->y_d = ((all + j)->y_d == y_pos) ? y_neg : y_pos;
+                }
+
+                /*} else if () {  Small to left topper corner
+
+                } else if () {  Small to left lower corner
+
+                } else if () {  Small to right topper corner
+
+                } else if () {  Small to right lower corner
+
+                }*/
+
+                /* New physics approach */
+                /*base_mass = base->ball->w;
+                an_mass = an->ball->w;
+                base_x_spd = (base->x_spd * (base_mass - an_mass) + 2 * an_mass * an->x_spd) /
+                        (base_mass + an_mass);
+                an_x_spd = (an->x_spd * (an_mass - base_mass) + 2 * base_mass * base->x_spd) /
+                        (base_mass + an_mass);
+                if (base_x_spd < 0) {
+                    base->x_d = (base->x_d == x_pos) ? x_neg : x_pos;
+                }
+                if (an_x_spd < 0) {
+                    an->x_d = (an->x_d == x_pos) ? x_neg : x_pos;
+                }
+
+                base_y_spd = (base->y_spd * (base_mass - an_mass) + 2 * an_mass * an->y_spd) /
+                             (base_mass + an_mass);
+                an_y_spd = (an->y_spd * (an_mass - base_mass) + 2 * base_mass * base->y_spd) /
+                           (base_mass + an_mass);
+                if (base_y_spd < 0) {
+                    base->y_d = (base->y_d == y_pos) ? y_neg : y_pos;
+                }
+                if (an_y_spd < 0) {
+                    an->y_d = (an->y_d == y_pos) ? y_neg : y_pos;
+                }*/
+
+                move_ball(base);
+                move_ball(an);
             }
         }
     }
 }
 
-void balls_touch_wall(struct pro_balls *all) {
+void balls_touch_wall(struct pro_balls *all, struct SDL_Rect *curr_ball) {
 
     /* Initializing variables */
     register int i;
 
     /* Main part */
     for (i = 0; i < BALL_C; ++i) {
+        if ((all + i)->ball == curr_ball || (all + i)->ball->w == 0) {
+            continue;
+        }
         if ((all + i)->ball->x < 0 && (all + i)->ball->y > 0 && ((all + i)->ball->y + (all + i)->ball->h) < HEIGHT) { /* Left wall */
             (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
-            move_ball(all + i);
         } else if (((all + i)->ball->x + (all + i)->ball->w) > WIDTH && (all + i)->ball->y > 0 && ((all + i)->ball->y + (all + i)->ball->h) < HEIGHT) { /* Right wall */
             (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
-            move_ball(all + i);
         } else if ((all + i)->ball->y < 0 && (all + i)->ball->x > 0 && ((all + i)->ball->x + (all + i)->ball->w) < WIDTH) { /* Topper wall */
             (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
-            move_ball(all + i);
         } else if (((all + i)->ball->y + (all + i)->ball->h) > HEIGHT && (all + i)->ball->x > 0 && ((all + i)->ball->x + (all + i)->ball->w) < WIDTH) { /* Lower wall */
             (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
-            move_ball(all + i);
         } else if ((all + i)->ball->x < 0 && (all + i)->ball->y < 0) { /* Left topper corner */
             (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
             (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
-            move_ball(all + i);
         } else if (((all + i)->ball->x < 0) && ((all + i)->ball->y + (all + i)->ball->h) > HEIGHT) { /* Left lower corner */
             (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
             (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
-            move_ball(all + i);
         }  else if (((all + i)->ball->y < 0) && ((all + i)->ball->x + (all + i)->ball->w) > WIDTH) { /* Right topper corner */
             (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
             (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
-            move_ball(all + i);
         } else if (((all + i)->ball->x + (all + i)->ball->w) > WIDTH && ((all + i)->ball->y + (all + i)->ball->h) > HEIGHT) { /* Right lower corner */
             (all + i)->x_d = ((all + i)->x_d == x_pos) ? x_neg : x_pos;
             (all + i)->y_d = ((all + i)->y_d == y_pos) ? y_neg : y_pos;
-            move_ball(all + i);
         }
+
+        move_ball(all + i);
     }
 }

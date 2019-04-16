@@ -21,7 +21,8 @@ int main(int argc, char *argv[]) {
             struct SDL_Rect *curr_ball = NULL;
 
             struct SDL_Color fore_color = { 130, 140, 50, 0 };
-            struct SDL_Color back_color = { 188, 155, 166, 0 };
+            /* struct SDL_Color back_color = { 188, 155, 166, 0 }; */
+            struct SDL_Color back_color = { 0, 0, 0, 0};
 
             int k = 0, i, check = 0;
             char text[10];
@@ -155,17 +156,18 @@ int main(int argc, char *argv[]) {
                                                                &back_color, shaded);
                             }
 
-                            /* Check for collision && Fix 'em all */
-                            ball_touch_another_ball(p_b, curr_ball);
-                            balls_touch_wall(p_b);
                         }
+                        /* Check for collision && Fix 'em all */
+                        ball_touch_another_ball(p_b, curr_ball);
+                        balls_touch_wall(p_b, curr_ball);
                     }
+                    /* Other stuff */
                     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
                     SDL_RenderClear(renderer);
                     draw_text(renderer, textTexture, &main_rect);
                     draw_balls(renderer, balls, BALL_C, ballTexture, ballTexture1, ball_cost, my_font, curr_ball);
-                    SDL_Delay(DELAY);
                     SDL_RenderPresent(renderer);
+                    SDL_Delay(DELAY);
                 }
 
                 /*SDL_CloseAudioDevice(deviceId);

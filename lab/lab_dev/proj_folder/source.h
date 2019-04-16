@@ -19,7 +19,7 @@
 #define BALL_C (10)
 #define RND_COST (10)
 #define RED_COEFF (2)
-#define DELAY (20)
+#define DELAY (30)
 
 #define CLION (1)
 
@@ -49,10 +49,10 @@ enum texttype {
 };
 
 enum control_speed {
-    up_speed = 5,
-    down_speed = 5,
-    left_speed = 5,
-    right_speed = 5
+    up_speed = 10,
+    down_speed = 10,
+    left_speed = 10,
+    right_speed = 10
 };
 
 enum directions {
@@ -63,10 +63,10 @@ enum directions {
 };
 
 enum speed_limits {
-    x_max_spd = 10,
-    x_min_spd = 0,
-    y_max_spd = 10,
-    y_min_spd = 0
+    x_max_spd = 5,
+    x_min_spd = 2,
+    y_max_spd = 5,
+    y_min_spd = 2
 };
 
 struct pro_balls {
@@ -92,6 +92,6 @@ void sound(struct Mix_Chunk *, char *);
 bool is_ball_collapse(struct SDL_Rect *, struct SDL_Rect *);
 void move_ball(struct pro_balls *);
 void ball_touch_another_ball(struct pro_balls *, struct SDL_Rect *);
-void balls_touch_wall(struct pro_balls *);
+void balls_touch_wall(struct pro_balls *, struct SDL_Rect *);
 
 #endif
