@@ -75,7 +75,7 @@ void init_balls(SDL_Rect *balls, int count, int *ball_cost) {
          * (balls + i)->w = 50 + 10 * i;
          * (balls + i)->h = 50 + 10 * i;
          */
-        
+
         (balls + i)->x = (rand() % (700 - 110 + 1)) + 110;
         (balls + i)->y = (rand() & (700 - 10 + 1)) + 10;
         (balls + i)->w = (rand() % (150 - 50 + 1)) + 50;
@@ -99,7 +99,8 @@ void init_balls(SDL_Rect *balls, int count, int *ball_cost) {
 }
 
 void draw_balls(struct SDL_Renderer *renderer, struct SDL_Rect *balls, int count,
-                struct SDL_Texture *texture, int *ball_cost, struct _TTF_Font *my_font) {
+                struct SDL_Texture *texture, struct SDL_Texture *texture_blue,
+                int *ball_cost, struct _TTF_Font *my_font, struct SDL_Rect *curr_ball) {
 
     /* Initializing variables */
     int i;
@@ -119,11 +120,15 @@ void draw_balls(struct SDL_Renderer *renderer, struct SDL_Rect *balls, int count
         font_rect.y = balls[i].y + (balls[i].w / RED_COEFF / 2);
         font_rect.w = balls[i].w - (balls[i].w / RED_COEFF);
         font_rect.h = balls[i].w - (balls[i].w / RED_COEFF);
-        SDL_RenderCopy(renderer, texture, NULL, &balls[i]);
-        sprintf(text, "%d", ball_cost[i]);
-        textTexture = get_text_texture(renderer, text, my_font, &fore_color, &back_color2, solid);
-        draw_text(renderer, textTexture, &font_rect);
-        SDL_DestroyTexture(textTexture);
+        if (balls + i == curr_ball) {
+            SDL_RenderCopy(renderer, texture_blue, NULL, &balls[i]);
+        } else {
+            SDL_RenderCopy(renderer, texture, NULL, &balls[i]);
+            sprintf(text, "%d", ball_cost[i]);
+            textTexture = get_text_texture(renderer, text, my_font, &fore_color, &back_color2, solid);
+            draw_text(renderer, textTexture, &font_rect);
+            SDL_DestroyTexture(textTexture);
+        }
     }
 }
 
