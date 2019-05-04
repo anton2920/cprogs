@@ -30,17 +30,27 @@ along with Sorting library. If not, see <https://www.gnu.org/licenses/>.
     #define NULL (0)
 #endif
 
-#define SWAP(a, b, size)           \
-  do {                             \
-      int __size = (size);         \
-      char *__a = (a), *__b = (b); \
-      do                           \
-        {                          \
-          char __tmp = *__a;       \
-          *__a++ = *__b;           \
-          *__b++ = __tmp;          \
-        } while (--__size > 0);    \
+#define SWAP(a, b, size)                \
+    do {                                \
+        int __size = (size);            \
+        char *__a = (a), *__b = (b);    \
+        do {                            \
+            char __tmp = *__a;          \
+            *__a++ = *__b;              \
+            *__b++ = __tmp;             \
+        } while (--__size > 0);         \
     } while (0)
+
+#define COPY(a, b, size)                \
+    do {                                \
+      int __size = (size);              \
+      char *__a = (a), *__b = (b);      \
+      do {                              \
+          *__a++ = *__b++;              \
+      } while (--__size > 0);           \
+    } while (0)
+
+#define MIN(a, b) (((a) < (b)) ? a : b)
 
 /* Types */
 typedef enum {
@@ -68,5 +78,6 @@ void insertion_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, con
 
 /* Advanced sorting algorithms */
 void quick_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
+void merge_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 
 #endif

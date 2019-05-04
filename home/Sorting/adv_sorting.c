@@ -58,3 +58,58 @@ void quick_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const v
         }
     }
 }
+
+static void merge(void *pbase, int nbytes, int left, int mid, int right, int (*cmp)(const void *, const void *)) {
+
+    /* Initializing variables */
+    auto char *p = (char *) pbase;
+    register int i, j, k;
+    auto int n1 = mid - left + 1, n2 = right - mid, res = 0;
+
+    auto char L[n1 * nbytes], R[n2 * nbytes];
+
+    /* Main part */
+    for (i = 0; i < n1; ++i) {
+        COPY((L + i * nbytes), (p + (left + i) * nbytes), nbytes);
+    }
+    for (j = 0; j < n2; ++j) {
+        COPY((R + j * nbytes), (p + (mid + 1 + j) * nbytes), nbytes);
+    }
+
+    for (i = 0, j = 0, k = 1; i < n1 && j < n2; ) {
+        if ((res = (*cmp)((const void *) (L + i * nbytes), (const void *) (R + j * nbytes))) < 0 || !res) {
+            COPY((p + k * nbytes), (L + i * nbytes), nbytes);
+            ++i;
+        } else {
+            COPY((p + k * nbytes), (R + j * nbytes), nbytes);
+            ++j;
+        }
+        ++k;
+    }
+
+    for ( ; i < n1; ++i, ++k) {
+        COPY((p + k * nbytes), (L + i * nbytes), nbytes);
+    }
+
+    for ( ; j < n2; ++j, ++k) {
+        COPY((p + k * nbytes), (R + j * nbytes), nbytes);
+    }
+}
+
+void merge_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *)) {
+
+    /* Initializing variables */
+    register int curr_size, left_start;
+
+    auto int mid, right_end;
+
+    /* Main part */
+    for (curr_size = 1; curr_size <= n - 1; curr_size *= 2) {
+        for (left_start = 0; left_start < n - 1; left_start += curr_size * 2) {
+            mid = left_start + curr_size - 1;
+            right_end = MIN((left_start + (curr_size * 2) - 1), n - 1);
+
+            merge(pbase, nbytes, left_start, mid, right_end, cmp);
+        }
+    }
+}
