@@ -1,4 +1,4 @@
-#include "source.h"
+#include "proj_folder/source.h"
 
 int main(int argc, char *argv[]) {
 
@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
     struct SDL_Renderer *renderer = NULL;
     union SDL_Event event;
     bool quit = false;
-    srand(time(NULL));
+    srand((unsigned int) time(NULL));
 
     /* VarCheck */
     if (check_args(argc, argv) == true) {
@@ -21,18 +21,22 @@ int main(int argc, char *argv[]) {
             struct SDL_Rect *curr_ball = NULL;
 
             struct SDL_Color fore_color = { 130, 140, 50, 0 };
-            struct SDL_Color back_color = { 188, 155, 166, 0 };
+            /* struct SDL_Color back_color = { 188, 155, 166, 0 }; */
+            struct SDL_Color back_color = { 0, 0, 0, 0};
 
-            int k = 0, i;
+            int k = 0, i, check = 0;
             char text[10];
             sprintf(text, "%d", k);
             textTexture = get_text_texture(renderer, text, my_font, &fore_color, &back_color, shaded);
             assert(textTexture != NULL);
 
-            /* CPU|GPU parity issue */
+            /* Balls */
             struct SDL_Rect balls[BALL_C];
+            struct pro_balls p_b[BALL_C];
             int ball_cost[BALL_C];
-            init_balls(balls, BALL_C, ball_cost);
+            init_balls(p_b, balls, ball_cost);
+
+            /* CPU|GPU parity issue */
             struct SDL_Surface *ballImage = IMG_Load(PIC_PATH);
             assert(ballImage != NULL); /* Debugging sh*t */
             SDL_SetColorKey(ballImage, SDL_TRUE, SDL_MapRGB(ballImage->format, 255, 255, 255));
@@ -41,10 +45,10 @@ int main(int argc, char *argv[]) {
             SDL_FreeSurface(ballImage);
 
             struct SDL_Surface *ballImage1 = IMG_Load(BLUE_PIC_PATH);
-            assert(ballImage != NULL); /* Debugging sh*t */
-            SDL_SetColorKey(ballImage, SDL_TRUE, SDL_MapRGB(ballImage1->format, 255, 255, 255));
+            assert(ballImage1 != NULL); /* Debugging sh*t */
+            SDL_SetColorKey(ballImage1, SDL_TRUE, SDL_MapRGB(ballImage1->format, 255, 255, 255));
             struct SDL_Texture *ballTexture1 = SDL_CreateTextureFromSurface(renderer, ballImage1);
-            assert(ballTexture != NULL);
+            assert(ballTexture1 != NULL);
             SDL_FreeSurface(ballImage1);
 
             /* Audio */
@@ -81,8 +85,8 @@ int main(int argc, char *argv[]) {
                                 for (i = 0; i < BALL_C; i++) {
                                     if (is_ball_hit(balls + i, event.button.x, event.button.y)) {
                                         balls[i].w = balls[i].h = 0;
-                                        k += ball_cost[i];
                                         sound(Sound, SND_PATH);
+                                        k += ball_cost[i];
                                         sprintf(text, "%d", k);
                                         SDL_DestroyTexture(textTexture);
                                         textTexture = get_text_texture(renderer, text, my_font, &fore_color,
@@ -92,30 +96,78 @@ int main(int argc, char *argv[]) {
                             }
                         } else {
                             if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) {
-                                for (i = 0; i < BALL_C; i++) {
-                                    if (is_ball_hit(balls + i, event.button.x, event.button.y)) {
+                                for (i = 0; i < BALL_C && event.type == SDL_MOUSEBUTTONDOWN; i++) {
+                                    if (is_ball_hit(balls + i, event.button.x, event.button.y) && balls + i != curr_ball) {
                                         curr_ball = (balls + i);
+                                        event.type = 0;
+                                        break;
+                                    } else if (is_ball_hit(balls + i, event.button.x, event.button.y) && balls + i == curr_ball) {
+                                        curr_ball = NULL;
+                                        event.type = 0;
                                         break;
                                     }
                                 }
                             } else if (event.type == SDL_KEYDOWN && curr_ball != NULL) {
                                 if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_w) {
                                     curr_ball->y -= up_speed;
+                                    check = 1;
                                 } else if (event.key.keysym.sym == SDLK_DOWN || event.key.keysym.sym == SDLK_s) {
                                     curr_ball->y += down_speed;
+                                    check = 1;
                                 } else if (event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_a) {
                                     curr_ball->x -= left_speed;
+                                    check = 1;
                                 } else if (event.key.keysym.sym == SDLK_RIGHT || event.key.keysym.sym == SDLK_d) {
                                     curr_ball->x += right_speed;
+                                    check = 1;
+                                }
+
+                                if (check) {
+                                    for (i = 0; i < BALL_C; ++i) {
+                                        if (is_ball_collapse(balls + i, curr_ball) == true && balls + i != curr_ball && (balls + i)->w != 0) {
+                                            balls[i].w = balls[i].h = 0;
+                                            sound(Sound, SND_PATH);
+                                            k += ball_cost[i];
+                                            sprintf(text, "%d", k);
+                                            SDL_DestroyTexture(textTexture);
+                                            textTexture = get_text_texture(renderer, text, my_font, &fore_color,
+                                                                           &back_color, shaded);
+                                        }
+                                    }
+
+                                    check = 0;
                                 }
                             }
                         }
                     }
+                    if (curr_ball != NULL) {
+                        for (i = 0; i < BALL_C; ++i) {
+                            if (balls + i == curr_ball || (balls + i)->w == 0) {
+                                continue;
+                            }
+                            move_ball(p_b + i);
+                            if (is_ball_collapse(balls + i, curr_ball) == true && balls + i != curr_ball && (balls + i)->w != 0) {
+                                balls[i].w = balls[i].h = 0;
+                                sound(Sound, SND_PATH);
+                                k += ball_cost[i];
+                                sprintf(text, "%d", k);
+                                SDL_DestroyTexture(textTexture);
+                                textTexture = get_text_texture(renderer, text, my_font, &fore_color,
+                                                               &back_color, shaded);
+                            }
+
+                        }
+                        /* Check for collision && Fix 'em all */
+                        ball_touch_another_ball(p_b, curr_ball);
+                        balls_touch_wall(p_b, curr_ball);
+                    }
+                    /* Other stuff */
                     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
                     SDL_RenderClear(renderer);
                     draw_text(renderer, textTexture, &main_rect);
                     draw_balls(renderer, balls, BALL_C, ballTexture, ballTexture1, ball_cost, my_font, curr_ball);
                     SDL_RenderPresent(renderer);
+                    SDL_Delay(DELAY);
                 }
 
                 /*SDL_CloseAudioDevice(deviceId);

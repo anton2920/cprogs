@@ -109,8 +109,6 @@ lab_dev: CMakeFiles/lab_dev.dir/main.c.o
 lab_dev: CMakeFiles/lab_dev.dir/input/input.c.o
 lab_dev: CMakeFiles/lab_dev.dir/proj_folder/source.c.o
 lab_dev: CMakeFiles/lab_dev.dir/build.make
-lab_dev: /usr/local/lib/libSDL2main.a
-lab_dev: /usr/lib/x86_64-linux-gnu/libSDL2.so
 lab_dev: CMakeFiles/lab_dev.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lab_dev"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab_dev.dir/link.txt --verbose=$(VERBOSE)

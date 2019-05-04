@@ -9,7 +9,7 @@ bool check_args(int argc, char *argv[]) {
             return true;
         }
     }
-    
+
     fprintf(stderr, "Error! Arguments problem!\n");
 
     /* Returning value */
@@ -19,9 +19,9 @@ bool check_args(int argc, char *argv[]) {
 bool create_string(char **a) {
 
     /* Main part */
-     if ((*a = (char *) malloc(INT_MAX))) {
+    if ((*a = (char *) malloc(INT_MAX))) {
         return true;
-     }
+    }
 
     /* Returning value */
     return false;
@@ -175,13 +175,9 @@ struct word get_next_word(struct word *c_word) {
         }
     }
 
-    for (i = 0; c_w.str[i] != ' ' && c_w.str[i] != ',' && c_w.str[i] != '.' && c_w.str[i] != '?' && c_w.str[i] != '!'; ++i) {
-        if (c_w.str[i] == '\0') {
-            c_w.str = NULL;
-            c_w.wd_len = 0;
-            return c_w;
-        }
-    }
+    for (i = 0; c_w.str[i] != ' ' && c_w.str[i] != ',' && c_w.str[i] != '.' &&
+    c_w.str[i] != '?' && c_w.str[i] != '!' && c_w.str[i] != '\0'; ++i)
+        ;
 
     c_w.wd_len = i;
 
