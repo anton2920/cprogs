@@ -4,6 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/anton/C/home/Sorting/adv_sorting.c" "/home/anton/C/home/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir/adv_sorting.c.o"
+  "/home/anton/C/home/Sorting/compare.c" "/home/anton/C/home/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir/compare.c.o"
+  "/home/anton/C/home/Sorting/convertions.c" "/home/anton/C/home/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir/convertions.c.o"
   "/home/anton/C/home/Sorting/sorting.c" "/home/anton/C/home/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir/sorting.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

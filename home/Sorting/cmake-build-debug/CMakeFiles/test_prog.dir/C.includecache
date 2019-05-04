@@ -11,12 +11,12 @@ stdio.h
 -
 stdlib.h
 -
+time.h
+-
 sorting.h
 /home/anton/C/home/Sorting/sorting.h
-
-/home/anton/C/home/Sorting/sorting.c
-sorting.h
-/home/anton/C/home/Sorting/sorting.h
+sys/time.h
+-
 
 /home/anton/C/home/Sorting/sorting.h
 

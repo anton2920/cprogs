@@ -66,4 +66,7 @@ void bubble_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const 
 void selection_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 void insertion_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 
+/* Advanced sorting algorithms */
+void quick_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
+
 #endif

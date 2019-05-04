@@ -4,6 +4,3 @@
 CMakeFiles/test_prog.dir/main.c.o: ../main.c
 CMakeFiles/test_prog.dir/main.c.o: ../sorting.h
 
-CMakeFiles/test_prog.dir/sorting.c.o: ../sorting.c
-CMakeFiles/test_prog.dir/sorting.c.o: ../sorting.h
-

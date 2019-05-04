@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test_prog.dir/main.c.o"
-  "CMakeFiles/test_prog.dir/sorting.c.o"
   "test_prog.pdb"
   "test_prog"
 )

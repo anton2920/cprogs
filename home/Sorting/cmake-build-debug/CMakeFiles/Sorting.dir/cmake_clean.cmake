@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Sorting.dir/sorting.c.o"
+  "CMakeFiles/Sorting.dir/adv_sorting.c.o"
+  "CMakeFiles/Sorting.dir/compare.c.o"
+  "CMakeFiles/Sorting.dir/convertions.c.o"
   "libSorting.pdb"
   "libSorting.so"
 )

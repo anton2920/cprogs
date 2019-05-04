@@ -136,6 +136,87 @@ test_prog/fast:
 	$(MAKE) -f CMakeFiles/test_prog.dir/build.make CMakeFiles/test_prog.dir/build
 .PHONY : test_prog/fast
 
+adv_sorting.o: adv_sorting.c.o
+
+.PHONY : adv_sorting.o
+
+# target to build an object file
+adv_sorting.c.o:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/adv_sorting.c.o
+.PHONY : adv_sorting.c.o
+
+adv_sorting.i: adv_sorting.c.i
+
+.PHONY : adv_sorting.i
+
+# target to preprocess a source file
+adv_sorting.c.i:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/adv_sorting.c.i
+.PHONY : adv_sorting.c.i
+
+adv_sorting.s: adv_sorting.c.s
+
+.PHONY : adv_sorting.s
+
+# target to generate assembly for a file
+adv_sorting.c.s:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/adv_sorting.c.s
+.PHONY : adv_sorting.c.s
+
+compare.o: compare.c.o
+
+.PHONY : compare.o
+
+# target to build an object file
+compare.c.o:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/compare.c.o
+.PHONY : compare.c.o
+
+compare.i: compare.c.i
+
+.PHONY : compare.i
+
+# target to preprocess a source file
+compare.c.i:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/compare.c.i
+.PHONY : compare.c.i
+
+compare.s: compare.c.s
+
+.PHONY : compare.s
+
+# target to generate assembly for a file
+compare.c.s:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/compare.c.s
+.PHONY : compare.c.s
+
+convertions.o: convertions.c.o
+
+.PHONY : convertions.o
+
+# target to build an object file
+convertions.c.o:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/convertions.c.o
+.PHONY : convertions.c.o
+
+convertions.i: convertions.c.i
+
+.PHONY : convertions.i
+
+# target to preprocess a source file
+convertions.c.i:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/convertions.c.i
+.PHONY : convertions.c.i
+
+convertions.s: convertions.c.s
+
+.PHONY : convertions.s
+
+# target to generate assembly for a file
+convertions.c.s:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/convertions.c.s
+.PHONY : convertions.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -170,7 +251,6 @@ sorting.o: sorting.c.o
 # target to build an object file
 sorting.c.o:
 	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/sorting.c.o
-	$(MAKE) -f CMakeFiles/test_prog.dir/build.make CMakeFiles/test_prog.dir/sorting.c.o
 .PHONY : sorting.c.o
 
 sorting.i: sorting.c.i
@@ -180,7 +260,6 @@ sorting.i: sorting.c.i
 # target to preprocess a source file
 sorting.c.i:
 	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/sorting.c.i
-	$(MAKE) -f CMakeFiles/test_prog.dir/build.make CMakeFiles/test_prog.dir/sorting.c.i
 .PHONY : sorting.c.i
 
 sorting.s: sorting.c.s
@@ -190,7 +269,6 @@ sorting.s: sorting.c.s
 # target to generate assembly for a file
 sorting.c.s:
 	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/sorting.c.s
-	$(MAKE) -f CMakeFiles/test_prog.dir/build.make CMakeFiles/test_prog.dir/sorting.c.s
 .PHONY : sorting.c.s
 
 # Help Target
@@ -203,6 +281,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... Sorting"
 	@echo "... test_prog"
+	@echo "... adv_sorting.o"
+	@echo "... adv_sorting.i"
+	@echo "... adv_sorting.s"
+	@echo "... compare.o"
+	@echo "... compare.i"
+	@echo "... compare.s"
+	@echo "... convertions.o"
+	@echo "... convertions.i"
+	@echo "... convertions.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

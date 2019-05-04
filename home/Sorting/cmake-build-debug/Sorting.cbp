@@ -118,12 +118,20 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/anton/C/home/Sorting/adv_sorting.c">
+			<Option target="Sorting"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Sorting/compare.c">
+			<Option target="Sorting"/>
+		</Unit>
+		<Unit filename="/home/anton/C/home/Sorting/convertions.c">
+			<Option target="Sorting"/>
+		</Unit>
 		<Unit filename="/home/anton/C/home/Sorting/main.c">
 			<Option target="test_prog"/>
 		</Unit>
 		<Unit filename="/home/anton/C/home/Sorting/sorting.c">
 			<Option target="Sorting"/>
-			<Option target="test_prog"/>
 		</Unit>
 		<Unit filename="/home/anton/C/home/Sorting/sorting.h">
 			<Option target="Sorting"/>
