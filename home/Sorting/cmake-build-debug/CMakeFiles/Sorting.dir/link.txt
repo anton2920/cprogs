@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libSorting.so -o libSorting.so CMakeFiles/Sorting.dir/sorting.c.o 

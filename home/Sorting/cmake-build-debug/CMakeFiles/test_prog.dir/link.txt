@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/test_prog.dir/main.c.o CMakeFiles/test_prog.dir/sorting.c.o  -o test_prog 
