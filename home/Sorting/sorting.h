@@ -44,13 +44,14 @@ along with Sorting library. If not, see <https://www.gnu.org/licenses/>.
 #define COPY(a, b, size)                \
     do {                                \
       int __size = (size);              \
-      char *__a = (a), *__b = (b);      \
+      char *__a = (a);                  \
+      const char *__b = (b);            \
       do {                              \
           *__a++ = *__b++;              \
       } while (--__size > 0);           \
     } while (0)
 
-#define MIN(a, b) (((a) < (b)) ? a : b)
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
 
 /* Types */
 typedef enum {
@@ -69,7 +70,7 @@ int inumcmp(const void *, const void *); /* Compares integers */
 int dnumcmp(const void *, const void *); /* Compares doubles */
 
 /* Miscellaneous routines */
-
+void copy_arr(void *, const void *, int, int);
 
 /* Basic sorting algorithms */
 void bubble_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));

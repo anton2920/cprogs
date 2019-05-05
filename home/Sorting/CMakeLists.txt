@@ -4,7 +4,7 @@ project(Sorting C)
 set(CMAKE_C_STANDARD 90)
 
 set(HEADER_FILES sorting.h)
-set(SOURCE_FILES sorting.c adv_sorting.c compare.c convertions.c)
+set(SOURCE_FILES sorting.c adv_sorting.c compare.c convertions.c others.c)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
