@@ -55,9 +55,9 @@ along with Sorting library. If not, see <https://www.gnu.org/licenses/>.
 
 /* Types */
 typedef enum {
-    false = 0,
-    true = 1
-} bool;
+    __false = 0,
+    __true = 1
+} __bool;
 
 /* String to ... */
 double atof(const char *); /* ...double */
@@ -71,11 +71,13 @@ int dnumcmp(const void *, const void *); /* Compares doubles */
 
 /* Miscellaneous routines */
 void copy_arr(void *, const void *, int, int);
+void *binary_search(const void *key, const void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 
 /* Basic sorting algorithms */
 void bubble_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 void selection_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 void insertion_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
+void shell_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));
 
 /* Advanced sorting algorithms */
 void quick_sort(void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *));

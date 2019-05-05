@@ -25,7 +25,7 @@ double atof(const char *n) {
 
     /* Initializing variables */
     auto int a = 0, b = 0, sign = 1;
-    auto bool comma = false;
+    auto __bool comma = __false;
 
     /* Main part */
     while (*n) {
@@ -34,7 +34,7 @@ double atof(const char *n) {
         } else if (*n == '+') {
             sign = 1;
         } else if (*n == '.') {
-            comma = true;
+            comma = __true;
         }
         if (isdigit(*n)) {
             if (comma) {

@@ -25,9 +25,34 @@ void copy_arr(void *a, const void *b, int n, int nbytes) {
 
     /* Initializing variables */
     auto int i;
+    auto char *arr = (char *) a;
+    auto char *brr = (char *) b;
 
     /* Main part */
     for (i = 0; i < n; ++i) {
-        COPY((a + i), (b + i), nbytes);
+        COPY((arr + i * nbytes), (brr + i * nbytes), nbytes);
     }
+}
+
+void *binary_search(const void *key, const void *pbase, int n, int nbytes, int (*cmp)(const void *, const void *)) {
+
+    /* Initializing variables */
+    auto const char *p = (char *) pbase, *pivot = NULL;
+    int res;
+
+    /* Main part */
+    for ( ; n > 0; n >>= 1) {
+        pivot = pbase + (n >> 1) * nbytes;
+        if (!(res = (*cmp)(key, (const void *) pivot))) {
+            return (void *) pivot;
+        }
+
+        if (res > 0) {
+            pbase = pivot + nbytes;
+            --n;
+        }
+    }
+
+    /* Returning value */
+    return NULL;
 }

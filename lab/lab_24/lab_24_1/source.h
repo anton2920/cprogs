@@ -12,6 +12,7 @@ typedef enum {
 } bool;
 
 union mas_p {
+    
     /* Single pointers */
     void *vd_p;
     int *i_p;
