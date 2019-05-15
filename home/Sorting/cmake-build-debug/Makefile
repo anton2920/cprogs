@@ -244,6 +244,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/test_prog.dir/build.make CMakeFiles/test_prog.dir/main.c.s
 .PHONY : main.c.s
 
+others.o: others.c.o
+
+.PHONY : others.o
+
+# target to build an object file
+others.c.o:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/others.c.o
+.PHONY : others.c.o
+
+others.i: others.c.i
+
+.PHONY : others.i
+
+# target to preprocess a source file
+others.c.i:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/others.c.i
+.PHONY : others.c.i
+
+others.s: others.c.s
+
+.PHONY : others.s
+
+# target to generate assembly for a file
+others.c.s:
+	$(MAKE) -f CMakeFiles/Sorting.dir/build.make CMakeFiles/Sorting.dir/others.c.s
+.PHONY : others.c.s
+
 sorting.o: sorting.c.o
 
 .PHONY : sorting.o
@@ -293,6 +320,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... others.o"
+	@echo "... others.i"
+	@echo "... others.s"
 	@echo "... sorting.o"
 	@echo "... sorting.i"
 	@echo "... sorting.s"

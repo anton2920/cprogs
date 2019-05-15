@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/C/home/Sorting/others.c
+sorting.h
+/home/anton/C/home/Sorting/sorting.h
+
+/home/anton/C/home/Sorting/sorting.h
+
