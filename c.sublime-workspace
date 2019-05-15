@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ret",
+				"return_get_2"
+			],
+			[
+				"buf",
+				"bufp"
+			],
+			[
+				"return",
+				"return_get"
+			],
+			[
 				"a",
 				"argv"
 			],
@@ -308,10 +320,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C"
+		"/home/anton/C",
+		"/home/anton/C/experiments",
+		"/home/anton/C/experiments/LowLevelFile",
+		"/home/anton/C/experiments/LowLevelFile/libs"
 	],
 	"file_history":
 	[
+		"/home/anton/ASM/training/polya_rivalry.s",
 		"/home/anton/C/lab/lab_24/lab_24_1/main.c",
 		"/home/anton/C/lab/lab_24/lab_24_1/source.h",
 		"/home/anton/C/lab/lab_24/lab_24_1/source.c",
@@ -438,8 +454,7 @@
 		"/home/anton/C/lab/lab_03/a2.c",
 		"/home/anton/C/lab/lab_03/a1.c",
 		"/home/anton/PABC/liza/a1.pas",
-		"/home/anton/PABC/school/11b/a3.pas",
-		"/home/anton/PY/CTE/a1.py"
+		"/home/anton/PABC/school/11b/a3.pas"
 	],
 	"find":
 	{
