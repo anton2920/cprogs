@@ -6,3 +6,4 @@ set(CMAKE_C_STANDARD 90)
 set(SOURCE_FILES ../lab_25.c)
 
 add_executable(lab_25_dev ${SOURCE_FILES})
+# add_executable(lab_25_dev main.c)

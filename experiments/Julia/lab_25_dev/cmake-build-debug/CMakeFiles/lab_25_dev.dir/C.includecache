@@ -6,12 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/experiments/Julia/lab_25.c
+/home/anton/C/experiments/Julia/lab_25_dev/main.c
+locale.h
+-
 stdio.h
 -
-stdlib.h
+malloc.h
 -
-limits.h
+stdlib.h
 -
 string.h
 -
