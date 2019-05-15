@@ -374,6 +374,7 @@ void write_array(const struct array *mas, enum file_type t) {
             prt_ln();
             for (i = 0; i < mas->m; ++i) {
                 j = -1;
+                putchar('|');
                 do {
                     ++j;
                     printf("%3d", mas->p[i][j]);
@@ -410,7 +411,7 @@ void write_array(const struct array *mas, enum file_type t) {
                 j = -1;
                 do {
                     ++j;
-                    fprintf(fp, "%3d", mas->p[i][j]);
+                    fprintf(fp, "%d ", mas->p[i][j]);
                 } while (mas->p[i][j] != mas->t);
 
                 putc(0xA, fp);
