@@ -4,7 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/proj_folder/source.c" line="154" />
+    <bookmark url="file://$PROJECT_DIR$/proj_folder/source.c" line="348" />
+    <bookmark url="file://$PROJECT_DIR$/proj_folder/source.c" line="521" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -19,24 +20,19 @@
   <component name="ChangeListManager">
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../../c.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experiments/Julia/lab_25_dev/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../experiments/Julia/lab_25_dev/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_23/main" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_23/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab_23/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_23/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab_23/source.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_23/source.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_23/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_23/main.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab_23/source.h" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_23/source.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab_28/main" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_28/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab_28/source.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_28/source.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab_28/source.o" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_28/source.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_23/source.o" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_23/source.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/anton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/anton.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/input/input.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/input/input.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/proj_folder/source.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/proj_folder/source.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj_folder/source.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj_folder/source.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj_folder/source.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj_folder/source.h" afterDir="false" />
@@ -57,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="17">
               <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
@@ -66,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="-2067">
+              <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -75,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proj_folder/source.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
+            <state relative-caret-position="438">
+              <caret line="528" selection-start-line="528" selection-end-line="528" />
             </state>
           </provider>
         </entry>
@@ -84,8 +80,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proj_folder/source.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            <state relative-caret-position="-10">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+              <folding>
+                <element signature="e#909#1230#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,6 +112,9 @@
       <find>x</find>
       <find>RND_COST</find>
       <find>(an-&gt;ball-&gt;w / RND_COST / MASS_RED)</find>
+      <find>ballTexture</find>
+      <find>grassTexture</find>
+      <find>mineImage</find>
     </findStrings>
     <replaceStrings>
       <replace>outputs</replace>
@@ -133,6 +135,13 @@
       <replace>RND_COST / MASS_RED</replace>
       <replace>base_mass</replace>
       <replace>an_mass</replace>
+      <replace>grassImage</replace>
+      <replace>grassTexture</replace>
+      <replace>concImage</replace>
+      <replace>concTexture</replace>
+      <replace>mineImage</replace>
+      <replace>mineTexture</replace>
+      <replace>trapImage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -158,17 +167,17 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/a1in.txt" />
         <option value="$PROJECT_DIR$/input/input.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/proj_folder/source.h" />
         <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/proj_folder/source.h" />
         <option value="$PROJECT_DIR$/proj_folder/source.c" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="648" />
-    <option name="y" value="348" />
-    <option name="width" value="1262" />
-    <option name="height" value="691" />
+    <option name="x" value="1918" />
+    <option name="y" value="-3" />
+    <option name="width" value="1924" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -178,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,19 +202,25 @@
             <path>
               <item name="lab_dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_dev" type="462c0819:PsiDirectoryNode" />
+              <item name="pictures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_dev" type="462c0819:PsiDirectoryNode" />
               <item name="proj_folder" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/anton/C/lab/lab_dev/main.c" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/ProTest/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="debugger.stepping" />
   </component>
@@ -326,6 +340,7 @@
       <workItem from="1556294176323" duration="51000" />
       <workItem from="1556528612574" duration="1221000" />
       <workItem from="1556607227582" duration="633000" />
+      <workItem from="1558112096812" duration="8170000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -380,7 +395,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246814000" />
+    <option name="totallyTimeSpent" value="254984000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -392,19 +407,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <frame x="1918" y="-3" width="1924" height="1052" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18836713" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19009584" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48665956" weight="0.34825328" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3951965" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48665956" visible="true" weight="0.3480129" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3941998" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4946581" weight="0.3187773" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4946581" weight="0.3179377" />
       <window_info anchor="bottom" id="CMake" order="8" weight="0.32826087" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5133405" side_tool="true" weight="0.34825328" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32822758" />
@@ -493,22 +509,6 @@
     <MESSAGE value="DELL: lab_23 pt2A (dev)" />
     <option name="LAST_COMMIT_MESSAGE" value="DELL: lab_23 pt2A (dev)" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/proj_folder/source.c</url>
-          <line>49</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/proj_folder/source.c</url>
-          <line>139</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
       <provider selected="true" editor-type-id="text-editor">
@@ -580,29 +580,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="17">
           <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/proj_folder/source.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        <state relative-caret-position="-10">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding>
+            <element signature="e#909#1230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2067">
+          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/proj_folder/source.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
+        <state relative-caret-position="438">
+          <caret line="528" selection-start-line="528" selection-end-line="528" />
         </state>
       </provider>
     </entry>

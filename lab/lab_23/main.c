@@ -1,4 +1,4 @@
-#include "proj_folder/source.h"
+#include "source.h"
 
 int main(int argc, char *argv[]) {
 

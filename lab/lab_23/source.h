@@ -21,7 +21,7 @@
 #define RED_COEFF (2)
 #define DELAY (30)
 
-#define CLION (1)
+#define CLION (0)
 
 #if (CLION == 1)
 #define FONT_PATH ("../font/Font.ttf")
