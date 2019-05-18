@@ -531,3 +531,17 @@ void print_info(int mleft, int lleft, struct SDL_Renderer *renderer, struct _TTF
     rect.h = 40;
     SDL_RenderCopy(renderer, text_t, NULL, &rect);
 }
+
+void spawn_character(struct SDL_Rect *pl_rect, struct SDL_Renderer *renderer) {
+
+    /* Initializing variables */
+    auto struct SDL_Surface *trapImage = IMG_Load(CHAR_PATH);
+    assert(trapImage != NULL); /* Debugging sh*t */
+    SDL_SetColorKey(trapImage, SDL_TRUE, SDL_MapRGB(trapImage->format, 255, 255, 255));
+    auto struct SDL_Texture *trapTexture = SDL_CreateTextureFromSurface(renderer, trapImage);
+    assert(trapTexture != NULL);
+    SDL_FreeSurface(trapImage);
+
+    /* Main part */
+
+}

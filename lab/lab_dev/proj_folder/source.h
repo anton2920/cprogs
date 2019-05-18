@@ -36,6 +36,7 @@
 #define CONCRETE_PATH ("../pictures/Concrete.jpg")
 #define MINE_PATH ("../pictures/mine.png")
 #define TRAP_PATH ("../pictures/trap.png")
+#define CHAR_PATH ("../pictures/game-sprite.phg")
 #else
 #define FONT_PATH ("Font.ttf")
 #define MUS_PATH ("Very_bad_piece.wav")
@@ -46,6 +47,7 @@
 #define CONCRETE_PATH ("Concrete.jpg")
 #define MINE_PATH ("mine.png")
 #define TRAP_PATH ("trap.png")
+#define CHAR_PATH ("game-sprite.phg")
 #endif
 
 /* Types */
