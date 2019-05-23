@@ -18,13 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: lab_23 (dev, field hot-fix)">
-      <change beforePath="$PROJECT_DIR$/../../c.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/proj_folder/source.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/proj_folder/source.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj_folder/source.c" beforeDir="false" afterPath="$PROJECT_DIR$/proj_folder/source.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj_folder/source.h" beforeDir="false" afterPath="$PROJECT_DIR$/proj_folder/source.h" afterDir="false" />
-    </list>
+    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: lab_23 (dev, nothing significant)" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proj_folder/source.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="526" column="27" lean-forward="true" selection-start-line="526" selection-start-column="27" selection-end-line="526" selection-end-column="27" />
+            <state relative-caret-position="524">
+              <caret line="531" column="32" lean-forward="true" selection-start-line="531" selection-start-column="32" selection-end-line="531" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -326,7 +320,7 @@
       <workItem from="1556528612574" duration="1221000" />
       <workItem from="1556607227582" duration="633000" />
       <workItem from="1558112096812" duration="8838000" />
-      <workItem from="1558178972487" duration="2462000" />
+      <workItem from="1558178972487" duration="2510000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -391,11 +385,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558120698371</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="PC: lab_23 (dev, nothing significant)">
+      <created>1558183466058</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558183466058</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258114000" />
+    <option name="totallyTimeSpent" value="258162000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,7 +409,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1918" y="-3" width="1924" height="1052" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19169329" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -509,7 +509,8 @@
     <MESSAGE value="DELL: lab_23 pt2A (dev)" />
     <MESSAGE value="PC: lab_23 (dev, first steps)" />
     <MESSAGE value="PC: lab_23 (dev, field hot-fix)" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC: lab_23 (dev, field hot-fix)" />
+    <MESSAGE value="PC: lab_23 (dev, nothing significant)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PC: lab_23 (dev, nothing significant)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
@@ -603,8 +604,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/proj_folder/source.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="526" column="27" lean-forward="true" selection-start-line="526" selection-start-column="27" selection-end-line="526" selection-end-column="27" />
+        <state relative-caret-position="524">
+          <caret line="531" column="32" lean-forward="true" selection-start-line="531" selection-start-column="32" selection-end-line="531" selection-end-column="32" />
         </state>
       </provider>
     </entry>
