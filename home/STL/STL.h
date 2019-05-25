@@ -1,8 +1,16 @@
 #ifndef STL_LIBRARY_H
 #define STL_LIBRARY_H
 
-#include <stdio.h>
-#include <stdlib.h>
+/* Include config.h */
+#include "config.h"
+
+/* Including standard headers */
+#if (HAVE_STDIO_H == 1)
+    #include <stdio.h>
+#endif
+#if (HAVE_STDLIB_H == 1)
+    #include <stdlib.h>
+#endif
 
 /* Macros */
 #define SIZE_OF_WORD (sizeof(word))
@@ -14,27 +22,29 @@
 #ifndef FALSE
     #define FALSE (0)
 #endif
-#define SWAP(a, b, size)                \
-    do {                                \
-        int __size = (size);            \
-        char *__a = (a), *__b = (b);    \
-        do {                            \
-            char __tmp = *__a;          \
-            *__a++ = *__b;              \
-            *__b++ = __tmp;             \
-        } while (--__size > 0);         \
-    } while (0)
-
-#define COPY(a, b, size)                \
-    do {                                \
-      int __size = (size);              \
-      char *__a = (a);                  \
-      const char *__b = (b);            \
-      do {                              \
-          *__a++ = *__b++;              \
-      } while (--__size > 0);           \
-    } while (0)
-
+#ifndef SWAP
+    #define SWAP(a, b, size)                \
+        do {                                \
+            int __size = (size);            \
+            char *__a = (a), *__b = (b);    \
+            do {                            \
+                char __tmp = *__a;          \
+                *__a++ = *__b;              \
+                *__b++ = __tmp;             \
+            } while (--__size > 0);         \
+        } while (0)
+#endif
+#ifndef COPY
+    #define COPY(a, b, size)                \
+        do {                                \
+          int __size = (size);              \
+          char *__a = (a);                  \
+          const char *__b = (b);            \
+          do {                              \
+              *__a++ = *__b++;              \
+          } while (--__size > 0);           \
+        } while (0)
+#endif
 
 /* Unprotected macros for pop'ing */
 #define STACK_POP_SHORT(st) (*((short *) Stack_popw(st)))

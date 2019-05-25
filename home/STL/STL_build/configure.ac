@@ -15,11 +15,10 @@ AC_CONFIG_MACRO_DIR([m4])
 
 # Enable «automake» to simplify creating makefile:
 AM_INIT_AUTOMAKE
-AC_CONFIG_FILES([Makefile)
+AC_CONFIG_FILES([Makefile])
 
 # Look for a C compiler:
-AC_LANG([C])
-AC_PROG_C
+AC_PROG_CC
 
 # Check for: (more) programs, libraries, header files, types,
 # structures, compiler characteristics, library functions, system services.
