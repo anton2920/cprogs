@@ -22,42 +22,59 @@ along with Sorting library. If not, see <https://www.gnu.org/licenses/>.
 #define SORTING_LIBRARY_H
 
 /* Macros */
-#define isdigit(n) ((n >= '0' && n <= '9') ? 1 : 0)
-#define GREATER (1)
-#define LESS (-1)
-#define EQUALS (0)
+#ifndef isdigit
+    #define isdigit(n) ((n >= '0' && n <= '9') ? 1 : 0)
+#endif
+#ifndef GREATER
+    #define GREATER (1)
+#endif
+#ifndef LESS
+    #define LESS (-1)
+#endif
+#ifndef EQUALS
+    #define EQUALS (0)
+#endif
 #ifndef NULL
     #define NULL (0)
 #endif
 
-#define SWAP(a, b, size)                \
-    do {                                \
-        int __size = (size);            \
-        char *__a = (a), *__b = (b);    \
-        do {                            \
-            char __tmp = *__a;          \
-            *__a++ = *__b;              \
-            *__b++ = __tmp;             \
-        } while (--__size > 0);         \
-    } while (0)
+#ifndef SWAP
+    #define SWAP(a, b, size)                \
+        do {                                \
+            int __size = (size);            \
+            char *__a = (a), *__b = (b);    \
+            do {                            \
+                char __tmp = *__a;          \
+                *__a++ = *__b;              \
+                *__b++ = __tmp;             \
+            } while (--__size > 0);         \
+        } while (0)
+#endif
 
-#define COPY(a, b, size)                \
-    do {                                \
-      int __size = (size);              \
-      char *__a = (a);                  \
-      const char *__b = (b);            \
-      do {                              \
-          *__a++ = *__b++;              \
-      } while (--__size > 0);           \
-    } while (0)
+#ifndef COPY
+    #define COPY(a, b, size)                \
+        do {                                \
+          int __size = (size);              \
+          char *__a = (a);                  \
+          const char *__b = (b);            \
+          do {                              \
+              *__a++ = *__b++;              \
+          } while (--__size > 0);           \
+        } while (0)
+#endif
 
-#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#ifndef MIN
+    #define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#endif
 
 /* Types */
-typedef enum {
-    __false = 0,
-    __true = 1
-} __bool;
+#ifndef __BOOL_TYPE
+    #define __BOOL_TYPE
+    typedef enum {
+        __false = 0,
+        __true = 1
+    } __bool;
+#endif
 
 /* String to ... */
 double atof(const char *); /* ...double */

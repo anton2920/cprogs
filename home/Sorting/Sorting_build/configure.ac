@@ -1,10 +1,10 @@
 # Autoconf requirements
 
 # Initialize, but use more options. Note parameters brackts and whitespace.
-AC_INIT([STL], [1.0], [anton2920@gmail.com])
+AC_INIT([Sorting], [1.0], [anton2920@gmail.com])
 
 # Safety check - list a source file that wouldn't be in other directories:
-AC_CONFIG_SRCDIR([../STL.h])
+AC_CONFIG_SRCDIR([../sorting.h])
 
 # Put configuration results here, so we can easily #include them:
 AC_CONFIG_HEADERS([../config.h])
@@ -27,16 +27,7 @@ LT_INIT
 AC_ENABLE_SHARED
 AC_PROG_LIBTOOL
 
-# Check for essential libraries
-AC_SEARCH_LIBS([malloc], [c], [], [
-	AC_MSG_ERROR([unable to find c lib])
-	])
-
-AC_CHECK_HEADERS([stdio.h stdlib.h], [], [
-	AC_MSG_ERROR([unable to find necessary headers])
-	])
-
- # Checks for typedefs, structures, and compiler characteristics.
+# Checks for typedefs, structures, and compiler characteristics.
 AC_HEADER_STDBOOL
 AC_C_INLINE
 AC_TYPE_SIZE_T

@@ -1,3 +1,23 @@
+/*
+Standard Template Library for C — free shared library, that contains an attempt of recreation of libc++ STL
+Copyright © Pavlovsky Anton, 2019
+
+This file is part of STL.
+
+STL is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+STL is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with STL. If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #ifndef STL_LIBRARY_H
 #define STL_LIBRARY_H
 
@@ -13,9 +33,15 @@
 #endif
 
 /* Macros */
-#define SIZE_OF_WORD (sizeof(word))
-#define SIZE_OF_LONG (sizeof(lword))
-#define SIZE_OF_QUAD (sizeof(qword))
+#ifndef SIZE_OF_WORD
+    #define SIZE_OF_WORD (sizeof(word))
+#endif
+#ifndef SIZE_OF_LONG
+    #define SIZE_OF_LONG (sizeof(lword))
+#endif
+#ifndef SIZE_OF_QUAD
+    #define SIZE_OF_QUAD (sizeof(qword))
+#endif
 #ifndef TRUE
     #define TRUE (1)
 #endif
@@ -54,10 +80,13 @@
 #define STACK_POP_DOUBLE(st) (*((double *) Stack_popq(st)))
 
 /* New data types */
-typedef enum {
-    __false = FALSE,
-    __true = TRUE
-} __bool;
+#ifndef __BOOL_TYPE
+    #define __BOOL_TYPE
+    typedef enum {
+        __false = FALSE,
+        __true = TRUE
+    } __bool;
+#endif
 
 /* LIFO stack data type */
 typedef struct _stack {
