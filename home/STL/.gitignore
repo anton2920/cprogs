@@ -5,3 +5,14 @@ config.h.in
 libSTL_la-STL_Stack.lo
 libSTL_la-STL_Stack.o
 stamp-h1
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+build-aux/
+config.log
+config.status
+configure
+libSTL.la
+libtool
+m4/
