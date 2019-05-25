@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <STL.h>
 
 #define KIB (1024)
