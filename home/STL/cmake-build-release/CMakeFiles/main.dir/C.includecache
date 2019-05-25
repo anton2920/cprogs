@@ -7,10 +7,14 @@
 #IncludeRegexTransform: 
 
 /home/anton/C/home/STL/STL.h
+config.h
+/home/anton/C/home/STL/config.h
 stdio.h
 -
 stdlib.h
 -
+
+/home/anton/C/home/STL/config.h
 
 /home/anton/C/home/STL/main.c
 STL.h

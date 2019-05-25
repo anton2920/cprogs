@@ -3,4 +3,5 @@
 
 CMakeFiles/STL.dir/STL_Stack.c.o: ../STL.h
 CMakeFiles/STL.dir/STL_Stack.c.o: ../STL_Stack.c
+CMakeFiles/STL.dir/STL_Stack.c.o: ../config.h
 

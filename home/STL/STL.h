@@ -87,5 +87,6 @@ void *Stack_popw(Stack *); /* Pops a word from a stack */
 void *Stack_popl(Stack *); /* Pops a longword from a stack */
 void *Stack_popq(Stack *); /* Pops a quadword from a stack */
 void *Stack_pop_nbytes(Stack *, size_t); /* Pops a variable sized word form a stack */
+size_t Stack_get_size(Stack *); /* Returns difference between sp and bp */
 
 #endif

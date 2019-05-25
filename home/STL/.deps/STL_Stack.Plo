@@ -1,5 +1,5 @@
 ../STL_Stack.lo: ../STL_Stack.c /usr/include/stdc-predef.h ../STL.h \
- /usr/include/stdio.h /usr/include/features.h \
+ ../config.h /usr/include/stdio.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
@@ -20,6 +20,8 @@
 /usr/include/stdc-predef.h:
 
 ../STL.h:
+
+../config.h:
 
 /usr/include/stdio.h:
 

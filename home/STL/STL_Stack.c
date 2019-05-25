@@ -16,7 +16,7 @@ __bool Stack_init(Stack *st, size_t nbytes) {
 void Stack_delete(Stack *st) {
 
     /* Main part */
-    st->bp += st->size;
+    st->bp -= st->size;
     free(st->bp);
 }
 
@@ -75,47 +75,20 @@ __bool Stack_resize(Stack *st, size_t new_size) {
 
 __bool Stack_pushw(Stack *st, const void *word) {
 
-    /* VarCheck */
-    if (st->sp - SIZE_OF_WORD < st->bp - st->size) {
-        return __false;
-    }
-
-    /* Main part */
-    COPY((void *) st->sp, word, SIZE_OF_WORD);
-    st->sp -= SIZE_OF_WORD;
-
     /* Returning value */
-    return __true;
+    return Stack_push_nbytes(st, word, SIZE_OF_WORD);
 }
 
 __bool Stack_pushl(Stack *st, const void *long_word) {
 
-    /* VarCheck */
-    if (st->sp - SIZE_OF_LONG < st->bp - st->size) {
-        return __false;
-    }
-
-    /* Main part */
-    COPY((void *) st->sp, long_word, SIZE_OF_LONG);
-    st->sp -= SIZE_OF_LONG;
-
     /* Returning value */
-    return __true;
+    return Stack_push_nbytes(st, long_word, SIZE_OF_LONG);
 }
 
 __bool Stack_pushq(Stack *st, const void *quad_word) {
 
-    /* VarCheck */
-    if (st->sp - SIZE_OF_QUAD < st->bp - st->size) {
-        return __false;
-    }
-
-    /* Main part */
-    COPY((void *) st->sp, quad_word, SIZE_OF_QUAD);
-    st->sp -= SIZE_OF_QUAD;
-
     /* Returning value */
-    return __true;
+    return Stack_push_nbytes(st, quad_word, SIZE_OF_QUAD);
 }
 
 __bool Stack_push_nbytes(Stack *st, const void *elem, size_t nbytes) {
@@ -127,52 +100,28 @@ __bool Stack_push_nbytes(Stack *st, const void *elem, size_t nbytes) {
 
     /* Main part */
     COPY((void *) st->sp, elem, nbytes);
-    st->sp -= SIZE_OF_QUAD;
+    st->sp -= nbytes;
 
     /* Returning value */
     return __true;
 }
 
 void *Stack_popw(Stack *st) {
-    
-    /* VarCheck */
-    if (st->sp + SIZE_OF_WORD > st->bp) {
-        return NULL;
-    }
-
-    /* Main part */
-    st->sp += SIZE_OF_WORD;
 
     /* Returning value */
-    return st->sp;
+    return Stack_pop_nbytes(st, SIZE_OF_WORD);
 }
 
 void *Stack_popl(Stack *st) {
 
-    /* VarCheck */
-    if (st->sp + SIZE_OF_LONG > st->bp) {
-        return NULL;
-    }
-
-    /* Main part */
-    st->sp += SIZE_OF_LONG;
-
     /* Returning value */
-    return st->sp;
+    return Stack_pop_nbytes(st, SIZE_OF_LONG);
 }
 
 void *Stack_popq(Stack *st) {
 
-    /* VarCheck */
-    if (st->sp + SIZE_OF_QUAD > st->bp) {
-        return NULL;
-    }
-
-    /* Main part */
-    st->sp += SIZE_OF_QUAD;
-
     /* Returning value */
-    return st->sp;
+    return Stack_pop_nbytes(st, SIZE_OF_QUAD);
 }
 
 void *Stack_pop_nbytes(Stack *st, size_t nbytes) {
@@ -187,4 +136,10 @@ void *Stack_pop_nbytes(Stack *st, size_t nbytes) {
 
     /* Returning value */
     return st->sp;
+}
+
+size_t Stack_get_size(Stack *st) {
+
+    /* Returning value */
+    return (st->bp - st->sp);
 }
