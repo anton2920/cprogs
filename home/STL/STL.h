@@ -88,13 +88,6 @@ along with STL. If not, see <https://www.gnu.org/licenses/>.
     } __bool;
 #endif
 
-/* LIFO stack data type */
-typedef struct _stack {
-    void *bp;
-    void *sp;
-    size_t size;
-} Stack;
-
 typedef short word;
 typedef int dword;
 typedef int lword;
@@ -102,12 +95,20 @@ typedef long qword;
 
 /* Function declarations */
 
-/* STL_Stack */
+/* STL_Stack section */
+
+/* LIFO stack data type */
+typedef struct _stack {
+    void *bp;
+    void *sp;
+    size_t size;
+} Stack;
+
 __bool Stack_init(Stack *, size_t); /* Creates a stack of declared size using malloc() [not a POSIX-standard function]. Returns __true, if everything is fine */
 void Stack_delete(Stack *); /* Deletes a stack */
 __bool Stack_cpy(Stack *, Stack *); /* Copies the right stack to the left one. The left stack size must be greater or equals to size of the right one, otherwise function will return __false */
 __bool Stack_ncpy(Stack *, Stack *, size_t); /* Acts like function above, but copies only first bytes of the right stack */
-__bool Stack_resize(Stack *, size_t); /* Securely resizes stack according to new declared size. Returns __true, if everything is fine */
+__bool Stack_resize(Stack *, size_t); /* Safely resizes stack according to new declared size. Returns __true, if everything is fine */
 __bool Stack_pushw(Stack *, const void *word); /* Pushes a word to stack */
 __bool Stack_pushl(Stack *, const void *long_word); /* Pushes a longword to stack */
 __bool Stack_pushq(Stack *, const void *quad_word); /* Pushes a quadword to stack */
@@ -117,5 +118,28 @@ void *Stack_popl(Stack *); /* Pops a longword from a stack */
 void *Stack_popq(Stack *); /* Pops a quadword from a stack */
 void *Stack_pop_nbytes(Stack *, size_t); /* Pops a variable sized word form a stack */
 size_t Stack_get_size(Stack *); /* Returns difference between sp and bp */
+
+/* STL_List section */
+typedef struct _list_node {
+    struct _list *next;
+    void *value;
+} list_node;
+
+/* Single-linked list data type */
+typedef struct _list {
+    list_node *bp;
+    list_node *lp;
+    size_t size;
+} List;
+
+typedef enum _stpt {
+    head,
+    tail
+} stpt;
+
+__bool List_init(List *);
+void List_detele(List *);
+__bool List_add_element(List *, const void *, size_t nbytes, stpt pt, size_t offset);
+
 
 #endif

@@ -161,6 +161,9 @@
 		<Unit filename="/home/anton/C/home/STL/STL.h">
 			<Option target="STL"/>
 		</Unit>
+		<Unit filename="/home/anton/C/home/STL/STL_List.c">
+			<Option target="STL"/>
+		</Unit>
 		<Unit filename="/home/anton/C/home/STL/STL_Stack.c">
 			<Option target="STL"/>
 		</Unit>

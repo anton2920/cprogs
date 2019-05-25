@@ -182,6 +182,33 @@ STL/fast:
 	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/build
 .PHONY : STL/fast
 
+STL_List.o: STL_List.c.o
+
+.PHONY : STL_List.o
+
+# target to build an object file
+STL_List.c.o:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_List.c.o
+.PHONY : STL_List.c.o
+
+STL_List.i: STL_List.c.i
+
+.PHONY : STL_List.i
+
+# target to preprocess a source file
+STL_List.c.i:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_List.c.i
+.PHONY : STL_List.c.i
+
+STL_List.s: STL_List.c.s
+
+.PHONY : STL_List.s
+
+# target to generate assembly for a file
+STL_List.c.s:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_List.c.s
+.PHONY : STL_List.c.s
+
 STL_Stack.o: STL_Stack.c.o
 
 .PHONY : STL_Stack.o
@@ -250,6 +277,9 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
+	@echo "... STL_List.o"
+	@echo "... STL_List.i"
+	@echo "... STL_List.s"
 	@echo "... STL_Stack.o"
 	@echo "... STL_Stack.i"
 	@echo "... STL_Stack.s"

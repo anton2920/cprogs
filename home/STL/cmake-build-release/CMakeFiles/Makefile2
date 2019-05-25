@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/anton/C/home/STL/cmake-build-release
 CMakeFiles/main.dir/all: CMakeFiles/STL.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/home/STL/cmake-build-release/CMakeFiles --progress-num=3,4 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/home/STL/cmake-build-release/CMakeFiles --progress-num=4,5 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-release/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-release/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-release/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule
@@ -108,7 +108,7 @@ clean: CMakeFiles/main.dir/clean
 CMakeFiles/STL.dir/all:
 	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/depend
 	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/home/STL/cmake-build-release/CMakeFiles --progress-num=1,2 "Built target STL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/home/STL/cmake-build-release/CMakeFiles --progress-num=1,2,3 "Built target STL"
 .PHONY : CMakeFiles/STL.dir/all
 
 # Include target in all.
@@ -118,7 +118,7 @@ all: CMakeFiles/STL.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/STL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-release/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-release/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/STL.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-release/CMakeFiles 0
 .PHONY : CMakeFiles/STL.dir/rule
