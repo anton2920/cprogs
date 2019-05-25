@@ -12,3 +12,5 @@ libtool
 m4/
 ../config.h.in
 ../stamp-h1
+.libs/
+libSTL.la
