@@ -1,0 +1,4 @@
+/home/anton/C/home/STL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/anton/C/home/STL/cmake-build-debug/CMakeFiles/STL.dir
+/home/anton/C/home/STL/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/anton/C/home/STL/cmake-build-debug/CMakeFiles/main.dir
