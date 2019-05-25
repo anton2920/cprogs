@@ -1,13 +1,14 @@
 # Initializing variables
 CC = cc
 CFLAGS = -Wall -std=c90
+LDFLAGS = -ldialog -lncursesw -lm
 
 all: prog
 
 prog: main.o menu.o math.o tree.o menu2.o menu3.o
-	$(CC) $(CFLAGS) main.o menu.o menu2.o menu3.o tree.o math.o -o main -ldialog -lncursesw -lm
+	$(CC) $(CFLAGS) main.o menu.o menu2.o menu3.o tree.o math.o -o main $(LDFLAGS)
 dbg: main.o menu.o math.o tree2.o menu2.o menu3.o
-	$(CC) $(CFLAGS) main.o menu.o menu2.o menu3.o tree2.o math.o -o dbg_main -ldialog -lncursesw -lm
+	$(CC) $(CFLAGS) main.o menu.o menu2.o menu3.o tree2.o math.o -o dbg_main $(LDFLAGS)
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c

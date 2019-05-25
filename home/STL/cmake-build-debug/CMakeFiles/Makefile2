@@ -65,43 +65,6 @@ CMAKE_SOURCE_DIR = /home/anton/C/home/STL
 CMAKE_BINARY_DIR = /home/anton/C/home/STL/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/STL.dir
-
-# All Build rule for target.
-CMakeFiles/STL.dir/all:
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/depend
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/home/STL/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target STL"
-.PHONY : CMakeFiles/STL.dir/all
-
-# Include target in all.
-all: CMakeFiles/STL.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/STL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/STL.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/STL.dir/rule
-
-# Convenience name for target.
-STL: CMakeFiles/STL.dir/rule
-
-.PHONY : STL
-
-# clean rule for target.
-CMakeFiles/STL.dir/clean:
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/clean
-.PHONY : CMakeFiles/STL.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/STL.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
@@ -135,6 +98,43 @@ CMakeFiles/main.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/STL.dir
+
+# All Build rule for target.
+CMakeFiles/STL.dir/all:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/depend
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/home/STL/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target STL"
+.PHONY : CMakeFiles/STL.dir/all
+
+# Include target in all.
+all: CMakeFiles/STL.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/STL.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/STL.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/home/STL/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/STL.dir/rule
+
+# Convenience name for target.
+STL: CMakeFiles/STL.dir/rule
+
+.PHONY : STL
+
+# clean rule for target.
+CMakeFiles/STL.dir/clean:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/clean
+.PHONY : CMakeFiles/STL.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/STL.dir/clean
 
 .PHONY : clean
 
