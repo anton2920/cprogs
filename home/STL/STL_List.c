@@ -38,7 +38,7 @@ __bool List_init(List *l) {
 void List_delete(List *l) {
 
     /* Main part */
-    while (l->bp->next != l->lp) {
+    while (l->bp->next != l->lp && l->bp != l->lp) {
         List_delete_element(l, tail, 0);
     }
 
@@ -157,7 +157,7 @@ void *List_get_element_value(List *l, stpt pt, size_t offset) {
 int List_get_element_offset(List *l, list_node *lnode, stpt pt) {
 
     /* Initializing variables */
-    register int i;
+    register size_t i;
     auto list_node *iter;
 
     /* Main part */
@@ -172,7 +172,7 @@ int List_get_element_offset(List *l, list_node *lnode, stpt pt) {
     return (pt == head) ? (i) : (l->size - i);
 }
 
-__bool List_swap_elements(List *l, list_node *lnode1, list_node *lnode2) {
+__bool List_swap_elements(list_node *lnode1, list_node *lnode2) {
 
     /* Initializing variables */
     auto void *t_v;

@@ -28,7 +28,7 @@ main() {
         printf("%d ", (digit = STACK_POP_LONG(&a)));
         back_num += digit;
         back_num *= 10;
-        fflush(stdout);
+
         if (Stack_get_size(&a)) {
             back_num += STACK_POP_LONG(&a);
             back_num *= 10;
@@ -41,4 +41,7 @@ main() {
     printf("\nNumber (backwards): %d\n", back_num);
 
     Stack_delete(&a);
+
+    /* Returning value */
+    return 0;
 }

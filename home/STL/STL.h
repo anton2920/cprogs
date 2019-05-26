@@ -157,7 +157,7 @@ __bool List_delete_element(List *, stpt pt, size_t offset); /* Deletes a specifi
 list_node *List_get_element(List *, stpt pt, size_t offset); /* Returns a full list node, defined by starting point and the offset from it */
 void *List_get_element_value(List *, stpt pt, size_t offset); /* Returns the value of a specific node, defined by starting point and the offset from it */
 int List_get_element_offset(List *, list_node *, stpt pt); /* Returns the offset of specific element from declared starting point */
-__bool List_swap_elements(List *, list_node *, list_node *); /* Swaps two values of specific elements */
+__bool List_swap_elements(list_node *, list_node *); /* Swaps two values of specific elements */
 __bool List_cpy(List *__dest, List *__src); /* Creates an exact copy of a list */
 __bool List_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a list */
 

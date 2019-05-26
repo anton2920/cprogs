@@ -1,4 +1,5 @@
-#include "STL.h"
+#include <stdio.h>
+#include <STL.h>
 
 main() {
 
@@ -11,7 +12,7 @@ main() {
     printf("Type a number: ");
     for ( ; (digit = getchar()) != 0xA; ) {
         digit -= '0';
-        List_Stack_pushl(&a, &digit);
+        List_Stack_pushl(&a, (const void *) &digit);
     }
 
     if (!(a.size % 2)) {
@@ -20,7 +21,8 @@ main() {
         number *= 10;
     }
 
-    printf("\nOdd positioned digits of number (backwards): ");
+    printf("\nDigits on odd places (backwards): ");
+
     for ( ; a.size; ) {
         LIST_STACK_POPL(&a, digit);
         number += digit;
@@ -35,7 +37,7 @@ main() {
     }
     number /= 10;
 
-    printf("\nThis number (backwards): %d\n", number);
+    printf("\nNumber (backwards): %d\n", number);
 
     List_delete(&a);
 
