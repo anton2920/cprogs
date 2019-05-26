@@ -171,23 +171,23 @@ void *List_Stack_pop(List *);
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
         if (temp != NULL) {                                     \
-            (__word) = (temp == NULL) ? 0 : *((word *) temp);   \
+            (__word) = *((word *) temp);                        \
             free(temp);                                         \
         }                                                       \
     } while(0)
-#define LIST_STACK_POPL(st, __word)                             \
+#define LIST_STACK_POPL(st, __lword)                            \
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
         if (temp != NULL) {                                     \
-            (__word) = (temp == NULL) ? 0 : *((lword *) temp);  \
+            (__lword) = *((lword *) temp);                      \
             free(temp);                                         \
         }                                                       \
     } while(0)
-#define LIST_STACK_POPQ(st, __word)                             \
+#define LIST_STACK_POPQ(st, __qword)                            \
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
         if (temp != NULL) {                                     \
-            (__word) = (temp == NULL) ? 0 : *((qword *) temp);  \
+            (__qword) = *((qword *) temp);                      \
             free(temp);                                         \
         }                                                       \
     } while(0)

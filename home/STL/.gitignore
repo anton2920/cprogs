@@ -3,6 +3,7 @@
 .dirstamp
 config.h.in
 libSTL_la-STL_Stack.lo
+libSTL_la-STL_List.lo
 libSTL_la-STL_Stack.o
 stamp-h1
 Makefile
