@@ -13,6 +13,8 @@ stdio.h
 -
 stdlib.h
 -
+malloc.h
+-
 
 /home/anton/C/home/STL/config.h
 

@@ -31,6 +31,9 @@ along with STL. If not, see <https://www.gnu.org/licenses/>.
 #if (HAVE_STDLIB_H == 1)
     #include <stdlib.h>
 #endif
+#if (HAVE_MALLOC_H == 1)
+    #include <malloc.h>
+#endif
 
 /* Macros */
 #ifndef SIZE_OF_WORD
@@ -47,6 +50,9 @@ along with STL. If not, see <https://www.gnu.org/licenses/>.
 #endif
 #ifndef FALSE
     #define FALSE (0)
+#endif
+#ifndef LIST_INDEX_ERROR
+    #define LIST_INDEX_ERROR (-1)
 #endif
 #ifndef SWAP
     #define SWAP(a, b, size)                \
@@ -72,12 +78,11 @@ along with STL. If not, see <https://www.gnu.org/licenses/>.
         } while (0)
 #endif
 
-/* Unprotected macros for pop'ing */
-#define STACK_POP_SHORT(st) (*((short *) Stack_popw(st)))
-#define STACK_POP_LONG(st) (*((int *) Stack_popl(st)))
-#define STACK_POP_FLOAT(st) (*((float *) Stack_popl(st)))
-#define STACK_POP_QUAD(st) (*((long *) Stack_popq(st)))
-#define STACK_POP_DOUBLE(st) (*((double *) Stack_popq(st)))
+/* AT&T assembly styled macros */
+#define movb(__src, __dest) (COPY((void *) __dest, (const void *) __src, 1))
+#define movw(__src, __dest) (COPY((void *) __dest, (const void *) __src, SIZE_OF_WORD))
+#define movl(__src, __dest) (COPY((void *) __dest, (const void *) __src, SIZE_OF_LONG))
+#define movq(__src, __dest) (COPY((void *) __dest, (const void *) __src, SIZE_OF_QUAD))
 
 /* New data types */
 #ifndef __BOOL_TYPE
@@ -119,27 +124,72 @@ void *Stack_popq(Stack *); /* Pops a quadword from a stack */
 void *Stack_pop_nbytes(Stack *, size_t); /* Pops a variable sized word form a stack */
 size_t Stack_get_size(Stack *); /* Returns difference between sp and bp */
 
+/* Unprotected macros for pop'ing */
+#define STACK_POP_SHORT(st) (*((short *) Stack_popw(st)))
+#define STACK_POP_LONG(st) (*((int *) Stack_popl(st)))
+#define STACK_POP_FLOAT(st) (*((float *) Stack_popl(st)))
+#define STACK_POP_QUAD(st) (*((long *) Stack_popq(st)))
+#define STACK_POP_DOUBLE(st) (*((double *) Stack_popq(st)))
+
 /* STL_List section */
 typedef struct _list_node {
-    struct _list *next;
+    struct _list_node *next;
     void *value;
 } list_node;
 
-/* Single-linked list data type */
+/* Single-linked list data type. First element's value is not used. *bp should be changed! */
 typedef struct _list {
     list_node *bp;
     list_node *lp;
     size_t size;
 } List;
 
+/* Offset base for adding and removing elements */
 typedef enum _stpt {
     head,
     tail
 } stpt;
 
-__bool List_init(List *);
-void List_detele(List *);
-__bool List_add_element(List *, const void *, size_t nbytes, stpt pt, size_t offset);
+__bool List_init(List *); /* Creates a single-linked list. Returns __true, if everything is OK */
+void List_delete(List *); /* Deletes a single-linked list */
+__bool List_add_element(List *, const void *elem, size_t nbytes, stpt pt, size_t offset); /* Adds an element of specific size to a specific place, defined by starting point and the offset from it*/
+__bool List_delete_element(List *, stpt pt, size_t offset); /* Deletes a specific element, defined by starting point and the offset from it */
+list_node *List_get_element(List *, stpt pt, size_t offset); /* Returns a full list node, defined by starting point and the offset from it */
+void *List_get_element_value(List *, stpt pt, size_t offset); /* Returns the value of a specific node, defined by starting point and the offset from it */
+int List_get_element_offset(List *, list_node *, stpt pt); /* Returns the offset of specific element from declared starting point */
+__bool List_swap_elements(List *, list_node *, list_node *); /* Swaps two values of specific elements */
+__bool List_cpy(List *__dest, List *__src); /* Creates an exact copy of a list */
+__bool List_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a list */
 
+/* LIFO Stack based on STL_List */
+__bool List_Stack_push_nbytes(List *, const void *, size_t);
+__bool List_Stack_pushw(List *, const void *);
+__bool List_Stack_pushl(List *, const void *);
+__bool List_Stack_pushq(List *, const void *);
+void *List_Stack_pop(List *);
+#define LIST_STACK_POPW(st, __word)                             \
+    do {                                                        \
+        void *temp = List_Stack_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__word) = (temp == NULL) ? 0 : *((word *) temp);   \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+#define LIST_STACK_POPL(st, __word)                             \
+    do {                                                        \
+        void *temp = List_Stack_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__word) = (temp == NULL) ? 0 : *((lword *) temp);  \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+#define LIST_STACK_POPQ(st, __word)                             \
+    do {                                                        \
+        void *temp = List_Stack_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__word) = (temp == NULL) ? 0 : *((qword *) temp);  \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
 
 #endif

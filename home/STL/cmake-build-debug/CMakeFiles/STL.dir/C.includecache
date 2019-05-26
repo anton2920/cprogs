@@ -13,8 +13,10 @@ stdio.h
 -
 stdlib.h
 -
+malloc.h
+-
 
-/home/anton/C/home/STL/STL_Stack.c
+/home/anton/C/home/STL/STL_List.c
 STL.h
 /home/anton/C/home/STL/STL.h
 

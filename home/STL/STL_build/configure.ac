@@ -32,7 +32,7 @@ AC_SEARCH_LIBS([malloc], [c], [], [
 	AC_MSG_ERROR([unable to find c lib])
 	])
 
-AC_CHECK_HEADERS([stdio.h stdlib.h], [], [
+AC_CHECK_HEADERS([stdio.h stdlib.h malloc.h], [], [
 	AC_MSG_ERROR([unable to find necessary headers])
 	])
 
