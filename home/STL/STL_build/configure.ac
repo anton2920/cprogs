@@ -7,7 +7,7 @@ AC_INIT([STL], [1.0], [anton2920@gmail.com])
 AC_CONFIG_SRCDIR([../STL.h])
 
 # Put configuration results here, so we can easily #include them:
-AC_CONFIG_HEADERS([../config.h])
+AC_CONFIG_HEADERS([../STL_Config.h])
 
 # Put autotools auxiliary files in a subdir, so they don't clutter top dir:
 AC_CONFIG_AUX_DIR([build-aux])

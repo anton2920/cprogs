@@ -7,4 +7,4 @@ EXTRA_DIST = autogen.sh
 lib_LTLIBRARIES = libSTL.la
 libSTL_la_SOURCES = ../STL_Stack.c ../STL_List.c 
 libSTL_la_CFLAGS = $(AM_CFLAGS)
-include_HEADERS = ../STL.h
+include_HEADERS = ../STL.h ../STL_Config.h

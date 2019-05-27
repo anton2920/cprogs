@@ -22,7 +22,7 @@ along with STL. If not, see <https://www.gnu.org/licenses/>.
 #define STL_LIBRARY_H
 
 /* Include config.h */
-#include "config.h"
+#include "STL_Config.h"
 
 /* Including standard headers */
 #if (HAVE_STDIO_H == 1)

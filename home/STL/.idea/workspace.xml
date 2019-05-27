@@ -14,15 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68f8bda2-5106-4d5c-a8c4-ea21d4c92e40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/STL.h" beforeDir="false" afterPath="$PROJECT_DIR$/STL.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STL_List.c" beforeDir="false" afterPath="$PROJECT_DIR$/STL_List.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libSTL.so" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libSTL.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STL_build/Makefile.am" beforeDir="false" afterPath="$PROJECT_DIR$/STL_build/Makefile.am" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STL_build/configure.ac" beforeDir="false" afterPath="$PROJECT_DIR$/STL_build/configure.ac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/config.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -50,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="760">
+              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -190,7 +185,7 @@
       <workItem from="1558796656592" duration="17197000" />
       <workItem from="1558863790522" duration="26161000" />
       <workItem from="1558931292403" duration="25000" />
-      <workItem from="1558931360639" duration="2451000" />
+      <workItem from="1558931360639" duration="3186000" />
     </task>
     <task id="LOCAL-00001" summary="PC: add STL_List (a bit)">
       <created>1558815195758</created>
@@ -203,7 +198,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46189000" />
+    <option name="totallyTimeSpent" value="46924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1928" height="1048" extended-state="6" />
@@ -260,17 +255,6 @@
     <MESSAGE value="PC: add STL_List (a bit)" />
     <option name="LAST_COMMIT_MESSAGE" value="PC: add STL_List (a bit)" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/library.c" />
     <entry file="file://$PROJECT_DIR$/library.h" />
@@ -317,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="760">
+          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
         </state>
       </provider>
     </entry>
