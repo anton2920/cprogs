@@ -125,10 +125,10 @@ void *Stack_pop_nbytes(Stack *, size_t); /* Pops a variable sized word form a st
 size_t Stack_get_size(Stack *); /* Returns difference between sp and bp */
 
 /* Unprotected macros for pop'ing */
-#define STACK_POP_SHORT(st) (*((short *) Stack_popw(st)))
-#define STACK_POP_LONG(st) (*((int *) Stack_popl(st)))
+#define STACK_POPW(st) (*((word *) Stack_popw(st)))
+#define STACK_POPL(st) (*((lword *) Stack_popl(st)))
+#define STACK_POPQ(st) (*((qword *) Stack_popq(st)))
 #define STACK_POP_FLOAT(st) (*((float *) Stack_popl(st)))
-#define STACK_POP_QUAD(st) (*((long *) Stack_popq(st)))
 #define STACK_POP_DOUBLE(st) (*((double *) Stack_popq(st)))
 
 /* STL_List section */
@@ -144,7 +144,7 @@ typedef struct _list {
     size_t size;
 } List;
 
-/* Offset base for adding and removing elements */
+/* Offset's base for adding and removing elements */
 typedef enum _stpt {
     head,
     tail
@@ -161,12 +161,14 @@ __bool List_swap_elements(list_node *, list_node *); /* Swaps two values of spec
 __bool List_cpy(List *__dest, List *__src); /* Creates an exact copy of a list */
 __bool List_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a list */
 
+
 /* LIFO Stack based on STL_List */
 __bool List_Stack_push_nbytes(List *, const void *, size_t);
 __bool List_Stack_pushw(List *, const void *);
 __bool List_Stack_pushl(List *, const void *);
 __bool List_Stack_pushq(List *, const void *);
 void *List_Stack_pop(List *);
+
 #define LIST_STACK_POPW(st, __word)                             \
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
@@ -175,6 +177,7 @@ void *List_Stack_pop(List *);
             free(temp);                                         \
         }                                                       \
     } while(0)
+
 #define LIST_STACK_POPL(st, __lword)                            \
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
@@ -183,11 +186,83 @@ void *List_Stack_pop(List *);
             free(temp);                                         \
         }                                                       \
     } while(0)
+
 #define LIST_STACK_POPQ(st, __qword)                            \
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
         if (temp != NULL) {                                     \
             (__qword) = *((qword *) temp);                      \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+#define LIST_STACK_POP_FLOAT(st, __float)                       \
+    do {                                                        \
+        void *temp = List_Stack_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__float) = *((float *) temp);                      \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+#define LIST_STACK_POP_DOUBLE(st, __double)                     \
+    do {                                                        \
+        void *temp = List_Stack_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__double) = *((double *) temp);                    \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+
+/* FIFO Queue based on STL_List */
+__bool List_Queue_push_nbytes(List *, const void *, size_t);
+__bool List_Queue_pushw(List *, const void *);
+__bool List_Queue_pushl(List *, const void *);
+__bool List_Queue_pushq(List *, const void *);
+void *List_Queue_pop(List *);
+
+#define LIST_QUEUE_POPW(st, __word)                             \
+    do {                                                        \
+        void *temp = List_Queue_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__word) = *((word *) temp);                        \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+#define LIST_QUEUE_POPL(st, __lword)                            \
+    do {                                                        \
+        void *temp = List_Queue_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__lword) = *((lword *) temp);                      \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+#define LIST_QUEUE_POPQ(st, __qword)                            \
+    do {                                                        \
+        void *temp = List_Queue_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__qword) = *((qword *) temp);                      \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+#define LIST_STACK_POP_FLOAT(st, __float)                       \
+    do {                                                        \
+        void *temp = List_Stack_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__float) = *((float *) temp);                      \
+            free(temp);                                         \
+        }                                                       \
+    } while(0)
+
+#define LIST_QUEUE_POP_DOUBLE(st, __double)                     \
+    do {                                                        \
+        void *temp = List_Queue_pop((st));                      \
+        if (temp != NULL) {                                     \
+            (__double) = *((double *) temp);                    \
             free(temp);                                         \
         }                                                       \
     } while(0)

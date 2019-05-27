@@ -1,44 +1,41 @@
 #include "STL.h"
 
+int to_bin(int);
+
 main() {
 
     /* Initializing variables */
     auto List a;
-    auto int digit, number = 0;
+    auto int i, digit;
 
     /* Main part */
     List_init(&a);
-    printf("Type a number: ");
-    for ( ; (digit = getchar()) != 0xA; ) {
-        digit -= '0';
-        List_Stack_pushl(&a, &digit);
+
+    for (i = 0; i < 10; ++i) {
+        List_Queue_pushl(&a, (const void *) &i);
     }
 
-    if (!(a.size % 2)) {
-        LIST_STACK_POPL(&a, digit);
-        number += digit;
-        number *= 10;
+    for (i = 0; i < 10; ++i) {
+        LIST_QUEUE_POPL(&a, digit);
+        printf("%d = %d\n", digit, to_bin(digit));
     }
-
-    printf("\nOdd positioned digits of number (backwards): ");
-    for ( ; a.size; ) {
-        LIST_STACK_POPL(&a, digit);
-        number += digit;
-        number *= 10;
-        printf("%d ", digit);
-
-        if (a.size) {
-            LIST_STACK_POPL(&a, digit);
-            number += digit;
-            number *= 10;
-        }
-    }
-    number /= 10;
-
-    printf("\nThis number (backwards): %d\n", number);
 
     List_delete(&a);
 
     /* Returning value */
     return 0;
+}
+
+int to_bin(int num) {
+
+    /* Initializing variables */
+    auto int number = 0, multiplier = 1;
+
+    /* Main part */
+    for ( ; num; num >>= 1, multiplier *= 10) {
+        number += (num % 2) * multiplier;
+    }
+
+    /* Returning value */
+    return number;
 }

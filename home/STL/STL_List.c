@@ -224,6 +224,8 @@ __bool List_ncpy(List *l1, List *l2, size_t n) {
     return __true;
 }
 
+
+/* LIFO Stack based on STL_List */
 __bool List_Stack_push_nbytes(List *l, const void *elem, size_t nbytes) {
 
     /* Returning value */
@@ -233,22 +235,67 @@ __bool List_Stack_push_nbytes(List *l, const void *elem, size_t nbytes) {
 __bool List_Stack_pushw(List *l, const void *elem) {
 
     /* Returning value */
-    return List_add_element(l, elem, SIZE_OF_WORD, tail, 0);
+    return List_Stack_push_nbytes(l, elem, SIZE_OF_WORD);
 }
 
 __bool List_Stack_pushl(List *l, const void *elem) {
 
     /* Returning value */
-    return List_add_element(l, elem, SIZE_OF_LONG, tail, 0);
+    return List_Stack_push_nbytes(l, elem, SIZE_OF_LONG);
 }
 
 __bool List_Stack_pushq(List *l, const void *elem) {
 
     /* Returning value */
-    return List_add_element(l, elem, SIZE_OF_QUAD, tail, 0);
+    return List_Stack_push_nbytes(l, elem, SIZE_OF_QUAD);
 }
 
 void *List_Stack_pop(List *l) {
+
+    /* Initializing variables */
+    auto void *temp, *temp2;
+    auto size_t nbytes;
+
+    /* Main part */
+    if ((temp = List_get_element_value(l, tail, 0)) == NULL) {
+        return NULL;
+    }
+    if ((temp2 = malloc((nbytes = malloc_usable_size(temp)))) == NULL) {
+        return NULL;
+    }
+    COPY(temp2, temp, nbytes);
+    List_delete_element(l, tail, 0);
+
+    /* Returning value */
+    return temp2;
+}
+
+/* FIFO Queue based on STL_List */
+__bool List_Queue_push_nbytes(List *l, const void *elem, size_t nbytes) {
+
+    /* Returning value */
+    return List_add_element(l, elem, nbytes, head, 0);
+}
+
+__bool List_Queue_pushw(List *l, const void *elem) {
+
+    /* Returning value */
+    return List_Queue_push_nbytes(l, elem, SIZE_OF_WORD);
+}
+
+__bool List_Queue_pushl(List *l, const void *elem) {
+
+    /* Returning value */
+    return List_Queue_push_nbytes(l, elem, SIZE_OF_LONG);
+}
+
+__bool List_Queue_pushq(List *l, const void *elem) {
+
+    /* Returning value */
+    return List_Queue_push_nbytes(l, elem, SIZE_OF_QUAD);
+}
+
+void *List_Queue_pop(List *l) {
 
     /* Initializing variables */
     auto void *temp, *temp2;
