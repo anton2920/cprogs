@@ -7,22 +7,22 @@ int main(int argc, char *argv[]) {
     struct SDL_Renderer *renderer = NULL;
     union SDL_Event event;
     bool quit = false;
-    srand((unsigned int) time(NULL));
+    srand((unsigned int) time(NULL) / 2);
 
     /* VarCheck */
     if (check_args(argc, argv) == true) {
-        if (SDL_Init_All(&window, &renderer) == true) {
+        if (SDL_Init_All(&window, &renderer, (**(argv + 1) == '3') ? true : false) == true) {
 
             /* Initializing variables */
             struct _TTF_Font *my_font = TTF_OpenFont(FONT_PATH, 100);
             assert(my_font != NULL);
             struct SDL_Texture *textTexture;
-            struct SDL_Rect main_rect = { 0, 0, 70, 200 };
+            struct SDL_Rect main_rect = {0, 0, 70, 200};
             struct SDL_Rect *curr_ball = NULL;
 
-            struct SDL_Color fore_color = { 130, 140, 50, 0 };
+            struct SDL_Color fore_color = {130, 140, 50, 0};
             /* struct SDL_Color back_color = { 188, 155, 166, 0 }; */
-            struct SDL_Color back_color = { 0, 0, 0, 0};
+            struct SDL_Color back_color = {0, 0, 0, 0};
 
             int k = 0, i, check = 0;
             char text[10];
@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
             int ball_cost[BALL_C];
             init_balls(p_b, balls, ball_cost);
 
-            /* CPU|GPU parity issue */
+            /* CPU/GPU parity issue */
             struct SDL_Surface *ballImage = IMG_Load(PIC_PATH);
             assert(ballImage != NULL); /* Debugging sh*t */
             SDL_SetColorKey(ballImage, SDL_TRUE, SDL_MapRGB(ballImage->format, 255, 255, 255));
@@ -71,6 +71,10 @@ int main(int argc, char *argv[]) {
             struct Mix_Chunk *Sound = NULL;
             Mix_Music *fon = NULL;
             Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 1024);
+
+            /* Game */
+            auto int mleft = MINES_TOTAL;
+            auto int lleft = LIFES_TOTAL;
 
             /* Main part. SDL2 */
             /*loadmusic(fon);*/
@@ -184,6 +188,22 @@ int main(int argc, char *argv[]) {
                 SDL_Quit();
             } else {
 
+                /* F**cking game. Mines, traps, score, lives */
+                while (!quit) {
+                    while (SDL_PollEvent(&event)) {
+                        if (event.type == SDL_QUIT) {
+                            quit = true;
+                        }
+                        SDL_RenderClear(renderer);
+
+                        draw_field(renderer); /* Drawing field */
+                        spawn_mines(renderer); /* Spawning mines */
+                        set_traps(renderer); /* Setting traps */
+                        print_info(mleft, lleft, renderer, my_font); /* Printing mines information */
+
+                        SDL_RenderPresent(renderer);
+                    }
+                }
             }
         } else {
             fprintf(stderr, "Error! Code: %s\n", SDL_GetError());

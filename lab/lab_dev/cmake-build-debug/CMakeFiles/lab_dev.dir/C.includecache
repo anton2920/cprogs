@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/anton/C/lab/lab_dev/main.c
+proj_folder/source.h
+/home/anton/C/lab/lab_dev/proj_folder/source.h
+
 /home/anton/C/lab/lab_dev/proj_folder/source.c
 source.h
 /home/anton/C/lab/lab_dev/proj_folder/source.h

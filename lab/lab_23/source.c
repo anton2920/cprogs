@@ -16,10 +16,16 @@ bool check_args(int argc, char *argv[]) {
     return false;
 }
 
-bool SDL_Init_All(struct SDL_Window **window, struct SDL_Renderer **renderer) {
+bool SDL_Init_All(struct SDL_Window **window, struct SDL_Renderer **renderer, bool task_3) {
 
     /* SDL2 */
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
+    if (task_3 == true) {
+        #undef WIDTH
+        #undef HEIGHT
+        #define WIDTH (850)
+        #define HEIGHT (640)
+    }
     if ((*window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN)) < 0) {
         return false;
     } else if (!(*renderer = SDL_CreateRenderer(*window, -1, 0))) {
@@ -263,14 +269,14 @@ void ball_touch_another_ball(struct pro_balls *all, struct SDL_Rect *curr_ball) 
                     cX_base = an->ball->x + an->ball->w / 2;
                     cY_an = base->ball->y + base->ball->h / 2;
                     cY_base = an->ball->y + an->ball->h / 2;
-                    r_an = base->ball->h / 2;
+                    r_base = base->ball->h / 2;
                 }
 
                 if (cX_an < cX_base && cY_an >= cY_base - r_base && cY_an <= cY_base + r_base) { /* Small to left wall */
                     if (base->x_d != an->x_d) {
                         base->x_d = (base->x_d == x_pos) ? x_neg : x_pos;
                     }
-                        an->x_d = (an->x_d == x_pos) ? x_neg : x_pos;
+                    an->x_d = (an->x_d == x_pos) ? x_neg : x_pos;
                 } else if (cX_an > cX_base && cY_an >= cY_base - r_base && cY_an <= cY_base + r_base) { /* Small to right wall */
                     if (base->x_d != an->x_d) {
                         base->x_d = (base->x_d == x_pos) ? x_neg : x_pos;
@@ -378,4 +384,164 @@ void balls_touch_wall(struct pro_balls *all, struct SDL_Rect *curr_ball) {
 
         move_ball(all + i);
     }
+}
+
+/* Game */
+void draw_field(struct SDL_Renderer *renderer) {
+
+    /* Initializing variables */
+    register int i, j;
+
+    auto struct SDL_Surface *grassImage = IMG_Load(GRASS_PATH);
+    assert(grassImage != NULL); /* Debugging sh*t */
+    SDL_SetColorKey(grassImage, SDL_TRUE, SDL_MapRGB(grassImage->format, 255, 255, 255));
+    auto struct SDL_Texture *grassTexture = SDL_CreateTextureFromSurface(renderer, grassImage);
+    assert(grassTexture != NULL);
+    SDL_FreeSurface(grassImage);
+
+    auto struct SDL_Surface *concImage = IMG_Load(CONCRETE_PATH);
+    assert(concImage != NULL); /* Debugging sh*t */
+    SDL_SetColorKey(concImage, SDL_TRUE, SDL_MapRGB(concImage->format, 255, 255, 255));
+    auto struct SDL_Texture *concTexture = SDL_CreateTextureFromSurface(renderer, concImage);
+    assert(concTexture != NULL);
+    SDL_FreeSurface(concImage);
+
+    auto struct SDL_Rect text_rect = {};
+
+    /* Main part */
+
+    /* Field:                      */
+    /* 0 * * * * * * * * * * * * * * * *
+       1 * - - - - × - - - - - - - - - *
+       2 * - - - # - - - - # - - × - - *
+       3 * * * * * * * * * - - - - - - *
+       4 * - - # - - - - * - - - # - - *
+       5 * - - - - - × - - - × - - - × *
+       6 * - × - - - - - - - - - - - - *
+       7 * - - - # - - - * - - - # - - *
+       8 * - - - - - × - * * * * * * * *
+       9 * * * * * * - - # - - - - - - *
+      10 * - - - × # - - - - - - × - - *
+      11 * - - - - - - - - × - - - - - *
+      12 * * * * * * * * * * * * - - × *
+      13 * - - × - - - # - - - × - - - *
+      14 * - # - - - × - - - - - # - - *
+      15 * * * * * * * * * * * * * * * *
+         0 1 2 3 4 5 6 7 8 9 A B C D E F */
+
+    for (i = 0; i < 16; ++i) {
+        for (j = 0; j < 16; ++j) {
+            text_rect.x = j * TEXTURE_SIZE;
+            text_rect.y = i * TEXTURE_SIZE;
+            text_rect.w = TEXTURE_SIZE;
+            text_rect.h = text_rect.w;
+            if (!i || i == 15 || !j || j == 15 || (i == 3 && j <= 8) ||
+                    (i == 4 && j == 8) || (i == 7 && j == 8) || (i == 8 && j >= 8) ||
+                    (i == 9 && j <= 5) || (i == 12 && j <= 11)) {
+                SDL_RenderCopy(renderer, concTexture, NULL, &text_rect);
+            } else {
+                SDL_RenderCopy(renderer, grassTexture, NULL, &text_rect);
+            }
+        }
+    }
+}
+
+void spawn_mines(struct SDL_Renderer *renderer) {
+
+    /* Initializing variables */
+    register int i, j;
+
+    auto struct SDL_Surface *mineImage = IMG_Load(MINE_PATH);
+    assert(mineImage != NULL); /* Debugging sh*t */
+    SDL_SetColorKey(mineImage, SDL_TRUE, SDL_MapRGB(mineImage->format, 255, 255, 255));
+    auto struct SDL_Texture *mineTexture = SDL_CreateTextureFromSurface(renderer, mineImage);
+    assert(mineTexture != NULL);
+    SDL_FreeSurface(mineImage);
+
+    auto struct SDL_Rect text_rect = {};
+
+    /* Main part */
+    for (i = 0; i < 15; ++i) {
+        for (j = 0; j < 15; ++j) {
+            if ((i == 1 && j == 5) || (i == 2 && j == 12) || (i == 5 && j == 6) ||
+                    (i == 5 && j == 10) || (i == 5 && j == 14) || (i == 6 && j == 2) ||
+                    (i == 8 && j == 6) || (i == 10 && j == 4) || (i == 10 && j == 12) ||
+                    (i == 11 && j == 9) || (i == 12 && j == 14) || (i == 13 && j == 3) ||
+                    (i == 13 && j == 11) || (i == 14 && j == 6)) {
+                text_rect.w = TEXTURE_SIZE / 2;
+                text_rect.h = text_rect.w;
+                text_rect.x = j * TEXTURE_SIZE + text_rect.w / 2;
+                text_rect.y = i * TEXTURE_SIZE + text_rect.h / 2;
+                SDL_RenderCopy(renderer, mineTexture, NULL, &text_rect);
+            }
+        }
+    }
+}
+
+void set_traps(struct SDL_Renderer *renderer) {
+
+    /* Initializing variables */
+    register int i, j;
+
+    auto struct SDL_Surface *trapImage = IMG_Load(TRAP_PATH);
+    assert(trapImage != NULL); /* Debugging sh*t */
+    SDL_SetColorKey(trapImage, SDL_TRUE, SDL_MapRGB(trapImage->format, 255, 255, 255));
+    auto struct SDL_Texture *trapTexture = SDL_CreateTextureFromSurface(renderer, trapImage);
+    assert(trapTexture != NULL);
+    SDL_FreeSurface(trapImage);
+
+    auto struct SDL_Rect text_rect = {};
+
+    /* Main part */
+    for (i = 0; i < 15; ++i) {
+        for (j = 0; j < 15; ++j) {
+            if ((i == 2 && j == 4) || (i == 2 && j == 9) || (i == 4 && j == 3) ||
+                    (i == 4 && j == 12) || (i == 7 && j == 4) || (i == 7 && j == 12) ||
+                    (i == 9 && j == 8) || (i == 10 && j == 5) || (i == 13 && j == 7) ||
+                    (i == 14 && j == 2) || (i == 14 && j == 12)) {
+                text_rect.w = TEXTURE_SIZE;
+                text_rect.h = text_rect.w;
+                text_rect.x = j * TEXTURE_SIZE;
+                text_rect.y = i * TEXTURE_SIZE;
+                SDL_RenderCopy(renderer, trapTexture, NULL, &text_rect);
+            }
+        }
+    }
+}
+
+void print_info(int mleft, int lleft, struct SDL_Renderer *renderer, struct _TTF_Font *fnt) {
+
+    /* Initializing variables */
+    auto char text[20];
+    auto struct SDL_Color clr = {0xFF, 0x55, 0x00, 0x00};
+
+    /* Main part */
+    sprintf(text, "Mines left: %d", mleft);
+    auto struct SDL_Texture *text_t = get_text_texture(renderer, text, fnt, &clr, NULL, solid);
+    assert(text_t != NULL);
+    auto struct SDL_Rect rect = {680, 40, 120, 40};
+    SDL_RenderCopy(renderer, text_t, NULL, &rect);
+
+    sprintf(text, "Lives left: %d", lleft);
+    text_t = get_text_texture(renderer, text, fnt, &clr, NULL, solid);
+    assert(text_t != NULL);
+    rect.x = 680;
+    rect.y = 80;
+    rect.w = 120;
+    rect.h = 40;
+    SDL_RenderCopy(renderer, text_t, NULL, &rect);
+}
+
+void spawn_character(struct SDL_Rect *pl_rect, struct SDL_Renderer *renderer) {
+
+    /* Initializing variables */
+    auto struct SDL_Surface *trapImage = IMG_Load(CHAR_PATH);
+    assert(trapImage != NULL); /* Debugging sh*t */
+    SDL_SetColorKey(trapImage, SDL_TRUE, SDL_MapRGB(trapImage->format, 255, 255, 255));
+    auto struct SDL_Texture *trapTexture = SDL_CreateTextureFromSurface(renderer, trapImage);
+    assert(trapTexture != NULL);
+    SDL_FreeSurface(trapImage);
+
+    /* Main part */
+
 }
