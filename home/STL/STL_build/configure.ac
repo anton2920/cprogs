@@ -55,7 +55,7 @@ AC_OUTPUT
 echo 
 echo " ---------------------------------"
 echo "| Options used to compile and link:"
-echo "| C             = $C"
+echo "| C             = $CС"
 echo "| CFLAGS        = $CFLAGS"
 echo "| LDFLAGS       = $LDFLAGS"
 echo "| ARFLAGS       = $ARFLAGS"

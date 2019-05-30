@@ -7,30 +7,10 @@
 #IncludeRegexTransform: 
 
 /home/anton/C/lab/lab_dev/main.c
-proj_folder/source.h
-/home/anton/C/lab/lab_dev/proj_folder/source.h
-
-/home/anton/C/lab/lab_dev/proj_folder/source.c
-source.h
-/home/anton/C/lab/lab_dev/proj_folder/source.h
-
-/home/anton/C/lab/lab_dev/proj_folder/source.h
 stdio.h
 -
-stdlib.h
+STL.h
 -
-assert.h
--
-SDL2/SDL.h
--
-SDL2/SDL_image.h
--
-SDL2/SDL_ttf.h
--
-SDL2/SDL_mixer.h
--
-time.h
--
-math.h
+string.h
 -
 

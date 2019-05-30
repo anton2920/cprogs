@@ -5,7 +5,6 @@ CMakeFiles/lab_dev.dir/input/input.c.o: ../input/input.c
 CMakeFiles/lab_dev.dir/input/input.c.o: ../input/input.h
 
 CMakeFiles/lab_dev.dir/main.c.o: ../main.c
-CMakeFiles/lab_dev.dir/main.c.o: ../proj_folder/source.h
 
 CMakeFiles/lab_dev.dir/proj_folder/source.c.o: ../proj_folder/source.c
 CMakeFiles/lab_dev.dir/proj_folder/source.c.o: ../proj_folder/source.h
