@@ -18,20 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: lab_23 (dev, nothing significant)">
-      <change beforePath="$PROJECT_DIR$/../../c.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/STL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/STL/STL_Config.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL/STL_Config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/STL/STL_Config.h.in" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL/STL_Config.h.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/STL/STL_build/configure.ac" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL/STL_build/configure.ac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: lab_33 (dev, find_age)" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="130" column="4" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
+            <state relative-caret-position="779">
+              <caret line="131" column="1" lean-forward="true" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -340,7 +327,7 @@
       <workItem from="1558796616648" duration="35000" />
       <workItem from="1559035688005" duration="2950000" />
       <workItem from="1559151310373" duration="4183000" />
-      <workItem from="1559220968705" duration="5701000" />
+      <workItem from="1559220968705" duration="5890000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -412,11 +399,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558183466058</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="PC: lab_33 (dev, find_age)">
+      <created>1559245810986</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559245810986</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271102000" />
+    <option name="totallyTimeSpent" value="271291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +423,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1918" y="-3" width="1924" height="1052" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20181043" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -531,7 +524,8 @@
     <MESSAGE value="PC: lab_23 (dev, first steps)" />
     <MESSAGE value="PC: lab_23 (dev, field hot-fix)" />
     <MESSAGE value="PC: lab_23 (dev, nothing significant)" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC: lab_23 (dev, nothing significant)" />
+    <MESSAGE value="PC: lab_33 (dev, find_age)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PC: lab_33 (dev, find_age)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
@@ -625,8 +619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="130" column="4" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
+        <state relative-caret-position="779">
+          <caret line="131" column="1" lean-forward="true" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
