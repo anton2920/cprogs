@@ -95,13 +95,14 @@ __bool List_delete_element(List *l, stpt pt, size_t offset) {
     auto list_node *iter, *temp;
 
     /* Main part */
-    if (pt == head) {
+    if (pt == head && offset < l->size) {
+        for (i = 0, iter = l->bp; i < offset && iter->next != NULL; ++i, iter = (list_node *) iter->next)
+            ;
+    } else if (pt == tail && (offset = l->size - offset - 1) < l->size) {
         for (i = 0, iter = l->bp; i < offset && iter->next != NULL; ++i, iter = (list_node *) iter->next)
             ;
     } else {
-        offset = l->size - offset - 1;
-        for (i = 0, iter = l->bp; i < offset && iter->next != NULL; ++i, iter = (list_node *) iter->next)
-            ;
+        return __false;
     }
 
     if (i != offset) {
@@ -161,7 +162,7 @@ int List_get_element_offset(List *l, list_node *lnode, stpt pt) {
     auto list_node *iter;
 
     /* Main part */
-    for (i = 0, iter = l->bp; iter != lnode && iter != NULL; ++i, iter = iter->next)
+    for (i = 0, iter = l->bp->next; iter != lnode && iter != NULL; ++i, iter = iter->next)
         ;
 
     if (iter == NULL) {
@@ -313,4 +314,207 @@ void *List_Queue_pop(List *l) {
 
     /* Returning value */
     return temp2;
+}
+
+/* Circular buffer based on STL_List */
+__bool List_Ring_link(List *r) {
+
+    /* Main part */
+    if (r->size) {
+        r->lp->next = r->bp->next;
+    } else {
+        return __false;
+    }
+
+    /* Returning value */
+    return __true;
+}
+
+__bool List_Ring_unlink(List *r) {
+
+    /* Main part */
+    if (r->size) {
+        r->lp->next = NULL;
+    } else {
+        return __false;
+    }
+
+    /* Returning value */
+    return __true;
+}
+
+__bool List_Ring_init(List *r) {
+
+    /* Main part */
+    return List_init(r);
+}
+
+__bool List_Ring_delete(List *r) {
+
+    /* Initializing variables */
+    auto __bool status;
+
+    /* Main part */
+    if ((status = List_Ring_unlink(r)) == __false) {
+        return status;
+    }
+    List_delete(r);
+    if ((status = List_Ring_link(r)) == __false) {
+        return status;
+    }
+
+    /* Returning value */
+    return __true;
+}
+
+__bool List_Ring_add_element(List *r, const void *elem, size_t nbytes, stpt pt, size_t offset) {
+
+    /* Initializing variables */
+    auto __bool status;
+
+    /* Main part */
+    List_Ring_unlink(r);
+    if ((status = List_add_element(r, elem, nbytes, pt, offset)) == __false) {
+        return status;
+    }
+    List_Ring_link(r);
+
+    /* Returning value */
+    return __true;
+}
+
+__bool List_Ring_delete_element(List *r, stpt pt, size_t offset) {
+
+    /* Initializing variables */
+    auto __bool status;
+
+    /* Main part */
+    List_Ring_unlink(r);
+    if (offset == r->size) {
+        List_delete_element(r, pt, 0);
+    } else if ((status = List_delete_element(r, pt, offset)) == __false) {
+        return status;
+    }
+    List_Ring_link(r);
+
+    /* Returning value */
+    return __true;
+}
+
+list_node *List_Ring_get_element(List *r, stpt pt, size_t offset) {
+
+    /* Initializing variables */
+    auto __bool status;
+    auto list_node *elem;
+
+    /* Main part */
+    if ((status = List_Ring_unlink(r)) == __false) {
+        return NULL;
+    }
+    elem = List_get_element(r, pt, offset);
+    if ((status = List_Ring_link(r)) == __false) {
+        return NULL;
+    }
+
+    /* Returning value */
+    return elem;
+}
+
+void *List_Ring_get_element_value(List *r, stpt pt, size_t offset) {
+
+    /* Initializing variables */
+    auto __bool status;
+    auto void *val;
+
+    /* Main part */
+    if ((status = List_Ring_unlink(r)) == __false) {
+        return NULL;
+    }
+    val = List_get_element_value(r, pt, offset);
+    if ((status = List_Ring_link(r)) == __false) {
+        return NULL;
+    }
+
+    /* Returning value */
+    return val;
+}
+
+int List_Ring_get_element_offset(List *r, list_node *elem, stpt pt) {
+
+    /* Initializing variables */
+    auto int offs;
+
+    /* Main part */
+    if (List_Ring_unlink(r) == __false) {
+        return LIST_INDEX_ERROR;
+    }
+    offs = List_get_element_offset(r, elem, pt);
+    if (List_Ring_link(r) == __false) {
+        return LIST_INDEX_ERROR;
+    }
+
+    /* Returning value */
+    return offs;
+}
+
+__bool List_Ring_swap_elements(list_node *l1, list_node *l2) {
+
+    /* Returning value */
+    return List_swap_elements(l1, l2);
+}
+
+__bool List_Ring_cpy(List *l1, List *l2) {
+
+    /* Initializing variables */
+    auto __bool status;
+
+    /* Main part */
+    if ((status = List_Ring_unlink(l1)) == __false) {
+        return status;
+    }
+    if ((status = List_Ring_unlink(l2)) == __false) {
+        return status;
+    }
+
+    if ((status = List_cpy(l1, l2)) == __false) {
+        return status;
+    }
+
+    if ((status = List_Ring_link(l1)) == __false) {
+        return status;
+    }
+    if ((status = List_Ring_link(l2)) == __false) {
+        return status;
+    }
+
+    /* Returning value */
+    return __true;
+}
+
+__bool List_Ring_ncpy(List *l1, List *l2, size_t n) {
+
+    /* Initializing variables */
+    __bool status;
+
+    /* Main part */
+    if ((status = List_Ring_unlink(l1)) == __false) {
+        return status;
+    }
+    if ((status = List_Ring_unlink(l2)) == __false) {
+        return status;
+    }
+
+    if ((status = List_ncpy(l1, l2, n)) == __false) {
+        return status;
+    }
+
+    if ((status = List_Ring_link(l1)) == __false) {
+        return status;
+    }
+    if ((status = List_Ring_link(l2)) == __false) {
+        return status;
+    }
+
+    /* Returning value */
+    return __true;
 }

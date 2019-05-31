@@ -163,12 +163,13 @@ __bool List_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy 
 
 
 /* LIFO Stack based on STL_List */
-__bool List_Stack_push_nbytes(List *, const void *, size_t);
-__bool List_Stack_pushw(List *, const void *);
-__bool List_Stack_pushl(List *, const void *);
-__bool List_Stack_pushq(List *, const void *);
-void *List_Stack_pop(List *);
+__bool List_Stack_push_nbytes(List *, const void *, size_t); /* Pushes nbytes value in the list, acting like a stack */
+__bool List_Stack_pushw(List *, const void *); /* Pushes word in a list, acting like the stack */
+__bool List_Stack_pushl(List *, const void *); /* Pushes long word in the list, acting like a stack */
+__bool List_Stack_pushq(List *, const void *); /* Pushes quad word in the list, acting like a stack */
+void *List_Stack_pop(List *); /* Pops element from the list, acting like a stack */
 
+/* Secure macros for popping values from the list, acting like a stack*/
 #define LIST_STACK_POPW(st, __word)                             \
     do {                                                        \
         void *temp = List_Stack_pop((st));                      \
@@ -216,12 +217,13 @@ void *List_Stack_pop(List *);
 
 
 /* FIFO Queue based on STL_List */
-__bool List_Queue_push_nbytes(List *, const void *, size_t);
-__bool List_Queue_pushw(List *, const void *);
-__bool List_Queue_pushl(List *, const void *);
-__bool List_Queue_pushq(List *, const void *);
-void *List_Queue_pop(List *);
+__bool List_Queue_push_nbytes(List *, const void *, size_t); /* Pushes nbytes in the list, acting like a queue */
+__bool List_Queue_pushw(List *, const void *); /* Pushes word in the list, acting like a queue */
+__bool List_Queue_pushl(List *, const void *); /* Pushes word in the list, acting like a queue */
+__bool List_Queue_pushq(List *, const void *); /* Pushes word in the list, acting like a queue */
+void *List_Queue_pop(List *); /* Pops value from the list, acting like a queue */
 
+/* Secure macros for popping values from the list, acting like a queue */
 #define LIST_QUEUE_POPW(st, __word)                             \
     do {                                                        \
         void *temp = List_Queue_pop((st));                      \
@@ -266,5 +268,18 @@ void *List_Queue_pop(List *);
             free(temp);                                         \
         }                                                       \
     } while(0)
+
+
+/* Circular buffer based on STL_List */
+__bool List_Ring_init(List *); /* Creates a ring based on single-linked list. Returns __true, if everything is OK */
+__bool List_Ring_delete(List *); /* Deletes a ring */
+__bool List_Ring_add_element(List *, const void *elem, size_t nbytes, stpt pt, size_t offset); /* Adds an element of specific size to a specific place, defined by starting point and the offset from it*/
+__bool List_Ring_delete_element(List *, stpt pt, size_t offset); /* Deletes a specific element, defined by starting point and the offset from it */
+list_node *List_Ring_get_element(List *, stpt pt, size_t offset); /* Returns a full list node, defined by starting point and the offset from it */
+void *List_Ring_get_element_value(List *, stpt pt, size_t offset); /* Returns the value of a specific node, defined by starting point and the offset from it */
+int List_Ring_get_element_offset(List *, list_node *, stpt pt); /* Returns the offset of specific element from declared starting point */
+__bool List_Ring_swap_elements(list_node *, list_node *); /* Swaps two values of specific elements */
+__bool List_Ring_cpy(List *__dest, List *__src); /* Creates an exact copy of a ring */
+__bool List_Ring_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a ring */
 
 #endif
