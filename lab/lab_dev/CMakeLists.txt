@@ -7,7 +7,7 @@ set(HEADER_FILES input/input.h proj_folder/source.h)
 set(SOURCE_FILES main.c input/input.c proj_folder/source.c)
 add_executable(lab_dev ${HEADER_FILES} ${SOURCE_FILES})
 
-target_link_libraries(lab_dev m SDL2 SDL2_image SDL2_ttf SDL2_mixer)
+target_link_libraries(lab_dev m SDL2 SDL2_image SDL2_ttf SDL2_mixer STL)
 
 # SDL2
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${lab_dev_SOURCE_DIR}/cmake")
