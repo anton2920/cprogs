@@ -219,8 +219,8 @@ void *List_Stack_pop(List *); /* Pops element from the list, acting like a stack
 /* FIFO Queue based on STL_List */
 __bool List_Queue_push_nbytes(List *, const void *, size_t); /* Pushes nbytes in the list, acting like a queue */
 __bool List_Queue_pushw(List *, const void *); /* Pushes word in the list, acting like a queue */
-__bool List_Queue_pushl(List *, const void *); /* Pushes word in the list, acting like a queue */
-__bool List_Queue_pushq(List *, const void *); /* Pushes word in the list, acting like a queue */
+__bool List_Queue_pushl(List *, const void *); /* Pushes long word in the list, acting like a queue */
+__bool List_Queue_pushq(List *, const void *); /* Pushes quad word in the list, acting like a queue */
 void *List_Queue_pop(List *); /* Pops value from the list, acting like a queue */
 
 /* Secure macros for popping values from the list, acting like a queue */
