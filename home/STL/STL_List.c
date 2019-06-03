@@ -374,6 +374,9 @@ __bool List_Ring_add_element(List *r, const void *elem, size_t nbytes, stpt pt, 
 
     /* Main part */
     List_Ring_unlink(r);
+    if (offset >= r->size) {
+        offset -= r->size;
+    }
     if ((status = List_add_element(r, elem, nbytes, pt, offset)) == __false) {
         return status;
     }
@@ -390,9 +393,10 @@ __bool List_Ring_delete_element(List *r, stpt pt, size_t offset) {
 
     /* Main part */
     List_Ring_unlink(r);
-    if (offset == r->size) {
-        List_delete_element(r, pt, 0);
-    } else if ((status = List_delete_element(r, pt, offset)) == __false) {
+    if (offset >= r->size) {
+        offset -= r->size;
+    }
+    if ((status = List_delete_element(r, pt, offset)) == __false) {
         return status;
     }
     List_Ring_link(r);
@@ -410,6 +414,9 @@ list_node *List_Ring_get_element(List *r, stpt pt, size_t offset) {
     /* Main part */
     if ((status = List_Ring_unlink(r)) == __false) {
         return NULL;
+    }
+    if (offset >= r->size) {
+        offset -= r->size;
     }
     elem = List_get_element(r, pt, offset);
     if ((status = List_Ring_link(r)) == __false) {
@@ -429,6 +436,9 @@ void *List_Ring_get_element_value(List *r, stpt pt, size_t offset) {
     /* Main part */
     if ((status = List_Ring_unlink(r)) == __false) {
         return NULL;
+    }
+    if (offset >= r->size) {
+        offset -= r->size;
     }
     val = List_get_element_value(r, pt, offset);
     if ((status = List_Ring_link(r)) == __false) {
