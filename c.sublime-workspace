@@ -260,6 +260,10 @@
 		"selected_items":
 		[
 			[
+				"col",
+				"UI: Select Color Scheme"
+			],
+			[
 				"colo",
 				"UI: Select Color Scheme"
 			],
@@ -332,20 +336,22 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C",
-		"/home/anton/C/lab"
+		"/home/anton/C"
 	],
 	"file_history":
 	[
-		"/home/anton/C/lab/lab_34/main.c",
-		"/home/anton/C/home/STL/STL.h",
-		"/home/anton/C/lab/lab_23/source.c",
-		"/home/anton/C/lab/lab_23/main.c",
-		"/home/anton/C/home/STL/.gitignore",
-		"/home/anton/C/home/STL/STL_build/configure.ac",
-		"/home/anton/C/lab/lab_31/main.c",
+		"/home/anton/C/lab/lab_28/source.c",
 		"/home/anton/C/lab/lab_30/main.c",
+		"/home/anton/C/lab/lab_31/main.c",
+		"/home/anton/C/lab/lab_32/main.c",
+		"/home/anton/C/lab/lab_33/main.c",
+		"/home/anton/C/lab/lab_23/source.h",
+		"/home/anton/C/lab/lab_23/main.c",
+		"/home/anton/C/lab/lab_23/source.c",
 		"/home/anton/C/home/STL/STL_build/Makefile.am",
+		"/home/anton/C/home/STL/STL.h",
+		"/home/anton/C/home/STL/STL_build/configure.ac",
+		"/home/anton/C/home/STL/.gitignore",
 		"/home/anton/C/home/Sorting/Sorting_build/Makefile.am",
 		"/home/anton/C/home/Sorting/.gitignore",
 		"/home/anton/C/home/Sorting/Sorting_build/configure.ac",
@@ -354,7 +360,6 @@
 		"/home/anton/ProTest/src/Makefile.am",
 		"/home/anton/C/home/STL/STL_build/buid-aux/.init",
 		"/home/anton/C/home/Project/Makefile",
-		"/home/anton/C/lab/lab_23/source.h",
 		"/home/anton/C/experiments/Julia/lab_25.c",
 		"/home/anton/C/experiments/Julia/Makefile",
 		"/home/anton/C/c.sublime-project",
@@ -363,7 +368,6 @@
 		"/home/anton/C/lab/lab_24/lab_24_1/source.h",
 		"/home/anton/C/lab/lab_24/lab_24_1/source.c",
 		"/home/anton/C/lab/lab_28/main.c",
-		"/home/anton/C/lab/lab_28/source.c",
 		"/home/anton/C/lab/lab_15/a1.h",
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Header.h",
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Source1.cpp",
@@ -463,12 +467,11 @@
 		"/home/anton/C/lab/lab_06/a3.c",
 		"/home/anton/C/lab/lab_06/a2.c",
 		"/home/anton/C/lab/lab_06/a1.c",
-		"/home/anton/C/lab/lab_04/a1.c",
-		"/home/anton/C/lab/lab_04/a2.c"
+		"/home/anton/C/lab/lab_04/a1.c"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -520,11 +523,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 33.0
 	},
 	"input":
 	{
-		"height": 45.0
+		"height": 47.0
 	},
 	"layout":
 	{
@@ -565,7 +568,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":

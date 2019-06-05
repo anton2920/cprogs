@@ -52,7 +52,9 @@ void find_digits(struct string *a) {
 
     /* Main part */
     for (i = 0; i < strlen(a->str); ++i) {
-        if (isdigit(a->str[i])) {
+        if (a->str[i] == 0) {
+            break;
+        } else if (isdigit(a->str[i])) {
             rm_ch(a->str, i);
             ++a->num_num;
             --i;
