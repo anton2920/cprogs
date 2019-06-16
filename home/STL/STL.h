@@ -170,7 +170,7 @@ void *List_get_element_value(List *, stpt pt, size_t offset); /* Returns the val
 int List_get_element_offset(List *, list_node *, stpt pt); /* Returns the offset of specific element from declared starting point */
 __bool List_swap_elements(list_node *, list_node *); /* Swaps two values of specific elements */
 __bool List_cpy(List *__dest, List *__src); /* Creates an exact copy of a list */
-__bool List_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a list */
+__bool List_ncpy(List *__dest, List *__src, size_t); /* Creates an exact copy of first n elements of a list */
 size_t List_get_size(List *); /* Returns the number of elements in the list */
 
 /* LIFO Stack based on STL_List */
@@ -291,6 +291,6 @@ void *List_Ring_get_element_value(List *, stpt pt, size_t offset); /* Returns th
 int List_Ring_get_element_offset(List *, list_node *, stpt pt); /* Returns the offset of specific element from declared starting point */
 __bool List_Ring_swap_elements(list_node *, list_node *); /* Swaps two values of specific elements */
 __bool List_Ring_cpy(List *__dest, List *__src); /* Creates an exact copy of a ring */
-__bool List_Ring_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a ring */
+__bool List_Ring_ncpy(List *__dest, List *__src, size_t); /* Creates an exact copy of first n elements of a ring */
 
 #endif
