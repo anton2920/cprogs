@@ -199,7 +199,7 @@ __bool List_cpy(List *l1, List *l2) {
 
     /* Main part */
     for (iter = l2->bp; iter != NULL; iter = iter->next) {
-        if (List_add_element(l1, iter->value, malloc_usable_size(iter->value), tail, 0) == __false) {
+        if (List_add_element(l1, iter->value, MUS(iter->value), tail, 0) == __false) {
             return __false;
         }
     }
@@ -216,7 +216,7 @@ __bool List_ncpy(List *l1, List *l2, size_t n) {
 
     /* Main part */
     for (i = 0, iter = l2->bp; iter != NULL && i < n; ++i, iter = iter->next) {
-        if (List_add_element(l1, iter->value, malloc_usable_size(iter->value), tail, 0) == __false) {
+        if (List_add_element(l1, iter->value, MUS(iter->value), tail, 0) == __false) {
             return __false;
         }
     }
@@ -261,7 +261,7 @@ void *List_Stack_pop(List *l) {
     if ((temp = List_get_element_value(l, tail, 0)) == NULL) {
         return NULL;
     }
-    if ((temp2 = malloc((nbytes = malloc_usable_size(temp)))) == NULL) {
+    if ((temp2 = malloc((nbytes = MUS(temp)))) == NULL) {
         return NULL;
     }
     COPY(temp2, temp, nbytes);
@@ -306,7 +306,7 @@ void *List_Queue_pop(List *l) {
     if ((temp = List_get_element_value(l, tail, 0)) == NULL) {
         return NULL;
     }
-    if ((temp2 = malloc((nbytes = malloc_usable_size(temp)))) == NULL) {
+    if ((temp2 = malloc((nbytes = MUS(temp)))) == NULL) {
         return NULL;
     }
     COPY(temp2, temp, nbytes);

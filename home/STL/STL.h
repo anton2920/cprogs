@@ -84,6 +84,15 @@ along with STL. If not, see <https://www.gnu.org/licenses/>.
 #define movl(__src, __dest) (COPY((void *) __dest, (const void *) __src, SIZE_OF_LONG))
 #define movq(__src, __dest) (COPY((void *) __dest, (const void *) __src, SIZE_OF_QUAD))
 
+#ifndef MUS
+    #ifdef _WIN32
+        #define MUS(__ptr) (_msize(__ptr))
+    #endif
+    #ifdef __unix__
+        #define MUS(__ptr) (malloc_usable_size(__ptr))
+    #endif
+#endif
+
 /* New data types */
 #ifndef __BOOL_TYPE
     #define __BOOL_TYPE
@@ -131,6 +140,8 @@ size_t Stack_get_size(Stack *); /* Returns difference between sp and bp */
 #define STACK_POP_FLOAT(st) (*((float *) Stack_popl(st)))
 #define STACK_POP_DOUBLE(st) (*((double *) Stack_popq(st)))
 
+
+
 /* STL_List section */
 typedef struct _list_node {
     struct _list_node *next;
@@ -160,7 +171,7 @@ int List_get_element_offset(List *, list_node *, stpt pt); /* Returns the offset
 __bool List_swap_elements(list_node *, list_node *); /* Swaps two values of specific elements */
 __bool List_cpy(List *__dest, List *__src); /* Creates an exact copy of a list */
 __bool List_ncpy(List *__dest, List *__src, size_t n); /* Creates an exact copy of first n elements of a list */
-
+size_t List_get_size(List *); /* Returns the number of elements in the list */
 
 /* LIFO Stack based on STL_List */
 __bool List_Stack_push_nbytes(List *, const void *, size_t); /* Pushes nbytes value in the list, acting like a stack */
