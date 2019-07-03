@@ -1,4 +1,4 @@
-#include "Header.h"
+п»ї#include "Header.h"
 #pragma comment (lib, "SDL2_mixer.lib")
 #undef main 
 
@@ -12,25 +12,25 @@ int main(int argc, char** argv)
 	TTF_Font* font = TTF_OpenFont("2.ttf", 100);
 
 	Mix_Init(0);
-	Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 1024); // звук
+	Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 1024); // Р·РІСѓРє
 	Mix_Music * fon_m = NULL;
 	loadmusic(fon_m, 0);
 
-	int a[N]; // массив цифр
-	int lv = 0; // уровень
-	int emd; // сложность
-	int index[N]; // массив цифр на поле
+	int a[N]; // РјР°СЃСЃРёРІ С†РёС„СЂ
+	int lv = 0; // СѓСЂРѕРІРµРЅСЊ
+	int emd; // СЃР»РѕР¶РЅРѕСЃС‚СЊ
+	int index[N]; // РјР°СЃСЃРёРІ С†РёС„СЂ РЅР° РїРѕР»Рµ
 
-	SDL_Rect button[3], cell[N] = {}; // структура для кнопок, структура для клеток поля
-	SDL_Texture *fon = NULL, *fon_rec = NULL, *text_logo = NULL, *exit_texture = NULL; // текстура фона, текстура рекордов, текстура лого, текстура кнопки выход
+	SDL_Rect button[3], cell[N] = {}; // СЃС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ РєРЅРѕРїРѕРє, СЃС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ РєР»РµС‚РѕРє РїРѕР»СЏ
+	SDL_Texture *fon = NULL, *fon_rec = NULL, *text_logo = NULL, *exit_texture = NULL; // С‚РµРєСЃС‚СѓСЂР° С„РѕРЅР°, С‚РµРєСЃС‚СѓСЂР° СЂРµРєРѕСЂРґРѕРІ, С‚РµРєСЃС‚СѓСЂР° Р»РѕРіРѕ, С‚РµРєСЃС‚СѓСЂР° РєРЅРѕРїРєРё РІС‹С…РѕРґ
 	SDL_Texture  *texture_button = NULL, *button_text[3] = {}, *winner_text[2] = {}, *cell_text[257] = {}, *game_sudocu = NULL, *cell_fon = NULL;
-	// текстура фона кнопки, текстура текста на кнопке, текстура если победа, текстура для цифр, текстура ?, текстура фона клетки
+	// С‚РµРєСЃС‚СѓСЂР° С„РѕРЅР° РєРЅРѕРїРєРё, С‚РµРєСЃС‚СѓСЂР° С‚РµРєСЃС‚Р° РЅР° РєРЅРѕРїРєРµ, С‚РµРєСЃС‚СѓСЂР° РµСЃР»Рё РїРѕР±РµРґР°, С‚РµРєСЃС‚СѓСЂР° РґР»СЏ С†РёС„СЂ, С‚РµРєСЃС‚СѓСЂР° ?, С‚РµРєСЃС‚СѓСЂР° С„РѕРЅР° РєР»РµС‚РєРё
 	SDL_Event event;
 	bool quit = false;
 	int sign = 0, theme = 0, play = 0, exit = 1, win = -1, plan;
-	int i_menu = -1; // номер экрана
+	int i_menu = -1; // РЅРѕРјРµСЂ СЌРєСЂР°РЅР°
 
-	init_rect(button, 1, 0, 0); // инициализация первого экрана
+	init_rect(button, 1, 0, 0); // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїРµСЂРІРѕРіРѕ СЌРєСЂР°РЅР°
 	
 	SDL_Surface *fonImage = IMG_Load("theme.bmp");
 	SDL_SetColorKey(fonImage, SDL_TRUE, SDL_MapRGB(fonImage->format, 0, 0, 0));
@@ -48,22 +48,22 @@ int main(int argc, char** argv)
 	cell_fon = SDL_CreateTextureFromSurface(renderer, fonImage);
 	SDL_FreeSurface(fonImage);
 
-	init_text(renderer, button_text, 1, font, theme); // получаем текстуры текста для первого экрана
-	draw_game(0,lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture); // отрисовка первого экрана
+	init_text(renderer, button_text, 1, font, theme); // РїРѕР»СѓС‡Р°РµРј С‚РµРєСЃС‚СѓСЂС‹ С‚РµРєСЃС‚Р° РґР»СЏ РїРµСЂРІРѕРіРѕ СЌРєСЂР°РЅР°
+	draw_game(0,lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture); // РѕС‚СЂРёСЃРѕРІРєР° РїРµСЂРІРѕРіРѕ СЌРєСЂР°РЅР°
 	
 	int i_help = -5;
 	char winner_name[5][12] = {};
 	int count[N] = {};
-	int start = 0; // гл. меню
-	int l = 0; //  индексы
+	int start = 0; // РіР». РјРµРЅСЋ
+	int l = 0; //  РёРЅРґРµРєСЃС‹
 	int red[N] = {};
-	int z = 0; // для ввода двузначных цифр
+	int z = 0; // РґР»СЏ РІРІРѕРґР° РґРІСѓР·РЅР°С‡РЅС‹С… С†РёС„СЂ
 	int time = 0, time_min = 0;
 	int new_record = 0;
-	int start_time, end_time; // время
+	int start_time, end_time; // РІСЂРµРјСЏ
 	int winner_time[5] = {100,100,100,100,100};
 	char t_name[12] = {};
-	int stop = -1; // рекорды
+	int stop = -1; // СЂРµРєРѕСЂРґС‹
 	int winner = 0;
 	SDL_Rect ex_rect = { 700, 500, 75, 75 };
 	SDL_Texture* name_text[13] = {};
@@ -88,10 +88,10 @@ int main(int argc, char** argv)
 
 		if (event.type == SDL_QUIT)
 			quit = true;
-		if (exit == 0) // выход при нажатии кнопки exit
+		if (exit == 0) // РІС‹С…РѕРґ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё exit
 			quit = true;
 
-		if ((ex == 0) && (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) && (is_user_hit(ex_rect, event.button.x, event.button.y))) // переход от таблицы рекордов в главное меню
+		if ((ex == 0) && (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) && (is_user_hit(ex_rect, event.button.x, event.button.y))) // РїРµСЂРµС…РѕРґ РѕС‚ С‚Р°Р±Р»РёС†С‹ СЂРµРєРѕСЂРґРѕРІ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ
 		{
 			ex = 1;
 			sign = 1;
@@ -111,7 +111,7 @@ int main(int argc, char** argv)
 					event.type = NULL;
 					switch (sign)
 					{
-					case 0: // экран 1. выбор темы
+					case 0: // СЌРєСЂР°РЅ 1. РІС‹Р±РѕСЂ С‚РµРјС‹
 					{
 						loadmusic(fon_m, i);
 						SDL_Surface *fonImage = NULL;
@@ -155,39 +155,39 @@ int main(int argc, char** argv)
 						init_text(renderer, button_text, 2, font, theme);
 						draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
 					} break;
-					case 1: // экран 2. главное меню
+					case 1: // СЌРєСЂР°РЅ 2. РіР»Р°РІРЅРѕРµ РјРµРЅСЋ
 					{
-						if (i == 0) // игра
+						if (i == 0) // РёРіСЂР°
 						{
 							sign = 2;
 							play = 0;
 							init_text(renderer, button_text, 5, font, theme);
 							draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 2, exit_texture);
 						}
-						if (i == 1) // рекорды
+						if (i == 1) // СЂРµРєРѕСЂРґС‹
 						{
 							sign = 3;
 							init_text(renderer, button_text, 4, font, theme);
 							draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
 							stop = 0;
 						}
-						if (i == 2) // выход
+						if (i == 2) // РІС‹С…РѕРґ
 						{
 							quit = true;
 						}
 					} break;
 					case 2:
 					{
-						switch (play) // выбор уровня, сложности и режима игры
+						switch (play) // РІС‹Р±РѕСЂ СѓСЂРѕРІРЅСЏ, СЃР»РѕР¶РЅРѕСЃС‚Рё Рё СЂРµР¶РёРјР° РёРіСЂС‹
 						{
-						case 0: // режим
+						case 0: // СЂРµР¶РёРј
 						{
 							init_text(renderer, button_text, 3, font, theme);
 							draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
 							in_time = i;
 							play = 1;
 						} break;
-						case 1: // уровень
+						case 1: // СѓСЂРѕРІРµРЅСЊ
 						{
 							lv = i;
 							if (lv == 0)
@@ -206,11 +206,11 @@ int main(int argc, char** argv)
 							draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
 							play = 2;
 						} break;
-						case 2: // сложность и отрисовка поля
+						case 2: // СЃР»РѕР¶РЅРѕСЃС‚СЊ Рё РѕС‚СЂРёСЃРѕРІРєР° РїРѕР»СЏ
 						{
 							emd = i;
-							init_rect(cell, 2, lv, 0); // координаты клеток
-							read_file(lv, a, index, emd, count); // цифры
+							init_rect(cell, 2, lv, 0); // РєРѕРѕСЂРґРёРЅР°С‚С‹ РєР»РµС‚РѕРє
+							read_file(lv, a, index, emd, count); // С†РёС„СЂС‹
 							for (int j = 0; j < lv*lv; j++)
 							{
 								if (index[l] == 0)
@@ -223,15 +223,15 @@ int main(int argc, char** argv)
 							draw_game(0, lv, renderer, fon, cell_fon, text_logo, cell_text, cell, lv*lv, exit_texture);
 							start = 1;
 							play = 0;
-							start_time = clock(); // начинаем отсчет времени
+							start_time = clock(); // РЅР°С‡РёРЅР°РµРј РѕС‚СЃС‡РµС‚ РІСЂРµРјРµРЅРё
 						} break;
 						}
 					}break;
-					case 3: // таблица рекордов
+					case 3: // С‚Р°Р±Р»РёС†Р° СЂРµРєРѕСЂРґРѕРІ
 					{
 						switch (stop)
 						{
-						case 0: // выбор уровня
+						case 0: // РІС‹Р±РѕСЂ СѓСЂРѕРІРЅСЏ
 						{
 							init_text(renderer, button_text, 3, font, theme);
 							draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
@@ -250,7 +250,7 @@ int main(int argc, char** argv)
 							}
 							stop = 1;
 						} break;
-						case 1: // выбор сложности
+						case 1: // РІС‹Р±РѕСЂ СЃР»РѕР¶РЅРѕСЃС‚Рё
 						{
 							emd = i;
 							read_file_winner(lv, emd, winner_time, winner_name);
@@ -282,11 +282,11 @@ int main(int argc, char** argv)
 								init_rect(record_rect, 4, strlen(winner_name[j]), j);
 							}
 
-							for (int j = 0; j < 5; j++) // текстура со временем( в секундах)
+							for (int j = 0; j < 5; j++) // С‚РµРєСЃС‚СѓСЂР° СЃРѕ РІСЂРµРјРµРЅРµРј( РІ СЃРµРєСѓРЅРґР°С…)
 							{
 								record_texture[j + 5] = get_text_texture(renderer, font, winner_time[j], winner_time[j], &in_time);
 							}
-							for (int j = 0; j < 5; j++) // текстура с именем
+							for (int j = 0; j < 5; j++) // С‚РµРєСЃС‚СѓСЂР° СЃ РёРјРµРЅРµРј
 							{
 								record_texture[j] = get_text_texture_text(renderer, font, winner_name[j], theme);
 							}
@@ -299,7 +299,7 @@ int main(int argc, char** argv)
 				}
 			}
 		}
-		if ((event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) && (start == 1)) // игровой процесс (узнаем значение какой клетки хочет поменять пользователь)
+		if ((event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) && (start == 1)) // РёРіСЂРѕРІРѕР№ РїСЂРѕС†РµСЃСЃ (СѓР·РЅР°РµРј Р·РЅР°С‡РµРЅРёРµ РєР°РєРѕР№ РєР»РµС‚РєРё С…РѕС‡РµС‚ РїРѕРјРµРЅСЏС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ)
 		{
 			for (int i = 0; i < lv*lv; i++)
 				{
@@ -309,7 +309,7 @@ int main(int argc, char** argv)
 					}
 				}
 		}
-		if ((event.type == SDL_KEYDOWN) && (play == i_help)) // для вывода цифр от 10 до 16(для уровня 16х16)
+		if ((event.type == SDL_KEYDOWN) && (play == i_help)) // РґР»СЏ РІС‹РІРѕРґР° С†РёС„СЂ РѕС‚ 10 РґРѕ 16(РґР»СЏ СѓСЂРѕРІРЅСЏ 16С…16)
 		{
 			switch (event.key.keysym.sym)
 			{
@@ -415,7 +415,7 @@ int main(int argc, char** argv)
 			} break;
 			}
 		}
-		if ((event.type == SDL_KEYDOWN) && (play >= 0) && (play != i_help)) // ввод цифр пользователем
+		if ((event.type == SDL_KEYDOWN) && (play >= 0) && (play != i_help)) // РІРІРѕРґ С†РёС„СЂ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
 		{			
 			switch (event.key.keysym.sym)
 			{
@@ -518,7 +518,7 @@ int main(int argc, char** argv)
 			}
 		}
 		z = 0;
-		if ((winner == 3)  && (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)) // возврат в главное меню после игры?
+		if ((winner == 3)  && (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)) // РІРѕР·РІСЂР°С‚ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РїРѕСЃР»Рµ РёРіСЂС‹?
 		{
 			event.type = NULL;
 			start = 0;
@@ -526,7 +526,7 @@ int main(int argc, char** argv)
 			init_text(renderer, button_text, 2, font, theme);
 			draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
 		}
-		if (new_record == 1) // пользователь вводит свое имя
+		if (new_record == 1) // РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІРІРѕРґРёС‚ СЃРІРѕРµ РёРјСЏ
 		{
 			draw_name(renderer, fon, text_logo, cell_fon, winner_text, winner_new_rect, name_text, name_win);
 			if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
@@ -537,7 +537,7 @@ int main(int argc, char** argv)
 					{
 						if (i == 12)
 						{
-							time_win(time, winner_time, lv, emd, winner_name, t_name); // запись в файл
+							time_win(time, winner_time, lv, emd, winner_name, t_name); // Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р»
 							start = 0;
 							init_text(renderer, button_text, 2, font, theme);
 							draw_game(0, lv, renderer, fon, texture_button, text_logo, button_text, button, 3, exit_texture);
@@ -552,7 +552,7 @@ int main(int argc, char** argv)
 				}
 			}
 		}
-		if (winner == 1) // время - рекорд
+		if (winner == 1) // РІСЂРµРјСЏ - СЂРµРєРѕСЂРґ
 		{
 			draw_game(0, lv, renderer, fon, NULL, text_logo, winner_text, winner_new_rect, 2, exit_texture);
 			init_text(renderer, winner_text, 8, font, theme);
@@ -561,15 +561,15 @@ int main(int argc, char** argv)
 			new_record = 1;
 			winner = 2;
 		}
-		if (start == 2) // пользователь победил
+		if (start == 2) // РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕР±РµРґРёР»
 		{
-			end_time = clock(); // время окончания игры
-			time = (end_time - start_time) / CLOCKS_PER_SEC; // время игры в секундах
+			end_time = clock(); // РІСЂРµРјСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РёРіСЂС‹
+			time = (end_time - start_time) / CLOCKS_PER_SEC; // РІСЂРµРјСЏ РёРіСЂС‹ РІ СЃРµРєСѓРЅРґР°С…
 	
 			init_text(renderer, winner_text, 7, font, theme);
 			start = 3;
 			play = -1;
-			if (in_time == 0) // проверяем новое время( если новое время рекорд, то просим пользователя ввести имя)
+			if (in_time == 0) // РїСЂРѕРІРµСЂСЏРµРј РЅРѕРІРѕРµ РІСЂРµРјСЏ( РµСЃР»Рё РЅРѕРІРѕРµ РІСЂРµРјСЏ СЂРµРєРѕСЂРґ, С‚Рѕ РїСЂРѕСЃРёРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІРІРµСЃС‚Рё РёРјСЏ)
 			{
 				for (int i = 0; i < 5; i++) 
 				{
@@ -592,7 +592,7 @@ int main(int argc, char** argv)
 				}
 			}
 		}
-		if ((event.type == SDL_KEYDOWN) && (key >= 0)) // ввод имени
+		if ((event.type == SDL_KEYDOWN) && (key >= 0)) // РІРІРѕРґ РёРјРµРЅРё
 		{
 			switch (event.key.keysym.sym)
 			{

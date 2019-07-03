@@ -1,4 +1,4 @@
-# ifndef Header_h
+﻿# ifndef Header_h
 #define Header_h
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>

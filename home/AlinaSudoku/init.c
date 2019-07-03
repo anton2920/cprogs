@@ -1,4 +1,4 @@
-#include "Header.h"
+п»ї#include "Header.h"
 
 void loadmusic(Mix_Music * fon, int n)
 {
@@ -170,7 +170,7 @@ void init_text(SDL_Renderer *renderer, SDL_Texture* text_button[], int i_menu, T
 			}
 		}
 	} break;
-	case 4: // сложность
+	case 4: // СЃР»РѕР¶РЅРѕСЃС‚СЊ
 	{
 		for (int j = 0; j < 3; j++)
 		{
@@ -191,7 +191,7 @@ void init_text(SDL_Renderer *renderer, SDL_Texture* text_button[], int i_menu, T
 			}
 		}
 	} break;
-	case 5: // ВРЕМЯ
+	case 5: // Р’Р Р•РњРЇ
 	{
 		for (int j = 0; j < 2; j++)
 		{
@@ -296,13 +296,13 @@ int game_end(int count[], int red[], int lv)
 }
 void init_rect(SDL_Rect button[], int sign, int lv, int j)
 {
-	if (sign == 1) // для меню
+	if (sign == 1) // РґР»СЏ РјРµРЅСЋ
 	{
 		button[0] = { 125, 250, 200, 100 };
 		button[1] = { 475, 250, 200, 100 };
 		button[2] = { 300, 425, 200, 100 };
 	}
-	if (sign == 2) // для игры
+	if (sign == 2) // РґР»СЏ РёРіСЂС‹
 	{
 		for (int i = 0; i < lv * lv; i++)
 		{
@@ -321,11 +321,11 @@ void init_rect(SDL_Rect button[], int sign, int lv, int j)
 				}
 		}
 	}
-	if (sign == 3) // рекорды. время
+	if (sign == 3) // СЂРµРєРѕСЂРґС‹. РІСЂРµРјСЏ
 	{
 		button[j] = { 200, 200 + (j - 5) * 51, lv * 30, 50 };
 	}
-	if (sign == 4) // рекорды. имя
+	if (sign == 4) // СЂРµРєРѕСЂРґС‹. РёРјСЏ
 	{
 		button[j] = { 450, 200 + j * 51, lv * 25, 50 };
 	}
@@ -455,7 +455,7 @@ int time_win(int time, int winner_time[], int lv, int emd, char winner_name[5][1
 	int winner = 0;
 	read_file_winner(lv, emd, winner_time, winner_name);
 	
-	for (int i = 0; i < 5; i++) { // сортируем массив в секундах
+	for (int i = 0; i < 5; i++) { // СЃРѕСЂС‚РёСЂСѓРµРј РјР°СЃСЃРёРІ РІ СЃРµРєСѓРЅРґР°С…
 		for (int j = 0; j < 5; j++) 
 		{
 			if (winner_time[i] < winner_time[j]) 
@@ -472,7 +472,7 @@ int time_win(int time, int winner_time[], int lv, int emd, char winner_name[5][1
 	}
 
 
-	for (int i = 0; i < 5; i++) // проверяем новое время
+	for (int i = 0; i < 5; i++) // РїСЂРѕРІРµСЂСЏРµРј РЅРѕРІРѕРµ РІСЂРµРјСЏ
 	{ 
 		for (int j = 0; j < 5; j++)
 		{
