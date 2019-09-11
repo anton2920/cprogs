@@ -3,10 +3,6 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/proj_folder/source.c" line="348" />
-    <bookmark url="file://$PROJECT_DIR$/proj_folder/source.c" line="521" />
-  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="lab_dev" targetName="lab_dev" />
@@ -18,8 +14,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: small changes in dev proj" />
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: lab_23 (dev, nothing significant)">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state>
               <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
             </state>
           </provider>
@@ -44,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="413">
+              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -136,30 +138,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/input/input.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/input.h" />
-        <option value="$PROJECT_DIR$/input.c" />
-        <option value="$PROJECT_DIR$/input/input.h" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/a1out.bin" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/a1in.txt" />
-        <option value="$PROJECT_DIR$/input/input.c" />
-        <option value="$PROJECT_DIR$/proj_folder/source.c" />
-        <option value="$PROJECT_DIR$/proj_folder/source.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.c" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1966" />
-    <option name="width" value="1920" />
-    <option name="height" value="1045" />
-  </component>
+  <component name="ProjectId" id="1PHcG9ZyOWNqwb8SHrY7hlhtSii" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -175,6 +157,11 @@
             <path>
               <item name="lab_dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_dev" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lab_dev" type="b2602c69:ProjectViewProjectNode" />
@@ -322,7 +309,9 @@
       <workItem from="1561756308989" duration="821000" />
       <workItem from="1561758129579" duration="1109000" />
       <workItem from="1561804174217" duration="155000" />
-      <workItem from="1562872326534" duration="172000" />
+      <workItem from="1562872326534" duration="53000" />
+      <workItem from="1565534372567" duration="209000" />
+      <workItem from="1567614578834" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -394,18 +383,11 @@
       <option name="project" value="LOCAL" />
       <updated>1558183466058</updated>
     </task>
-    <task id="LOCAL-00011" summary="PC: small changes in dev proj">
-      <created>1562872466416</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1562872466416</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279566000" />
+    <option name="totallyTimeSpent" value="279447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -418,6 +400,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21100427" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -429,9 +412,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48985043" visible="true" weight="0.31613612" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4941302" weight="0.3168636" />
       <window_info anchor="bottom" id="CMake" order="8" weight="0.32826087" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5101496" side_tool="true" weight="0.31613612" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.51387405" side_tool="true" weight="0.3469388" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32822758" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32822758" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32901832" />
@@ -474,20 +457,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -519,8 +489,7 @@
     <MESSAGE value="PC: lab_23 (dev, first steps)" />
     <MESSAGE value="PC: lab_23 (dev, field hot-fix)" />
     <MESSAGE value="PC: lab_23 (dev, nothing significant)" />
-    <MESSAGE value="PC: small changes in dev proj" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC: small changes in dev proj" />
+    <option name="LAST_COMMIT_MESSAGE" value="PC: lab_23 (dev, nothing significant)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
@@ -598,6 +567,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/proj_folder/source.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -612,17 +588,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="413">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
