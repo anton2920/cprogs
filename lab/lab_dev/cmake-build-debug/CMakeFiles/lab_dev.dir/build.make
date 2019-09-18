@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/anton/Downloads/clion-2019.2.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/anton/Downloads/clion-2019.2.1/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -70,47 +70,32 @@ CMakeFiles/lab_dev.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab_dev.dir/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/lab/lab_dev/main.c -o CMakeFiles/lab_dev.dir/main.c.s
 
-CMakeFiles/lab_dev.dir/input/input.c.o: CMakeFiles/lab_dev.dir/flags.make
-CMakeFiles/lab_dev.dir/input/input.c.o: ../input/input.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab_dev.dir/input/input.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab_dev.dir/input/input.c.o   -c /home/anton/C/lab/lab_dev/input/input.c
+CMakeFiles/lab_dev.dir/libs/libs.c.o: CMakeFiles/lab_dev.dir/flags.make
+CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab_dev.dir/libs/libs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab_dev.dir/libs/libs.c.o   -c /home/anton/C/lab/lab_dev/libs/libs.c
 
-CMakeFiles/lab_dev.dir/input/input.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab_dev.dir/input/input.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/lab/lab_dev/input/input.c > CMakeFiles/lab_dev.dir/input/input.c.i
+CMakeFiles/lab_dev.dir/libs/libs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab_dev.dir/libs/libs.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/lab/lab_dev/libs/libs.c > CMakeFiles/lab_dev.dir/libs/libs.c.i
 
-CMakeFiles/lab_dev.dir/input/input.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab_dev.dir/input/input.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/lab/lab_dev/input/input.c -o CMakeFiles/lab_dev.dir/input/input.c.s
-
-CMakeFiles/lab_dev.dir/proj_folder/source.c.o: CMakeFiles/lab_dev.dir/flags.make
-CMakeFiles/lab_dev.dir/proj_folder/source.c.o: ../proj_folder/source.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lab_dev.dir/proj_folder/source.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab_dev.dir/proj_folder/source.c.o   -c /home/anton/C/lab/lab_dev/proj_folder/source.c
-
-CMakeFiles/lab_dev.dir/proj_folder/source.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab_dev.dir/proj_folder/source.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/lab/lab_dev/proj_folder/source.c > CMakeFiles/lab_dev.dir/proj_folder/source.c.i
-
-CMakeFiles/lab_dev.dir/proj_folder/source.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab_dev.dir/proj_folder/source.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/lab/lab_dev/proj_folder/source.c -o CMakeFiles/lab_dev.dir/proj_folder/source.c.s
+CMakeFiles/lab_dev.dir/libs/libs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab_dev.dir/libs/libs.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/lab/lab_dev/libs/libs.c -o CMakeFiles/lab_dev.dir/libs/libs.c.s
 
 # Object files for target lab_dev
 lab_dev_OBJECTS = \
 "CMakeFiles/lab_dev.dir/main.c.o" \
-"CMakeFiles/lab_dev.dir/input/input.c.o" \
-"CMakeFiles/lab_dev.dir/proj_folder/source.c.o"
+"CMakeFiles/lab_dev.dir/libs/libs.c.o"
 
 # External object files for target lab_dev
 lab_dev_EXTERNAL_OBJECTS =
 
 lab_dev: CMakeFiles/lab_dev.dir/main.c.o
-lab_dev: CMakeFiles/lab_dev.dir/input/input.c.o
-lab_dev: CMakeFiles/lab_dev.dir/proj_folder/source.c.o
+lab_dev: CMakeFiles/lab_dev.dir/libs/libs.c.o
 lab_dev: CMakeFiles/lab_dev.dir/build.make
 lab_dev: CMakeFiles/lab_dev.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lab_dev"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable lab_dev"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab_dev.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/anton/Downloads/clion-2019.2.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/anton/Downloads/clion-2019.2.1/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/anton/C/lab/lab_dev/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/anton/Downloads/clion-2019.2.1/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/anton/Downloads/clion-2019.2.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,32 +123,32 @@ lab_dev/fast:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
 .PHONY : lab_dev/fast
 
-input/input.o: input/input.c.o
+libs/libs.o: libs/libs.c.o
 
-.PHONY : input/input.o
+.PHONY : libs/libs.o
 
 # target to build an object file
-input/input.c.o:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/input/input.c.o
-.PHONY : input/input.c.o
+libs/libs.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.o
+.PHONY : libs/libs.c.o
 
-input/input.i: input/input.c.i
+libs/libs.i: libs/libs.c.i
 
-.PHONY : input/input.i
+.PHONY : libs/libs.i
 
 # target to preprocess a source file
-input/input.c.i:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/input/input.c.i
-.PHONY : input/input.c.i
+libs/libs.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.i
+.PHONY : libs/libs.c.i
 
-input/input.s: input/input.c.s
+libs/libs.s: libs/libs.c.s
 
-.PHONY : input/input.s
+.PHONY : libs/libs.s
 
 # target to generate assembly for a file
-input/input.c.s:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/input/input.c.s
-.PHONY : input/input.c.s
+libs/libs.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
+.PHONY : libs/libs.c.s
 
 main.o: main.c.o
 
@@ -177,33 +177,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
 .PHONY : main.c.s
 
-proj_folder/source.o: proj_folder/source.c.o
-
-.PHONY : proj_folder/source.o
-
-# target to build an object file
-proj_folder/source.c.o:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/proj_folder/source.c.o
-.PHONY : proj_folder/source.c.o
-
-proj_folder/source.i: proj_folder/source.c.i
-
-.PHONY : proj_folder/source.i
-
-# target to preprocess a source file
-proj_folder/source.c.i:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/proj_folder/source.c.i
-.PHONY : proj_folder/source.c.i
-
-proj_folder/source.s: proj_folder/source.c.s
-
-.PHONY : proj_folder/source.s
-
-# target to generate assembly for a file
-proj_folder/source.c.s:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/proj_folder/source.c.s
-.PHONY : proj_folder/source.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,15 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
 	@echo "... edit_cache"
-	@echo "... input/input.o"
-	@echo "... input/input.i"
-	@echo "... input/input.s"
+	@echo "... libs/libs.o"
+	@echo "... libs/libs.i"
+	@echo "... libs/libs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... proj_folder/source.o"
-	@echo "... proj_folder/source.i"
-	@echo "... proj_folder/source.s"
 .PHONY : help
 
 

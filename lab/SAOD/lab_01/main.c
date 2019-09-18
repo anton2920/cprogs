@@ -1,4 +1,4 @@
-#include "libs/libs.h"
+#include "libs.h"
 #include <sys/time.h>
 
 main() {
