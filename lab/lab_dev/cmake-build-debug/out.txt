@@ -1,0 +1,8 @@
+except for find-min).
+bounds are in the amortized sense
+
+se-
+
+
+unds for all the operations match the lower bound proved
+

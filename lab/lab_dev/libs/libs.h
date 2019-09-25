@@ -5,17 +5,10 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Constants */
-enum consts {
-    faces = 6
-};
+/* Macro definitions */
 
-/* libs.c */
-unsigned long int findRecursive(int m, int n, int x);
-unsigned long int findIterative(int m, int n, int x);
-unsigned long int findOptimized(int m, int n, int x);
+/* Type definitions */
 
-void prt_ln(void);
-int menu_continue(void);
+/* Functions declarations */
 
 #endif
