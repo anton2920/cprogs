@@ -59,13 +59,6 @@ unsigned long int findIterative(int m, int n, int x) {
         }
     }
 
-    /*for (i = 0; i < n + 1; ++i) {
-        for (j = 0; j < x + 1; ++j) {
-            printf("%3lu", table[i][j]);
-        }
-        printf("\n");
-    }*/
-
     /* Returning value */
     return table[n][x];
 }

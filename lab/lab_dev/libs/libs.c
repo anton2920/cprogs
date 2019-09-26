@@ -52,7 +52,7 @@ unsigned long int findIterative(int m, int n, int x) {
 
     /* Fill the rest of the table. i — number of dice, j — sum */
     for (i = 2; i <= n; i++) {
-        for (j = 1; j <= x; j++) {
+        for (j = 2; j <= x; j++) {
             for (k = 1; k <= m && k < j; k++) {
                 table[i][j] += table[i - 1][j - k];
             }
@@ -97,6 +97,13 @@ unsigned long int findOptimized(int m, int n, int x) {
                 mem[i][j] -= mem[i - 1][j - m - 1];
             }
         }
+    }
+
+    for (i = 0; i < n + 1; ++i) {
+        for (j = 0; j < x + 1; ++j) {
+            printf("%3lu", mem[i][j]);
+        }
+        printf("\n");
     }
 
     /* Returning value */
