@@ -1,8 +1,7 @@
 except for find-min).
-bounds are in the amortized sense
-
-se-
-
-
-unds for all the operations match the lower bound proved
-
+key and meld (all the bounds are in the amortized sense
+min, O(log n) for delete-min, and O(log log n) for decrease-
+Namely, our heap structure requires O(1) for insert and find-
+by Fredman for a family of similar self-adjusting heaps.
+bounds for all the operations match the lower bound proved
+We give a variation of the pairing heaps for which the time

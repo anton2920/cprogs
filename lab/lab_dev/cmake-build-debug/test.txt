@@ -1,6 +1,7 @@
-dasdawdwadwadaw1024*2adaawdawdaadawdawd512/2adadfwafawfaf
-awdawdawrawq856*74adawdawdeqweqdaqdqedqsd
-adasd54-6dqwdqwdqwdwdwqdqdq1/0qwdqwdwqdqd
-adawdawdadasdasda78+8965qawdqwdqd4231/7dqwdqwd
-asdasdawdawdqawdawdawdawd
-awfawfawfawfawfawfawfqqqwfqwfhnqjwofnqwojfnawfawfawfawfawfawfawfawf
+We give a variation of the pairing heaps for which the time
+bounds for all the operations match the lower bound proved
+by Fredman for a family of similar self-adjusting heaps.
+Namely, our heap structure requires O(1) for insert and find-
+min, O(log n) for delete-min, and O(log log n) for decrease-
+key and meld (all the bounds are in the amortized sense
+except for find-min).
