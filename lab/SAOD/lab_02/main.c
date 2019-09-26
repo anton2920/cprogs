@@ -1,4 +1,4 @@
-#include "libs/libs.h"
+#include "libs.h"
 
 enum buf_const{
     BUFSIZE = 1024
@@ -69,7 +69,7 @@ main() {
     }
 
     /* Final output */
-    printf("\nString with the maximum value of expression is string %lu\n%s", string_index, buf);
+    printf("\nString with the maximum value of expression is string %lu\n%s\n", string_index, buf);
 
     fclose(inputs);
 }

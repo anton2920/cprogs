@@ -1,159 +1,133 @@
-<<<<<<< HEAD
 #include "libs.h"
 
-/* Time complexity: O(m ^ n), space complexity: O(n) */
-unsigned long int findRecursive(int m, int n, int x) {
+FILE *getFd(void) {
 
     /* Initializing variables */
-    auto unsigned long int res = 0;
-    register int i;
+    auto char name[20];
+
+    /* I/O flow */
+    printf("Type the file name: ");
+    scanf("%s", name);
+
+    /* Returning value */
+    return fopen(name, "r");
+}
+
+struct token *tryParseForOp(const char *str, size_t length) {
+
+    /* Initializing variables */
+    auto size_t i;
+    auto struct token *tmp;
 
     /* Main part */
-    if ((x && !n) || (!x && n)) {
-        return 0;
-    } else if (!x)
-        return 1;
+    for (i = 0; i < length; ++i) {
+        if (isoperator(*(str + i))) {
+            tmp = token_alloc(1);
+            tmp->type = op;
+            tmp->op_val = *(str + i);
+            tmp->beg = (void *) (str + i);
+            return tmp;
+        }
+    }
 
-    /* When x is so high that sum can not go beyond x even when we get maximum value in every dice throw */
-    if (m * n <= x)
-        return (m * n == x) ? 1 : 0;
+    /* Returning value */
+    return NULL;
+}
 
-    /* When x is too low */
-    if (n >= x)
-        return (n == x) ? 1 : 0;
+struct token *token_alloc(size_t nelem) {
 
-    for (i = 1; i <= m; i++)
-        res += findRecursive(m, n - 1, x - i);
+    /* Returning value */
+    return (struct token *) malloc(sizeof(struct token) * nelem);
+}
+
+struct token *getFirstNum(struct token *op, const char *string, size_t index) {
+
+    /* Initializing variables */
+    auto size_t i;
+    auto struct token *num1;
+    auto char tmp[max_num_len] = "", *test;
+    auto size_t length;
+
+    /* Main part */
+    for (i = index - 1; i && isdigit(*(string + i)) && index - i <= max_num_len; --i)
+        ; /* While i > 0, our char is digit and we don't exceed maximum number length */
+
+    if (!(length = (i) ? (index - i - 1) : (index))) {
+        return NULL; /* No digits were found */
+    }
+
+    strncpy(tmp, (i) ? (string + i + 1) : (string), length);
+
+    num1 = token_alloc(1);
+    num1->type = num;
+    num1->num_val = strtol(tmp, &test, 10);
+    if (test == NULL) {
+        free(num1);
+        return NULL; /* We have missed some deprecated symbols */
+    }
+
+    /* Returning value */
+    return num1;
+}
+
+struct token *getSecondNum(struct token *op, const char *string, size_t index) {
+
+    /* Initializing variables */
+    auto size_t i;
+    auto struct token *num2;
+    auto char tmp[max_num_len] = "", *test;
+    auto size_t length;
+
+    /* Main part */
+    for (i = index + 1; i < strlen(string) && isdigit(*(string + i)) && i - index <= max_num_len; ++i)
+        ; /* While i < strlen(string), our char is digit and we don't exceed maximum number length */
+
+    if (!(length = i - index - 1)) {
+        return NULL; /* No digits were found */
+    }
+
+    strncpy(tmp, string + i - length, length);
+
+    num2 = token_alloc(1);
+    num2->type = num;
+    num2->num_val = strtol(tmp, &test, 10);
+    if (op->op_val == '/' && !num2->num_val) {
+        free(num2);
+        return NULL; /* Zero division error */
+    }
+
+    if (test == NULL) {
+        free(num2);
+        return NULL; /* We have missed some deprecated symbols */
+    }
+
+    /* Returning value */
+    return num2;
+}
+
+long eval(struct token *num1, struct token *op, struct token *num2) {
+
+    /* Initializing variables */
+    register long res = 0;
+
+    /* Main part */
+    switch (op->op_val) {
+        case '+':
+            res = num1->num_val + num2->num_val;
+            break;
+        case '-':
+            res = num1->num_val - num2->num_val;
+            break;
+        case '*':
+            res = num1->num_val * num2->num_val;
+            break;
+        case '/':
+            res = num1->num_val / num2->num_val;
+            break;
+        default:
+            break;
+    }
 
     /* Returning value */
     return res;
 }
-
-/* Time complexity: O(m × n × x), space complexity: O(n × x) */
-unsigned long int findIterative(int m, int n, int x) {
-
-    /* Initializing variables */
-    register int i, j, k;
-    auto unsigned long int table[n + 1][x + 1];
-    memset(table, 0, sizeof(table));
-
-    /* Main part */
-
-    /* When x is so high that sum can not go beyond x even when we get maximum value in every dice throw */
-    if (m * n <= x)
-        return (m * n == x) ? 1 : 0;
-
-    /* When x is too low */
-    if (n >= x)
-        return (n == x) ? 1 : 0;
-
-    /* Table entries for only one dice */
-    for (j = 1; j <= m && j <= x; j++)
-        table[1][j] = 1;
-
-    /* Fill the rest of the table. i — number of dice, j — sum */
-    for (i = 2; i <= n; i++) {
-        for (j = 2; j <= x; j++) {
-            for (k = 1; k <= m && k < j; k++) {
-                table[i][j] += table[i - 1][j - k];
-            }
-        }
-    }
-
-    /*for (i = 0; i < n + 1; ++i) {
-        for (j = 0; j < x + 1; ++j) {
-            printf("%3lu", table[i][j]);
-        }
-        printf("\n");
-    }*/
-
-    /* Returning value */
-    return table[n][x];
-}
-
-/* Time complexity: O(n × x), space complexity: O(n × x) */
-unsigned long int findOptimized(int m, int n, int x) {
-
-    /* Initializing variables */
-    register int i, j;
-    auto unsigned long int mem[n + 1][x + 1];
-    memset(mem, 0, sizeof mem);
-    mem[0][0] = 1;
-
-    /* Main part */
-
-    /* When x is so high that sum can not go beyond x even when we get maximum value in every dice throw */
-    if (m * n <= x)
-        return (m * n == x) ? 1 : 0;
-
-    /* When x is too low */
-    if (n >= x)
-        return (n == x) ? 1 : 0;
-
-    for (i = 1; i <= n; i++) {
-        for (j = i; j <= x; j++) {
-            mem[i][j] = mem[i][j - 1] + mem[i - 1][j - 1];
-
-            if (j - m - 1 >= 0) {
-                mem[i][j] -= mem[i - 1][j - m - 1];
-            }
-        }
-    }
-
-    for (i = 0; i < n + 1; ++i) {
-        for (j = 0; j < x + 1; ++j) {
-            printf("%3lu", mem[i][j]);
-        }
-        printf("\n");
-    }
-
-    /* Returning value */
-    return mem[n][x];
-}
-
-void prt_ln(void) {
-
-    /* Final output */
-    printf(" ------------------------------------------------------------\n");
-}
-
-int menu_continue(void) {
-
-    /* Initializing variables */
-    int func;
-
-    /* I/O flow */
-    while (1) {
-        printf("| Continue? [y/N]: ");
-        switch ((func = getchar())) {
-            case 'y': case 'Y':
-                if ((getchar()) != '\n') {
-                    while ((getchar()) != '\n')
-                        ;
-                    prt_ln();
-                    continue;
-                }
-                prt_ln();
-                return 1;
-            case 'n': case 'N': case '\n':
-                if (func == 'n' || func == 'N') {
-                    if ((getchar()) != '\n') {
-                        while ((getchar()) != '\n')
-                            ;
-                        prt_ln();
-                        continue;
-                    }
-                }
-                prt_ln();
-                return 0;
-            default:
-                while ((getchar()) != '\n')
-                    ;
-                prt_ln();
-                continue;
-        }
-    }
-}
-=======
-#include "libs.h"
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
