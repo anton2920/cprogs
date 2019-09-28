@@ -13,10 +13,6 @@ stdlib.h
 -
 string.h
 -
-limits.h
--
-ctype.h
--
 
 /home/anton/C/lab/lab_dev/main.c
 libs/libs.h
