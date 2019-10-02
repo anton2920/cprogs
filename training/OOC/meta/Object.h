@@ -16,4 +16,4 @@ extern const void *Class;
 const void *classOf(const void *_self);
 size_t sizeOf(const void *_self);
 
-#endif OBJECT_H
+#endif

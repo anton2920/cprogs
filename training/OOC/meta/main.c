@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+#include "Object.h"
+#include "Class.h"
+#include "any.c"
+
 main() {
 
 	/* Initializing variables */

@@ -8,7 +8,7 @@
 /* Object representation */
 struct Object {
 	const struct Class *class;
-}
+};
 
 /* Class representation */
 struct Class {

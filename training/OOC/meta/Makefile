@@ -5,20 +5,20 @@ LDFLAGS =
 DEBUG = -g
 
 # Main part
-all: main.o new.o Point.o Circle.o
-	$(CC) $(CFLAGS) main.o new.o Point.o Circle.o -o main $(LDFLAGS) $(DEBUG)
+all: main.o Object.o Class.o any.o
+	$(CC) $(CFLAGS) main.o Object.o Class.o any.o -o main $(LDFLAGS) $(DEBUG)
 
 main.o: main.c
 	$(CC) $(CFLAGS) $(DEBUG) -c main.c
 
-new.o: new.c new.h new.r
-	$(CC) $(CFLAGS) $(DEBUG) -c new.c
+Object.o: Object.c Object.h Object.r
+	$(CC) $(CFLAGS) $(DEBUG) -c Object.c
 
-Point.o: Point.c Point.h Point.r
-	$(CC) $(CFLAGS) $(DEBUG) -c Point.c
+Class.o: Class.c Class.h
+	$(CC) $(CFLAGS) $(DEBUG) -c Class.c
 
-Circle.o: Circle.c Circle.h Circle.h
-	$(CC) $(CFLAGS) $(DEBUG) -c Circle.c
+any.o: any.c
+	$(CC) $(CFLAGS) $(DEBUG) -c any.c
 
 clean:
 	rm -f *.o main
