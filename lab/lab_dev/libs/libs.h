@@ -19,5 +19,8 @@ struct word {
 /* Functions declarations */
 struct word *find_word(const char *, const char *);
 struct word *word_alloc(size_t);
+char *insertAfter(char *text, size_t maxsize, char ch, size_t pos);
+char *insertBefore(char *text, size_t maxsize, char ch, size_t pos);
+void replaceNAll(char *text, size_t n, char from, char to);
 
 #endif

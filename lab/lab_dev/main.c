@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+
 #include "libs/libs.h"
 
 enum buf_consts {
@@ -5,53 +10,107 @@ enum buf_consts {
     WORDSIZE = 30
 };
 
+enum symbols {
+    sym = ' ',
+    nul = '\0'
+};
+
 main() {
 
     /* Initializing variables */
-    auto char buf[BUFSIZE] = "", new_buf[BUFSIZE], *lineptr, *curr_insert;
-    auto char word1[WORDSIZE], word2[WORDSIZE];
+    auto char buf[BUFSIZE], word[WORDSIZE], **lines, **new_lines;
     auto FILE *infile = fopen("test.txt", "r"), *outfile = fopen("out.txt", "w");
-    auto struct word *curr_word = NULL;
-    auto size_t word2l;
+    auto size_t max_length = 0, curr_length, max_word_length = 0;
+    auto char *beg_sp, *end_sp;
 
-    /* I/O flow */
-    printf("Type a first word: ");
-    scanf("%s", word1);
-    printf("Type a second word: ");
-    scanf("%s", word2);
+    auto char *pbuf = buf, *lineptr;
+    auto size_t nlines, offset;
+    auto size_t i, j;
+    auto size_t curr_l;
+    auto struct word *curr_w;
 
     /* Main part */
-    if (infile == NULL || outfile == NULL) {
-        perror("Problem with files");
+    assert(infile != NULL && outfile != NULL);
+
+    /* Finding out how many lines */
+    for (nlines = 0; ; ++nlines) {
+        if ((fgets(buf, BUFSIZE / 2, infile)) == NULL) {
+            break;
+        }
+
+        pbuf = buf;
+        while (*pbuf != '\n') {
+            sscanf(pbuf, "%s", word);
+            curr_length = strlen(word);
+            if (curr_length > max_word_length) {
+                max_word_length = curr_length;
+            }
+            pbuf += curr_length;
+        }
     }
 
-    word2l = strlen(word2);
+    fseek(infile, 0L, SEEK_SET);
 
+    /* Store 'em all */
+    lines = (char **) malloc(nlines * sizeof(char *));
+
+    for (i = 0; i < nlines; ++i) {
+        fgets(buf, BUFSIZE / 2, infile);
+        *(lines + i) = strdup(buf);
+    }
+
+    /* Ask user for the offset */
+    do {
+        printf("Type offset: ");
+        scanf("%lu", &offset);
+    } while (offset < max_word_length);
+
+    /* Split lines using following rules:
+     * 1. We can't split the words
+     * 2. smth...
+     */
+
+    new_lines = (char **) malloc(nlines * sizeof(char *));
+
+    for (i = 0, j = 0; i < nlines; ++i) {
+        lineptr = *(lines + i);
+        while ((curr_w = get_next_word()) {
+
+        }
+    }
+
+    /* sym insertion */
     for (;;) {
         if ((fgets(buf, BUFSIZE / 2, infile)) == NULL) {
             break;
         }
-        memset(new_buf, 0, BUFSIZE);
-        memcpy(new_buf, buf, strlen(buf));
 
-        for (lineptr = buf, curr_insert = new_buf; ; lineptr = curr_word->beg + curr_word->length) {
-            if ((curr_word = find_word(lineptr, word1)) == NULL) {
+        for (beg_sp = strchr(buf, sym), curr_length = strlen(buf);
+            curr_length < max_length;
+            beg_sp = strchr(beg_sp + 1, sym), ++curr_length)
+        {
+            beg_sp = insertAfter(buf, curr_length + 1, sym, beg_sp - buf);
+
+            if (beg_sp == NULL) {
+                beg_sp = buf;
+                --curr_length;
+            }
+
+            if (++curr_length >= max_length) {
                 break;
             }
-            memset(new_buf, 0, BUFSIZE);
 
-            memcpy(curr_insert, buf, curr_word->beg - buf);
-            curr_insert += curr_word->beg - lineptr;
-            memcpy(curr_insert, word2, word2l);
-            curr_insert += word2l;
-            memcpy(curr_insert, curr_word-> beg + curr_word->length, strlen(curr_word->beg + curr_word->length));
+            end_sp = strrchr(buf, sym);
+            end_sp = insertBefore(buf, curr_length + 1, nul, end_sp - buf);
 
-            memcpy(buf, new_buf, strlen(new_buf));
-
-            /* Clean up */
-            free(curr_word);
+            if (end_sp == NULL || end_sp <= beg_sp) {
+                replaceNAll(buf, curr_length, nul, sym);
+            }
         }
-        fprintf(outfile, "%s", new_buf);
+
+        replaceNAll(buf, curr_length, nul, sym);
+        fprintf(outfile, "%s", buf);
+        fflush(outfile);
     }
 
     fclose(infile);

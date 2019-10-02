@@ -7,14 +7,16 @@
 #IncludeRegexTransform: 
 
 /home/anton/C/lab/lab_dev/libs/libs.h
+
+/home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
 stdlib.h
 -
 string.h
 -
-
-/home/anton/C/lab/lab_dev/main.c
+assert.h
+-
 libs/libs.h
 /home/anton/C/lab/lab_dev/libs/libs.h
 
