@@ -4,6 +4,82 @@
 		"selected_items":
 		[
 			[
+				"size",
+				"size_t\t(Object.c)"
+			],
+			[
+				"s",
+				"super\tabc"
+			],
+			[
+				"class",
+				"classOf\tabc"
+			],
+			[
+				"Any",
+				"Any_differ\t(any.c)"
+			],
+			[
+				"std",
+				"stdarg.h\t(new.r)"
+			],
+			[
+				"Circle",
+				"Circle.o\tabc"
+			],
+			[
+				"Cir",
+				"Circle_draw\tabc"
+			],
+			[
+				"Point",
+				"Point_ctor\tabc"
+			],
+			[
+				"va",
+				"va_arg\tabc"
+			],
+			[
+				"Strin",
+				"String_differ\tabc"
+			],
+			[
+				"Stri",
+				"String_clone\tabc"
+			],
+			[
+				"Str",
+				"String_ctor\tabc"
+			],
+			[
+				"de",
+				"delete\t(class.c)"
+			],
+			[
+				"co",
+				"count\tabc"
+			],
+			[
+				"st",
+				"struct\tabc"
+			],
+			[
+				"si",
+				"size\tabc"
+			],
+			[
+				"con",
+				"contains\t(main.c)"
+			],
+			[
+				"inc",
+				"include\tabc"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
 				"lib",
 				"libs.c\tabc"
 			],
@@ -12,20 +88,12 @@
 				"CFLAGS\tabc"
 			],
 			[
-				"st",
-				"stdio.h\t(main.c)"
-			],
-			[
 				"is",
 				"isdigit"
 			],
 			[
 				"__",
 				"__TRUE"
-			],
-			[
-				"de",
-				"define"
 			],
 			[
 				"lab",
@@ -104,10 +172,6 @@
 				"include\t(read.c)"
 			],
 			[
-				"inc",
-				"include"
-			],
-			[
 				"d",
 				"define\t(read.c)"
 			],
@@ -152,20 +216,12 @@
 				"n"
 			],
 			[
-				"std",
-				"stdio.h\tstandard header"
-			],
-			[
 				"r",
 				"r"
 			],
 			[
 				"b",
 				"b"
-			],
-			[
-				"c",
-				"c"
 			],
 			[
 				"sum",
@@ -224,48 +280,65 @@
 	"buffers":
 	[
 		{
-<<<<<<< HEAD
-			"file": "lab/SAOD/lab_01/libs.c",
+			"file": "training/OOC/meta/main.c",
 			"settings":
 			{
-				"buffer_size": 3609,
-=======
-			"file": "lab/SAOD/lab_01/Makefile",
-			"settings":
-			{
-				"buffer_size": 272,
+				"buffer_size": 467,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/SAOD/lab_01/libs.c",
+			"file": "training/OOC/meta/Object.c",
 			"settings":
 			{
-				"buffer_size": 3765,
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
+				"buffer_size": 943,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/SAOD/lab_01/main.c",
+			"file": "training/OOC/meta/Object.r",
 			"settings":
 			{
-				"buffer_size": 1820,
-<<<<<<< HEAD
-=======
+				"buffer_size": 473,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/SAOD/lab_01/libs.h",
+			"file": "training/OOC/meta/Object.h",
 			"settings":
 			{
-				"buffer_size": 387,
+				"buffer_size": 381,
 				"encoding": "UTF-8",
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "training/OOC/meta/any.c",
+			"settings":
+			{
+				"buffer_size": 114,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "training/OOC/meta/Class.c",
+			"settings":
+			{
+				"buffer_size": 842,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "training/OOC/meta/Class.h",
+			"settings":
+			{
+				"buffer_size": 107,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -391,21 +464,46 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
-		"/home/anton/C/lab",
-		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_01"
+		"/home/anton/C/training",
+		"/home/anton/C/training/1.2temperature",
+		"/home/anton/C/training/8lowlevel",
+		"/home/anton/C/training/OOC"
 	],
 	"file_history":
 	[
-<<<<<<< HEAD
-=======
-		"/home/anton/C/experiments/sign/sign.c",
-		"/home/anton/C/lab/SAOD/lab_01/libs.h",
-		"/home/anton/C/lab/SAOD/lab_01/Makefile",
-		"/home/anton/C/lab/SAOD/lab_01/main.c",
+		"/home/anton/C/training/OOC/point/main.c",
+		"/home/anton/C/training/OOC/point/Makefile",
+		"/home/anton/C/training/OOC/point/new.c",
+		"/home/anton/C/training/OOC/point/new.h",
+		"/home/anton/C/training/OOC/point/Circle.h",
+		"/home/anton/C/training/OOC/point/Point.h",
+		"/home/anton/C/training/OOC/point/Circle.r",
+		"/home/anton/C/training/OOC/point/Point.r",
+		"/home/anton/C/training/OOC/point/Circle.c",
+		"/home/anton/C/training/OOC/point/Point.c",
+		"/home/anton/C/training/OOC/point/new.r",
+		"/home/anton/C/training/OOC/string/new.c",
+		"/home/anton/C/training/OOC/string/new.h",
+		"/home/anton/C/training/OOC/string/Makefile",
+		"/home/anton/C/training/OOC/string/String.h",
+		"/home/anton/C/training/OOC/string/main.c",
+		"/home/anton/C/training/OOC/string/String.c",
+		"/home/anton/C/training/OOC/string/new.s",
+		"/home/anton/C/training/OOC/string/new.r",
+		"/home/anton/C/training/OOC/string/class.h",
+		"/home/anton/C/training/OOC/string",
+		"/home/anton/C/training/OOC/sets/Makefile",
+		"/home/anton/C/training/OOC/sets/main.c",
+		"/home/anton/C/training/OOC/sets/Set.c",
+		"/home/anton/C/training/OOC/sets/new.h",
+		"/home/anton/C/training/OOC/sets/Object.h",
+		"/home/anton/C/training/OOC/sets/Set.h",
+		"/home/anton/C/training/OOC/sets/Set2.c",
+		"/home/anton/C/training/OOC/sets/new.c",
+		"/home/anton/C/lab/SAOD/lab_02/Makefile",
+		"/home/anton/C/lab/SAOD/lab_02/main.c",
+		"/home/anton/C/lab/SAOD/lab_02/test.txt",
 		"/home/anton/C/lab/SAOD/lab_01/libs.c",
-		"/home/anton/C/home/Olya/a2.c",
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
 		"/home/anton/C/home/AlinaSudoku/AlinaSudoku_dev/Header.h",
 		"/home/anton/C/experiments/memPage/a1.c",
 		"/home/anton/C/lab/lab_28/source.c",
@@ -500,52 +598,15 @@
 		"/home/anton/C/lab/lab_wrong/lab_11/a1.c",
 		"/home/anton/C/lab/lab_wrong/lab_11/a2.c",
 		"/home/anton/C/lab/lab_10/a1.c",
-		"/home/anton/C/experiments/SanyaEbet/shoulders.h",
-		"/home/anton/C/experiments/SanyaEbet/shoulders.c",
-		"/home/anton/C/experiments/SanyaEbet/main.c",
-		"/home/anton/C/experiments/pic/main.c",
-		"/home/anton/C/experiments/pic/main,c",
-		"/home/anton/C/experiments/SanyaEbet/main,c",
-		"/home/anton/C/experiments/SanyaEbet/a2.c",
-		"/home/anton/C/experiments/locale/a1.c",
-		"/home/anton/C/lab/lab_07/a1.c",
-		"/home/anton/C/lab/lab_07/a11.c",
-		"/home/anton/C/lab/lab_07/a2.c",
-		"/home/anton/C/lab/lab_07/a3.c",
-		"/home/anton/C/lab/lab_07/a4.c",
-		"/home/anton/C/lab/lab_07/a5.c",
-		"/home/anton/C/lab/lab_07/a51.c",
-		"/home/anton/C/lab/lab_wrong/lab_11/a3.c",
-		"/home/anton/C/lab/lab_wrong/lab_09/a2.c",
-		"/home/anton/C/experiments/ifbool/void.c",
-		"/home/anton/C/lab/lab_11/a1.c",
-		"/home/anton/C/lab/lab_11/a2.c",
-		"/home/anton/C/lab/lab_11/a3.c",
-		"/home/anton/C/lab/lab_09/input.h",
-		"/home/anton/C/lab/lab_09/check.c",
-		"/home/anton/C/lab/lab_09/input.c",
-		"/home/anton/C/lab/lab_09/ForSanya.c",
-		"/home/anton/C/lab/lab_05/a2.c",
-		"/home/anton/C/lab/lab_08/a2.c",
-		"/home/anton/C/lab/lab_08/a1.c",
-		"/home/anton/C/lab/lab_07/a52.c",
-		"/home/anton/C/lab/lab_06/a6.c",
-		"/home/anton/C/lab/lab_06/a5.c",
-		"/home/anton/C/lab/lab_06/a4.c",
-<<<<<<< HEAD
-		"/home/anton/C/lab/lab_06/a3.c",
-		"/home/anton/C/lab/lab_06/a2.c"
+		"/home/anton/C/experiments/SanyaEbet/shoulders.h"
 	],
 	"find":
 	{
+<<<<<<< HEAD
 		"height": 32.0
 =======
-		"/home/anton/C/lab/lab_06/a3.c"
-	],
-	"find":
-	{
 		"height": 26.0
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
+>>>>>>> bed5b699d1a16e3e2b24c627dc091796b1716b37
 	},
 	"find_in_files":
 	{
@@ -590,141 +651,117 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-<<<<<<< HEAD
-					"file": "lab/SAOD/lab_01/libs.c",
+					"file": "training/OOC/meta/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3609,
-=======
-					"file": "lab/SAOD/lab_01/Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 272,
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
+						"buffer_size": 467,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-<<<<<<< HEAD
-								609,
-								609
-=======
-								69,
-								69
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
-							]
-						],
-						"settings":
-						{
-<<<<<<< HEAD
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/SAOD/lab_01/main.c",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1820,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								566,
-								566
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-=======
-							"open_with_edit": true,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/SAOD/lab_01/libs.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3765,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2820,
-								2820
+								465,
+								465
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1587.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "training/OOC/meta/Object.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "lab/SAOD/lab_01/main.c",
+					"file": "training/OOC/meta/Object.r",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1820,
+						"buffer_size": 473,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10,
-								10
+								396,
+								396
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "training/OOC/meta/Object.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -734,28 +771,84 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "lab/SAOD/lab_01/libs.h",
+					"buffer": 4,
+					"file": "training/OOC/meta/any.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 387,
+						"buffer_size": 114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								334,
-								334
+								112,
+								112
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "training/OOC/meta/Class.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								396,
+								396
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "training/OOC/meta/Class.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -773,11 +866,11 @@
 		"height": 32.0
 =======
 		"height": 26.0
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
+>>>>>>> bed5b699d1a16e3e2b24c627dc091796b1716b37
 	},
 	"input":
 	{
-		"height": 47.0
+		"height": 57.0
 	},
 	"layout":
 	{
@@ -822,7 +915,7 @@
 		"height": 60.0
 =======
 		"height": 48.0
->>>>>>> f667ac888f700f0ab78fcd748abf164dcc8d2a40
+>>>>>>> bed5b699d1a16e3e2b24c627dc091796b1716b37
 	},
 	"save_all_on_build": true,
 	"select_file":
