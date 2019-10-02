@@ -4,8 +4,44 @@
 		"selected_items":
 		[
 			[
+				"supe",
+				"superclass\tabc"
+			],
+			[
+				"cla",
+				"class\tabc"
+			],
+			[
+				"Object",
+				"Object_differ\tabc"
+			],
+			[
+				"Class",
+				"Class_dtor\t(Class.c)"
+			],
+			[
+				"Obje",
+				"Object_differ\tabc"
+			],
+			[
+				"va",
+				"va_arg\tabc"
+			],
+			[
+				"void",
+				"voidf\tabc"
+			],
+			[
+				"voi",
+				"voidf\tabc"
+			],
+			[
+				"off",
+				"offset\tabc"
+			],
+			[
 				"size",
-				"size_t\t(Object.c)"
+				"size_t\tabc"
 			],
 			[
 				"s",
@@ -34,10 +70,6 @@
 			[
 				"Point",
 				"Point_ctor\tabc"
-			],
-			[
-				"va",
-				"va_arg\tabc"
 			],
 			[
 				"Strin",
@@ -279,77 +311,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "training/OOC/meta/main.c",
-			"settings":
-			{
-				"buffer_size": 467,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/meta/Object.c",
-			"settings":
-			{
-				"buffer_size": 943,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/meta/Object.r",
-			"settings":
-			{
-				"buffer_size": 473,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/point/Circle.r",
-			"settings":
-			{
-				"buffer_size": 178,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/meta/Object.h",
-			"settings":
-			{
-				"buffer_size": 381,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/meta/any.c",
-			"settings":
-			{
-				"buffer_size": 114,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/meta/Class.c",
-			"settings":
-			{
-				"buffer_size": 842,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "training/OOC/meta/Class.h",
-			"settings":
-			{
-				"buffer_size": 107,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -394,6 +355,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"col",
 				"UI: Select Color Scheme"
@@ -471,15 +436,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C",
-		"/home/anton/C/training",
-		"/home/anton/C/training/1.2temperature",
-		"/home/anton/C/training/8lowlevel",
-		"/home/anton/C/training/OOC",
-		"/home/anton/C/training/OOC/point"
+		"/home/anton/C"
 	],
 	"file_history":
 	[
+		"/home/anton/C/training/OOC/oocp/file.awk",
+		"/home/anton/C/training/OOC/meta/main.c",
+		"/home/anton/C/training/OOC/meta/any.c",
+		"/home/anton/C/training/OOC/meta/Class.h",
+		"/home/anton/C/training/OOC/meta/Class.c",
+		"/home/anton/C/training/OOC/meta/Object.h",
+		"/home/anton/C/training/OOC/meta/Object.r",
+		"/home/anton/C/training/OOC/meta/Object.c",
+		"/home/anton/C/training/OOC/meta/Makefile",
+		"/home/anton/C/training/OOC/meta/new.c",
 		"/home/anton/C/training/OOC/point/main.c",
 		"/home/anton/C/training/OOC/point/Makefile",
 		"/home/anton/C/training/OOC/point/new.c",
@@ -597,21 +567,11 @@
 		"/home/anton/C/lab/lab_10/a4.c",
 		"/home/anton/C/experiments/SanyaEbet/arrayequasion.c",
 		"/home/anton/C/experiments/IntVarCheck/input.c",
-		"/home/anton/C/experiments/IntVarCheck/test.c",
-		"/home/anton/C/experiments/IntVarCheck/input.h",
-		"/home/anton/C/lab/lab_09/a1.c",
-		"/home/anton/C/lab/lab_09/a2.c",
-		"/home/anton/C/lab/lab_09/a3.c",
-		"/home/anton/C/lab/lab.sublime-project",
-		"/home/anton/C/lab/lab_10/a3.c",
-		"/home/anton/C/lab/lab_wrong/lab_11/a1.c",
-		"/home/anton/C/lab/lab_wrong/lab_11/a2.c",
-		"/home/anton/C/lab/lab_10/a1.c",
-		"/home/anton/C/experiments/SanyaEbet/shoulders.h"
+		"/home/anton/C/experiments/IntVarCheck/test.c"
 	],
 	"find":
 	{
-		"height": 57.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -656,246 +616,14 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "training/OOC/meta/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 467,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "training/OOC/meta/Object.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 943,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								355,
-								355
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "training/OOC/meta/Object.r",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 473,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								387,
-								387
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "training/OOC/point/Circle.r",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								170,
-								170
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "training/OOC/meta/Object.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 381,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								364,
-								364
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "training/OOC/meta/any.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "training/OOC/meta/Class.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 842,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								581,
-								581
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "training/OOC/meta/Class.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 107,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								99,
-								99
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 57.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -940,7 +668,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 110.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
