@@ -14,17 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: lab_23 (dev, nothing significant)">
-      <change beforePath="$PROJECT_DIR$/../../home/STL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): add Molch's SAOD task" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +186,7 @@
       <workItem from="1569486618769" duration="2563000" />
       <workItem from="1569510534824" duration="719000" />
       <workItem from="1569511311905" duration="3119000" />
-      <workItem from="1569658391433" duration="4056000" />
+      <workItem from="1569658391433" duration="4646000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -268,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558183466058</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="PC: (lab_dev): add Molch's SAOD task">
+      <created>1569662515246</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1569662515246</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -321,7 +318,8 @@
     <MESSAGE value="PC: lab_23 (dev, first steps)" />
     <MESSAGE value="PC: lab_23 (dev, field hot-fix)" />
     <MESSAGE value="PC: lab_23 (dev, nothing significant)" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC: lab_23 (dev, nothing significant)" />
+    <MESSAGE value="PC: (lab_dev): add Molch's SAOD task" />
+    <option name="LAST_COMMIT_MESSAGE" value="PC: (lab_dev): add Molch's SAOD task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
