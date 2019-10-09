@@ -91,6 +91,7 @@ size_t STL_List_size(STL_List *); /* Returns STL_List->size */
 STL_List_node *STL_List_begin(STL_List *); /* Returns STL_List->bp */
 STL_List_node *STL_List_end(STL_List *); /* Returns STL_List->lp */
 
+void mergeNatural(STL_List *, int (*cmp)(const void *, const void *));
 void STL_List_sort(STL_List *, int (*cmp)(const void *, const void *)); /* Sorts the list */
 
 void STL_List_swap_nodes(STL_List_node *, STL_List_node *); /* Swaps the contents of two STL_List_nodes */

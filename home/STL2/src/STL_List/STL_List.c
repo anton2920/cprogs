@@ -38,17 +38,11 @@ int STL_List_init(STL_List *l) {
         return STL_List_null_reference_error;
     }
 
-    if ((l->bp = (STL_List_node *) malloc(sizeof(STL_List_node))) == NULL) {
-        return STL_List_memory_error;
-    }
-
-    l->lp = l->bp;
-    l->bp->next = l->bp->prev = l->bp->value = NULL;
+    l->lp = l->bp = NULL;
     l->size = 0;
 
     /* Returning value */
     return STL_List_OK;
-    
 }
 
 void STL_List_delete(STL_List *l) {
@@ -59,8 +53,6 @@ void STL_List_delete(STL_List *l) {
     }
 
     STL_List_clear(l);
-
-    free(l->bp);
 }
 
 void STL_List_clear(STL_List *l) {
@@ -86,12 +78,16 @@ int STL_List_insert_pos(STL_List *l, const void *elem, size_t size, size_t pos) 
         return STL_List_null_reference_error;
     }
 
-    if (pos > l->size || pos < 0) {
+    if (pos > l->size) {
         return STL_List_index_error;
     }
 
+    if (l->bp == NULL) {
+        return STL_List_push_front(l, elem, size);
+    }
+
     if (pos > l->size / 2) {
-        for (iter = STL_List_end(l), i = l->size; iter->prev != NULL && i > pos; iter = iter->prev, --i)
+        for (iter = STL_List_end(l), i = l->size; iter->prev != NULL && i >= pos; iter = iter->prev, --i)
             ;
     } else {
         for (iter = STL_List_begin(l), i = 0; iter->next != NULL && i < pos; iter = iter->next, ++i)
@@ -123,26 +119,30 @@ int STL_List_insert(STL_List *l, const void *elem, size_t size, STL_List_node *p
     memcpy(new_element->value, elem, size);
     new_element->size = size;
 
-    new_element->next = pos;
-    new_element->prev = pos->prev;
+    if (l->bp == NULL) {
+        new_element->next = NULL;
+        new_element->prev = NULL;
+        l->bp = l->lp = new_element;
+    } else if (pos != NULL) {
+        new_element->next = pos;
+        new_element->prev = pos->prev;
 
-    if (pos->prev != NULL) {
-        pos->prev->next = new_element;
-    }
-    pos->prev = new_element;
+        if (pos->prev != NULL) {
+            pos->prev->next = new_element;
+        }
+        pos->prev = new_element;
 
-    /* Managing list */
-    if (new_element->prev == NULL) {
-        l->bp = new_element;
-    } else if (new_element->next == NULL) {
-        l->lp = new_element;
+        /* Managing list */
+        if (new_element->prev == NULL) {
+            l->bp = new_element;
+        } else if (new_element->next == NULL) {
+            l->lp = new_element;
+        }
+
+        STL_List_check_pointers(l);
     }
-    if (l->bp > l->lp) {
-        l->lp = l->bp;
-    }
+
     ++l->size;
-
-    STL_List_check_pointers(l);
 
     /* Returning value */
     return STL_List_OK;
@@ -168,10 +168,17 @@ int STL_List_push_back(STL_List *l, const void *elem, size_t size) {
     memcpy(new_element->value, elem, size);
     new_element->size = size;
 
-    new_element->next = NULL;
-    new_element->prev = l->lp;
+    if (l->bp == NULL) {
+        new_element->next = NULL;
+        new_element->prev = NULL;
+        l->bp = l->lp = new_element;
+    } else {
+        new_element->next = NULL;
+        new_element->prev = l->lp;
+        l->lp->next = new_element;
 
-    l->lp = new_element;
+        l->lp = new_element;
+    }
 
     ++l->size;
 
@@ -191,7 +198,7 @@ STL_List_node *STL_List_erase_pos(STL_List *l, size_t pos) {
 
     /* Initializing variables */
     register size_t i;
-    auto STL_List_node *iter, *ret;
+    auto STL_List_node *iter;
 
     /* Main part */
     if (l == NULL) {
@@ -221,7 +228,7 @@ STL_List_node *STL_List_erase(STL_List *l, STL_List_node *pos) {
     }
 
     if (pos->prev != NULL) {
-        pos->prev = pos->next;
+        pos->prev->next = pos->next;
     } else {
         l->bp = pos->next;
     }
@@ -305,7 +312,7 @@ static void STL_List_sort_merge(STL_List_node **start1, STL_List_node **end1,
     auto STL_List_node *bstart = *start2, *bend = *end2;
     auto STL_List_node *bendnext = bend->next;
 
-    while (astart != aend && bstart != bend) {
+    while (astart != aend && bstart != bendnext) {
         if (cmp(astart->next->value, bstart->value) == 1) {
             temp = bstart->next;
             bstart->next = astart->next;
@@ -377,6 +384,83 @@ void STL_List_sort(STL_List *l, int (*cmp)(const void *, const void *)) {
         }
         prevend->next = start1;
     }
+}
+
+STL_List_node *mergeList(STL_List_node *left, STL_List_node *right, int (*cmp)(const void *, const void *)) {
+
+    /* Initializing variables */
+    auto STL_List_node *head, *current, *tail;
+
+    /* Main part */
+    if (left == NULL) {
+        return right;
+    }
+    if (right == NULL) {
+        return left;
+    }
+
+    if (cmp(right->value, left->value) == 1) {
+        head = tail = left;
+        left = left->next;
+    } else {
+        head = tail = right;
+        right = right->next;
+    }
+
+    while (left != NULL && right != NULL) {
+        if (cmp(right->value, left->value) == 1) {
+            current = left;
+            left = left->next;
+        } else {
+            current = right;
+            right = right->next;
+        }
+
+        current->next = NULL;
+        tail = tail->next = current;
+    }
+
+    tail->next = (left != NULL) ? left : right;
+
+    /* Returning value */
+    return head;
+}
+
+void mergeNatural(STL_List *l, int (*cmp)(const void *, const void *)) {
+
+    /* Initializing variables */
+    auto size_t j, k, lim;
+    auto size_t size = STL_List_size(l);
+    STL_List_node **work;
+    STL_List_node *head = l->bp;
+
+    /* Main part */
+    if (size < 2) {
+        return;
+    }
+
+    work = (STL_List_node **) calloc(size + 1, sizeof(*work));
+
+    for (lim = 0; head != NULL; lim++) {
+        STL_List_node *parent = head, *child;
+        work[lim] = parent;
+        child = parent->next;
+        while (child != NULL && cmp(parent->value, child->value) <= 0) {
+            parent = child;
+            child = parent->next;
+        }
+        head = child;
+        parent->next = NULL;
+    }
+    work[lim] = NULL;
+
+    for (; lim > 1; lim = (lim + 1) / 2) {
+        for (j = k = 0; k < lim; j++, k += 2)
+            work[j] = mergeList(work[k], work[k + 1], cmp);
+        work[j] = NULL;
+    }
+
+    free(work);
 }
 
 void STL_List_swap_nodes(STL_List_node *a, STL_List_node *b) {

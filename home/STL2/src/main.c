@@ -5,6 +5,7 @@
 #include <time.h>
 
 void printList(STL_List *, FILE *);
+int num_cmp(const void *, const void *);
 
 main() {
 
@@ -18,10 +19,14 @@ main() {
     srand(time(NULL) / 2);
     for (i = 0; i < 10; ++i) {
         rand_val = rand() % 10;
-        STL_List_insert_pos(&a, &rand_val, sizeof(int), i);
+        STL_List_push_back(&a, &rand_val, sizeof(int));
     }
 
     printList(&a, stdout);
+    mergeNatural(&a, num_cmp);
+    printList(&a, stdout);
+
+    STL_List_delete(&a);
 
     /* Returning value */
     return 0;
@@ -34,10 +39,19 @@ void printList(STL_List *l, FILE *stream) {
     auto int *value;
 
     /* Main part */
-    for (iter = STL_List_begin(l); iter < STL_List_end(l); iter = iter->next) {
+    for (iter = STL_List_begin(l); iter != NULL; iter = iter->next) {
         value = (int *) iter->value;
         fprintf(stream, "%d ", *value);
     }
 
     fprintf(stream, "\n");
+}
+
+int num_cmp(const void *_this, const void *_other) {
+
+    /* Initializing variables */
+    auto const int *this = _this, *other = _other;
+
+    /* Returning value */
+    return (*this > *other) ? 1 : (*this < *other) ? -1 : 0;
 }
