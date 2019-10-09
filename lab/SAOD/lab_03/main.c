@@ -3,10 +3,10 @@
 #include <string.h>
 #include <assert.h>
 
-#include "libs/libs.h"
+#include "libs.h"
 #include "/home/anton/C/home/STL2/src/STL.h"
 
-main() {
+int main() {
 
     /* Initializing variables */
     auto FILE *fin1 = fopen("input.txt", "r"), *fin2 = fopen("input2.txt", "r");
@@ -17,6 +17,9 @@ main() {
     STL_List_init(&c);
 
     /* I/O flow */
+    if (fin1 == NULL || fin2 == NULL) {
+        return -1;
+    }
     if (fin1 == stdin) {
         printf("----\t\tPolynomial #1\t\t----\n");
     }
@@ -47,4 +50,7 @@ main() {
     fflush(stdout);
 
     STL_List_delete(&a);
+
+    /* Returning value */
+    return 0;
 }

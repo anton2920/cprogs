@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/anton/C/lab/lab_dev/libs/libs.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/libs/libs.c.o"
-  "/home/anton/C/lab/lab_dev/main.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o"
+  "/home/anton/C/home/STL2/src/STL_List/STL_List.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/STL.dir/home/anton/C/home/STL2/src/STL_List/STL_List.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -15,7 +14,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/STL.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -6,17 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/home/anton/C/home/STL2/src/STL_Config.h
+
+/home/anton/C/home/STL2/src/STL_List/STL_List.h
+../STL_Config.h
+/home/anton/C/home/STL2/src/STL_Config.h
+stdio.h
+-
+
+/home/anton/C/lab/lab_dev/libs/libs.c
+stdio.h
+-
+string.h
+-
+libs.h
 /home/anton/C/lab/lab_dev/libs/libs.h
 
-/home/anton/C/lab/lab_dev/main.c
+/home/anton/C/lab/lab_dev/libs/libs.h
 stdio.h
 -
 stdlib.h
 -
 string.h
 -
-assert.h
--
-libs/libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
+../../../home/STL2/src/STL_List/STL_List.h
+/home/anton/C/home/STL2/src/STL_List/STL_List.h
 

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../../home/STL2/src/STL_List/STL_List.h"
+#include "/home/anton/C/home/STL2/src/STL.h"
 
 /* Macro definitions */
 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSTL.a  CMakeFiles/STL.dir/home/anton/C/home/STL2/src/STL_List/STL_List.c.o
+/usr/bin/ranlib libSTL.a
