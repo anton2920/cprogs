@@ -1,5 +1,5 @@
-/home/anton/Загрузки/clion-2019.1.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/anton/C/home/Sorting
--- The C compiler identification is GNU 4.8.4
+/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/anton/C/home/Sorting
+-- The C compiler identification is GNU 8.3.0
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
 -- Detecting C compiler ABI info
