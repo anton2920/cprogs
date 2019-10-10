@@ -163,6 +163,33 @@ STL_List/STL_List.c.s:
 	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_List/STL_List.c.s
 .PHONY : STL_List/STL_List.c.s
 
+STL_Queue/STL_Queue.o: STL_Queue/STL_Queue.c.o
+
+.PHONY : STL_Queue/STL_Queue.o
+
+# target to build an object file
+STL_Queue/STL_Queue.c.o:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.o
+.PHONY : STL_Queue/STL_Queue.c.o
+
+STL_Queue/STL_Queue.i: STL_Queue/STL_Queue.c.i
+
+.PHONY : STL_Queue/STL_Queue.i
+
+# target to preprocess a source file
+STL_Queue/STL_Queue.c.i:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.i
+.PHONY : STL_Queue/STL_Queue.c.i
+
+STL_Queue/STL_Queue.s: STL_Queue/STL_Queue.c.s
+
+.PHONY : STL_Queue/STL_Queue.s
+
+# target to generate assembly for a file
+STL_Queue/STL_Queue.c.s:
+	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.s
+.PHONY : STL_Queue/STL_Queue.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -203,6 +230,9 @@ help:
 	@echo "... STL_List/STL_List.o"
 	@echo "... STL_List/STL_List.i"
 	@echo "... STL_List/STL_List.s"
+	@echo "... STL_Queue/STL_Queue.o"
+	@echo "... STL_Queue/STL_Queue.i"
+	@echo "... STL_Queue/STL_Queue.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

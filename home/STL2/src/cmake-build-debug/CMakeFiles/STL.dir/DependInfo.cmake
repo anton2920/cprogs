@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/anton/C/home/STL2/src/STL_List/STL_List.c" "/home/anton/C/home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/STL_List/STL_List.c.o"
+  "/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.c" "/home/anton/C/home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

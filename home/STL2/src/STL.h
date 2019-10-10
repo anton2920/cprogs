@@ -3,5 +3,6 @@
 
 /* Header inclusion */
 #include "STL_List/STL_List.h"
+#include "STL_Queue/STL_Queue.h"
 
 #endif

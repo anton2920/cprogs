@@ -9,6 +9,8 @@
 /home/anton/C/home/STL2/src/STL.h
 STL_List/STL_List.h
 /home/anton/C/home/STL2/src/STL_List/STL_List.h
+STL_Queue/STL_Queue.h
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.h
 
 /home/anton/C/home/STL2/src/STL_Config.h
 
@@ -17,6 +19,8 @@ STL_List/STL_List.h
 /home/anton/C/home/STL2/src/STL_Config.h
 stdio.h
 -
+
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.h
 
 /home/anton/C/home/STL2/src/main.c
 STL.h

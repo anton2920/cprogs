@@ -5,3 +5,8 @@ CMakeFiles/STL.dir/STL_List/STL_List.c.o: ../STL_Config.h
 CMakeFiles/STL.dir/STL_List/STL_List.c.o: ../STL_List/STL_List.c
 CMakeFiles/STL.dir/STL_List/STL_List.c.o: ../STL_List/STL_List.h
 
+CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.o: ../STL_Config.h
+CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.o: ../STL_List/STL_List.h
+CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.o: ../STL_Queue/STL_Queue.c
+CMakeFiles/STL.dir/STL_Queue/STL_Queue.c.o: ../STL_Queue/STL_Queue.h
+

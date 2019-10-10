@@ -4,5 +4,6 @@
 CMakeFiles/main.dir/main.c.o: ../STL.h
 CMakeFiles/main.dir/main.c.o: ../STL_Config.h
 CMakeFiles/main.dir/main.c.o: ../STL_List/STL_List.h
+CMakeFiles/main.dir/main.c.o: ../STL_Queue/STL_Queue.h
 CMakeFiles/main.dir/main.c.o: ../main.c
 

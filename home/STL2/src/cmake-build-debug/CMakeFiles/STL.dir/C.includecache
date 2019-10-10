@@ -8,17 +8,17 @@
 
 /home/anton/C/home/STL2/src/STL_Config.h
 
-/home/anton/C/home/STL2/src/STL_List/STL_List.c
-stdlib.h
--
-string.h
--
-STL_List.h
-/home/anton/C/home/STL2/src/STL_List/STL_List.h
-
 /home/anton/C/home/STL2/src/STL_List/STL_List.h
 ../STL_Config.h
 /home/anton/C/home/STL2/src/STL_Config.h
 stdio.h
 -
+
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.c
+../STL_List/STL_List.h
+/home/anton/C/home/STL2/src/STL_List/STL_List.h
+STL_Queue.h
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.h
+
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.h
 
