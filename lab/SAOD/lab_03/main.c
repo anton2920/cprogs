@@ -9,8 +9,8 @@
 int main() {
 
     /* Initializing variables */
-    auto FILE *fin1 = fopen("input.txt", "r"), *fin2 = fopen("input2.txt", "r");
-    /* auto FILE *fin1 = stdin, *fin2 = stdin; */
+    /* auto FILE *fin1 = fopen("input.txt", "r"), *fin2 = fopen("input2.txt", "r"); */
+    auto FILE *fin1 = stdin, *fin2 = stdin;
     auto FILE *fout = stdout;
     auto STL_List a, b, c;
     STL_List_init(&a);

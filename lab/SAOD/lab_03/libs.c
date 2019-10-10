@@ -18,7 +18,9 @@ void read_polynomials(STL_List *l, FILE *fp) {
             scanf("%lu", &tmp.power);
             printf("\n");
 
-            if (!tmp.coefficient) {
+            if (!tmp.coefficient && !tmp.power) {
+                break;
+            } else if (!tmp.coefficient) {
                 continue;
             }
         } else {
@@ -28,7 +30,9 @@ void read_polynomials(STL_List *l, FILE *fp) {
 
             fscanf(fp, "%d %lu\n", &tmp.coefficient, &tmp.power);
 
-            if (!tmp.coefficient) {
+            if (!tmp.coefficient && !tmp.power) {
+                break;
+            } else if (!tmp.coefficient) {
                 continue;
             }
         }
