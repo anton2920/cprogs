@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/STL.dir/home/anton/C/home/STL2/src/STL_List/STL_List.c.o"
-  "libSTL.pdb"
   "libSTL.a"
+  "libSTL.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
