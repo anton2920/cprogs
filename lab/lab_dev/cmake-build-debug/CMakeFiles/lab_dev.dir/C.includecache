@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/anton/C/home/STL2/src/STL.h
+STL_List/STL_List.h
+/home/anton/C/home/STL2/src/STL_List/STL_List.h
+STL_Queue/STL_Queue.h
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.h
+
 /home/anton/C/home/STL2/src/STL_Config.h
 
 /home/anton/C/home/STL2/src/STL_List/STL_List.h
@@ -14,13 +20,7 @@
 stdio.h
 -
 
-/home/anton/C/lab/lab_dev/libs/libs.c
-stdio.h
--
-string.h
--
-libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
+/home/anton/C/home/STL2/src/STL_Queue/STL_Queue.h
 
 /home/anton/C/lab/lab_dev/libs/libs.h
 stdio.h
@@ -29,6 +29,14 @@ stdlib.h
 -
 string.h
 -
-../../../home/STL2/src/STL_List/STL_List.h
-/home/anton/C/home/STL2/src/STL_List/STL_List.h
+../../../home/STL2/src/STL.h
+/home/anton/C/home/STL2/src/STL.h
+
+/home/anton/C/lab/lab_dev/main.c
+stdio.h
+-
+libs/libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
+/home/anton/C/home/STL2/src/STL.h
+-
 

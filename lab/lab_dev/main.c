@@ -1,7 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
 
 #include "libs/libs.h"
 #include "/home/anton/C/home/STL2/src/STL.h"
@@ -9,42 +6,16 @@
 main() {
 
     /* Initializing variables */
-    auto FILE *fin1 = fopen("input.txt", "r"), *fin2 = fopen("input2.txt", "r");
-    auto FILE *fout = stdout;
-    auto STL_List a, b, c;
-    STL_List_init(&a);
-    STL_List_init(&b);
-    STL_List_init(&c);
-
-    /* I/O flow */
-    if (fin1 == stdin) {
-        printf("----\t\tPolynomial #1\t\t----\n");
-    }
-    read_polynomials(&a, fin1);
-    if (fin2 == stdin) {
-        printf("----\t\tPolynomial #2\t\t----\n");
-    }
-    read_polynomials(&b, fin2);
-    fflush(stdout);
-
-    printf("----\t\tPolynomial #1\t\t----\n");
-    print_polynomials(&a, fout);
-    printf("----\t\tPolynomial #2\t\t----\n");
-    print_polynomials(&b, fout);
-    fflush(stdout);
+    size_t sz;
 
     /* Main part */
-    STL_List_clear(&c);
-    add_polynomials(&c, &a, &b);
-    printf("\n----\t\t#1 + #2\t\t----\n");
-    print_polynomials(&c, fout);
-    fflush(stdout);
+    sz = get_curr_mem();
+    printf("%lu\n", sz);
 
-    STL_List_clear(&c);
-    multiply_polynomials(&c, &a, &b);
-    printf("\n----\t\t#1 * #2\t\t----\n");
-    print_polynomials(&c, fout);
-    fflush(stdout);
+    sz -= sizeof(STL_Queue);
+    sz /= sizeof(STL_Queue_node);
+    sz /= sizeof(double);
 
-    STL_List_delete(&a);
+    printf("%lu\n", sz);
+
 }

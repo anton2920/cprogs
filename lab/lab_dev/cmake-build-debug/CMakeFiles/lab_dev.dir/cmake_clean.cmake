@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lab_dev.dir/libs/libs.c.o"
   "CMakeFiles/lab_dev.dir/main.c.o"
-  "lab_dev"
+  "CMakeFiles/lab_dev.dir/libs/libs.c.o"
   "lab_dev.pdb"
+  "lab_dev"
 )
 
 # Per-language clean rules from dependency scanning.

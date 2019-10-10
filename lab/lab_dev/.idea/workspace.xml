@@ -16,26 +16,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): add Molch's SAOD task">
+      <change afterPath="$PROJECT_DIR$/../../home/STL2/src/STL_Queue/STL_Queue.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../home/STL2/src/STL_Queue/STL_Queue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../c.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/test_prog.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/CMakeFiles/test_prog.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/Sorting.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/Sorting.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/test_prog.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/CMakeFiles/test_prog.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/Sorting/cmake-build-release/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/STL.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/STL.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/STL.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/libSTL.so" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/libSTL.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/src.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/cmake-build-debug/src.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../home/STL2/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../home/STL2/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SAOD/lab_03/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SAOD/lab_03/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SAOD/lab_03/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../SAOD/lab_03/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STL.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libSTL.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libSTL.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +87,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/input/input.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1PHcG9ZyOWNqwb8SHrY7hlhtSii" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -68,7 +98,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/anton/C/lab/lab_dev/main.c" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/CPP/lab/lab_dev" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../home/STL2/src" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
@@ -218,6 +248,7 @@
       <workItem from="1570041842461" duration="9819000" />
       <workItem from="1570645143550" duration="53000" />
       <workItem from="1570645220995" duration="8039000" />
+      <workItem from="1570692838452" duration="2850000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
