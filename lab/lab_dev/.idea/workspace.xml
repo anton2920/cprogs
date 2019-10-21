@@ -14,11 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): statring Molch's SAOD task">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/tree/tree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/tree/tree.h" afterDir="false" />
-    </list>
+    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): statring Molch's SAOD task (#2)" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +195,7 @@
       <workItem from="1570729775131" duration="262000" />
       <workItem from="1570730112335" duration="49000" />
       <workItem from="1571215312420" duration="102000" />
-      <workItem from="1571671940043" duration="11851000" />
+      <workItem from="1571671940043" duration="11912000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -285,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571682751773</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="PC: (lab_dev): statring Molch's SAOD task (#2)">
+      <created>1571687501193</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571687501193</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -340,7 +343,8 @@
     <MESSAGE value="PC: lab_23 (dev, nothing significant)" />
     <MESSAGE value="PC: (lab_dev): add Molch's SAOD task" />
     <MESSAGE value="PC: (lab_dev): statring Molch's SAOD task" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC: (lab_dev): statring Molch's SAOD task" />
+    <MESSAGE value="PC: (lab_dev): statring Molch's SAOD task (#2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PC: (lab_dev): statring Molch's SAOD task (#2)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
