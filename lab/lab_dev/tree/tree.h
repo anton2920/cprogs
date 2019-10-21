@@ -38,4 +38,6 @@ void      *Tree_get_value(const tree_node *);
 
 void Tree_print(const tree *t, void (*)(const tree_node *));
 
+int Tree_count(const tree *t, const void *, int (*)(const void *, const void *));
+
 #endif

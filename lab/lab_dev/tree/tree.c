@@ -200,3 +200,29 @@ void Tree_Print(const tree *t, void (*print_node_value)(const tree_node *)) {
     /* Main part */
     Tree_Node_print(Tree_begin(t), 0lu, print_node_value);
 }
+
+int Tree_Node_count(const tree_node *node, const void *elem, int (*cmp)(const void *, const void *)) {
+
+    /* Initializing variables */
+    auto size_t count = 0;
+    register size_t i;
+
+    /* Main part */
+    for (i = 0; i < Tree_get_nchild(node); ++i) {
+        if (!cmp(elem, Tree_get_value(node))) {
+            ++count;
+        }
+        if (Tree_get_child(node, i) != NULL) {
+            count += Tree_Node_count(Tree_get_child(node, i), elem, cmp);
+        }
+    }
+
+    /* Returning value */
+    return count;
+}
+
+int Tree_count(const tree *t, const void *elem, int (*cmp)(const void *, const void *)) {
+
+    /* Returning value */
+    return Tree_Node_count(Tree_begin(t), elem, cmp);
+}

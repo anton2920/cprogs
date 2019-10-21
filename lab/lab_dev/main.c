@@ -7,5 +7,4 @@ main() {
 
     /* Initializing variables */
 
-
 }
