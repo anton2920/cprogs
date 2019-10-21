@@ -14,6 +14,6 @@
 
 
 /* Functions declarations */
-size_t get_curr_mem(void);
+
 
 #endif
