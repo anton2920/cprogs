@@ -1,5 +1,5 @@
-#include "libs/libs.h"
-#include "tree/tree.h"
+#include "libs.h"
+#include "tree.h"
 
 main() {
 

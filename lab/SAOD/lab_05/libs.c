@@ -121,6 +121,8 @@ void checkTree(const tree *t) {
             printf("Employee %s %s occurs more than once\n", e.ln, e.fn);
         } else if (!counter) {
             printf("Employee %s %s didn't occur\n", e.ln, e.fn);
+        } else {
+            printf("Employee %s %s occurs correctly\n", e.ln, e.fn);
         }
 
         counter = 0;

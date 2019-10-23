@@ -14,8 +14,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): statring Molch's SAOD task (#2)">
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+    <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): updating tree structure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tree/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/tree/tree.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -199,7 +204,7 @@
       <workItem from="1570730112335" duration="49000" />
       <workItem from="1571215312420" duration="102000" />
       <workItem from="1571671940043" duration="11912000" />
-      <workItem from="1571843597583" duration="274000" />
+      <workItem from="1571843597583" duration="12912000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -292,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571687501193</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="PC: (lab_dev): updating tree structure">
+      <created>1571843899083</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1571843899083</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -348,14 +360,13 @@
     <MESSAGE value="PC: (lab_dev): add Molch's SAOD task" />
     <MESSAGE value="PC: (lab_dev): statring Molch's SAOD task" />
     <MESSAGE value="PC: (lab_dev): statring Molch's SAOD task (#2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC: (lab_dev): statring Molch's SAOD task (#2)" />
+    <MESSAGE value="PC: (lab_dev): updating tree structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="PC: (lab_dev): updating tree structure" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="p1" />
-        <watch expression="p2" />
-        <watch expression="res" />
+        <watch expression="curr" />
       </configuration>
     </watches-manager>
   </component>

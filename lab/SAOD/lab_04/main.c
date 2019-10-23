@@ -15,13 +15,15 @@ main() {
 
     /* Main part */
     sz = get_curr_mem();
-    printf("%lu\n", sz);
+    printf("Free mem: %lu MB\n", sz);
+	
+	sz <<= 10;
 
     sz -= sizeof(STL_Queue);
     sz /= sizeof(STL_Queue_node);
     sz /= sizeof(double);
 
-    printf("%lu\n", sz);
+    printf("Queue members: %lu\n", sz);
 
 }
 
