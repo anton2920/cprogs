@@ -6,12 +6,19 @@
 
 int Tree_init(tree *t) {
 
-    /* Initializing variables */
-
     /* VarCheck */
     if (t == NULL) {
         return Tree_null_reference_error;
     }
+
+    if ((t->base = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
+        return Tree_memory_error;
+    }
+
+    t->base->value = NULL;
+    t->base->parent = NULL;
+    t->base->nchild = 0;
+    t->base->child = NULL;
 
     /* Returning value */
     return Tree_OK;
@@ -108,6 +115,7 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size) {
     }
 
     memcpy(node->child[node->nchild - 1]->value, item, size);
+    node->child[node->nchild - 1]->parent = node;
 
     /* Returning value */
     return node->child[node->nchild - 1];

@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 90)
 
 set(HEADER_FILES libs/libs.h)
 set(SOURCE_FILES main.c libs/libs.c)
-# set(TREE_FILES tree/tree.c tree/tree.h)
+set(TREE_FILES tree/tree.c tree/tree.h)
 
 # set(STL_SOURCE /home/anton/C/home/STL2/src/STL_List/STL_List.c)
 
