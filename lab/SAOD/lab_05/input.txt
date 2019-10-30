@@ -3,5 +3,6 @@ Mysyutin Aleksey 3 3 221
 Dergachev Konstantin 2 1 413
 Trubakov Evgeniy 2 1 410
 Trubakov Andrey 2 1 410
+Demidov Andrew 2 4 312
 Averchenkov Andrey 4 2 327
 Malahankov Aleksey 1 6 45
