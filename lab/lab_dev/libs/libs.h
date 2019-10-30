@@ -10,9 +10,20 @@
 /* Macro definitions */
 
 /* Type definitions */
+struct element {
+    key_t key;
+    size_t naccess;
+};
 
+enum way {
+    LEFT = 0,
+    RIGHT,
+    STAND
+};
 
 /* Functions declarations */
-
+void fillInTree(tree *, FILE *);
+double doAccess(tree *);
+void rearrange(tree *new_t, const tree *t);
 
 #endif

@@ -1,17 +1,33 @@
+#include <time.h>
+
 #include "libs/libs.h"
 #include "tree/tree.h"
 
-main() {
+int main() {
 
     /* Initializing variables */
-    auto tree t;
+    auto tree t, new_t;
     Tree_init(&t);
+    Tree_init(&new_t);
+    auto FILE *fp = fopen("input.txt", "r");
+    auto double mean1, mean2;
+    srand(time(NULL) / 2);
+
+    /* VarCheck */
+    if (fp == NULL) {
+        return -1;
+    }
 
     /* I/O flow */
-    fillInTree(&t);
+    fillInTree(&t, NULL);
 
     /* Main part */
-    checkTree(&t);
+    mean1 = doAccess(&t);
+
+    rearrange(&new_t, &t);
 
     Tree_delete(&t);
+
+    /* Returning value */
+    return 0;
 }

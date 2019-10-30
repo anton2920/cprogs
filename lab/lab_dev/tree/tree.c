@@ -82,6 +82,7 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int 
             return NULL;
         }
         if ((tmp->value = malloc(size)) == NULL) {
+            free(tmp);
             return NULL;
         }
         memcpy(tmp->value, item, size);
@@ -101,12 +102,23 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int 
 tree_node *Tree_insert(tree *t, const void *item, size_t size, int (*cmp)(const void *, const void *)) {
 
     /* VarCheck */
-    if (t == NULL || Tree_isEmpty(t)) {
+    if (t == NULL) {
         return NULL;
     }
 
+    if (Tree_isEmpty(t)) {
+        if ((Tree_begin(t)->value = malloc(size)) == NULL) {
+            return NULL;
+        }
+        memcpy(Tree_begin(t)->value, item, size);
+        Tree_begin(t)->nbytes = size;
+        Tree_begin(t)->left = Tree_begin(t)->right = NULL;
+    } else {
+        return Tree_Node_insert(t->root, item, size, cmp);
+    }
+
     /* Returning value */
-    return Tree_Node_insert(t->root, item, size, cmp);
+    return NULL;
 }
 
 tree_node *Tree_begin(const tree *t) {
@@ -119,10 +131,6 @@ tree_node *Tree_begin(const tree *t) {
     /* Returning value */
     return t->root;
 }
-
-/* tree_node *Tree_get_parent(const tree_node *t) {
-
-} */
 
 tree_node *Tree_get_left_child(const tree_node *node) {
 
