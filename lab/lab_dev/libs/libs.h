@@ -10,27 +10,9 @@
 /* Macro definitions */
 
 /* Type definitions */
-enum consts {
-    NAME = 30
-};
 
-struct employee {
-    char ln[NAME];
-    char fn[NAME];
-    unsigned building;
-    enum department {
-        CSaS = 1,
-        CTS,
-        FM,
-        GP,
-        Tb,
-        EE,
-    } dep;
-    unsigned room;
-};
 
 /* Functions declarations */
-void fillInTree(tree *t);
-void checkTree(const tree *);
+
 
 #endif
