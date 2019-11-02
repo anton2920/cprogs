@@ -109,6 +109,7 @@ lab_dev: CMakeFiles/lab_dev.dir/main.c.o
 lab_dev: CMakeFiles/lab_dev.dir/libs/libs.c.o
 lab_dev: CMakeFiles/lab_dev.dir/tree/tree.c.o
 lab_dev: CMakeFiles/lab_dev.dir/build.make
+lab_dev: libSTL.a
 lab_dev: CMakeFiles/lab_dev.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lab_dev"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab_dev.dir/link.txt --verbose=$(VERBOSE)

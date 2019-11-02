@@ -1,7 +1,7 @@
 #include <time.h>
 
-#include "libs/libs.h"
-#include "tree/tree.h"
+#include "libs.h"
+#include "tree.h"
 
 int main() {
 
@@ -10,7 +10,7 @@ int main() {
     Tree_init(&t);
     Tree_init(&new_t);
     auto FILE *fp = fopen("input.txt", "r");
-//    srand(time(NULL) / 2);
+    /* srand(time(NULL) / 2); */
 
     /* VarCheck */
     if (fp == NULL) {

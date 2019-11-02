@@ -5,13 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../tree/tree.h"
+
+#include "tree.h"
 
 /* Macro definitions */
 
 /* Type definitions */
 struct element {
-    key_t key;
+    int key;
     size_t naccess;
 };
 
