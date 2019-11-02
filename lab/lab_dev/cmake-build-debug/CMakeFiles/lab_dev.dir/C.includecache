@@ -17,11 +17,21 @@ string.h
 /home/anton/C/lab/lab_dev/tree/tree.h
 
 /home/anton/C/lab/lab_dev/main.c
+stdio.h
+-
 time.h
 -
 libs/libs.h
 /home/anton/C/lab/lab_dev/libs/libs.h
 tree/tree.h
+/home/anton/C/lab/lab_dev/tree/tree.h
+
+/home/anton/C/lab/lab_dev/tree/tree.c
+stdlib.h
+-
+string.h
+-
+tree.h
 /home/anton/C/lab/lab_dev/tree/tree.h
 
 /home/anton/C/lab/lab_dev/tree/tree.h

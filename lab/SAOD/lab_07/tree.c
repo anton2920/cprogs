@@ -61,7 +61,7 @@ static tree_node *Tree_double_rotate_right_left(tree_node *k1) {
     return Tree_single_rotate_left(k1);
 }
 
-static Tree_get_balance(const tree_node *node) {
+static int Tree_get_balance(const tree_node *node) {
 
     /* VarCheck */
     if (node == NULL) {

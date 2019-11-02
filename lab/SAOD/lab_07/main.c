@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "libs/libs.h"
-#include "tree/tree.h"
+#include "libs.h"
+#include "tree.h"
 
 int main() {
 

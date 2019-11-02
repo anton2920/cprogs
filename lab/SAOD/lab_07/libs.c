@@ -63,5 +63,5 @@ void deleteRand(tree *t) {
     }
 
     /* Final output */
-    printf("\n\nDeleted item: %d\n", val);
+    printf("\n\nDeleted item: %d\n\n", val);
 }
