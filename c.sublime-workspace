@@ -595,7 +595,7 @@
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -656,8 +656,8 @@
 						"selection":
 						[
 							[
-								4702,
-								4702
+								4410,
+								4410
 							]
 						],
 						"settings":
@@ -678,7 +678,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 44.0
+		"height": 39.0
 	},
 	"input":
 	{
@@ -723,7 +723,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 84.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
