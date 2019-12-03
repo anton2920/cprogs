@@ -38,7 +38,7 @@ void node_print(const tree_node *node) {
     auto int *val = node->value;
 
     /* Main part */
-    printf("%d\n", *val);
+    printf("%d", *val);
 }
 
 void deleteRand(tree *t) {

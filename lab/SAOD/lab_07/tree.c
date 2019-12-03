@@ -346,10 +346,11 @@ static void Tree_Node_print(const tree_node *node, size_t Tree_print_counter, vo
     }
 
     /* Main part */
-    printf("\t----\t----\t----\t----\n");
+    /*printf("\t----\t----\t----\t----\n");
     printf("Node level: %lu\n", Tree_print_counter);
-    printf("Node's value: ");
+    printf("Node's value: ");*/
     print_node_value(node);
+    printf(" on level %lu\n", Tree_print_counter);
 
     Tree_Node_print(node->left, Tree_print_counter + 1, print_node_value);
     Tree_Node_print(node->right, Tree_print_counter + 1, print_node_value);
