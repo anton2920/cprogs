@@ -1,362 +1,250 @@
-#include <stdlib.h>
-#include <string.h>
-
 #include "tree.h"
 
+node *headTree = NULL;
+
+FILE *f = NULL;
+
 static int max(int a, int b) {
-
-    /* Returning value */
-    return (a > b) ? a : b;
+    return (a < b) ? b : a;
 }
 
-static tree_node *Tree_single_rotate_right(tree_node *k2) {
+void addNode(int keyNode, node **node_pointer) {
 
-    /* Initializing variables */
-    auto tree_node *k1 = NULL;
+    node *newnode;
+    newnode = (node *) malloc(sizeof(node));
+
+    newnode->s_left = NULL;
+    newnode->s_right = NULL;
+    newnode->key = keyNode;
+    *node_pointer = newnode;
+}
+
+void makeTree(node *head) {
+
+    int temp;
+    node *search;
+
+    while (!feof(f)) {
+        fscanf(f, "%d", &temp);
+        search = head;
+        while (1) {
+            if (temp < search->key) {
+                if (search->s_left) search = search->s_left;
+                else { addNode(temp, &search->s_left); break; }
+            }
+            else if (temp > search->key)
+                if (search->s_right) search = search->s_right;
+                else { addNode(temp, &search->s_right); break; }
+            else
+                break;
+        }
+    }
+}
+
+void build_AVL_Tree() {
+
+    int temp;
+    fseek(f, 0, 0);
+    if (feof(f)) { printf("файл содержит пустое дерево!"); getchar(); exit(1); }
+    fscanf(f, "%d", &temp);
+
+    headTree = (sheet *) malloc(sizeof(sheet));
+    headTree->key = temp;
+    headTree->s_left = NULL;
+    headTree->s_right = NULL;
+
+    makeTree(headTree);
+}
+
+/*int high(node *node) {
+
+}*/
+
+int high_p(node *node) {
 
     /* Main part */
-    k1 = k2->left;
-    k2->left = k1->right;
-    k1->right = k2;
-
-    k2->height = max(Tree_get_height(k2->left), Tree_get_height(k2->right)) + 1;
-    k1->height = max(Tree_get_height(k1->left), Tree_get_height(k2)) + 1;
+    if (node == NULL) {
+        return -1;
+    }
 
     /* Returning value */
-    return k1;
+    return max(high_p(node->s_left), high_p(node->s_right)) + 1;
 }
 
-static tree_node *Tree_single_rotate_left(tree_node *k1) {
+/*int checkNode(node *node) {
 
-    /* Initializing variables */
-    auto tree_node *k2 = NULL;
+}*/
+
+int checkTree(node *node) {
 
     /* Main part */
-    k2 = k1->right;
-    k1->right = k2->left;
-    k2->left = k1;
-
-    k1->height = max(Tree_get_height(k1->left), Tree_get_height(k1->right)) + 1;
-    k2->height = max(Tree_get_height(k2->right), Tree_get_height(k1)) + 1;
-
-    /* Returning value */
-    return k2;
-}
-
-static tree_node *Tree_double_rotate_left_right(tree_node *k1) {
-
-    /* Main part */
-    k1->left = Tree_single_rotate_left(k1->left);
-
-    /* Returning value */
-    return Tree_single_rotate_right(k1);
-}
-
-static tree_node *Tree_double_rotate_right_left(tree_node *k1) {
-
-    /* Main part */
-    k1->right = Tree_single_rotate_right(k1->right);
-
-    /* Returning value */
-    return Tree_single_rotate_left(k1);
-}
-
-static Tree_get_balance(const tree_node *node) {
-
-    /* VarCheck */
     if (node == NULL) {
         return 0;
+    } else if (abs(high_p(node->s_right) - high_p(node->s_left)) > 1) {
+        return node->key;
     }
 
     /* Returning value */
-    return Tree_get_height(node->right) - Tree_get_height(node->left);
+    return max(checkTree(node->s_left), checkTree(node->s_right));
 }
 
-int Tree_init(tree *t) {
-
-    /* VarCheck */
-    if (t == NULL) {
-        return Tree_null_reference_error;
-    }
+node *search_rod(int key_, node *node) {
 
     /* Main part */
-    if ((t->root = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
-        return Tree_memory_error;
-    }
-
-    t->root->left = t->root->right = t->root->value = NULL;
-    t->root->nbytes = 0lu;
-
-    /* Returning value */
-    return Tree_OK;
-}
-
-static int Tree_Node_delete(tree_node *node) {
-
-    /* VarCheck */
-    if (node == NULL) {
-        return Tree_null_reference_error;
-    }
-
-    /* Main part */
-    if (node->left == NULL && node->right == NULL) {
-        free(node->value);
-        free(node);
-        return Tree_OK;
-    } else {
-        Tree_Node_delete(node->left);
-        Tree_Node_delete(node->right);
-    }
-}
-
-int Tree_delete(tree *t) {
-
-    /* VarCheck */
-    if (t == NULL) {
-        return Tree_null_reference_error;
-    }
-
-    /* Main part */
-    Tree_Node_delete(Tree_begin(t));
-}
-
-int Tree_erase(tree *t, void *item, int (*cmp)(const void *, const void *)) {
-
-    /* VarCheck */
-    if (t == NULL) {
-        return Tree_null_reference_error;
-    }
-
-    t->root = Tree_Node_erase(t->root, item, cmp);
-
-    /* Returning value */
-    return Tree_OK;
-}
-
-int Tree_isEmpty(const tree *t) {
-
-    /* VarCheck */
-    if (t == NULL) {
-        return Tree_null_reference_error;
-    }
-
-    /* Returning value */
-    return t->root->value == NULL ? 1 : 0;
-}
-
-static tree_node *Tree_min_value_node(tree_node *node) {
-
-    /* Main part */
-    while (node->left != NULL) {
-        node = node->left;
-    }
-
-    /* Returning value */
-    return node;
-}
-
-tree_node *Tree_Node_erase(tree_node *node, void *item, int (*cmp)(const void *, const void *)) {
-
-    /* Initializing variables */
-    auto tree_node *tmp;
-    auto int res;
-
-    /* Main part */
-    if (node == NULL) {
-        return NULL;
-    }
-    if ((res = cmp(item, node->value)) == -1) {
-        node->left = Tree_Node_erase(node->left, item, cmp);
-    } else if (res == 1) {
-        node->right = Tree_Node_erase(node->right, item, cmp);
-    } else {
-        if (node->left == NULL || node->right == NULL) {
-            tmp = node->left != NULL ? node->left : node->right;
-
-            free(node->value);
-            if (tmp == NULL) {
-                tmp = node;
-                node = NULL;
-            } else {
-                memcpy(node, tmp, sizeof(tree_node));
-            }
-
-            free(tmp);
+    while (node != NULL) {
+        if (key_ == node->s_right->key || key_ == node->s_left->key) {
+            return node;
         } else {
-            tmp = Tree_min_value_node(node->right);
-
-            memcpy(node->value, tmp->value, node->nbytes);
-            node->right = Tree_Node_erase(node->right, tmp->value, cmp);
+            node = (key_ < node->key) ? node->s_left : node->s_right;
         }
-    }
-
-    if (node == NULL) {
-        return NULL;
-    }
-
-    node->height = max(Tree_get_height(node->left), Tree_get_height(node->right)) + 1;
-
-    if (Tree_get_balance(node) < -1) {
-        if (Tree_get_balance(node->left) >= 0) {
-            node = Tree_single_rotate_right(node);
-        } else {
-            node = Tree_double_rotate_left_right(node);
-        }
-    } else if (Tree_get_balance(node) > 1) {
-        if (Tree_get_balance(node->right) <= 0) {
-            node = Tree_single_rotate_left(node);
-        } else {
-            node = Tree_double_rotate_right_left(node);
-        }
-    }
-
-    /* Returning value */
-    return node;
-}
-
-tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int (*cmp)(const void *, const void *)) {
-
-    /* Initializing variables */
-    auto int res;
-
-    /* Main part */
-    if (node == NULL) {
-        if ((node = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
-            return NULL;
-        }
-        if ((node->value = malloc(size)) == NULL) {
-            free(node);
-            return NULL;
-        }
-        memcpy(node->value, item, size);
-        node->nbytes = size;
-        node->height = 0;
-        node->left = node->right = NULL;
-    } else if ((res = cmp(item, node->value)) == -1) {
-        node->left = Tree_Node_insert(node->left, item, size, cmp);
-    } else if (res == 1) {
-        node->right = Tree_Node_insert(node->right, item, size, cmp);
-    } else {
-        return node;
-    }
-
-    node->height = max(Tree_get_height(node->left), Tree_get_height(node->right)) + 1;
-
-    if (Tree_get_balance(node) < -1) {
-        if (cmp(item, node->left->value) == -1) {
-            node = Tree_single_rotate_right(node);
-        } else {
-            node = Tree_double_rotate_left_right(node);
-        }
-    } else if (Tree_get_balance(node) > 1) {
-        if (cmp(item, node->right->value) == 1) {
-            node = Tree_single_rotate_left(node);
-        } else {
-            node = Tree_double_rotate_right_left(node);
-        }
-    }
-
-    /* Returning value */
-    return node;
-}
-
-tree_node *Tree_insert(tree *t, const void *item, size_t size, int (*cmp)(const void *, const void *)) {
-
-    /* VarCheck */
-    if (t == NULL) {
-        return NULL;
-    }
-
-    if (Tree_isEmpty(t)) {
-        if ((Tree_begin(t)->value = malloc(size)) == NULL) {
-            return NULL;
-        }
-        memcpy(Tree_begin(t)->value, item, size);
-        Tree_begin(t)->nbytes = size;
-        Tree_begin(t)->left = Tree_begin(t)->right = NULL;
-        Tree_begin(t)->height = 0;
-    } else {
-        return t->root = Tree_Node_insert(t->root, item, size, cmp);
     }
 
     /* Returning value */
     return NULL;
 }
 
-tree_node *Tree_begin(const tree *t) {
+node *search(int key_, node *node) {
 
-    /* VarCheck */
-    if (t == NULL) {
-        return NULL;
-    }
+    struct _node *current = node;
 
-    /* Returning value */
-    return t->root;
+    while (current != NULL)
+        if (key_ == current->key)
+            return current;
+        else
+            current = (key_ < current->key) ? current->s_left : current->s_right;
+
+    return (0);
 }
 
-tree_node *Tree_get_left_child(const tree_node *node) {
-
-    /* VarCheck */
-    if (node == NULL) {
-        return NULL;
-    }
-
-    /* Returning value */
-    return node->left;
-}
-
-tree_node *Tree_get_right_child(const tree_node *node) {
-
-    /* VarCheck */
-    if (node == NULL) {
-        return NULL;
-    }
-
-    /* Returning value */
-    return node->right;
-}
-
-void *Tree_get_value(const tree_node *node) {
-
-    /* VarCheck */
-    if (node == NULL) {
-        return NULL;
-    }
-
-    /* Returning value */
-    return node->value;
-}
-
-int Tree_get_height(const tree_node *node) {
-
-    /* VarCheck */
-    if (node == NULL) {
-        return -1;
-    }
-
-    /* Returning value */
-    return node->height;
-}
-
-static void Tree_Node_print(const tree_node *node, size_t Tree_print_counter, void (*print_node_value)(const tree_node *)) {
-
-    /* VarCheck */
-    if (node == NULL) {
-        return;
-    }
+node *search_left(node *node) {
 
     /* Main part */
-    printf("\t----\t----\t----\t----\n");
-    printf("Node level: %lu\n", Tree_print_counter);
-    printf("Node's value: ");
-    print_node_value(node);
+    while (node->s_left != NULL) {
+        node = node->s_left;
+    }
 
-    Tree_Node_print(node->left, Tree_print_counter + 1, print_node_value);
-    Tree_Node_print(node->right, Tree_print_counter + 1, print_node_value);
+    /* Returning value */
+    return node;
 }
 
-void Tree_print(const tree *t, void (*print_node_value)(const tree_node *)) {
+void addKey(int temp, node *head) {
 
-    /* Main part */
-    Tree_Node_print(Tree_begin(t), 0lu, print_node_value);
+    node *search;
+    search = head;
+    while (1) {
+        if (temp < search->key) {
+            if (search->s_left) search = search->s_left;
+            else { addNode(temp, &search->s_left); break; }
+
+        }
+        else
+        if (search->s_right) search = search->s_right;
+        else { addNode(temp, &search->s_right); break; }
+    }
+}
+
+int delKey(int key) {
+
+    sheet *node, *node_rod;
+    node = search(key, headTree);
+
+    node_rod = search_rod(node->key, headTree);
+    if (!node->s_left) {
+        if ((node_rod->s_left)->key == node->key)
+            node_rod->s_left = node->s_right;
+        else node_rod->s_right = node->s_right;
+        return 1;
+    }
+
+    if (!node->s_right) {
+        if ((node_rod->s_left)->key == node->key)
+            node_rod->s_left = node->s_left;
+        else node_rod->s_right = node->s_left;
+        return 1;
+    }
+
+    search_left(node->s_right)->s_left = (node->s_left)->s_right;
+    (node->s_left)->s_right = node->s_right;
+    if (key == headTree->key) headTree = node->s_left;
+    else {
+        if ((node_rod->s_left)->key == node->key)
+            node_rod->s_left = node->s_left;
+        else node_rod->s_right = node->s_left;
+    }
+    free(node);
+}
+
+int balans(node *node) {
+
+    int k, k_p;
+    struct _node *temp;
+
+    if (!node) return NULL;
+
+    k = high_p(node->s_right) - high_p(node->s_left);
+
+    if (k > 0) {
+        k_p = high_p((node->s_right)->s_right) - high_p((node->s_right)->s_left);
+        if (k_p >= 0) {
+            temp = node->s_right;
+            node->s_right = temp->s_left;
+            temp->s_left = node;
+            if (headTree->key == node->key) headTree = temp;
+            else
+            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
+                search_rod(node->key, headTree)->s_left = temp;
+            else search_rod(node->key, headTree)->s_right = temp;
+        }
+        else {
+            temp = (node->s_right)->s_left;
+            (node->s_right)->s_left = temp->s_right;
+            temp->s_right = node->s_right;
+            node->s_right = temp->s_left;
+            temp->s_left = node;
+            if (headTree->key == node->key) headTree = temp;
+            else
+            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
+                search_rod(node->key, headTree)->s_left = temp;
+            else search_rod(node->key, headTree)->s_right = temp;
+        }
+    }
+    else if (k < 0) {
+        k_p = high_p((node->s_left)->s_right) - high_p((node->s_left)->s_left);
+        if (k_p < 0) {
+            temp = node->s_left;
+            node->s_left = temp->s_right;
+            temp->s_right = node;
+            if (headTree->key == node->key) headTree = temp;
+            else
+            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
+                search_rod(node->key, headTree)->s_left = temp;
+            else search_rod(node->key, headTree)->s_right = temp;
+        }
+        else {
+            temp = (node->s_left)->s_right;
+            (node->s_left)->s_right = temp->s_left;
+            temp->s_left = node->s_left;
+            node->s_left = temp->s_right;
+            temp->s_right = node;
+            if (headTree->key == node->key) headTree = temp;
+            else
+            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
+                search_rod(node->key, headTree)->s_left = temp;
+            else search_rod(node->key, headTree)->s_right = temp;
+        }
+    }
+    else { printf("узел сбалансирован"); getchar(); exit(1); }
+}
+
+int balansTree(node *node) {
+
+    while (checkTree(node)) {
+        if (node->s_right)
+            if (checkTree(node->s_right)) balans(search(checkTree(node->s_right), node->s_right));
+
+        if (node->s_left)
+            if (checkTree(node->s_left)) balans(search(checkTree(node->s_left), node->s_left));
+
+        balans(search(checkTree(node), node));
+    }
 }

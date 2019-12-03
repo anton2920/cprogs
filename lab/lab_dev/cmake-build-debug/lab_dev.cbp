@@ -17,62 +17,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/anton/C/lab/lab_dev/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="STL">
-				<Option output="/home/anton/C/lab/lab_dev/cmake-build-debug/libSTL.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anton/C/lab/lab_dev/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/4.8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/4.8"/>
-					<Add directory="/usr/include/c++/4.8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 STL"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="STL/fast">
-				<Option output="/home/anton/C/lab/lab_dev/cmake-build-debug/libSTL.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anton/C/lab/lab_dev/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/4.8"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/4.8"/>
-					<Add directory="/usr/include/c++/4.8/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 STL/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/home/anton/C/lab/lab_dev/cmake-build-debug"/>
 				<Option type="4"/>
@@ -129,19 +73,17 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/anton/C/lab/lab_dev/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anton/C/lab/lab_dev/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="/home/anton/C/home/STL2/src/STL_List/STL_List.c">
-			<Option target="STL"/>
-		</Unit>
-		<Unit filename="/home/anton/C/home/STL2/src/STL_List/STL_List.h">
-			<Option target="STL"/>
-		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/libs/libs.c">
-			<Option target="lab_dev"/>
-		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/libs/libs.h">
-			<Option target="lab_dev"/>
-		</Unit>
 		<Unit filename="/home/anton/C/lab/lab_dev/main.c">
 			<Option target="lab_dev"/>
 		</Unit>

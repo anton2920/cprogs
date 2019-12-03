@@ -1,34 +1,32 @@
 #include <stdio.h>
-#include <time.h>
 
-#include "libs/libs.h"
 #include "tree/tree.h"
 
-int main() {
+void print_GVK(node *root, int level);
 
-    /* Initializing variables */
-    auto int n;
-    auto tree t;
-    Tree_init(&t);
-    /* srand(time(NULL) / 2); */
+main() {
+    f = fopen("input.txt", "r");
 
-    /* I/O flow */
-    do {
-        printf("Type n: ");
-        scanf("%d", &n);
-    } while (n <= 0);
+    build_AVL_Tree();
+
+    node *treeRoot = headTree;
+
+    balansTree(treeRoot);
+
+    print_GVK(treeRoot, 0);
+
+    return 0;
+}
+
+void print_GVK(node *root, int level) {
 
     /* Main part */
-    fillInTree(&t, n);
-    printf("Old tree: \n");
-    Tree_print(&t, node_print);
+    if (root == NULL) {
+        return;
+    }
 
-    deleteRand(&t);
-    printf("\nNew tree: \n");
-    Tree_print(&t, node_print);
+    printf("key: %d on level %d\n", root->key, level);
 
-    Tree_delete(&t);
-
-    /* Returning value */
-    return 0;
+    print_GVK(root->s_left, level + 1);
+    print_GVK(root->s_right, level + 1);
 }

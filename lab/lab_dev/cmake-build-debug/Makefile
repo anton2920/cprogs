@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/anton/C/lab/lab_dev/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named STL
-
-# Build rule for target.
-STL: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 STL
-.PHONY : STL
-
-# fast build rule for target.
-STL/fast:
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/build
-.PHONY : STL/fast
-
-#=============================================================================
 # Target rules for targets named lab_dev
 
 # Build rule for target.
@@ -135,60 +122,6 @@ lab_dev: cmake_check_build_system
 lab_dev/fast:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
 .PHONY : lab_dev/fast
-
-home/anton/C/home/STL2/src/STL_List/STL_List.o: home/anton/C/home/STL2/src/STL_List/STL_List.c.o
-
-.PHONY : home/anton/C/home/STL2/src/STL_List/STL_List.o
-
-# target to build an object file
-home/anton/C/home/STL2/src/STL_List/STL_List.c.o:
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/home/anton/C/home/STL2/src/STL_List/STL_List.c.o
-.PHONY : home/anton/C/home/STL2/src/STL_List/STL_List.c.o
-
-home/anton/C/home/STL2/src/STL_List/STL_List.i: home/anton/C/home/STL2/src/STL_List/STL_List.c.i
-
-.PHONY : home/anton/C/home/STL2/src/STL_List/STL_List.i
-
-# target to preprocess a source file
-home/anton/C/home/STL2/src/STL_List/STL_List.c.i:
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/home/anton/C/home/STL2/src/STL_List/STL_List.c.i
-.PHONY : home/anton/C/home/STL2/src/STL_List/STL_List.c.i
-
-home/anton/C/home/STL2/src/STL_List/STL_List.s: home/anton/C/home/STL2/src/STL_List/STL_List.c.s
-
-.PHONY : home/anton/C/home/STL2/src/STL_List/STL_List.s
-
-# target to generate assembly for a file
-home/anton/C/home/STL2/src/STL_List/STL_List.c.s:
-	$(MAKE) -f CMakeFiles/STL.dir/build.make CMakeFiles/STL.dir/home/anton/C/home/STL2/src/STL_List/STL_List.c.s
-.PHONY : home/anton/C/home/STL2/src/STL_List/STL_List.c.s
-
-libs/libs.o: libs/libs.c.o
-
-.PHONY : libs/libs.o
-
-# target to build an object file
-libs/libs.c.o:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.o
-.PHONY : libs/libs.c.o
-
-libs/libs.i: libs/libs.c.i
-
-.PHONY : libs/libs.i
-
-# target to preprocess a source file
-libs/libs.c.i:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.i
-.PHONY : libs/libs.c.i
-
-libs/libs.s: libs/libs.c.s
-
-.PHONY : libs/libs.s
-
-# target to generate assembly for a file
-libs/libs.c.s:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
-.PHONY : libs/libs.c.s
 
 main.o: main.c.o
 
@@ -250,16 +183,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... STL"
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
-	@echo "... home/anton/C/home/STL2/src/STL_List/STL_List.o"
-	@echo "... home/anton/C/home/STL2/src/STL_List/STL_List.i"
-	@echo "... home/anton/C/home/STL2/src/STL_List/STL_List.s"
-	@echo "... libs/libs.o"
-	@echo "... libs/libs.i"
-	@echo "... libs/libs.s"
+	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

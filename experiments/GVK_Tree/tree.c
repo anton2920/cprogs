@@ -4,7 +4,7 @@ node *headTree = NULL;
 
 FILE *f = NULL;
 
-int max(int a, int b) {
+static int max(int a, int b) {
 	return (a < b) ? b : a;
 }
 
