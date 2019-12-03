@@ -4,6 +4,10 @@ node *headTree = NULL;
 
 FILE *f = NULL;
 
+int max(int a, int b) {
+	return (a < b) ? b : a;
+}
+
 void addNode(int keyNode, node **node_pointer) {
 
 	node *newnode;
@@ -28,9 +32,11 @@ void makeTree(node *head) {
 				if (search->s_left) search = search->s_left;
 				else { addNode(temp, &search->s_left); break; }
 			}
-			else
+			else if (temp > search->key)
 				if (search->s_right) search = search->s_right;
 				else { addNode(temp, &search->s_right); break; }
+			else
+				break;
 		}
 	}
 }
@@ -50,13 +56,76 @@ void build_AVL_Tree() {
 	makeTree(headTree);
 }
 
-int high(node *node);
-int high_p(node *node);
-int checkNode(node *node);
-int checkTree(node *node);
-node *search_rod(int key_, node *node);
-node *search(int key_, node *node);
-node *search_left(node *node);
+/*int high(node *node) {
+
+}*/
+
+int high_p(node *node) {
+
+	/* Main part */
+	if (node == NULL) {
+		return -1;
+	}
+
+	/* Returning value */
+	return max(high_p(node->s_left), high_p(node->s_right)) + 1;
+}
+
+/*int checkNode(node *node) {
+
+}*/
+
+int checkTree(node *node) {
+
+	/* Main part */
+	if (node == NULL) {
+		return 0;
+	} else if (abs(high_p(node->s_right) - high_p(node->s_left)) > 1) {
+		return node->key;
+	}
+
+	/* Returning value */
+	return max(checkTree(node->s_left), checkTree(node->s_right));
+}
+
+node *search_rod(int key_, node *node) {
+
+	/* Main part */
+	while (node != NULL) {
+		if (key_ == node->s_right->key || key_ == node->s_left->key) {
+			return node;
+		} else {
+			node = (key_ < node->key) ? node->s_left : node->s_right;
+		}
+	}
+
+	/* Returning value */
+	return NULL;
+}
+
+node *search(int key_, node *node) {
+
+	struct _node *current = node;
+
+	while (current != NULL)
+		if (key_ == current->key)
+			return current;
+		else
+			current = (key_ < current->key) ? current->s_left : current->s_right;
+
+	return (0);
+}
+
+node *search_left(node *node) {
+
+	/* Main part */
+	while (node->s_left != NULL) {
+		node = node->s_left;
+	}
+
+	/* Returning value */
+	return node;
+}
 
 void addKey(int temp, node *head) {
 

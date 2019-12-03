@@ -11,3 +11,6 @@ typedef struct _node {
 } node;
 
 typedef node sheet;
+
+extern node *headTree;
+extern FILE *f;
