@@ -1,30 +1,32 @@
 #include <stdio.h>
 
-#include "tree.h"
+#include "tree/tree.h"
+
+void print_GVK(node *root, int level);
 
 main() {
-	f = fopen("input.txt", "r");
+    f = fopen("input.txt", "r");
 
-	build_AVL_Tree();
+    build_AVL_Tree();
 
-	node *treeRoot = headTree;
+    node *treeRoot = headTree;
 
-	balansTree(treeRoot);
+    balansTree(treeRoot);
 
-	print_GVK(treeRoot, 0);
+    print_GVK(treeRoot, 0);
 
-	return 0;
+    return 0;
 }
 
 void print_GVK(node *root, int level) {
 
-	/* Main part */
-	if (root == NULL) {
-		return;
-	}
+    /* Main part */
+    if (root == NULL) {
+        return;
+    }
 
-	printf("key: %d on level %d\n", root->key, level);
+    printf("key: %d on level %d\n", root->key, level);
 
-	print_GVK(root->s_left, level + 1);
-	print_GVK(root->s_right, level + 1);
+    print_GVK(root->s_left, level + 1);
+    print_GVK(root->s_right, level + 1);
 }
