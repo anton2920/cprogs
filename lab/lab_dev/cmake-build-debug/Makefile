@@ -123,6 +123,33 @@ lab_dev/fast:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
 .PHONY : lab_dev/fast
 
+libs/libs.o: libs/libs.c.o
+
+.PHONY : libs/libs.o
+
+# target to build an object file
+libs/libs.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.o
+.PHONY : libs/libs.c.o
+
+libs/libs.i: libs/libs.c.i
+
+.PHONY : libs/libs.i
+
+# target to preprocess a source file
+libs/libs.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.i
+.PHONY : libs/libs.c.i
+
+libs/libs.s: libs/libs.c.s
+
+.PHONY : libs/libs.s
+
+# target to generate assembly for a file
+libs/libs.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
+.PHONY : libs/libs.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
 	@echo "... edit_cache"
+	@echo "... libs/libs.o"
+	@echo "... libs/libs.i"
+	@echo "... libs/libs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

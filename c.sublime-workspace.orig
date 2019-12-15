@@ -4,6 +4,129 @@
 		"selected_items":
 		[
 			[
+<<<<<<< HEAD
+				"le",
+				"left\tabc"
+			],
+			[
+				"Tree_get_",
+				"Tree_get_balance\tabc"
+			],
+			[
+				"Tre",
+				"Tree_print_counter\tabc"
+			],
+			[
+				"bala",
+				"balansTree\t(tree.c)"
+			],
+			[
+				"print",
+				"print_GVK\tabc"
+			],
+			[
+				"s",
+				"s_right\t(tree.c)"
+			],
+			[
+				"pr",
+				"print_GVK\tabc"
+			],
+			[
+				"r",
+				"root\tabc"
+			],
+			[
+				"head",
+				"headTree\t(tree.c)"
+			],
+			[
+				"node",
+				"node\tabc"
+			],
+			[
+				"nod",
+				"node\tabc"
+			],
+			[
+				"ke",
+				"key\tabc"
+			],
+			[
+=======
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+				"in",
+				"include\tabc"
+			],
+			[
+				"std",
+				"stdio.h\t(tree.h)"
+			],
+			[
+				"inc",
+				"include\t(tree.c)"
+			],
+			[
+				"se",
+				"search\tabc"
+			],
+			[
+				"s_",
+				"s_right\tabc"
+			],
+			[
+				"s",
+				"s_right\tabc"
+			],
+			[
+				"no",
+				"node\tabc"
+			],
+			[
+				"hi",
+				"high_p\tabc"
+			],
+			[
+				"h",
+				"high_p\tabc"
+			],
+			[
+				"search_",
+				"search_rod\tabc"
+			],
+			[
+				"head",
+				"headTree\tabc"
+			],
+			[
+				"add",
+				"addNode\tabc"
+			],
+			[
+				"ke",
+				"key\tabc"
+			],
+			[
+				"k",
+				"key\tabc"
+			],
+			[
+				"hea",
+				"headTree\tabc"
+			],
+			[
+				"he",
+				"headTree\tabc"
+			],
+			[
+				"node",
+				"node_pointer\tabc"
+			],
+			[
+				"tree",
+				"tree.c\tabc"
+			],
+			[
 				"STL",
 				"STL_Queue\tabc"
 			],
@@ -60,20 +183,12 @@
 				"size_t\tabc"
 			],
 			[
-				"s",
-				"super\tabc"
-			],
-			[
 				"class",
 				"classOf\tabc"
 			],
 			[
 				"Any",
 				"Any_differ\t(any.c)"
-			],
-			[
-				"std",
-				"stdarg.h\t(new.r)"
 			],
 			[
 				"Circle",
@@ -118,10 +233,6 @@
 			[
 				"con",
 				"contains\t(main.c)"
-			],
-			[
-				"inc",
-				"include\tabc"
 			],
 			[
 				"c",
@@ -210,10 +321,6 @@
 			[
 				"ma",
 				"main.o"
-			],
-			[
-				"in",
-				"include\t(read.c)"
 			],
 			[
 				"d",
@@ -324,10 +431,26 @@
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
+			"file": "lab/SAOD/lab_07/tree.c",
+			"settings":
+			{
+				"buffer_size": 8523,
+=======
+			"file": "experiments/GVK_Tree/Makefile",
+			"settings":
+			{
+				"buffer_size": 282,
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "lab/SAOD/lab_07/main.c",
 			"settings":
 			{
-				"buffer_size": 562,
+				"buffer_size": 552,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -336,35 +459,24 @@
 			"file": "lab/SAOD/lab_07/libs.h",
 			"settings":
 			{
-				"buffer_size": 371,
+				"buffer_size": 375,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "lab/SAOD/lab_07/libs.c",
 			"settings":
 			{
-				"buffer_size": 1398,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_07/tree.h",
+				"buffer_size": 1396,
+=======
+			"file": "experiments/GVK_Tree/main.c",
 			"settings":
 			{
-				"buffer_size": 1371,
+				"buffer_size": 414,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_07/tree.c",
-			"settings":
-			{
-				"buffer_size": 8468,
-				"encoding": "UTF-8",
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 				"line_ending": "Unix"
 			}
 		}
@@ -495,11 +607,27 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_07"
+		"/home/anton/C/lab/SAOD"
 	],
 	"file_history":
 	[
+<<<<<<< HEAD
+		"/home/anton/C/experiments/GVK_Tree/input.txt",
+		"/home/anton/C/experiments/GVK_Tree/tree.h",
+		"/home/anton/C/experiments/GVK_Tree/tree.c",
+		"/home/anton/C/experiments/GVK_Tree/main.c",
+		"/home/anton/C/experiments/GVK_Tree/Makefile",
+		"/home/anton/C/lab/SAOD/lab_07/libs.c",
+		"/home/anton/C/lab/SAOD/lab_07/tree.c",
+		"/home/anton/C/lab/SAOD/lab_06/input.txt",
+=======
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+		"/home/anton/C/experiments/GVK_Tree/Errors.html",
+		"/home/anton/C/lab/SAOD/lab_07/libs.c",
+		"/home/anton/C/lab/SAOD/lab_07/libs.h",
+		"/home/anton/C/lab/SAOD/lab_07/tree.c",
+		"/home/anton/C/lab/SAOD/lab_07/tree.h",
+		"/home/anton/C/lab/SAOD/lab_07/main.c",
 		"/home/anton/C/lab/SAOD/lab_06/main.c",
 		"/home/anton/C/lab/SAOD/lab_06/tree.c",
 		"/home/anton/C/lab/SAOD/lab_06/tree.h",
@@ -616,26 +744,20 @@
 		"/home/anton/C/lab/lab_22/main.h",
 		"/home/anton/C/lab/lab_21/routines.c",
 		"/home/anton/C/lab/lab_21/main.c",
+<<<<<<< HEAD
+		"/home/anton/C/lab/lab_20/Makefile"
+=======
 		"/home/anton/C/lab/lab_20/Makefile",
 		"/home/anton/C/lab/lab_20/routines.c",
 		"/home/anton/C/lab/lab_20/tasks.c",
 		"/home/anton/C/lab/lab_20/main.h",
 		"/home/anton/C/lab/lab_20/main.c",
-		"/home/anton/C/lab/lab_19/a1.c",
-		"/home/anton/C/lab/lab_dev/cmake-build-debug/vegetables.bmp",
-		"/home/anton/C/lab/lab_18/a1.c",
-		"/home/anton/C/experiments/array/array2.c",
-		"/home/anton/C/lab/lab_17/main.c",
-		"/home/anton/C/lab/lab_17/lab.h",
-		"/home/anton/C/lab/lab_17/menu.c"
+		"/home/anton/C/lab/lab_19/a1.c"
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 	],
 	"find":
 	{
-<<<<<<< HEAD
 		"height": 26.0
-=======
-		"height": 39.0
->>>>>>> e48c739c9f32d071dc08c45dd66f181dba1315ac
 	},
 	"find_in_files":
 	{
@@ -649,6 +771,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Make",
+			"getch()",
+			"Malloc",
 			"stepx",
 			"rightx",
 			"leftx",
@@ -665,6 +790,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"getchar()",
+			"malloc",
 			"c",
 			"b",
 			"a",
@@ -680,136 +807,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lab/SAOD/lab_07/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 562,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								66,
-								66
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/SAOD/lab_07/libs.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 371,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								140,
-								140
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "lab/SAOD/lab_07/libs.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1398,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1398,
-								1398
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 714.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "lab/SAOD/lab_07/tree.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1371,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1371,
-								1371
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+<<<<<<< HEAD
 					"file": "lab/SAOD/lab_07/tree.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8468,
+						"buffer_size": 8523,
+=======
+					"file": "experiments/GVK_Tree/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 282,
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 						"regions":
 						{
 						},
@@ -817,26 +832,159 @@
 						[
 							[
 <<<<<<< HEAD
-								1399,
-								1399
+								6108,
+								6108
 =======
-								4410,
-								4410
->>>>>>> e48c739c9f32d071dc08c45dd66f181dba1315ac
+								0,
+								0
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
+<<<<<<< HEAD
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+=======
+							"open_with_edit": true,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+						},
+						"translation.x": 0.0,
+						"translation.y": 5280.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab/SAOD/lab_07/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								252,
+								252
+=======
+								0,
+								0
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+							]
+						],
+						"settings":
+						{
+<<<<<<< HEAD
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+=======
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+<<<<<<< HEAD
+					"stack_index": 2,
+=======
+					"stack_index": 0,
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lab/SAOD/lab_07/libs.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								207,
+								207
+=======
+								0,
+								0
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+<<<<<<< HEAD
+					"stack_index": 3,
+=======
+					"stack_index": 1,
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+<<<<<<< HEAD
+					"file": "lab/SAOD/lab_07/libs.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1396,
+=======
+					"file": "experiments/GVK_Tree/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 414,
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								1013,
+								1013
+=======
+								0,
+								0
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+							]
+						],
+						"settings":
+						{
+<<<<<<< HEAD
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+=======
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+>>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+						},
+						"translation.x": 0.0,
+						"translation.y": 511.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -844,11 +992,7 @@
 	],
 	"incremental_find":
 	{
-<<<<<<< HEAD
 		"height": 26.0
-=======
-		"height": 39.0
->>>>>>> e48c739c9f32d071dc08c45dd66f181dba1315ac
 	},
 	"input":
 	{
@@ -893,11 +1037,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-<<<<<<< HEAD
 		"height": 48.0
-=======
-		"height": 74.0
->>>>>>> e48c739c9f32d071dc08c45dd66f181dba1315ac
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -1,250 +1,202 @@
+#include <stdlib.h>
+#include <string.h>
+
 #include "tree.h"
 
-node *headTree = NULL;
+int Tree_init(tree *t) {
 
-FILE *f = NULL;
-
-static int max(int a, int b) {
-    return (a < b) ? b : a;
-}
-
-void addNode(int keyNode, node **node_pointer) {
-
-    node *newnode;
-    newnode = (node *) malloc(sizeof(node));
-
-    newnode->s_left = NULL;
-    newnode->s_right = NULL;
-    newnode->key = keyNode;
-    *node_pointer = newnode;
-}
-
-void makeTree(node *head) {
-
-    int temp;
-    node *search;
-
-    while (!feof(f)) {
-        fscanf(f, "%d", &temp);
-        search = head;
-        while (1) {
-            if (temp < search->key) {
-                if (search->s_left) search = search->s_left;
-                else { addNode(temp, &search->s_left); break; }
-            }
-            else if (temp > search->key)
-                if (search->s_right) search = search->s_right;
-                else { addNode(temp, &search->s_right); break; }
-            else
-                break;
-        }
+    /* VarCheck */
+    if (t == NULL) {
+        return Tree_null_reference_error;
     }
-}
-
-void build_AVL_Tree() {
-
-    int temp;
-    fseek(f, 0, 0);
-    if (feof(f)) { printf("файл содержит пустое дерево!"); getchar(); exit(1); }
-    fscanf(f, "%d", &temp);
-
-    headTree = (sheet *) malloc(sizeof(sheet));
-    headTree->key = temp;
-    headTree->s_left = NULL;
-    headTree->s_right = NULL;
-
-    makeTree(headTree);
-}
-
-/*int high(node *node) {
-
-}*/
-
-int high_p(node *node) {
 
     /* Main part */
-    if (node == NULL) {
-        return -1;
+    if ((t->root = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
+        return Tree_memory_error;
+    }
+
+    t->root->left = t->root->right = t->root->value = NULL;
+    t->nelem = t->level = 0lu;
+    t->root->nbytes = 0lu;
+}
+int Tree_delete(tree *t) {
+
+    /* VarCheck */
+    if (t == NULL) {
+        return Tree_null_reference_error;
     }
 
     /* Returning value */
-    return max(high_p(node->s_left), high_p(node->s_right)) + 1;
+    return Tree_Node_delete(t->root);
 }
 
-/*int checkNode(node *node) {
+int Tree_isEmpty(const tree *t) {
 
-}*/
-
-int checkTree(node *node) {
-
-    /* Main part */
-    if (node == NULL) {
-        return 0;
-    } else if (abs(high_p(node->s_right) - high_p(node->s_left)) > 1) {
-        return node->key;
+    /* VarCheck */
+    if (t == NULL) {
+        return Tree_null_reference_error;
     }
 
     /* Returning value */
-    return max(checkTree(node->s_left), checkTree(node->s_right));
+    return t->root->value == NULL ? 1 : 0;
 }
 
-node *search_rod(int key_, node *node) {
+int Tree_Node_delete(tree_node *t) {
 
     /* Main part */
-    while (node != NULL) {
-        if (key_ == node->s_right->key || key_ == node->s_left->key) {
-            return node;
-        } else {
-            node = (key_ < node->key) ? node->s_left : node->s_right;
+    if (t == NULL) {
+        return Tree_null_reference_error;
+    }
+    if (t->left == NULL && t->right == NULL) {
+        free(t->value);
+        free(t);
+        return Tree_OK;
+    } else {
+        Tree_Node_delete(t->left);
+        Tree_Node_delete(t->right);
+    }
+
+    /* Returning value */
+    return Tree_OK;
+}
+
+tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int (*cmp)(const void *, const void *)) {
+
+    /* VarCheck */
+    if (node == NULL) {
+        return NULL;
+    }
+
+    /* Initializing variables */
+    auto int res = cmp(item, node->value);
+    auto tree_node *tmp;
+
+    /* Main part */
+    if (!res) {
+        return node;
+    } else if (res == -1 && node->left != NULL) {
+        return Tree_Node_insert(node->left, item, size, cmp);
+    } else if (res == 1 && node->right != NULL) {
+        return Tree_Node_insert(node->right, item, size, cmp);
+    } else {
+        if ((tmp = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
+            return NULL;
         }
+        if ((tmp->value = malloc(size)) == NULL) {
+            free(tmp);
+            return NULL;
+        }
+        memcpy(tmp->value, item, size);
+        tmp->nbytes = size;
+        tmp->left = tmp->right = NULL;
+
+        if (res == -1) {
+            node->left = tmp;
+        } else if (res == 1) {
+            node->right = tmp;
+        }
+    }
+
+    return tmp;
+}
+
+tree_node *Tree_insert(tree *t, const void *item, size_t size, int (*cmp)(const void *, const void *)) {
+
+    /* VarCheck */
+    if (t == NULL) {
+        return NULL;
+    }
+
+    if (Tree_isEmpty(t)) {
+        if ((Tree_begin(t)->value = malloc(size)) == NULL) {
+            return NULL;
+        }
+        memcpy(Tree_begin(t)->value, item, size);
+        Tree_begin(t)->nbytes = size;
+        Tree_begin(t)->left = Tree_begin(t)->right = NULL;
+    } else {
+        return Tree_Node_insert(t->root, item, size, cmp);
     }
 
     /* Returning value */
     return NULL;
 }
 
-node *search(int key_, node *node) {
+tree_node *Tree_begin(const tree *t) {
 
-    struct _node *current = node;
-
-    while (current != NULL)
-        if (key_ == current->key)
-            return current;
-        else
-            current = (key_ < current->key) ? current->s_left : current->s_right;
-
-    return (0);
-}
-
-node *search_left(node *node) {
-
-    /* Main part */
-    while (node->s_left != NULL) {
-        node = node->s_left;
+    /* VarCheck */
+    if (t == NULL) {
+        return NULL;
     }
 
     /* Returning value */
-    return node;
+    return t->root;
 }
 
-void addKey(int temp, node *head) {
+tree_node *Tree_get_left_child(const tree_node *node) {
 
-    node *search;
-    search = head;
-    while (1) {
-        if (temp < search->key) {
-            if (search->s_left) search = search->s_left;
-            else { addNode(temp, &search->s_left); break; }
-
-        }
-        else
-        if (search->s_right) search = search->s_right;
-        else { addNode(temp, &search->s_right); break; }
+    /* VarCheck */
+    if (node == NULL) {
+        return NULL;
     }
+
+    /* Returning value */
+    return node->left;
 }
 
-int delKey(int key) {
+tree_node *Tree_get_right_child(const tree_node *node) {
 
-    sheet *node, *node_rod;
-    node = search(key, headTree);
-
-    node_rod = search_rod(node->key, headTree);
-    if (!node->s_left) {
-        if ((node_rod->s_left)->key == node->key)
-            node_rod->s_left = node->s_right;
-        else node_rod->s_right = node->s_right;
-        return 1;
+    /* VarCheck */
+    if (node == NULL) {
+        return NULL;
     }
 
-    if (!node->s_right) {
-        if ((node_rod->s_left)->key == node->key)
-            node_rod->s_left = node->s_left;
-        else node_rod->s_right = node->s_left;
-        return 1;
-    }
-
-    search_left(node->s_right)->s_left = (node->s_left)->s_right;
-    (node->s_left)->s_right = node->s_right;
-    if (key == headTree->key) headTree = node->s_left;
-    else {
-        if ((node_rod->s_left)->key == node->key)
-            node_rod->s_left = node->s_left;
-        else node_rod->s_right = node->s_left;
-    }
-    free(node);
+    /* Returning value */
+    return node->right;
 }
 
-int balans(node *node) {
+void *Tree_get_value(const tree_node *node) {
 
-    int k, k_p;
-    struct _node *temp;
-
-    if (!node) return NULL;
-
-    k = high_p(node->s_right) - high_p(node->s_left);
-
-    if (k > 0) {
-        k_p = high_p((node->s_right)->s_right) - high_p((node->s_right)->s_left);
-        if (k_p >= 0) {
-            temp = node->s_right;
-            node->s_right = temp->s_left;
-            temp->s_left = node;
-            if (headTree->key == node->key) headTree = temp;
-            else
-            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
-                search_rod(node->key, headTree)->s_left = temp;
-            else search_rod(node->key, headTree)->s_right = temp;
-        }
-        else {
-            temp = (node->s_right)->s_left;
-            (node->s_right)->s_left = temp->s_right;
-            temp->s_right = node->s_right;
-            node->s_right = temp->s_left;
-            temp->s_left = node;
-            if (headTree->key == node->key) headTree = temp;
-            else
-            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
-                search_rod(node->key, headTree)->s_left = temp;
-            else search_rod(node->key, headTree)->s_right = temp;
-        }
+    /* VarCheck */
+    if (node == NULL) {
+        return NULL;
     }
-    else if (k < 0) {
-        k_p = high_p((node->s_left)->s_right) - high_p((node->s_left)->s_left);
-        if (k_p < 0) {
-            temp = node->s_left;
-            node->s_left = temp->s_right;
-            temp->s_right = node;
-            if (headTree->key == node->key) headTree = temp;
-            else
-            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
-                search_rod(node->key, headTree)->s_left = temp;
-            else search_rod(node->key, headTree)->s_right = temp;
-        }
-        else {
-            temp = (node->s_left)->s_right;
-            (node->s_left)->s_right = temp->s_left;
-            temp->s_left = node->s_left;
-            node->s_left = temp->s_right;
-            temp->s_right = node;
-            if (headTree->key == node->key) headTree = temp;
-            else
-            if ((search_rod(node->key, headTree)->s_left)->key == node->key)
-                search_rod(node->key, headTree)->s_left = temp;
-            else search_rod(node->key, headTree)->s_right = temp;
-        }
-    }
-    else { printf("узел сбалансирован"); getchar(); exit(1); }
+
+    /* Returning value */
+    return node->value;
 }
 
-int balansTree(node *node) {
+static void Tree_Node_print(const tree_node *node, size_t Tree_print_counter, void (*print_node_value)(const tree_node *)) {
 
-    while (checkTree(node)) {
-        if (node->s_right)
-            if (checkTree(node->s_right)) balans(search(checkTree(node->s_right), node->s_right));
-
-        if (node->s_left)
-            if (checkTree(node->s_left)) balans(search(checkTree(node->s_left), node->s_left));
-
-        balans(search(checkTree(node), node));
+    /* VarCheck */
+    if (node == NULL) {
+        return;
     }
+
+    /* Main part */
+    printf("\t----\t----\t----\t----\n");
+    printf("Node level: %lu\n", Tree_print_counter);
+    printf("Node's value: ");
+    print_node_value(node);
+
+    Tree_Node_print(node->left, Tree_print_counter + 1, print_node_value);
+    Tree_Node_print(node->right, Tree_print_counter + 1, print_node_value);
+}
+
+void Tree_print(const tree *t, void (*print_node_value)(const tree_node *)) {
+
+    /* Main part */
+    Tree_Node_print(Tree_begin(t), 0lu, print_node_value);
+}
+
+size_t Tree_get_nelem(const tree *t) {
+
+    /* Returning value */
+    return t->nelem;
+}
+
+size_t Tree_get_max_level(const tree *t) {
+
+    /* Returning value */
+    return t->level;
 }

@@ -1,34 +1,48 @@
-#ifndef GVK_THE_BEST_TREE_EVER_O_1
-#define GVK_THE_BEST_TREE_EVER_O_1
+#ifndef LAB_DEV_TREE_H
+#define LAB_DEV_TREE_H
 
-/* Header inclusion */
+/* Header inclusions */
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 /* New data types */
-typedef struct _node {
-    int key;
-    struct _node *s_left;
-    struct _node *s_right;
-} node;
+typedef struct __tree_node {
+    void *value;
+    size_t nbytes;
 
-typedef node sheet;
+    struct __tree_node *left;
+    struct __tree_node *right;
+} tree_node;
 
-extern node *headTree;
-extern FILE *f;
+typedef struct __tree {
+    tree_node *root;
+    size_t nelem;
+    size_t level;
+} tree;
 
-void addNode(int keyNode, node **node_pointer);
-void makeTree(node *head);
-void build_AVL_Tree();
-int high_p(node *node);
-int checkTree(node *node);
-node *search_rod(int key_, node *node);
-node *search(int key_, node *node);
-node *search_left(node *node);
-void addKey(int temp, node *head);
-int delKey(int key);
-int balans(node *node);
-int balansTree(node *node);
+enum Tree_errors {
+    Tree_OK = 1,                    /* Everything is OK. Not an error */
+    Tree_memory_error,              /* If Tree routine can't allocate memory */
+    Tree_null_reference_error       /* If (Tree *) or (const void *elem) is NULL */
+};
+
+/* Tree methods */
+int Tree_init(tree *);
+int Tree_delete(tree *);
+
+int Tree_isEmpty(const tree *);
+
+int Tree_Node_delete(tree_node *);
+tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int (*)(const void *, const void *));
+tree_node *Tree_insert(tree *t, const void *, size_t, int (*)(const void *, const void *));
+
+tree_node *Tree_begin(const tree *);
+/* tree_node *Tree_get_parent(const tree_node *); */
+tree_node *Tree_get_left_child(const tree_node *);
+tree_node *Tree_get_right_child(const tree_node *);
+void      *Tree_get_value(const tree_node *);
+size_t     Tree_get_nelem(const tree *);
+size_t     Tree_get_max_level(const tree *);
+
+void Tree_print(const tree *t, void (*)(const tree_node *));
 
 #endif
