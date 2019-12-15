@@ -10,7 +10,7 @@ int main() {
     auto int n;
     auto tree t;
     Tree_init(&t);
-    /* srand(time(NULL) / 2); */
+    srand(time(NULL));
 
     /* I/O flow */
     do {

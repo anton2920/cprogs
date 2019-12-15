@@ -11,7 +11,7 @@
 
 /* Type definitions */
 enum way {
-    LEFT,
+    LEFT = 1,
     RIGHT,
     STAND
 };
