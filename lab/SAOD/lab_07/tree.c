@@ -197,13 +197,13 @@ tree_node *Tree_Node_erase(tree_node *node, void *item, int (*cmp)(const void *,
     node->height = max(Tree_get_height(node->left), Tree_get_height(node->right)) + 1;
 
     if (Tree_get_balance(node) < -1) {
-        if (Tree_get_balance(node->left) >= 0) {
+        if (Tree_get_balance(node->left) <= 0) {
             node = Tree_single_rotate_right(node);
         } else {
             node = Tree_double_rotate_left_right(node);
         }
     } else if (Tree_get_balance(node) > 1) {
-        if (Tree_get_balance(node->right) <= 0) {
+        if (Tree_get_balance(node->right) >= 0) {
             node = Tree_single_rotate_left(node);
         } else {
             node = Tree_double_rotate_right_left(node);
@@ -243,13 +243,13 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int 
     node->height = max(Tree_get_height(node->left), Tree_get_height(node->right)) + 1;
 
     if (Tree_get_balance(node) < -1) {
-        if (cmp(item, node->left->value) == -1) {
+        if (Tree_get_balance(node->left) == -1) {
             node = Tree_single_rotate_right(node);
         } else {
             node = Tree_double_rotate_left_right(node);
         }
     } else if (Tree_get_balance(node) > 1) {
-        if (cmp(item, node->right->value) == 1) {
+        if (Tree_get_balance(node->right) == 1) {
             node = Tree_single_rotate_left(node);
         } else {
             node = Tree_double_rotate_right_left(node);
