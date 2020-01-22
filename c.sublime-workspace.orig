@@ -54,7 +54,7 @@
 			],
 			[
 =======
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+>>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 				"in",
 				"include\tabc"
 			],
@@ -436,12 +436,6 @@
 			"settings":
 			{
 				"buffer_size": 8523,
-=======
-			"file": "experiments/GVK_Tree/Makefile",
-			"settings":
-			{
-				"buffer_size": 282,
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -465,18 +459,16 @@
 			}
 		},
 		{
-<<<<<<< HEAD
 			"file": "lab/SAOD/lab_07/libs.c",
 			"settings":
 			{
 				"buffer_size": 1396,
 =======
-			"file": "experiments/GVK_Tree/main.c",
+			"file": "lab/SAOD/lab_06/tree.c",
 			"settings":
 			{
-				"buffer_size": 414,
-				"encoding": "UTF-8",
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+				"buffer_size": 4162,
+>>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 				"line_ending": "Unix"
 			}
 		}
@@ -606,22 +598,19 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
+		"/home/anton/C/experiments",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/SAOD"
+		"/home/anton/C/lab/lab_dev",
+		"/home/anton/C/lab/lab_dev/tree",
+		"/home/anton/C/lab/SAOD",
+		"/home/anton/C/lab/SAOD/lab_06"
 	],
 	"file_history":
 	[
-<<<<<<< HEAD
-		"/home/anton/C/experiments/GVK_Tree/input.txt",
-		"/home/anton/C/experiments/GVK_Tree/tree.h",
-		"/home/anton/C/experiments/GVK_Tree/tree.c",
-		"/home/anton/C/experiments/GVK_Tree/main.c",
 		"/home/anton/C/experiments/GVK_Tree/Makefile",
-		"/home/anton/C/lab/SAOD/lab_07/libs.c",
-		"/home/anton/C/lab/SAOD/lab_07/tree.c",
-		"/home/anton/C/lab/SAOD/lab_06/input.txt",
-=======
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+		"/home/anton/C/experiments/GVK_Tree/tree.c",
+		"/home/anton/C/experiments/GVK_Tree/tree.h",
+		"/home/anton/C/experiments/GVK_Tree/main.c",
 		"/home/anton/C/experiments/GVK_Tree/Errors.html",
 		"/home/anton/C/lab/SAOD/lab_07/libs.c",
 		"/home/anton/C/lab/SAOD/lab_07/libs.h",
@@ -748,12 +737,8 @@
 		"/home/anton/C/lab/lab_20/Makefile"
 =======
 		"/home/anton/C/lab/lab_20/Makefile",
-		"/home/anton/C/lab/lab_20/routines.c",
-		"/home/anton/C/lab/lab_20/tasks.c",
-		"/home/anton/C/lab/lab_20/main.h",
-		"/home/anton/C/lab/lab_20/main.c",
-		"/home/anton/C/lab/lab_19/a1.c"
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+		"/home/anton/C/lab/lab_20/routines.c"
+>>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 	],
 	"find":
 	{
@@ -807,7 +792,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -819,12 +804,12 @@
 					{
 						"buffer_size": 8523,
 =======
-					"file": "experiments/GVK_Tree/Makefile",
-					"semi_transient": false,
+					"file": "lab/SAOD/lab_06/tree.c",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 282,
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+						"buffer_size": 4162,
+>>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 						"regions":
 						{
 						},
@@ -832,30 +817,21 @@
 						[
 							[
 <<<<<<< HEAD
-								6108,
-								6108
-=======
-								0,
-								0
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+								5722,
+								5722
 							]
 						],
 						"settings":
 						{
-<<<<<<< HEAD
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-=======
-							"open_with_edit": true,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 						},
 						"translation.x": 0.0,
 						"translation.y": 5280.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -871,35 +847,26 @@
 						"selection":
 						[
 							[
-<<<<<<< HEAD
 								252,
 								252
 =======
-								0,
-								0
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
+								617,
+								617
+>>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 							]
 						],
 						"settings":
 						{
-<<<<<<< HEAD
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-=======
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 						},
 						"translation.x": 0.0,
-						"translation.y": 408.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 <<<<<<< HEAD
 					"stack_index": 2,
-=======
-					"stack_index": 0,
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 					"type": "text"
 				},
 				{
@@ -915,13 +882,8 @@
 						"selection":
 						[
 							[
-<<<<<<< HEAD
 								207,
 								207
-=======
-								0,
-								0
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 							]
 						],
 						"settings":
@@ -932,59 +894,40 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-<<<<<<< HEAD
 					"stack_index": 3,
-=======
-					"stack_index": 1,
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-<<<<<<< HEAD
 					"file": "lab/SAOD/lab_07/libs.c",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1396,
-=======
-					"file": "experiments/GVK_Tree/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 414,
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-<<<<<<< HEAD
 								1013,
 								1013
-=======
-								0,
-								0
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 							]
 						],
 						"settings":
 						{
-<<<<<<< HEAD
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-=======
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
->>>>>>> e30d7791c77dffb245e47c4630da6c7828226f55
 						},
 						"translation.x": 0.0,
 						"translation.y": 511.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
+=======
+					"stack_index": 0,
+>>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 					"type": "text"
 				}
 			]

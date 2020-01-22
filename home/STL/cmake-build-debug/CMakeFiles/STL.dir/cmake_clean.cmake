@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/STL.dir/STL_Stack.c.o"
   "CMakeFiles/STL.dir/STL_List.c.o"
+  "CMakeFiles/STL.dir/STL_Stack.c.o"
   "libSTL.pdb"
   "libSTL.so"
 )
