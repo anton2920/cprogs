@@ -4,58 +4,6 @@
 		"selected_items":
 		[
 			[
-				"le",
-				"left\tabc"
-			],
-			[
-				"Tree_get_",
-				"Tree_get_balance\tabc"
-			],
-			[
-				"Tre",
-				"Tree_print_counter\tabc"
-			],
-			[
-				"le",
-				"level\tabc"
-			],
-			[
-				"bala",
-				"balansTree\t(tree.c)"
-			],
-			[
-				"print",
-				"print_GVK\tabc"
-			],
-			[
-				"s",
-				"s_right\t(tree.c)"
-			],
-			[
-				"pr",
-				"print_GVK\tabc"
-			],
-			[
-				"r",
-				"root\tabc"
-			],
-			[
-				"head",
-				"headTree\t(tree.c)"
-			],
-			[
-				"node",
-				"node\tabc"
-			],
-			[
-				"nod",
-				"node\tabc"
-			],
-			[
-				"ke",
-				"key\tabc"
-			],
-			[
 				"in",
 				"include\tabc"
 			],
@@ -76,6 +24,10 @@
 				"s_right\tabc"
 			],
 			[
+				"s",
+				"s_right\tabc"
+			],
+			[
 				"no",
 				"node\tabc"
 			],
@@ -92,8 +44,16 @@
 				"search_rod\tabc"
 			],
 			[
+				"head",
+				"headTree\tabc"
+			],
+			[
 				"add",
 				"addNode\tabc"
+			],
+			[
+				"ke",
+				"key\tabc"
 			],
 			[
 				"k",
@@ -106,6 +66,10 @@
 			[
 				"he",
 				"headTree\tabc"
+			],
+			[
+				"node",
+				"node_pointer\tabc"
 			],
 			[
 				"tree",
@@ -272,6 +236,10 @@
 				"source.c\t(source.h)"
 			],
 			[
+				"le",
+				"left_x"
+			],
+			[
 				"C",
 				"CENTER_X"
 			],
@@ -348,6 +316,10 @@
 				"n"
 			],
 			[
+				"r",
+				"r"
+			],
+			[
 				"b",
 				"b"
 			],
@@ -408,38 +380,10 @@
 	"buffers":
 	[
 		{
-			"file": "experiments/GVK_Tree/main.c",
+			"file": "lab/SAOD/lab_06/tree.c",
 			"settings":
 			{
-				"buffer_size": 414,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_07/main.c",
-			"settings":
-			{
-				"buffer_size": 552,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_07/libs.h",
-			"settings":
-			{
-				"buffer_size": 375,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "experiments/GVK_Tree/input.txt",
-			"settings":
-			{
-				"buffer_size": 44,
-				"encoding": "UTF-8",
+				"buffer_size": 4162,
 				"line_ending": "Unix"
 			}
 		}
@@ -488,15 +432,15 @@
 		"selected_items":
 		[
 			[
-				"colo",
-				"UI: Select Color Scheme"
-			],
-			[
 				"instal",
 				"Package Control: Install Package"
 			],
 			[
 				"col",
+				"UI: Select Color Scheme"
+			],
+			[
+				"colo",
 				"UI: Select Color Scheme"
 			],
 			[
@@ -569,22 +513,23 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
+		"/home/anton/C/experiments",
 		"/home/anton/C/lab",
+		"/home/anton/C/lab/lab_dev",
+		"/home/anton/C/lab/lab_dev/tree",
 		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_07"
+		"/home/anton/C/lab/SAOD/lab_06"
 	],
 	"file_history":
 	[
-		"/home/anton/C/experiments/GVK_Tree/input.txt",
-		"/home/anton/C/experiments/GVK_Tree/tree.h",
-		"/home/anton/C/experiments/GVK_Tree/tree.c",
-		"/home/anton/C/experiments/GVK_Tree/main.c",
 		"/home/anton/C/experiments/GVK_Tree/Makefile",
-		"/home/anton/C/lab/SAOD/lab_07/libs.c",
-		"/home/anton/C/lab/SAOD/lab_07/tree.c",
-		"/home/anton/C/lab/SAOD/lab_06/input.txt",
+		"/home/anton/C/experiments/GVK_Tree/tree.c",
+		"/home/anton/C/experiments/GVK_Tree/tree.h",
+		"/home/anton/C/experiments/GVK_Tree/main.c",
 		"/home/anton/C/experiments/GVK_Tree/Errors.html",
+		"/home/anton/C/lab/SAOD/lab_07/libs.c",
 		"/home/anton/C/lab/SAOD/lab_07/libs.h",
+		"/home/anton/C/lab/SAOD/lab_07/tree.c",
 		"/home/anton/C/lab/SAOD/lab_07/tree.h",
 		"/home/anton/C/lab/SAOD/lab_07/main.c",
 		"/home/anton/C/lab/SAOD/lab_06/main.c",
@@ -593,6 +538,7 @@
 		"/home/anton/C/lab/SAOD/lab_06/libs.c",
 		"/home/anton/C/lab/SAOD/lab_06/libs.h",
 		"/home/anton/C/lab/SAOD/lab_06/input2.txt",
+		"/home/anton/C/lab/SAOD/lab_06/input.txt",
 		"/home/anton/C/lab/SAOD/lab_05/tree.h",
 		"/home/anton/C/lab/SAOD/lab_05/tree.c",
 		"/home/anton/C/lab/SAOD/lab_05/input.txt",
@@ -703,14 +649,11 @@
 		"/home/anton/C/lab/lab_21/routines.c",
 		"/home/anton/C/lab/lab_21/main.c",
 		"/home/anton/C/lab/lab_20/Makefile",
-		"/home/anton/C/lab/lab_20/routines.c",
-		"/home/anton/C/lab/lab_20/tasks.c",
-		"/home/anton/C/lab/lab_20/main.h",
-		"/home/anton/C/lab/lab_20/main.c"
+		"/home/anton/C/lab/lab_20/routines.c"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -724,10 +667,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"checkTree",
-			"checkNode",
-			"high_p",
-			"high",
 			"Make",
 			"getch()",
 			"Malloc",
@@ -769,116 +708,32 @@
 			[
 				{
 					"buffer": 0,
-					"file": "experiments/GVK_Tree/main.c",
-					"semi_transient": false,
+					"file": "lab/SAOD/lab_06/tree.c",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 414,
+						"buffer_size": 4162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								414,
-								414
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 5280.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/SAOD/lab_07/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 552,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5545,
-								5545
+								617,
+								617
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "lab/SAOD/lab_07/libs.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22,
-								22
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "experiments/GVK_Tree/input.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 44,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44,
-								44
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 511.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -886,7 +741,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -931,7 +786,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
