@@ -16,6 +16,10 @@
 				"Tree_print_counter\tabc"
 			],
 			[
+				"le",
+				"level\tabc"
+			],
+			[
 				"bala",
 				"balansTree\t(tree.c)"
 			],
@@ -448,8 +452,8 @@
 		"selected_items":
 		[
 			[
-				"list",
-				"Package Control: List Packages"
+				"in",
+				"Package Control: Install Package"
 			],
 			[
 				"colo",
@@ -474,6 +478,10 @@
 			[
 				"insta",
 				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
 			],
 			[
 				"update",
@@ -528,22 +536,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C",
-		"/home/anton/C/lab",
-		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_07"
+		"/home/anton/C"
 	],
 	"file_history":
 	[
-		"/home/anton/C/lab/SAOD/lab_07/libs.c",
+		"/home/anton/C/lab/SAOD/lab_08/libs.c",
+		"/home/anton/C/lab/SAOD/lab_08/main.c",
+		"/home/anton/C/lab/SAOD/lab_08/Makefile",
+		"/home/anton/C/experiments/GVK_Tree/input.txt",
 		"/home/anton/C/lab/SAOD/lab_07/libs.h",
 		"/home/anton/C/lab/SAOD/lab_07/main.c",
-		"/home/anton/C/lab/SAOD/lab_07/tree.c",
-		"/home/anton/C/experiments/GVK_Tree/input.txt",
-		"/home/anton/C/experiments/GVK_Tree/tree.h",
-		"/home/anton/C/experiments/GVK_Tree/tree.c",
 		"/home/anton/C/experiments/GVK_Tree/main.c",
 		"/home/anton/C/experiments/GVK_Tree/Makefile",
+		"/home/anton/C/lab/SAOD/lab_07/libs.c",
+		"/home/anton/C/lab/SAOD/lab_07/tree.c",
 		"/home/anton/C/lab/SAOD/lab_06/input.txt",
 		"/home/anton/C/experiments/GVK_Tree/Errors.html",
 		"/home/anton/C/lab/SAOD/lab_07/tree.h",
@@ -661,12 +667,11 @@
 		"/home/anton/C/lab/lab_21/main.h",
 		"/home/anton/C/lab/lab_22/main.h",
 		"/home/anton/C/lab/lab_21/routines.c",
-		"/home/anton/C/lab/lab_21/main.c",
-		"/home/anton/C/lab/lab_20/Makefile"
+		"/home/anton/C/lab/lab_21/main.c"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -727,7 +732,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -772,7 +777,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -814,7 +819,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 219.0,
+	"side_bar_width": 263.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

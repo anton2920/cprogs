@@ -3,12 +3,7 @@
 
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.c
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.h
-CMakeFiles/lab_dev.dir/libs/libs.c.o: ../tree/tree.h
 
 CMakeFiles/lab_dev.dir/main.c.o: ../libs/libs.h
 CMakeFiles/lab_dev.dir/main.c.o: ../main.c
-CMakeFiles/lab_dev.dir/main.c.o: ../tree/tree.h
-
-CMakeFiles/lab_dev.dir/tree/tree.c.o: ../tree/tree.c
-CMakeFiles/lab_dev.dir/tree/tree.c.o: ../tree/tree.h
 

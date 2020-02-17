@@ -93,12 +93,6 @@
 		<Unit filename="/home/anton/C/lab/lab_dev/main.c">
 			<Option target="lab_dev"/>
 		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/tree/tree.c">
-			<Option target="lab_dev"/>
-		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/tree/tree.h">
-			<Option target="lab_dev"/>
-		</Unit>
 		<Unit filename="/home/anton/C/lab/lab_dev/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

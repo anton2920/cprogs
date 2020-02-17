@@ -15,16 +15,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): updating tree structure">
-      <change beforePath="$PROJECT_DIR$/../../c.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experiments/GVK_Tree/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../experiments/GVK_Tree/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experiments/GVK_Tree/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../experiments/GVK_Tree/tree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experiments/GVK_Tree/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../experiments/GVK_Tree/tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/progress.make" afterDir="false" />
@@ -32,13 +32,12 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/tree/tree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/tree/tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree/tree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree/tree.h" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +64,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/anton/C/lab/lab_dev/main.c" />
@@ -85,18 +89,6 @@
       <recent name="$PROJECT_DIR$/input" />
       <recent name="$PROJECT_DIR$" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="CMake Application.lab_dev">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab_dev" TARGET_NAME="lab_dev" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab_dev" RUN_TARGET_NAME="lab_dev">
@@ -227,6 +219,9 @@
       <workItem from="1575356849511" duration="2310000" />
       <workItem from="1575749694706" duration="260000" />
       <workItem from="1575750502155" duration="2219000" />
+      <workItem from="1581793781905" duration="540000" />
+      <workItem from="1581794342746" duration="1198000" />
+      <workItem from="1581956189395" duration="8474000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -385,21 +380,50 @@
     <MESSAGE value="PC: (lab_dev): updating tree structure" />
     <option name="LAST_COMMIT_MESSAGE" value="PC: (lab_dev): updating tree structure" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/libs/libs.c</url>
-          <line>53</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="other" />
-        <watch expression="self" />
-      </configuration>
-    </watches-manager>
+  <component name="WindowStateProjectService">
+    <state width="1872" height="319" key="GridCell.Tab.0.bottom" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.0.center" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.0.left" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.0.right" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.1.bottom" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.1.center" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.1.left" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state width="1872" height="319" key="GridCell.Tab.1.right" timestamp="1581965495040">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1872" height="319" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581965495040" />
+    <state x="2701" y="148" width="556" height="726" key="refactoring.ChangeSignatureDialog" timestamp="1581957441951">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2701" y="148" width="556" height="726" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581957441951" />
+    <state x="2544" y="244" key="run.anything.popup" timestamp="1581795252802">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2544" y="244" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581795252802" />
+    <state x="2543" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1581959814579">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="251" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1581959814579" />
   </component>
 </project>

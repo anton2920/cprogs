@@ -6,21 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/home/anton/C/lab/lab_dev/libs/libs.c
+time.h
+-
+libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
+
 /home/anton/C/lab/lab_dev/libs/libs.h
 stdio.h
 -
-../tree/tree.h
-/home/anton/C/lab/lab_dev/tree/tree.h
-
-/home/anton/C/lab/lab_dev/main.c
-stdio.h
--
-libs/libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-tree/tree.h
-/home/anton/C/lab/lab_dev/tree/tree.h
-
-/home/anton/C/lab/lab_dev/tree/tree.h
-stdio.h
+stdlib.h
 -
 
