@@ -1,4 +1,8 @@
 /home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/anton/C/lab/lab_dev
 -- Configuring done
+CMake Error at CMakeLists.txt:9 (add_executable):
+  C_STANDARD is set to invalid value '89'
+
+
 -- Generating done
--- Build files have been written to: /home/anton/C/lab/lab_dev/cmake-build-debug
+CMake Generate step failed.  Build files cannot be regenerated correctly.
