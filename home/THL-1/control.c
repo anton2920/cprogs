@@ -2,33 +2,52 @@
 #include "control.h"
 #include <stdlib.h>
 
+/* Microcode layout pattern */
+uint32_t ucode[NINSTR][NSTEPS] = {
+        {CO|MI, RO|II|CE, 0,     0,     0},                 /* NOP  - 0b0000 */
+        {CO|MI, RO|II|CE, IO|MI, RO|AI, 0},                 /* LDA  - 0b0001 */
+        {CO|MI, RO|II|CE, IO|AI, 0,     0},                 /* LDI  - 0b0010 */
+        {CO|MI, RO|II|CE, IO|MI, AO|RI, 0},                 /* STA  - 0b0011 */
+        {CO|MI, RO|II|CE, IO|MI, RO|BI, EO|AI|FI},          /* ADD  - 0b0100 */
+        {CO|MI, RO|II|CE, IO|MI, RO|BI, EO|EC0|AI|FI},      /* SUB  - 0b0101 */
+        {CO|MI, RO|II|CE, IO|MI, RO|BI, EO|EC1|AI|FI},      /* AND  - 0b0110 */
+        {CO|MI, RO|II|CE, IO|MI, RO|BI, EO|EC1|EC0|AI|FI},  /* OR   - 0b0111 */
+        {CO|MI, RO|II|CE, IO|JP, 0,     0},                 /* JMP  - 0b1000 */
+        {CO|MI, RO|II|CE, 0,     0,     0},                 /* JC   - 0b1001 */
+        {CO|MI, RO|II|CE, 0,     0,     0},                 /* JZ   - 0b1010 */
+        {CO|MI, RO|II|CE, 0,     0,     0},                 /* JS   - 0b1011 */
+        {CO|MI, RO|II|CE, IO|MI, RO|BI, EO|EC0|FI},         /* CMP  - 0b1100 */
+        {CO|MI, RO|II|CE, IO|MI, RO|BI, EO|EC1|FI},         /* TEST - 0b1101 */
+        {CO|MI, RO|II|CE, AO|OI, 0,     0},                 /* OUT  - 0b1110 */
+        {CO|MI, RO|II|CE, HLT,   0,     0}                  /* HALT - 0b1111 */
+};
+
 void microcode(cu_t *cu) {
 
-    /* Initializing varaibles */
-    bool val = false;
-
     /* Main part */
-    /* Writing zeros everywhere */
-    memset(cu->data, false, (1 << 7) * CONTROL_UNIT_SIZE);
 
-    /* Fetch cycle */
-    for (uint8_t i = 0; i < 0x0F; ++i) {
-        cu->data[(i << 3) & 0x78][MI] = true;
-        cu->data[(i << 3) & 0x78][CO] = true;
-
-        cu->data[((i << 3) + 0x01) & 0x79][RO] = true;
-        cu->data[((i << 3) + 0x01) & 0x79][II] = true;
-        cu->data[((i << 3) + 0x01) & 0x79][CE] = true;
+    /* Copy pattern to every location */
+    for (uint8_t flag = 0; flag < NFLAGS; ++flag) {
+        memcpy(cu->data[flag], ucode, sizeof(ucode));
     }
 
-    /* LDA */
-    cu->data[((LDA << 3) + 0b010) & 0x7F][IO] = true;
-    cu->data[((LDA << 3) + 0b010) & 0x7F][MI] = true;
+    /* Set up jump instructions */
+    cu->data[SLZLCH][JC][0b010] = IO|JP;
 
-    cu->data[((LDA << 3) + 0b011) & 0x7F][RO] = true;
-    cu->data[((LDA << 3) + 0b011) & 0x7F][AI] = true;
+    cu->data[SLZHCL][JZ][0b010] = IO|JP;
 
-    /* OUT */
-    cu->data[((OUT << 3) + 0b010) & 0x7F][AO] = true;
-    cu->data[((OUT << 3) + 0b010) & 0x7F][OI] = true;
+    cu->data[SHZLCL][JS][0b010] = IO|JP;
+
+    cu->data[SLZHCH][JC][0b010] = IO|JP;
+    cu->data[SLZHCH][JZ][0b010] = IO|JP;
+
+    cu->data[SHZLCH][JC][0b010] = IO|JP;
+    cu->data[SHZLCH][JS][0b010] = IO|JP;
+
+    cu->data[SHZHCL][JZ][0b010] = IO|JP;
+    cu->data[SHZHCL][JS][0b010] = IO|JP;
+
+    cu->data[SHZHCH][JC][0b010] = IO|JP;
+    cu->data[SHZHCH][JZ][0b010] = IO|JP;
+    cu->data[SHZHCH][JS][0b010] = IO|JP;
 }

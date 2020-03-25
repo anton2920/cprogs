@@ -3,7 +3,7 @@ project(THL_1 C)
 
 set(CMAKE_C_STANDARD 99)
 
-set(ALU alu.h)
+set(ALU alu.c alu.h)
 set(REG register.h)
 set(RAM ram.h)
 set(PC pc.h)

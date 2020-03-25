@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/THL_1.dir/alu.c.o"
   "CMakeFiles/THL_1.dir/control.c.o"
   "CMakeFiles/THL_1.dir/main.c.o"
   "THL_1"

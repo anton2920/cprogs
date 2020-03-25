@@ -7,15 +7,11 @@
 
 /* New data types */
 enum ALU_CTRL {
-    ALU_AND = 0x00,
-    ALU_OR = 0x01,
-    ALU_ADD = 0x02,
-    ALU_Not_Used = 0x03,
-    ALU_AND_NOT = 0x04,
-    ALU_OR_NOT = 0x05,
-    ALU_SUB = 0x06,
-    ALU_LESS = 0x07,
-    ALU_CONTROL_SIZE = 0x03
+    ALU_ADD = 0b00,
+    ALU_SUB = 0b01,
+    ALU_AND = 0b10,
+    ALU_OR  = 0b11,
+    ALU_CONTROL_SIZE = 0x02
 };
 
 typedef struct ALU {
@@ -23,5 +19,7 @@ typedef struct ALU {
     reg_t *a, *b;
     bool OE;
 } alu_t;
+
+uint8_t perform_alu(alu_t *alu, reg_t *flags);
 
 #endif

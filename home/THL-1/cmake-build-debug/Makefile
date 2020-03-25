@@ -123,6 +123,33 @@ THL_1/fast:
 	$(MAKE) -f CMakeFiles/THL_1.dir/build.make CMakeFiles/THL_1.dir/build
 .PHONY : THL_1/fast
 
+alu.o: alu.c.o
+
+.PHONY : alu.o
+
+# target to build an object file
+alu.c.o:
+	$(MAKE) -f CMakeFiles/THL_1.dir/build.make CMakeFiles/THL_1.dir/alu.c.o
+.PHONY : alu.c.o
+
+alu.i: alu.c.i
+
+.PHONY : alu.i
+
+# target to preprocess a source file
+alu.c.i:
+	$(MAKE) -f CMakeFiles/THL_1.dir/build.make CMakeFiles/THL_1.dir/alu.c.i
+.PHONY : alu.c.i
+
+alu.s: alu.c.s
+
+.PHONY : alu.s
+
+# target to generate assembly for a file
+alu.c.s:
+	$(MAKE) -f CMakeFiles/THL_1.dir/build.make CMakeFiles/THL_1.dir/alu.c.s
+.PHONY : alu.c.s
+
 control.o: control.c.o
 
 .PHONY : control.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... THL_1"
 	@echo "... edit_cache"
+	@echo "... alu.o"
+	@echo "... alu.i"
+	@echo "... alu.s"
 	@echo "... control.o"
 	@echo "... control.i"
 	@echo "... control.s"

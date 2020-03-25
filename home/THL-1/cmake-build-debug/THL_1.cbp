@@ -74,6 +74,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/anton/C/home/THL-1/alu.c">
+			<Option target="THL_1"/>
+		</Unit>
 		<Unit filename="/home/anton/C/home/THL-1/alu.h">
 			<Option target="THL_1"/>
 		</Unit>

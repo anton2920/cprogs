@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/anton/C/home/THL-1/alu.c" "/home/anton/C/home/THL-1/cmake-build-debug/CMakeFiles/THL_1.dir/alu.c.o"
   "/home/anton/C/home/THL-1/control.c" "/home/anton/C/home/THL-1/cmake-build-debug/CMakeFiles/THL_1.dir/control.c.o"
   "/home/anton/C/home/THL-1/main.c" "/home/anton/C/home/THL-1/cmake-build-debug/CMakeFiles/THL_1.dir/main.c.o"
   )
