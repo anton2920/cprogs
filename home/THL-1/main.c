@@ -1,15 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "register.h"
 #include "ram.h"
 #include "control.h"
 #include "alu.h"
 #include "pc.h"
 
-#define INSTR(x, op) ((x << 4) + op)
+#define INSTR(x, op) ((x << 4) | op)
 
 void output(reg_t out);
+void read_ram(const char *program, ram_t *ram);
 
-int main() {
+int main(int argc, const char *argv[]) {
 
     /* Initializing variables */
     auto uint8_t bus = 0;
@@ -43,22 +47,27 @@ int main() {
 
     /* Main part */
     microcode(&cu);
-    ram.data[0x0] = INSTR(LDA,  0xE);
-    ram.data[0x1] = INSTR(OUT,  0x0);
-    ram.data[0x2] = INSTR(ADD,  0xD);
-    ram.data[0x3] = INSTR(JC,   0xA);
-    ram.data[0x4] = INSTR(STA,  0xF);
-    ram.data[0x5] = INSTR(LDA,  0xE);
-    ram.data[0x6] = INSTR(STA,  0xD);
-    ram.data[0x7] = INSTR(LDA,  0xF);
-    ram.data[0x8] = INSTR(STA,  0xE);
-    ram.data[0x9] = INSTR(JMP,  0x0);
-    ram.data[0xA] = INSTR(HALT, 0x0);
-    ram.data[0xB] = 0x0;
-    ram.data[0xC] = 0x0;
-    ram.data[0xD] = 0x0; // z - pre-prev
-    ram.data[0xE] = 0x1; // y - prev
-    ram.data[0xF] = 0x0; // x - current
+
+    if (argc == 1) {
+        ram.data[0x0] = INSTR(HALT, 0x0);
+        ram.data[0x1] = 0x0;
+        ram.data[0x2] = 0x0;
+        ram.data[0x3] = 0x0;
+        ram.data[0x4] = 0x0;
+        ram.data[0x5] = 0x0;
+        ram.data[0x6] = 0x0;
+        ram.data[0x7] = 0x0;
+        ram.data[0x8] = 0x0;
+        ram.data[0x9] = 0x0;
+        ram.data[0xA] = 0x0;
+        ram.data[0xB] = 0x0;
+        ram.data[0xC] = 0x0;
+        ram.data[0xD] = 0x0;
+        ram.data[0xE] = 0x0;
+        ram.data[0xF] = 0x0;
+    } else {
+        read_ram(argv[1], &ram);
+    }
 
     for ( ; !halt_flag; clock = !clock, bus = 0) {
 
@@ -139,4 +148,42 @@ void output(reg_t out) {
 
     /* I/O flow */
     printf("Octal: %o\tSigned: %d\tUnsigned: %u \tHex: %x\n", out.data, out.data, out.data, out.data);
+}
+
+enum THL_BIN {
+    HEADER_SIZE = 0x4,
+    PROGRAM_SIZE = RAM_SIZE
+};
+
+void read_ram(const char *program, ram_t *ram) {
+
+    /* Initializing variables */
+    char header[HEADER_SIZE];
+    FILE *fp = fopen(program, "rb");
+    size_t len;
+
+    /* Main part */
+    if (fp == NULL) {
+        fprintf(stderr, "THL-1: can't open file %s", program);
+    }
+
+    fseek(fp, 0x0, SEEK_END);
+    len = ftell(fp);
+    if (len != 0x14) {
+        fprintf(stderr, "THL-1: program must be 16 bytes long\n");
+        exit(1);
+    }
+
+    /* Main part */
+    fseek(fp, 0, SEEK_SET);
+    fread(header, 1, HEADER_SIZE, fp);
+
+    if (memcmp(header, "THL1", HEADER_SIZE) != 0) {
+        fprintf(stderr, "THL-1: program is in wrong format\n");
+        exit(2);
+    }
+
+    fread(ram->data, 1, PROGRAM_SIZE, fp);
+
+    fclose(fp);
 }

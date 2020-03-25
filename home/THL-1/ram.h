@@ -7,7 +7,7 @@
 
 /* New data types */
 enum RAM_CONSTS {
-    RAM_SIZE = 0x10
+    RAM_SIZE = 1 << 4
 };
 
 typedef struct ram {

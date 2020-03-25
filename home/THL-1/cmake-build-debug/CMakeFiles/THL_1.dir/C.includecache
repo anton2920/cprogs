@@ -21,6 +21,10 @@ stdbool.h
 /home/anton/C/home/THL-1/main.c
 stdio.h
 -
+stdlib.h
+-
+string.h
+-
 register.h
 /home/anton/C/home/THL-1/register.h
 ram.h

@@ -123,6 +123,19 @@ THL_1/fast:
 	$(MAKE) -f CMakeFiles/THL_1.dir/build.make CMakeFiles/THL_1.dir/build
 .PHONY : THL_1/fast
 
+#=============================================================================
+# Target rules for targets named creator
+
+# Build rule for target.
+creator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 creator
+.PHONY : creator
+
+# fast build rule for target.
+creator/fast:
+	$(MAKE) -f CMakeFiles/creator.dir/build.make CMakeFiles/creator.dir/build
+.PHONY : creator/fast
+
 alu.o: alu.c.o
 
 .PHONY : alu.o
@@ -204,6 +217,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/THL_1.dir/build.make CMakeFiles/THL_1.dir/main.c.s
 .PHONY : main.c.s
 
+prog_creator.o: prog_creator.c.o
+
+.PHONY : prog_creator.o
+
+# target to build an object file
+prog_creator.c.o:
+	$(MAKE) -f CMakeFiles/creator.dir/build.make CMakeFiles/creator.dir/prog_creator.c.o
+.PHONY : prog_creator.c.o
+
+prog_creator.i: prog_creator.c.i
+
+.PHONY : prog_creator.i
+
+# target to preprocess a source file
+prog_creator.c.i:
+	$(MAKE) -f CMakeFiles/creator.dir/build.make CMakeFiles/creator.dir/prog_creator.c.i
+.PHONY : prog_creator.c.i
+
+prog_creator.s: prog_creator.c.s
+
+.PHONY : prog_creator.s
+
+# target to generate assembly for a file
+prog_creator.c.s:
+	$(MAKE) -f CMakeFiles/creator.dir/build.make CMakeFiles/creator.dir/prog_creator.c.s
+.PHONY : prog_creator.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,6 +253,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... THL_1"
 	@echo "... edit_cache"
+	@echo "... creator"
 	@echo "... alu.o"
 	@echo "... alu.i"
 	@echo "... alu.s"
@@ -222,6 +263,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... prog_creator.o"
+	@echo "... prog_creator.i"
+	@echo "... prog_creator.s"
 .PHONY : help
 
 

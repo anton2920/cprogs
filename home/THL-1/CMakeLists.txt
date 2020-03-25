@@ -8,5 +8,7 @@ set(REG register.h)
 set(RAM ram.h)
 set(PC pc.h)
 set(CU control.c control.h)
+set(CREATOR prog_creator.c)
 
 add_executable(THL_1 main.c ${ALU} ${REG} ${RAM} ${PC} ${CU})
+add_executable(creator ${CREATOR})
