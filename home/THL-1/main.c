@@ -10,7 +10,7 @@
 
 #define INSTR(x, op) ((x << 4) | op)
 
-void output(reg_t out);
+void output(reg_t *out);
 void read_ram(const char *program, ram_t *ram);
 
 int main(int argc, const char *argv[]) {
@@ -120,7 +120,7 @@ bus_read:
             }
             if (out.RWB) {
                 out.data = bus;
-                output(out);
+                output(&out);
             }
             if (b.RWB) {
                 b.data = bus;
@@ -144,10 +144,10 @@ bus_read:
     return 0;
 }
 
-void output(reg_t out) {
+void output(reg_t *out) {
 
     /* I/O flow */
-    printf("Octal: %o\tSigned: %d\tUnsigned: %u \tHex: %x\n", out.data, out.data, out.data, out.data);
+    printf("Octal: %o\tSigned: %d\tUnsigned: %u \tHex: %x\n", out->data, out->data, out->data, out->data);
 }
 
 enum THL_BIN {
@@ -165,13 +165,14 @@ void read_ram(const char *program, ram_t *ram) {
     /* Main part */
     if (fp == NULL) {
         fprintf(stderr, "THL-1: can't open file %s", program);
+        exit(1);
     }
 
     fseek(fp, 0x0, SEEK_END);
     len = ftell(fp);
     if (len != 0x14) {
         fprintf(stderr, "THL-1: program must be 16 bytes long\n");
-        exit(1);
+        exit(2);
     }
 
     /* Main part */
@@ -180,7 +181,7 @@ void read_ram(const char *program, ram_t *ram) {
 
     if (memcmp(header, "THL1", HEADER_SIZE) != 0) {
         fprintf(stderr, "THL-1: program is in wrong format\n");
-        exit(2);
+        exit(3);
     }
 
     fread(ram->data, 1, PROGRAM_SIZE, fp);

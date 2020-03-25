@@ -407,6 +407,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "home/THL-1/cmake-build-debug/fib.thl",
+			"settings":
+			{
+				"buffer_size": 50,
+				"encoding": "Hexadecimal",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -536,7 +545,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C"
+		"/home/anton/C",
+		"/home/anton/C/home",
+		"/home/anton/C/home/THL-1",
+		"/home/anton/C/home/THL-1/cmake-build-debug"
 	],
 	"file_history":
 	[
@@ -671,7 +683,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 32.0
 	},
 	"find_in_files":
 	{
@@ -725,14 +737,43 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "home/THL-1/cmake-build-debug/fib.thl",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 50,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -777,7 +818,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 60.0
 	},
 	"save_all_on_build": true,
 	"select_file":
