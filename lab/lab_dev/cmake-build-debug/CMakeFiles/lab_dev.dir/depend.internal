@@ -4,5 +4,10 @@
 CMakeFiles/lab_dev.dir/libs/libs.c.o
  /home/anton/C/lab/lab_dev/libs/libs.c
  /home/anton/C/lab/lab_dev/libs/libs.h
+CMakeFiles/lab_dev.dir/libs/process.c.o
+ /home/anton/C/lab/lab_dev/libs/process.c
+ /home/anton/C/lab/lab_dev/libs/process.h
+CMakeFiles/lab_dev.dir/libs/visual.c.o
+ /home/anton/C/lab/lab_dev/libs/visual.c
 CMakeFiles/lab_dev.dir/main.c.o
  /home/anton/C/lab/lab_dev/main.c

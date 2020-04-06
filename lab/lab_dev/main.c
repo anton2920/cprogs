@@ -1,56 +1,171 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
 
-int numcmp(const void *_self, const void *_other) {
+void menu(void);
+int menu_continue(void);
+int quit_m(void);
+void prt_ln(void);
+void no_cmd(void);
 
-    /* Initializing variables */
-    auto const int *self = (const int *) _self, *other = (const int *) _other;
+main() {
 
-    /* Returning value */
-    return (*self > *other) ? 1 : (*self < *other) ? -1 : 0;
+    /* I/O flow */
+    menu();
 }
 
-int dblLinear(int n) {
-
-    /* Initializing variables */
-    auto int *a = (int *) calloc(n, sizeof(int)), i, len, tmp;
-    *a = 1;
-
-    /* VarCheck */
-    if (a == NULL) {
-        return 0;
-    }
-
-    /* Main part */
-    fprintf(stderr, "1");
-    for (len = 1, i = 0; len < n; ++i) {
-        *(a + len++) = 2 * *(a + i) + 1;
-        if (len >= n) {
-            break;
-        }
-        *(a + len++) = 3 * *(a + i) + 1;
-        fprintf(stderr, " %d %d", *(a + len - 2), *(a + len - 1));
-        qsort(a, len, sizeof(int), numcmp);
-    }
-    qsort(a, len, sizeof(int), numcmp);
-    fprintf(stderr, " %d %d", *(a + len - 2), *(a + len - 1));
-
-    tmp = *(a + n - 1);
-    free(a);
-
-    /* Returning value */
-    return tmp;
-}
-
-int main() {
-
-    /* Initializing variables */
-    auto int ans = dblLinear(20);
-    fflush(stderr);
+void prt_ln(void) {
 
     /* Final output */
-    printf("\nAnswer: %d\n", ans);
+    printf(" ------------------------------------------------------------\n");
+}
 
-    /* Returning value */
-    return 0;
+void no_cmd(void) {
+
+    /* Final output */
+    printf("| menu: no such command!                                     |\n");
+}
+
+void menu() {
+    /* Initializing variables */
+    int func, n = 0;
+
+    /* I/O flow */
+    while (1) {
+        printf(" ------------------------------------------------------------\n"
+               "|                                                            |\n"
+               "|                   >> Process monitor <<                    |\n"
+               "|                                                            |\n"
+               "|  >> Choose a scheduling algorithm:                         |\n"
+               "|                                                            |\n"
+               "|       1) HLRR                                              |\n"
+               "|       2) Round robin                                       |\n"
+               "|                                                            |\n"
+               "|       >> Type \"quit\" to terminate this program <<          |\n"
+               "|                                                            |\n");
+        printf("| Answer: ");
+        func = getchar();
+        prt_ln();
+        if (isdigit(func) && func >= '1' && func <= '6') {
+            func -= '0';
+            if ((getchar()) != '\n') {
+                while ((getchar()) != '\n')
+                    ;
+                no_cmd();
+                continue;
+            }
+
+            switch (func) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                default:
+                    break;
+            }
+
+            if (!menu_continue()) {
+                return;
+            }
+
+        } else if (func == 'q') {
+            if (quit_m()) {
+                return;
+            } else {
+                continue;
+            }
+        } else {
+            no_cmd();
+            if (func != '\n') {
+                while ((getchar()) != '\n')
+                    ;
+            }
+            continue;
+        }
+    }
+}
+
+int menu_continue(void) {
+
+    /* Initializing variables */
+    int func, junk;
+
+    /* I/O flow */
+    while (1) {
+        printf("| Continue? [y/N]: ");
+        switch ((func = getchar())) {
+            case 'y': case 'Y':
+                if ((junk = getchar()) != '\n') {
+                    while ((junk = getchar()) != '\n')
+                        ;
+                    prt_ln();
+                    continue;
+                }
+                prt_ln();
+                return 1;
+            case 'n': case 'N': case '\n':
+                if (func == 'n' || func == 'N') {
+                    if ((junk = getchar()) != '\n') {
+                        while ((junk = getchar()) != '\n')
+                            ;
+                        prt_ln();
+                        continue;
+                    }
+                }
+                prt_ln();
+                return 0;
+            default:
+                while ((junk = getchar()) != '\n')
+                    ;
+                prt_ln();
+                continue;
+        }
+    }
+}
+
+int quit_m(void) {
+
+    /* Initializing variables */
+    int junk;
+
+    /* Main part */
+    if ((junk = getchar()) == 'u') {
+        if ((junk = getchar()) == 'i') {
+            if ((junk = getchar()) == 't') {
+                if ((junk = getchar()) == '\n') {
+                    return -1;
+                } else {
+                    no_cmd();
+                    while ((junk = getchar()) != '\n')
+                        ;
+                    return 0;
+                }
+            } else {
+                no_cmd();
+                if (junk == '\n') {
+                    return 0;
+                } else {
+                    while ((junk = getchar()) != '\n');
+                    return 0;
+                }
+            }
+        } else {
+            no_cmd();
+            if (junk == '\n') {
+                return 0;
+            } else {
+                while ((junk = getchar()) != '\n');
+                return 0;
+            }
+        }
+    } else {
+        no_cmd();
+        if (junk == '\n') {
+            return 0;
+        } else {
+            while ((junk = getchar()) != '\n');
+            return 0;
+        }
+    }
 }

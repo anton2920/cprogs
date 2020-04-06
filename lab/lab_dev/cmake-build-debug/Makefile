@@ -150,6 +150,60 @@ libs/libs.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
 .PHONY : libs/libs.c.s
 
+libs/process.o: libs/process.c.o
+
+.PHONY : libs/process.o
+
+# target to build an object file
+libs/process.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/process.c.o
+.PHONY : libs/process.c.o
+
+libs/process.i: libs/process.c.i
+
+.PHONY : libs/process.i
+
+# target to preprocess a source file
+libs/process.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/process.c.i
+.PHONY : libs/process.c.i
+
+libs/process.s: libs/process.c.s
+
+.PHONY : libs/process.s
+
+# target to generate assembly for a file
+libs/process.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/process.c.s
+.PHONY : libs/process.c.s
+
+libs/visual.o: libs/visual.c.o
+
+.PHONY : libs/visual.o
+
+# target to build an object file
+libs/visual.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/visual.c.o
+.PHONY : libs/visual.c.o
+
+libs/visual.i: libs/visual.c.i
+
+.PHONY : libs/visual.i
+
+# target to preprocess a source file
+libs/visual.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/visual.c.i
+.PHONY : libs/visual.c.i
+
+libs/visual.s: libs/visual.c.s
+
+.PHONY : libs/visual.s
+
+# target to generate assembly for a file
+libs/visual.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/visual.c.s
+.PHONY : libs/visual.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -189,6 +243,12 @@ help:
 	@echo "... libs/libs.o"
 	@echo "... libs/libs.i"
 	@echo "... libs/libs.s"
+	@echo "... libs/process.o"
+	@echo "... libs/process.i"
+	@echo "... libs/process.s"
+	@echo "... libs/visual.o"
+	@echo "... libs/visual.i"
+	@echo "... libs/visual.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
