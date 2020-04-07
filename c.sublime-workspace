@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"visu",
+				"visual.c\tabc"
+			],
+			[
 				"le",
 				"left\tabc"
 			],
@@ -407,15 +411,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "home/THL-1/cmake-build-debug/fib.thl",
-			"settings":
-			{
-				"buffer_size": 50,
-				"encoding": "Hexadecimal",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -545,13 +540,18 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C",
-		"/home/anton/C/home",
-		"/home/anton/C/home/THL-1",
-		"/home/anton/C/home/THL-1/cmake-build-debug"
+		"/home/anton/C"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/OS/lab_05/main.c",
+		"/home/anton/C/lab/OS/lab_05/Makefile",
+		"/home/anton/C/lab/OS/lab_05/libs.c",
+		"/home/anton/C/lab/OS/lab_05/visual.h",
+		"/home/anton/C/lab/OS/lab_05/process.h",
+		"/home/anton/C/lab/lab_dev/libs/visual.c",
+		"/home/anton/C/lab/lab_dev/libs/libs.h",
+		"/home/anton/C/lab/lab_dev/libs/libs.c",
 		"/home/anton/C/lab/SAOD/lab_08/libs.c",
 		"/home/anton/C/lab/SAOD/lab_08/main.c",
 		"/home/anton/C/lab/SAOD/lab_08/Makefile",
@@ -671,15 +671,7 @@
 		"/home/anton/C/lab/lab_29/main.c",
 		"/home/anton/C/lab/lab_29/source.c",
 		"/home/anton/C/lab/lab_28/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_2/main.c",
-		"/home/anton/C/lab/lab_24/lab_24_2/source.c",
-		"/home/anton/C/lab/lab_24/lab_24_2/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_1/Makefile",
-		"/home/anton/C/lab/lab_22/main.c",
-		"/home/anton/C/lab/lab_21/main.h",
-		"/home/anton/C/lab/lab_22/main.h",
-		"/home/anton/C/lab/lab_21/routines.c",
-		"/home/anton/C/lab/lab_21/main.c"
+		"/home/anton/C/lab/lab_24/lab_24_2/main.c"
 	],
 	"find":
 	{
@@ -737,37 +729,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "home/THL-1/cmake-build-debug/fib.thl",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 50,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								50,
-								50
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

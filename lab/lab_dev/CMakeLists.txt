@@ -10,4 +10,4 @@ set(VISUAL libs/visual.c libs/visual.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS} ${PROCESS} ${VISUAL})
 
-target_link_libraries(lab_dev)
+target_link_libraries(lab_dev STL_Queue STL_Algorithm STL_Vector STL_List)

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "libs/libs.h"
+#include "libs.h"
 
 void menu(void);
 int menu_continue(void);
@@ -27,7 +27,7 @@ void no_cmd(void) {
 
 void menu() {
     /* Initializing variables */
-    int func, n = 0;
+    int func;
 
     /* I/O flow */
     while (1) {

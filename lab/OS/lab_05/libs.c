@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 199309L
+
 #include <stdio.h>
 #include <time.h>
 #include <STL/STL_Queue.h>
@@ -8,9 +10,9 @@
 #include "process.h"
 #include "visual.h"
 
-time_t dt = 4;  /* Number of sub-quants in quant */
-const FREQ = 5; /* Probability of process occasion = 1 / FREQ */
-struct timespec pause_pamram = {0, 1e8}; /* Program delay {sec, nsec} */
+static const time_t dt = 4;  /* Number of sub-quants in quant */
+static const int FREQ = 5; /* Probability of process occasion = 1 / FREQ */
+static struct timespec pause_pamram = {0, 1e8}; /* Program delay {sec, nsec} */
 
 enum aldorithm {
     halflife,
