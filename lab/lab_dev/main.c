@@ -1,174 +1,90 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <time.h>
+#include <pthread.h>
 
 #include "libs/libs.h"
 
-void menu(void);
-int menu_continue(void);
-int quit_m(void);
-void no_cmd(void);
+pthread_mutex_t the_mutex;
+pthread_cond_t condc, condp; /* used for signaling */
+
+/* Delays..., choruses, and reverberations :) */
+struct timespec prod_sleep_time = {0, 2e7};
+struct timespec cons_sleep_time = {0, 1e7};
+
+/* Buffer */
+typedef int item;
+static int buffer;
+
+/* Percentages */
+int overall_percentage = 0;
+int prod_percentage, cons_percentage;
+
+void *producer(void *ptr) {
+
+    /* Main part */
+    for (; overall_percentage < RUN_SIZE; ++overall_percentage) {
+        pthread_mutex_lock(&the_mutex); /* get exclusive access to buffer */
+        while (buffer == MAX_SIZE) {
+            pthread_cond_wait(&condp, &the_mutex);
+        }
+        for (prod_percentage = 0; prod_percentage < 100; ++prod_percentage)
+            nanosleep(&prod_sleep_time, NULL);   /* Simulating very hard work */
+        ++buffer; /* put item in buffer */
+        pthread_cond_signal(&condc); /* wake up consumer */
+        pthread_mutex_unlock(&the_mutex); /* release access to buffer */
+
+        /* To make interleaving sequence */
+        /* nanosleep(&prod_sleep_time, NULL); */
+    }
+
+    /* Exitting */
+    pthread_exit(0);
+}
+
+void *consumer(void *ptr) {
+
+    /* Main part */
+    for (; overall_percentage < RUN_SIZE; ++overall_percentage) {
+        pthread_mutex_lock(&the_mutex); /* get exclusive access to buffer */
+        while (!buffer) {
+            pthread_cond_wait(&condc, &the_mutex);
+        }
+        for (cons_percentage = 0; cons_percentage < 100; ++cons_percentage)
+            nanosleep(&cons_sleep_time, NULL);   /* Simulating very hard work */
+        --buffer; /* remove item from buffer */
+        pthread_cond_signal(&condp); /* wake up produccer */
+        pthread_mutex_unlock(&the_mutex); /* release access to buffer */
+
+        /* To make interleaving sequence */
+        /* nanosleep(&cons_sleep_time, NULL); */
+    }
+
+    /* Exitting */
+    pthread_exit(0);
+}
 
 main() {
 
     /* Initializing variables */
-    srand(time(NULL));
+    auto pthread_t pro, con, draw;
 
-    /* I/O flow */
-    menu();
-}
+    auto struct thread_status st = {&buffer, &prod_percentage,
+                                    &cons_percentage, &overall_percentage};
 
-void no_cmd(void) {
+    pthread_mutex_init(&the_mutex, 0);
 
-    /* Final output */
-    printf("| menu: no such command!                                     |\n");
-}
+    pthread_cond_init(&condc, 0);
+    pthread_cond_init(&condp, 0);
 
-void menu() {
-    /* Initializing variables */
-    int func, n = 0;
-
-    /* I/O flow */
-    while (1) {
-        printf(" ------------------------------------------------------------\n"
-               "|                                                            |\n"
-               "|                   >> Process monitor <<                    |\n"
-               "|                                                            |\n"
-               "|  >> Choose a scheduling algorithm:                         |\n"
-               "|                                                            |\n"
-               "|       1) HLRR                                              |\n"
-               "|       2) Round robin                                       |\n"
-               "|                                                            |\n"
-               "|       >> Type \"quit\" to terminate this program <<          |\n"
-               "|                                                            |\n");
-        printf("| Answer: ");
-        func = getchar();
-        prt_ln();
-        if (isdigit(func) && func >= '1' && func <= '6') {
-            func -= '0';
-            if ((getchar()) != '\n') {
-                while ((getchar()) != '\n')
-                    ;
-                no_cmd();
-                continue;
-            }
-
-            switch (func) {
-                case 1:
-                    hlrr();
-                    break;
-                case 2:
-                    round_robin();
-                    break;
-                default:
-                    break;
-            }
-
-            if (!menu_continue()) {
-                return;
-            }
-
-        } else if (func == 'q') {
-            if (quit_m()) {
-                return;
-            } else {
-                continue;
-            }
-        } else {
-            no_cmd();
-            if (func != '\n') {
-                while ((getchar()) != '\n')
-                    ;
-            }
-            continue;
-        }
-    }
-}
-
-int menu_continue(void) {
-
-    /* Initializing variables */
-    int func;
-
-    /* I/O flow */
-    while (getchar() != '\n')
-        ;
-
-    while (1) {
-        printf("| Continue? [y/N]: ");
-        switch ((func = getchar())) {
-            case 'y': case 'Y':
-                if ((getchar()) != '\n') {
-                    while ((getchar()) != '\n')
-                        ;
-                    prt_ln();
-                    continue;
-                }
-                prt_ln();
-                return 1;
-            case 'n': case 'N': case '\n':
-                if (func == 'n' || func == 'N') {
-                    if ((getchar()) != '\n') {
-                        while ((getchar()) != '\n')
-                            ;
-                        prt_ln();
-                        continue;
-                    }
-                }
-                prt_ln();
-                return 0;
-            default:
-                while ((getchar()) != '\n')
-                    ;
-                prt_ln();
-                continue;
-        }
-    }
-}
-
-int quit_m(void) {
-
-    /* Initializing variables */
-    int junk;
+    pthread_create(&draw, 0, draw_system, &st);
+    pthread_create(&con, 0, consumer, 0);
+    pthread_create(&pro, 0, producer, 0);
 
     /* Main part */
-    if ((junk = getchar()) == 'u') {
-        if ((junk = getchar()) == 'i') {
-            if ((junk = getchar()) == 't') {
-                if ((junk = getchar()) == '\n') {
-                    return -1;
-                } else {
-                    no_cmd();
-                    while ((junk = getchar()) != '\n')
-                        ;
-                    return 0;
-                }
-            } else {
-                no_cmd();
-                if (junk == '\n') {
-                    return 0;
-                } else {
-                    while ((junk = getchar()) != '\n');
-                    return 0;
-                }
-            }
-        } else {
-            no_cmd();
-            if (junk == '\n') {
-                return 0;
-            } else {
-                while ((junk = getchar()) != '\n');
-                return 0;
-            }
-        }
-    } else {
-        no_cmd();
-        if (junk == '\n') {
-            return 0;
-        } else {
-            while ((junk = getchar()) != '\n');
-            return 0;
-        }
-    }
+    pthread_join(draw, 0);
+    pthread_join(pro, 0);
+    pthread_join(con, 0);
+
+    pthread_cond_destroy(&condc);
+    pthread_cond_destroy(&condp);
+
+    pthread_mutex_destroy(&the_mutex);
 }
