@@ -411,24 +411,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "lab/SAOD/lab_09_2/main.c",
-			"settings":
-			{
-				"buffer_size": 2268,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_09_2/Makefile",
-			"settings":
-			{
-				"buffer_size": 291,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -566,16 +548,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C",
-		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_dev",
-		"/home/anton/C/lab/lab_dev/libs",
-		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_07",
-		"/home/anton/C/lab/SAOD/lab_09_2"
+		"/home/anton/C"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/OS/lab_06/main.c",
+		"/home/anton/C/lab/OS/lab_06/Makefile",
+		"/home/anton/C/lab/SAOD/lab_09_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_09_2/main.c",
 		"/home/anton/C/lab/OS/lab_05/main.c",
 		"/home/anton/C/lab/OS/lab_05/Makefile",
 		"/home/anton/C/lab/OS/lab_05/libs.c",
@@ -699,11 +679,7 @@
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Source.cpp",
 		"/home/anton/C/experiments/pow/pow.c",
 		"/home/anton/C/experiments/pow/lpow.s",
-		"/home/anton/C/lab/lab_29/source.h",
-		"/home/anton/C/lab/lab_29/main.c",
-		"/home/anton/C/lab/lab_29/source.c",
-		"/home/anton/C/lab/lab_28/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_2/main.c"
+		"/home/anton/C/lab/lab_29/source.h"
 	],
 	"find":
 	{
@@ -761,68 +737,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "lab/SAOD/lab_09_2/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2268,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								30,
-								30
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/SAOD/lab_09_2/Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 291,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								175,
-								175
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],

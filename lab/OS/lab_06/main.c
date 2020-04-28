@@ -1,6 +1,6 @@
 #include <pthread.h>
 
-#include "libs/libs.h"
+#include "libs.h"
 
 pthread_mutex_t the_mutex;
 pthread_cond_t condc, condp; /* Used for signaling */
