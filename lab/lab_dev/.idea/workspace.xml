@@ -16,15 +16,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): updating tree structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/process.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/process.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/process.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/process.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/visual.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/visual.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/visual.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/visual.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +48,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/input/input.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.c" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/input/input.c" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1PHcG9ZyOWNqwb8SHrY7hlhtSii" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -229,6 +231,8 @@
       <workItem from="1588004450811" duration="3606000" />
       <workItem from="1588014284422" duration="5867000" />
       <workItem from="1588065270119" duration="4016000" />
+      <workItem from="1588133899064" duration="41000" />
+      <workItem from="1588134034497" duration="2604000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -422,9 +426,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1872" height="262" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1588020152633" />
-    <state x="2376" y="172" width="1007" height="737" key="SettingsEditor" timestamp="1586197958163">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="456" y="165" width="1007" height="743" key="SettingsEditor" timestamp="1588134073439">
+      <screen x="0" y="0" width="1920" height="1038" />
     </state>
+    <state x="456" y="165" width="1007" height="743" key="SettingsEditor/0.0.1920.1038@0.0.1920.1038" timestamp="1588134073439" />
     <state x="2376" y="172" width="1007" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1586197958163" />
     <state x="2701" y="148" width="556" height="726" key="refactoring.ChangeSignatureDialog" timestamp="1586258661533">
       <screen x="1920" y="0" width="1920" height="1080" />

@@ -3,7 +3,7 @@
 
 /* New data types */
 enum thread_consts {
-    RUN_SIZE = 50,
+    RUN_SIZE = 100,
     MAX_SIZE = 17
 };
 

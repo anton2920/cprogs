@@ -6,7 +6,7 @@ pthread_mutex_t the_mutex;
 pthread_cond_t condc, condp; /* Used for signaling */
 
 /* Delays..., choruses, and reverberations :) */
-struct timespec prod_sleep_time = {0, 2e7};
+struct timespec prod_sleep_time = {0, 0.5e7};
 struct timespec cons_sleep_time = {0, 1e7};
 
 /* Buffer */
