@@ -456,6 +456,18 @@
 		"selected_items":
 		[
 			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"font",
+				"FontCycler - Prev Font"
+			],
+			[
 				"in",
 				"Package Control: Install Package"
 			],
@@ -470,10 +482,6 @@
 			[
 				"col",
 				"UI: Select Color Scheme"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
@@ -544,6 +552,10 @@
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/OS/lab_06/main.c",
+		"/home/anton/C/lab/OS/lab_06/Makefile",
+		"/home/anton/C/lab/SAOD/lab_09_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_09_2/main.c",
 		"/home/anton/C/lab/OS/lab_05/main.c",
 		"/home/anton/C/lab/OS/lab_05/Makefile",
 		"/home/anton/C/lab/OS/lab_05/libs.c",
@@ -667,11 +679,7 @@
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Source.cpp",
 		"/home/anton/C/experiments/pow/pow.c",
 		"/home/anton/C/experiments/pow/lpow.s",
-		"/home/anton/C/lab/lab_29/source.h",
-		"/home/anton/C/lab/lab_29/main.c",
-		"/home/anton/C/lab/lab_29/source.c",
-		"/home/anton/C/lab/lab_28/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_2/main.c"
+		"/home/anton/C/lab/lab_29/source.h"
 	],
 	"find":
 	{
