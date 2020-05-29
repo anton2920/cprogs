@@ -6,33 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/libs/libs.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-pthread.h
--
-libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-
+<<<<<<< HEAD
 /home/anton/C/lab/lab_dev/libs/libs.h
 STL/STL_Queue.h
 -
 ../process/process.h
 /home/anton/C/lab/lab_dev/process/process.h
-
-/home/anton/C/lab/lab_dev/main.c
-stdio.h
--
-stdlib.h
--
-time.h
--
-libs/libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
 
 /home/anton/C/lab/lab_dev/process/process.h
 time.h
@@ -52,6 +31,8 @@ visual.h
 ../process/process.h
 /home/anton/C/lab/lab_dev/process/process.h
 ../libs/libs.h
+=======
+>>>>>>> 5570a042e512ff084537e375244dc6da7b698332
 /home/anton/C/lab/lab_dev/libs/libs.h
 
 /home/anton/C/lab/lab_dev/visual/visual.h

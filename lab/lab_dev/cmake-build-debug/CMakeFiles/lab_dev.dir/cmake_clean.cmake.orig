@@ -1,0 +1,16 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/lab_dev.dir/libs/libs.c.o"
+<<<<<<< HEAD
+  "CMakeFiles/lab_dev.dir/libs/process.c.o"
+  "CMakeFiles/lab_dev.dir/libs/visual.c.o"
+=======
+>>>>>>> 0a176e005a070480244def9453d7c9c687d9ec4f
+  "CMakeFiles/lab_dev.dir/main.c.o"
+  "lab_dev"
+  "lab_dev.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/lab_dev.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
