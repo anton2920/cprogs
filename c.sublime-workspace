@@ -411,6 +411,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "lab/OS/lab_05/libs.c",
+			"settings":
+			{
+				"buffer_size": 7434,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -548,7 +556,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C"
+		"/home/anton/C",
+		"/home/anton/C/lab",
+		"/home/anton/C/lab/OS",
+		"/home/anton/C/lab/OS/lab_05"
 	],
 	"file_history":
 	[
@@ -737,8 +748,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "lab/OS/lab_05/libs.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								476,
+								476
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/C/lab/lab_dev/fifoserver.c
+stdio.h
+-
+stdlib.h
+-
+sys/stat.h
+-
+unistd.h
+-
+linux/stat.h
+-
+

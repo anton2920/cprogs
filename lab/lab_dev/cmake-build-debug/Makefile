@@ -177,6 +177,60 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
 .PHONY : main.c.s
 
+process/process.o: process/process.c.o
+
+.PHONY : process/process.o
+
+# target to build an object file
+process/process.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/process/process.c.o
+.PHONY : process/process.c.o
+
+process/process.i: process/process.c.i
+
+.PHONY : process/process.i
+
+# target to preprocess a source file
+process/process.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/process/process.c.i
+.PHONY : process/process.c.i
+
+process/process.s: process/process.c.s
+
+.PHONY : process/process.s
+
+# target to generate assembly for a file
+process/process.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/process/process.c.s
+.PHONY : process/process.c.s
+
+visual/visual.o: visual/visual.c.o
+
+.PHONY : visual/visual.o
+
+# target to build an object file
+visual/visual.c.o:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/visual/visual.c.o
+.PHONY : visual/visual.c.o
+
+visual/visual.i: visual/visual.c.i
+
+.PHONY : visual/visual.i
+
+# target to preprocess a source file
+visual/visual.c.i:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/visual/visual.c.i
+.PHONY : visual/visual.c.i
+
+visual/visual.s: visual/visual.c.s
+
+.PHONY : visual/visual.s
+
+# target to generate assembly for a file
+visual/visual.c.s:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/visual/visual.c.s
+.PHONY : visual/visual.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +246,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... process/process.o"
+	@echo "... process/process.i"
+	@echo "... process/process.s"
+	@echo "... visual/visual.o"
+	@echo "... visual/visual.i"
+	@echo "... visual/visual.s"
 .PHONY : help
 
 

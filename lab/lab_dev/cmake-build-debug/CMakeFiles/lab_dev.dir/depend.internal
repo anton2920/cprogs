@@ -4,6 +4,17 @@
 CMakeFiles/lab_dev.dir/libs/libs.c.o
  /home/anton/C/lab/lab_dev/libs/libs.c
  /home/anton/C/lab/lab_dev/libs/libs.h
+ /home/anton/C/lab/lab_dev/process/process.h
+ /home/anton/C/lab/lab_dev/visual/visual.h
 CMakeFiles/lab_dev.dir/main.c.o
  /home/anton/C/lab/lab_dev/libs/libs.h
  /home/anton/C/lab/lab_dev/main.c
+ /home/anton/C/lab/lab_dev/process/process.h
+CMakeFiles/lab_dev.dir/process/process.c.o
+ /home/anton/C/lab/lab_dev/process/process.c
+ /home/anton/C/lab/lab_dev/process/process.h
+CMakeFiles/lab_dev.dir/visual/visual.c.o
+ /home/anton/C/lab/lab_dev/libs/libs.h
+ /home/anton/C/lab/lab_dev/process/process.h
+ /home/anton/C/lab/lab_dev/visual/visual.c
+ /home/anton/C/lab/lab_dev/visual/visual.h

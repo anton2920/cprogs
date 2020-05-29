@@ -3,7 +3,18 @@
 
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.c
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.h
+CMakeFiles/lab_dev.dir/libs/libs.c.o: ../process/process.h
+CMakeFiles/lab_dev.dir/libs/libs.c.o: ../visual/visual.h
 
 CMakeFiles/lab_dev.dir/main.c.o: ../libs/libs.h
 CMakeFiles/lab_dev.dir/main.c.o: ../main.c
+CMakeFiles/lab_dev.dir/main.c.o: ../process/process.h
+
+CMakeFiles/lab_dev.dir/process/process.c.o: ../process/process.c
+CMakeFiles/lab_dev.dir/process/process.c.o: ../process/process.h
+
+CMakeFiles/lab_dev.dir/visual/visual.c.o: ../libs/libs.h
+CMakeFiles/lab_dev.dir/visual/visual.c.o: ../process/process.h
+CMakeFiles/lab_dev.dir/visual/visual.c.o: ../visual/visual.c
+CMakeFiles/lab_dev.dir/visual/visual.c.o: ../visual/visual.h
 

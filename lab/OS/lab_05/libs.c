@@ -238,10 +238,10 @@ void round_robin() {
         if (tmp.duration) {
             STL_Queue_push(&process_q, &tmp, sizeof(process));
         } else {
-            average.total_time = tmp.total_time;
-            average.awaiting = tmp.awaiting;
-            average.reactivity = tmp.reactivity;
-            average.fine_relation = tmp.fine_relation;
+            average.total_time += tmp.total_time;
+            average.awaiting += tmp.awaiting;
+            average.reactivity += tmp.reactivity;
+            average.fine_relation += tmp.fine_relation;
         }
 
         if (STL_Queue_size(&process_q)) {

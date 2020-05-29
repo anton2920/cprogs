@@ -1,20 +1,20 @@
 #ifndef LAB_DEV_LIBS_H
 #define LAB_DEV_LIBS_H
 
-/* New data types */
-enum thread_consts {
-    RUN_SIZE = 50,
-    MAX_SIZE = 17
-};
+/* Header inclusion */
+#include <STL/STL_Queue.h>
+#include "../process/process.h"
 
-struct thread_status {
-    int *buffer; /* General storage */
-    int *prod_percentage;
-    int *cons_percentage;
-    int *overall_percentage;
+/* New data types */
+enum QUEUE_CONSTS {
+    NUM_OF_QS = 4,
+    QUEUE_QUANT = 2
 };
 
 /* Functions' declarations */
-void *draw_system(void *);
+void prt_ln(void);
+
+void multiple_queues(void);
+void round_robin(STL_Queue *process_q, process *average);
 
 #endif

@@ -6,23 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/libs/libs.c
+/home/anton/C/lab/lab_dev/libs/libs.h
+STL/STL_Queue.h
+-
+../process/process.h
+/home/anton/C/lab/lab_dev/process/process.h
+
+/home/anton/C/lab/lab_dev/process/process.h
+time.h
+-
+
+/home/anton/C/lab/lab_dev/visual/visual.c
 stdio.h
+-
+STL/STL_List.h
+-
+STL/STL_Algorithm.h
 -
 stdlib.h
 -
-string.h
--
-pthread.h
--
-libs.h
+visual.h
+/home/anton/C/lab/lab_dev/visual/visual.h
+../process/process.h
+/home/anton/C/lab/lab_dev/process/process.h
+../libs/libs.h
 /home/anton/C/lab/lab_dev/libs/libs.h
 
-/home/anton/C/lab/lab_dev/libs/libs.h
-
-/home/anton/C/lab/lab_dev/main.c
-pthread.h
+/home/anton/C/lab/lab_dev/visual/visual.h
+STL/STL_Vector.h
 -
-libs/libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
+STL/STL_Queue.h
+-
 
