@@ -18,91 +18,11 @@
 
 #define sizeof_buffer (4096)
 
-static pthread_mutex_t read_m, write_m;
-static pthread_cond_t read_cs, write_cs, comp_cs;
-
 static char read_buffer[sizeof_buffer];
 static char write_buffer[sizeof_buffer];
 
-static int read_is_ready = 1;
-static int write_is_ready = 0;
-static size_t nbytes = 0;
-
 void handle_connections(int);
-void init_pthread(void);
-void prepare_answer(char *, char *);
-
-void *get_messages(void *arg) {
-
-    /* Initializing variables */
-    auto int sockfd = *((int *) arg);
-
-    /* Main part */
-    for ( ;; ) {
-        pthread_mutex_lock(&read_m);
-            if (!read_is_ready) {
-                pthread_cond_wait(&read_cs, &read_m);
-            }
-            if ((nbytes = read(sockfd, read_buffer, sizeof_buffer)) < 0) {
-                handle_error("read");
-            }
-            read_is_ready = 0;
-            pthread_cond_signal(&comp_cs);
-        pthread_mutex_unlock(&read_m);
-    }
-
-    /* Exitting */
-    pthread_exit(0);
-}
-
-void *compose_messages(void *arg) {
-
-    /* Main part */
-    for ( ;; ) {
-        pthread_mutex_lock(&read_m);
-        pthread_mutex_lock(&write_m);
-
-        if (read_is_ready) {
-            pthread_cond_wait(&comp_cs, &read_m);
-        }
-
-        prepare_answer(read_buffer, write_buffer);
-
-        read_is_ready = 1;
-        pthread_mutex_unlock(&read_m);
-        pthread_cond_signal(&read_cs);
-
-        write_is_ready = 1;
-        pthread_mutex_unlock(&write_m);
-        pthread_cond_signal(&write_cs);
-    }
-
-    /* Exitting */
-    pthread_exit(0);
-}
-
-void *send_messages(void *arg) {
-
-    /* Initializing variables */
-    auto int sockfd = *((int *) arg);
-    auto size_t n;
-
-    /* Main part */
-    for ( ;; ) {
-        pthread_mutex_lock(&write_m);
-            if (!write_is_ready) {
-                pthread_cond_wait(&write_cs, &write_m);
-            }
-            if (write(sockfd, write_buffer, nbytes) < 0) {
-                handle_error("write");
-            }
-            write_is_ready = 0;
-        pthread_mutex_unlock(&write_m);
-    }
-
-    /* Exitting */
-    pthread_exit(0);
-}
+int prepare_answer(char *rd, size_t nbytes, char *wr);
 
 int main(int argc, char *argv[]) {
 
@@ -136,8 +56,6 @@ int main(int argc, char *argv[]) {
     listen(sockfd, 5);
     clilen = sizeof(cli_addr);
 
-    init_pthread();
-
     for ( ;; ) {
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
         if (newsockfd < 0) {
@@ -159,17 +77,6 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-void init_pthread(void) {
-
-    /* Main part */
-    pthread_mutex_init(&read_m, NULL);
-    pthread_mutex_init(&write_m, NULL);
-
-    pthread_cond_init(&read_cs, NULL);
-    pthread_cond_init(&write_cs, NULL);
-    pthread_cond_init(&comp_cs, NULL);
-}
-
 void handle_connections(int socket) {
 
     /* Initialzing variables */
@@ -177,19 +84,34 @@ void handle_connections(int socket) {
     auto pthread_t get, send, compose;
 
     /* Main part */
-    pthread_create(&get, NULL, get_messages, &socket);
-    pthread_create(&compose, NULL, compose_messages, NULL);
-    pthread_create(&send, NULL, send_messages, &socket);
+    for ( ;; ) {
+        if ((n = read(socket, read_buffer, sizeof_buffer)) < 0) {
+            handle_error("read");
+        }
 
-    pthread_join(get, 0);
-    pthread_join(compose, 0);
-    pthread_join(send, 0);
+        n = prepare_answer(read_buffer, n, write_buffer);
+
+        if (!memcmp(write_buffer, "disconnect\n", sizeof("disconnect\n"))) {
+            if ((n = write(socket, "Bye!\n", sizeof("Bye!\n"))) < 0) {
+                handle_error("write");
+            }
+            break;
+        }
+
+        if ((n = write(socket, write_buffer, n)) < 0) {
+            handle_error("write");
+        }
+    }
 }
 
-void prepare_answer(char *rd, char *wr) {
+int prepare_answer(char *rd, size_t nbytes, char *wr) {
 
     /* Initializing variables */
+    auto size_t msg_size = nbytes;
 
     /* Main part */
     memcpy(wr, rd, nbytes);
+
+    /* Returning value */
+    return msg_size;
 }
