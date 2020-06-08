@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/lab_dev.dir/main.c.o CMakeFiles/lab_dev.dir/libs/libs.c.o CMakeFiles/lab_dev.dir/visual/visual.c.o CMakeFiles/lab_dev.dir/process/process.c.o  -o lab_dev  -lSTL_Queue -lSTL_Algorithm -lSTL_List -lSTL_Vector 
+/usr/bin/cc -g   CMakeFiles/lab_dev.dir/main.c.o CMakeFiles/lab_dev.dir/libs/libs.c.o  -o lab_dev  -lpthread 

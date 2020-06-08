@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/anton/C/lab/lab_dev/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +123,59 @@ lab_dev/fast:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
 .PHONY : lab_dev/fast
 
+#=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+#=============================================================================
+# Target rules for targets named libs
+
+# Build rule for target.
+libs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libs
+.PHONY : libs
+
+# fast build rule for target.
+libs/fast:
+	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/build
+.PHONY : libs/fast
+
+client.o: client.c.o
+
+.PHONY : client.o
+
+# target to build an object file
+client.c.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.c.o
+.PHONY : client.c.o
+
+client.i: client.c.i
+
+.PHONY : client.i
+
+# target to preprocess a source file
+client.c.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.c.i
+.PHONY : client.c.i
+
+client.s: client.c.s
+
+.PHONY : client.s
+
+# target to generate assembly for a file
+client.c.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.c.s
+.PHONY : client.c.s
+
 libs/libs.o: libs/libs.c.o
 
 .PHONY : libs/libs.o
@@ -130,6 +183,7 @@ libs/libs.o: libs/libs.c.o
 # target to build an object file
 libs/libs.c.o:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.o
+	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/libs/libs.c.o
 .PHONY : libs/libs.c.o
 
 libs/libs.i: libs/libs.c.i
@@ -139,6 +193,7 @@ libs/libs.i: libs/libs.c.i
 # target to preprocess a source file
 libs/libs.c.i:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.i
+	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/libs/libs.c.i
 .PHONY : libs/libs.c.i
 
 libs/libs.s: libs/libs.c.s
@@ -148,6 +203,7 @@ libs/libs.s: libs/libs.c.s
 # target to generate assembly for a file
 libs/libs.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
+	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/libs/libs.c.s
 .PHONY : libs/libs.c.s
 
 main.o: main.c.o
@@ -177,81 +233,26 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
 .PHONY : main.c.s
 
-process/process.o: process/process.c.o
-
-.PHONY : process/process.o
-
-# target to build an object file
-process/process.c.o:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/process/process.c.o
-.PHONY : process/process.c.o
-
-process/process.i: process/process.c.i
-
-.PHONY : process/process.i
-
-# target to preprocess a source file
-process/process.c.i:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/process/process.c.i
-.PHONY : process/process.c.i
-
-process/process.s: process/process.c.s
-
-.PHONY : process/process.s
-
-# target to generate assembly for a file
-process/process.c.s:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/process/process.c.s
-.PHONY : process/process.c.s
-
-visual/visual.o: visual/visual.c.o
-
-.PHONY : visual/visual.o
-
-# target to build an object file
-visual/visual.c.o:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/visual/visual.c.o
-.PHONY : visual/visual.c.o
-
-visual/visual.i: visual/visual.c.i
-
-.PHONY : visual/visual.i
-
-# target to preprocess a source file
-visual/visual.c.i:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/visual/visual.c.i
-.PHONY : visual/visual.c.i
-
-visual/visual.s: visual/visual.c.s
-
-.PHONY : visual/visual.s
-
-# target to generate assembly for a file
-visual/visual.c.s:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/visual/visual.c.s
-.PHONY : visual/visual.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
+	@echo "... client"
+	@echo "... edit_cache"
+	@echo "... libs"
+	@echo "... client.o"
+	@echo "... client.i"
+	@echo "... client.s"
 	@echo "... libs/libs.o"
 	@echo "... libs/libs.i"
 	@echo "... libs/libs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... process/process.o"
-	@echo "... process/process.i"
-	@echo "... process/process.s"
-	@echo "... visual/visual.o"
-	@echo "... visual/visual.i"
-	@echo "... visual/visual.s"
 .PHONY : help
 
 
