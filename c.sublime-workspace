@@ -411,6 +411,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "lab/lab_NET/lab_11/Makefile",
+			"settings":
+			{
+				"buffer_size": 165,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_NET/lab_11/main.c",
+			"settings":
+			{
+				"buffer_size": 7361,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -548,10 +566,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/anton/C"
+		"/home/anton/C",
+		"/home/anton/C/lab",
+		"/home/anton/C/lab/lab_dev",
+		"/home/anton/C/lab/lab_NET",
+		"/home/anton/C/lab/lab_NET/lab_11"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_NET/lab_11",
 		"/home/anton/C/lab/OS/RGR/Makefile",
 		"/home/anton/C/lab/OS/lab_05/libs.c",
 		"/home/anton/C/lab/OS/lab_06/main.c",
@@ -678,8 +701,7 @@
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Header.h",
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Source1.cpp",
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Source.cpp",
-		"/home/anton/C/experiments/pow/pow.c",
-		"/home/anton/C/experiments/pow/lpow.s"
+		"/home/anton/C/experiments/pow/pow.c"
 	],
 	"find":
 	{
@@ -737,8 +759,69 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "lab/lab_NET/lab_11/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								165,
+								165
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab/lab_NET/lab_11/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7361,
+								7361
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5933.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

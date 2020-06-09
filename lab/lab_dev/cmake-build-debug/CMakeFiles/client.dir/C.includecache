@@ -6,31 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/main.c
+/home/anton/C/lab/lab_dev/client.c
 stdio.h
 -
 stdlib.h
 -
-string.h
--
-ctype.h
--
-errno.h
--
-time.h
--
-signal.h
+pthread.h
 -
 sys/socket.h
 -
 netinet/in.h
 -
-sys/mman.h
+netdb.h
 -
 zconf.h
 -
-sys/fcntl.h
--
-sys/stat.h
+string.h
 -
 

@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/libs.dir/libs/libs.c.o  -o libs 
