@@ -21,6 +21,8 @@ netdb.h
 -
 poll.h
 -
+arpa/inet.h
+-
 zconf.h
 -
 string.h

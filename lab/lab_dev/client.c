@@ -6,6 +6,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <poll.h>
+#include <arpa/inet.h>
 
 #include <zconf.h>
 
@@ -25,7 +26,7 @@ static char *usage_string = "usage: %s hostname:[port] [port]\n";
 
 int log_in(char *domain, int socket);
 void read_and_write_possible_answer(int socket);
-void active_mode(int *ns, int port);
+void active_mode(int *s, unsigned short port);
 
 struct data {
     int socket;
@@ -38,6 +39,7 @@ void *get_messages(void *arg) {
     auto char buffer[sizeof_buffer] = {};
     auto int sockfd = *((int *) arg);
     auto size_t n;
+    auto char *prompt = "\rtftp$> ";
 
     /* Main part */
     for ( ;; ) {
@@ -49,11 +51,14 @@ void *get_messages(void *arg) {
 
         putc('\r', stdout);
         fputs(buffer, stdout);
-        fflush(stdout);
 
         if (!strcmp(buffer, "221 Goodbye.\r\n")) {
             break;
         }
+
+        fputs(prompt, stdout);
+        fflush(stdout);
+
     }
 
     /* Exitting */
@@ -67,13 +72,27 @@ void *send_messages(void *arg) {
 
     auto struct data *d = (struct data *) arg;
     auto int sockfd = d->socket;
-    d->ip = 0x1f849c07; /* 31.132.156.7 */
+    auto struct hostent *me;
+    /* d->ip = 0x1f849c07; 31.132.156.7 */
 
     auto char *prompt = "\rtftp$> ";
 
-    auto int port, ns;
+    auto int ns, s;
+    auto unsigned short port;
+    auto unsigned int clilen;
+    auto struct sockaddr_in cli_addr;
 
     /* Main part */
+    if (gethostname(buffer, sizeof_buffer) < 0) {
+        handle_error("gethostname");
+    }
+
+    if ((me = gethostbyname(buffer)) == NULL) {
+        handle_error("gethostbyname");
+    }
+
+    d->ip = ntohl(*((int *) me->h_addr));
+
     for ( ;; ) {
         fputs(prompt, stdout);
         fflush(stdout);
@@ -84,23 +103,40 @@ void *send_messages(void *arg) {
             break;
         }
 
-        if (!strcmp(buffer, "ls\n") || !strcmp(buffer, "dir\n")) {
+        if (!strcmp(buffer, "ls\n") || !strcmp(buffer, "dir\n")) {\
             port = (rand() % (1 << 16) - 1025 + 1) + 1025;
+            if (port <= 1024) {
+                port = 1800;
+            }
             sprintf(buffer, "PORT %u,%u,%u,%u,%d,%d\n", d->ip >> 24 & 0xFF,
                     d->ip >> 16 & 0x00FF, d->ip >> 8 & 0x0000FF,
                     d->ip & 0x000000FF, port / (1 << 8), port % (1 << 8));
-            write(sockfd, buffer, strlen(buffer));
-            active_mode(&ns, port);
-            fputs("200 PORT command successful\n", stdout);
-            write(sockfd, "TYPE A\n", sizeof("TYPE A\n"));
-            write(sockfd, "LIST\n", sizeof("LIST\n"));
-            read_and_write_possible_answer(ns);
-            fputs("226 Transfer complete", stdout);
-            close(ns);
-        }
+            if (write(sockfd, buffer, strlen(buffer)) < 0) {
+                handle_error("write");
+            }
+            if (write(sockfd, "TYPE A\n", strlen("TYPE A\n")) < 0) {
+                handle_error("write");
+            }
 
-        if (write(sockfd, buffer, strlen(buffer)) < 0) {
-            handle_error("write");
+            active_mode(&s, port);
+
+            if (write(sockfd, "LIST ./\n", strlen("LIST ./\n")) < 0) {
+                handle_error("write");
+            }
+
+            clilen = sizeof(cli_addr);
+            if ((ns = accept(s, (struct sockaddr *) &cli_addr, &clilen)) < 0) {
+                handle_error("accept");
+            }
+
+            close(s);
+
+            read_and_write_possible_answer(ns);
+            close(ns);
+        } else {
+            if (write(sockfd, buffer, strlen(buffer)) < 0) {
+                handle_error("write");
+            }
         }
     }
 
@@ -116,7 +152,7 @@ int main(int argc, char *argv[]) {
     auto struct sockaddr_in serv_addr = {};
     auto struct hostent *server;
 
-    auto char ip_string[0x14], *colon, *err_ptr = NULL, hostname[sizeof_buffer];
+    auto char ip_string[0x14], *colon, *err_ptr = NULL;
 
     /* VarCheck */
     if (argc < 2) {
@@ -180,8 +216,8 @@ int main(int argc, char *argv[]) {
     }
 
     /* Let's go with threads */
-    auto pthread_t recv_t, send_t;
     auto struct data d = {sockfd, human_readable_ip};
+    auto pthread_t recv_t, send_t;
 
     if (pthread_create(&recv_t, NULL, get_messages, &sockfd)) {
         handle_error("pthread");
@@ -192,8 +228,7 @@ int main(int argc, char *argv[]) {
 
     pthread_join(recv_t, 0);
     pthread_join(send_t, 0);
-
-    /*send_messages(&sockfd);*/
+    /*send_messages(&d);*/
 
     /* Returning value */
     return 0;
@@ -216,6 +251,8 @@ void read_and_write_possible_answer(int socket) {
             n = read(socket, read_buffer + total, sizeof_buffer);
             if (n < 0) {
                 handle_error("read");
+            } else if (n == 0) {
+                break;
             }
             total += n;
         } else {
@@ -223,11 +260,11 @@ void read_and_write_possible_answer(int socket) {
         }
     }
 
-    *(read_buffer + total) = '\0';
+    *(read_buffer + total - 1) = '\0';
 
-    if (write(1, read_buffer, total) < 0) {
-        handle_error("write");
-    }
+    putc('\r', stdout);
+    puts(read_buffer);
+    fflush(stdout);
 }
 
 int log_in(char *domain, int socket) {
@@ -273,16 +310,14 @@ int log_in(char *domain, int socket) {
     return EXIT_SUCCESS;
 }
 
-void active_mode(int *ns, int port) {
+void active_mode(int *s, unsigned short port) {
 
     /* Initializing variables */
-    auto int s;
-    auto unsigned int clilen;
-    auto struct sockaddr_in serv_addr = {}, cli_addr;
+    auto struct sockaddr_in serv_addr = {};
 
     /* Main part */
-    s = socket(AF_INET, SOCK_STREAM, 0);
-    if (s < 0) {
+    *s = socket(AF_INET, SOCK_STREAM, 0);
+    if (*s < 0) {
         handle_error("socket");
     }
 
@@ -290,16 +325,11 @@ void active_mode(int *ns, int port) {
     serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(port);
 
-    if (bind(s, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    if (bind(*s, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
         handle_error("bind");
     }
 
-    listen(s, 1);
-    clilen = sizeof(cli_addr);
-
-    if ((*ns = accept(s, (struct sockaddr *) &cli_addr, &clilen)) < 0) {
-        handle_error("accept");
+    if (listen(*s, 5) < 0) {
+        handle_error("listen");
     }
-
-    close(s);
 }
