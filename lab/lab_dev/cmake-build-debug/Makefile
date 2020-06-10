@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab_dev
-
-# Build rule for target.
-lab_dev: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_dev
-.PHONY : lab_dev
-
-# fast build rule for target.
-lab_dev/fast:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
-.PHONY : lab_dev/fast
-
-#=============================================================================
 # Target rules for targets named client
 
 # Build rule for target.
@@ -137,17 +124,30 @@ client/fast:
 .PHONY : client/fast
 
 #=============================================================================
-# Target rules for targets named libs
+# Target rules for targets named lab_dev
 
 # Build rule for target.
-libs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libs
-.PHONY : libs
+lab_dev: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_dev
+.PHONY : lab_dev
 
 # fast build rule for target.
-libs/fast:
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/build
-.PHONY : libs/fast
+lab_dev/fast:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
+.PHONY : lab_dev/fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 client.o: client.c.o
 
@@ -183,7 +183,6 @@ libs/libs.o: libs/libs.c.o
 # target to build an object file
 libs/libs.c.o:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.o
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/libs/libs.c.o
 .PHONY : libs/libs.c.o
 
 libs/libs.i: libs/libs.c.i
@@ -193,7 +192,6 @@ libs/libs.i: libs/libs.c.i
 # target to preprocess a source file
 libs/libs.c.i:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.i
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/libs/libs.c.i
 .PHONY : libs/libs.c.i
 
 libs/libs.s: libs/libs.c.s
@@ -203,7 +201,6 @@ libs/libs.s: libs/libs.c.s
 # target to generate assembly for a file
 libs/libs.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/libs/libs.c.s
 .PHONY : libs/libs.c.s
 
 main.o: main.c.o
@@ -233,6 +230,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
 .PHONY : main.c.s
 
+test.o: test.c.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.c.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.o
+.PHONY : test.c.o
+
+test.i: test.c.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.c.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.i
+.PHONY : test.c.i
+
+test.s: test.c.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.c.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.s
+.PHONY : test.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,10 +264,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... lab_dev"
 	@echo "... client"
 	@echo "... edit_cache"
-	@echo "... libs"
+	@echo "... lab_dev"
+	@echo "... test"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
@@ -253,6 +277,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

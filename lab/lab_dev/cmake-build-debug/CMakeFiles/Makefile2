@@ -53,9 +53,9 @@ CMAKE_BINARY_DIR = /home/anton/C/lab/lab_dev/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/lab_dev.dir/all
 all: CMakeFiles/client.dir/all
-all: CMakeFiles/libs.dir/all
+all: CMakeFiles/lab_dev.dir/all
+all: CMakeFiles/test.dir/all
 
 .PHONY : all
 
@@ -65,38 +65,11 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/lab_dev.dir/clean
 clean: CMakeFiles/client.dir/clean
-clean: CMakeFiles/libs.dir/clean
+clean: CMakeFiles/lab_dev.dir/clean
+clean: CMakeFiles/test.dir/clean
 
 .PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/lab_dev.dir
-
-# All Build rule for target.
-CMakeFiles/lab_dev.dir/all:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/depend
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=3,4,5 "Built target lab_dev"
-.PHONY : CMakeFiles/lab_dev.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/lab_dev.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lab_dev.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/lab_dev.dir/rule
-
-# Convenience name for target.
-lab_dev: CMakeFiles/lab_dev.dir/rule
-
-.PHONY : lab_dev
-
-# clean rule for target.
-CMakeFiles/lab_dev.dir/clean:
-	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/clean
-.PHONY : CMakeFiles/lab_dev.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/client.dir
@@ -126,31 +99,58 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/libs.dir
+# Target rules for target CMakeFiles/lab_dev.dir
 
 # All Build rule for target.
-CMakeFiles/libs.dir/all:
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/depend
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target libs"
-.PHONY : CMakeFiles/libs.dir/all
+CMakeFiles/lab_dev.dir/all:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/depend
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=3,4,5 "Built target lab_dev"
+.PHONY : CMakeFiles/lab_dev.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/libs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libs.dir/all
+CMakeFiles/lab_dev.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lab_dev.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/libs.dir/rule
+.PHONY : CMakeFiles/lab_dev.dir/rule
 
 # Convenience name for target.
-libs: CMakeFiles/libs.dir/rule
+lab_dev: CMakeFiles/lab_dev.dir/rule
 
-.PHONY : libs
+.PHONY : lab_dev
 
 # clean rule for target.
-CMakeFiles/libs.dir/clean:
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/clean
-.PHONY : CMakeFiles/libs.dir/clean
+CMakeFiles/lab_dev.dir/clean:
+	$(MAKE) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/clean
+.PHONY : CMakeFiles/lab_dev.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test.dir
+
+# All Build rule for target.
+CMakeFiles/test.dir/all:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target test"
+.PHONY : CMakeFiles/test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: CMakeFiles/test.dir/rule
+
+.PHONY : test
+
+# clean rule for target.
+CMakeFiles/test.dir/clean:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
+.PHONY : CMakeFiles/test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

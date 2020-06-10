@@ -19,6 +19,8 @@ netinet/in.h
 -
 netdb.h
 -
+poll.h
+-
 zconf.h
 -
 string.h
