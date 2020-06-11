@@ -8,7 +8,6 @@ set(LIBS libs/libs.c libs/libs.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS} ${VISUAL} ${PROCESS})
 add_executable(client client.c)
-add_executable(test test.c)
 
 target_link_libraries(lab_dev pthread)
 target_link_libraries(client pthread)

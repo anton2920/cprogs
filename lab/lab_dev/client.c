@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 #include <pthread.h>
+#include <errno.h>
 
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
 #include <poll.h>
-#include <arpa/inet.h>
 
 #include <zconf.h>
-
-#include <string.h>
+#include <fcntl.h>
+#include <signal.h>
 
 #define handle_error(msg)   \
     do {                    \
@@ -23,10 +25,29 @@
 #define DEFAULT_FTP_PORT (21)
 
 static char *usage_string = "usage: %s hostname:[port] [port]\n";
+static char *help_string = "Commands are: \n"
+                           "Directories:\tcd\tdir\tlcd\tls\tlpwd\tpwd\n"
+                           "Files:\t\t\tget\n"
+                           "Help:\t\t\t?\thelp\n"
+                           "Others:\t\t\traw\tuser\n";
+
+enum modes {
+    ascii,
+    binary
+};
 
 int log_in(char *domain, int socket);
-void read_and_write_possible_answer(int socket);
-void active_mode(int *s, unsigned short port);
+void read_and_write_possible_answer(int sin, int sout);
+void active_mode(int *s, int sockfd, uint32_t ip, enum modes mode);
+char *get_filename_ext(const char *filename);
+enum modes get_mode_by_ext(const char *fn);
+
+void send_command(int sockfd, uint32_t ip, char *cmd, enum modes mode, int sout);
+void get_file(int sockfd, uint32_t ip, char *fn);
+void list_dirs(int sockfd, uint32_t ip, char *arg, int sout);
+
+static char read_buffer[sizeof_buffer];
+static int stash = 0;
 
 struct data {
     int socket;
@@ -49,98 +70,158 @@ void *get_messages(void *arg) {
 
         *(buffer + n) = '\0';
 
-        putc('\r', stdout);
-        fputs(buffer, stdout);
+        if (!stash) {
+            putc('\r', stdout);
+            fputs(buffer, stdout);
+        }
 
         if (!strcmp(buffer, "221 Goodbye.\r\n")) {
             break;
         }
 
-        fputs(prompt, stdout);
-        fflush(stdout);
-
+        if (!stash) {
+            fputs(prompt, stdout);
+            fflush(stdout);
+        }
     }
 
     /* Exitting */
     pthread_exit(0);
 }
 
+struct command {
+    char cmd[0xA];
+    char arg[sizeof_buffer];
+};
+
 void *send_messages(void *arg) {
 
     /* Initializing variables */
     auto char buffer[sizeof_buffer] = {};
+    auto char path[sizeof_buffer] = {};
+    auto char dir_name[sizeof_buffer] = {};
+    auto struct command cmd;
 
     auto struct data *d = (struct data *) arg;
     auto int sockfd = d->socket;
-    auto struct hostent *me;
-    /* d->ip = 0x1f849c07; 31.132.156.7 */
 
     auto char *prompt = "\rtftp$> ";
 
-    auto int ns, s;
-    auto unsigned short port;
-    auto unsigned int clilen;
     auto struct sockaddr_in cli_addr;
+    auto unsigned int clilen = sizeof(cli_addr);
 
     /* Main part */
-    if (gethostname(buffer, sizeof_buffer) < 0) {
-        handle_error("gethostname");
-    }
+    signal(SIGCONT, exit);
+    if (!d->ip) {
+        if (getsockname(sockfd, (struct sockaddr *) &cli_addr, &clilen) < 0) {
+            handle_error("getsockname");
+        }
 
-    if ((me = gethostbyname(buffer)) == NULL) {
-        handle_error("gethostbyname");
+        d->ip = ntohl(cli_addr.sin_addr.s_addr);
     }
-
-    d->ip = ntohl(*((int *) me->h_addr));
 
     for ( ;; ) {
+        stash = 0;
         fputs(prompt, stdout);
         fflush(stdout);
         fgets(buffer, sizeof_buffer, stdin);
 
-        if (!strcmp(buffer, "bye\n") || !strcmp(buffer, "quit\n")) {
+        memset(&cmd, 0, sizeof(cmd));
+        sscanf(buffer, "%s %[^\n]", cmd.cmd, cmd.arg);
+
+        if (!strcmp(cmd.cmd, "bye") || !strcmp(cmd.cmd, "quit") || *cmd.cmd == EOF) {
             write(sockfd, "quit\n", sizeof("quit\n"));
             break;
         }
 
-        if (!strcmp(buffer, "ls\n") || !strcmp(buffer, "dir\n")) {\
-            port = (rand() % (1 << 16) - 1025 + 1) + 1025;
-            if (port <= 1024) {
-                port = 1800;
-            }
-            sprintf(buffer, "PORT %u,%u,%u,%u,%d,%d\n", d->ip >> 24 & 0xFF,
-                    d->ip >> 16 & 0x00FF, d->ip >> 8 & 0x0000FF,
-                    d->ip & 0x000000FF, port / (1 << 8), port % (1 << 8));
+        if (!strcmp(cmd.cmd, "ls") || !strcmp(cmd.cmd, "dir")) {\
+            list_dirs(sockfd, d->ip, cmd.arg, 1);
+        } else if (!strcmp(cmd.cmd, "?") || !strcmp(cmd.cmd, "help")) {
+            fputs(help_string, stdout);
+        } else if (!strcmp(cmd.cmd, "raw")) {
+            sprintf(buffer, "%s\r\n", cmd.arg);
             if (write(sockfd, buffer, strlen(buffer)) < 0) {
                 handle_error("write");
             }
-            if (write(sockfd, "TYPE A\n", strlen("TYPE A\n")) < 0) {
+        } else if (!strcmp(cmd.cmd, "cd")) {
+            sprintf(buffer, "CWD %s\r\n", cmd.arg);
+            if (write(sockfd, buffer, strlen(buffer)) < 0) {
+                handle_error("write");
+            }
+        } else if (!strcmp(cmd.cmd, "lcd")) {
+            if (chdir(cmd.arg) < 0) {
+                sprintf(buffer, "Failed: %s", strerror(errno));
+            } else {
+                sprintf(buffer, "Successfully changed to %s\r\n", getcwd(path, sizeof(path)));
+            }
+            fputs(buffer, stdout);
+        } else if (!strcmp(cmd.cmd, "pwd")) {
+            if (write(sockfd, "PWD\r\n", strlen("PWD\r\n")) < 0) {
+                handle_error("write");
+            }
+        } else if (!strcmp(cmd.cmd, "lpwd")) {
+            sprintf(buffer, "%s\r\n", getcwd(path, sizeof(path)));
+            fputs(buffer, stdout);
+        } else if (!strcmp(cmd.cmd, "get")) {
+            if (!strncmp(cmd.arg, "-a", strlen("-a")) || !strncmp(cmd.arg, "--all", strlen("--all"))) {
+                auto char *line, *line_end;
+                register int i;
+
+                sscanf(cmd.arg, "%*s %s", dir_name);
+
+                stash = 1;
+                list_dirs(sockfd, d->ip, dir_name, -1);
+
+                for (line = read_buffer, i = 0; line != (char *) 0x1; line = line_end + 1, ++i) {
+                    line_end = strchr(line, '\n');
+                    if (*line == 'd' || *line == 'l') {
+                        continue;
+                    }
+
+                    sscanf(line, "%*s %*s %*s %*s %*s %*s %*s %*s %s", path);
+                    sprintf(buffer, "%s/%s", dir_name, path);
+                    get_file(sockfd, d->ip, buffer);
+                }
+                if (i) {
+                    sprintf(buffer, "%d file%s %s successfully downloaded\r\n",
+                            i, (i == 1) ? "" : "s", (i == 1) ? "was" : "were");
+                    fputs(buffer, stdout);
+                }
+            } else {
+                get_file(sockfd, d->ip, cmd.arg);
+            }
+        } else if (!strcmp(cmd.cmd, "user")) {
+            stash = 1;
+            fputs("(username) ", stdout);
+            fflush(stdout);
+            fgets(read_buffer, sizeof_buffer, stdin);
+
+            *(read_buffer + strlen(read_buffer) - 1) = '\0';
+
+            sprintf(buffer, "USER %s\r\n", read_buffer);
+            if (write(sockfd, buffer, strlen(buffer)) < 0) {
                 handle_error("write");
             }
 
-            active_mode(&s, port);
+            fputs("Password: ", stdout);
+            fflush(stdout);
+            fgets(read_buffer, sizeof_buffer, stdin);
 
-            if (write(sockfd, "LIST ./\n", strlen("LIST ./\n")) < 0) {
+            *(read_buffer + strlen(read_buffer) - 1) = '\0';
+
+            stash = 0;
+            sprintf(buffer, "PASS %s\r\n", read_buffer);
+            if (write(sockfd, buffer, strlen(buffer) < 0)) {
                 handle_error("write");
             }
-
-            clilen = sizeof(cli_addr);
-            if ((ns = accept(s, (struct sockaddr *) &cli_addr, &clilen)) < 0) {
-                handle_error("accept");
-            }
-
-            close(s);
-
-            read_and_write_possible_answer(ns);
-            close(ns);
+        } else if (!*cmd.cmd) {
+            continue;
         } else {
-            if (write(sockfd, buffer, strlen(buffer)) < 0) {
-                handle_error("write");
-            }
+            fputs("Command not found!\r\n", stdout);
         }
     }
 
-    /* Exitting */
+    /* Exiting */
     pthread_exit(0);
 }
 
@@ -216,7 +297,7 @@ int main(int argc, char *argv[]) {
     }
 
     /* Let's go with threads */
-    auto struct data d = {sockfd, human_readable_ip};
+    auto struct data d = {sockfd, 0x0};
     auto pthread_t recv_t, send_t;
 
     if (pthread_create(&recv_t, NULL, get_messages, &sockfd)) {
@@ -228,18 +309,16 @@ int main(int argc, char *argv[]) {
 
     pthread_join(recv_t, 0);
     pthread_join(send_t, 0);
-    /*send_messages(&d);*/
 
     /* Returning value */
     return 0;
 }
 
-void read_and_write_possible_answer(int socket) {
+void read_and_write_possible_answer(int sin, int sout) {
 
     /* Initializing variables */
-    auto ssize_t n = 0, total = 0;
-    auto struct pollfd pfd = {socket, POLLIN, 0};
-    auto char read_buffer[sizeof_buffer];
+    auto ssize_t n, total = 0;
+    auto struct pollfd pfd = {sin, POLLIN, 0};
 
     /* Main part */
     for ( ;; ) {
@@ -248,7 +327,7 @@ void read_and_write_possible_answer(int socket) {
         }
 
         if (pfd.revents == POLLIN) {
-            n = read(socket, read_buffer + total, sizeof_buffer);
+            n = read(sin, read_buffer + total, sizeof_buffer);
             if (n < 0) {
                 handle_error("read");
             } else if (n == 0) {
@@ -262,22 +341,29 @@ void read_and_write_possible_answer(int socket) {
 
     *(read_buffer + total - 1) = '\0';
 
-    putc('\r', stdout);
-    puts(read_buffer);
-    fflush(stdout);
+    if (total) {
+        if (sout == 1) {
+            putc('\r', stdout);
+            puts(read_buffer);
+            fflush(stdout);
+        } else if (sout > 0) {
+            if (write(sout, read_buffer, total) < 0) {
+                handle_error("write");
+            }
+        }
+    }
 }
 
 int log_in(char *domain, int socket) {
 
     /* Initializing variables */
     auto char write_buffer[sizeof_buffer];
-    auto char read_buffer[sizeof_buffer];
     auto char *user_env = strdup(getenv("USER"));
 
     /* Main part */
 
     /* First time read without threads */
-    read_and_write_possible_answer(socket);
+    read_and_write_possible_answer(socket, 1);
 
     /* Perform log in sequence (USER, PASS) */
     sprintf(write_buffer, "Name (%s:%s): ", domain, user_env);
@@ -288,7 +374,7 @@ int log_in(char *domain, int socket) {
     fgets(read_buffer, sizeof_buffer, stdin);
 
     if (*(read_buffer) == '\n') {
-        sprintf(write_buffer, "USER %s\n", user_env);
+        sprintf(write_buffer, "USER %s\r\n", user_env);
     } else {
         sprintf(write_buffer, "USER %s", read_buffer);
     }
@@ -296,7 +382,7 @@ int log_in(char *domain, int socket) {
     free(user_env);
 
     /* Read answer */
-    read_and_write_possible_answer(socket);
+    read_and_write_possible_answer(socket, 1);
 
     fputs("Password: ", stdout);
     fgets(read_buffer, sizeof_buffer, stdin);
@@ -304,18 +390,41 @@ int log_in(char *domain, int socket) {
     write(socket, write_buffer, strlen(write_buffer));
 
     /* Read answer */
-    read_and_write_possible_answer(socket);
+    read_and_write_possible_answer(socket, 1);
 
     /* Returning value */
     return EXIT_SUCCESS;
 }
 
-void active_mode(int *s, unsigned short port) {
+void active_mode(int *s, int sockfd, uint32_t ip, enum modes mode) {
 
     /* Initializing variables */
+    auto char buffer[sizeof_buffer] = {};
     auto struct sockaddr_in serv_addr = {};
+    auto unsigned short port;
 
     /* Main part */
+    port = (rand() % (1 << 16) - 1025 + 1) + 1025;
+    if (port <= 1024) {
+        port = 1800;
+    }
+    sprintf(buffer, "PORT %u,%u,%u,%u,%d,%d\r\n", ip >> 24 & 0xFF,
+            ip >> 16 & 0x00FF, ip >> 8 & 0x0000FF,
+            ip & 0x000000FF, port / (1 << 8), port % (1 << 8));
+    if (write(sockfd, buffer, strlen(buffer)) < 0) {
+        handle_error("write");
+    }
+
+    if (mode == ascii) {
+        if (write(sockfd, "TYPE A\r\n", strlen("TYPE A\r\n")) < 0) {
+            handle_error("write");
+        }
+    } else if (mode == binary) {
+        if (write(sockfd, "TYPE I\r\n", strlen("TYPE I\r\n")) < 0) {
+            handle_error("write");
+        }
+    }
+
     *s = socket(AF_INET, SOCK_STREAM, 0);
     if (*s < 0) {
         handle_error("socket");
@@ -329,7 +438,93 @@ void active_mode(int *s, unsigned short port) {
         handle_error("bind");
     }
 
-    if (listen(*s, 5) < 0) {
+    if (listen(*s, 1) < 0) {
         handle_error("listen");
     }
+}
+
+char *get_filename_ext(const char *filename) {
+
+    /* Initializing variables */
+    auto char *dot = strrchr(filename, '.');
+
+    /* Main part */
+    if (!dot || dot == filename) {
+        return "";
+    }
+
+    /* Returning value */
+    return dot + 1;
+}
+
+enum modes get_mode_by_ext(const char *fn) {
+
+    /* Initializing variables */
+    auto char *ext = get_filename_ext(fn);
+
+    /* Main part */
+    if (!strcmp(ext, "txt") || !strcmp(ext, "html")) {
+        return ascii;
+    } else {
+        return binary;
+    }
+}
+
+void send_command(int sockfd, uint32_t ip, char *cmd, enum modes mode, int sout) {
+
+    /* Initializing variables */
+    auto int s, ns;
+    auto char buffer[sizeof_buffer];
+
+    auto struct sockaddr_in cli_addr;
+    auto unsigned int clilen = sizeof(cli_addr);
+
+    /* Main part */
+    active_mode(&s, sockfd, ip, mode);
+
+    sprintf(buffer, "%s\r\n", cmd);
+    if (write(sockfd, buffer, strlen(buffer)) < 0) {
+        handle_error("write");
+    }
+
+    if ((ns = accept(s, (struct sockaddr *) &cli_addr, &clilen)) < 0) {
+        handle_error("accept");
+    }
+
+    close(s);
+    read_and_write_possible_answer(ns, sout);
+    close(ns);
+}
+
+void get_file(int sockfd, uint32_t ip, char *fn) {
+
+    /* Initializing varaibles */
+    auto int file;
+    auto char *file_name;
+    auto char buffer[sizeof_buffer];
+
+    /* Main part */
+    if ((file_name = strrchr(fn, '/')) == NULL) {
+        file_name = fn;
+    } else {
+        ++file_name;
+    }
+
+    if ((file = creat(file_name, 0644)) < 0) {
+        handle_error("creat");
+    }
+
+    sprintf(buffer, "RETR %s\r\n", fn);
+    send_command(sockfd, ip, buffer, get_mode_by_ext(fn), file);
+    close(file);
+}
+
+void list_dirs(int sockfd, uint32_t ip, char *arg, int sout) {
+
+    /* Initializing variables */
+    auto char buffer[sizeof_buffer];
+
+    /* Main part */
+    sprintf(buffer, "LIST %s", arg);
+    send_command(sockfd, ip, buffer, ascii, sout);
 }
