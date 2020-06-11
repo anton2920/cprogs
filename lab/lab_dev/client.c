@@ -209,9 +209,8 @@ void *send_messages(void *arg) {
 
             *(read_buffer + strlen(read_buffer) - 1) = '\0';
 
-            stash = 0;
             sprintf(buffer, "PASS %s\r\n", read_buffer);
-            if (write(sockfd, buffer, strlen(buffer) < 0)) {
+            if (write(sockfd, buffer, strlen(buffer)) < 0) {
                 handle_error("write");
             }
         } else if (!*cmd.cmd) {
