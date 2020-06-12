@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"di",
+				"dir_name\tabc"
+			],
+			[
 				"visu",
 				"visual.c\tabc"
 			],
@@ -396,10 +400,6 @@
 				"IntToStr"
 			],
 			[
-				"di",
-				"divisor"
-			],
-			[
 				"tru",
 				"true"
 			],
@@ -412,19 +412,19 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_NET/lab_11/Makefile",
+			"file": "lab/lab_NET/lab_12/Makefile",
 			"settings":
 			{
-				"buffer_size": 165,
+				"buffer_size": 189,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/lab_NET/lab_11/main.c",
+			"file": "lab/lab_NET/lab_12/client.c",
 			"settings":
 			{
-				"buffer_size": 7361,
+				"buffer_size": 14679,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -570,10 +570,13 @@
 		"/home/anton/C/lab",
 		"/home/anton/C/lab/lab_dev",
 		"/home/anton/C/lab/lab_NET",
-		"/home/anton/C/lab/lab_NET/lab_11"
+		"/home/anton/C/lab/lab_NET/lab_11",
+		"/home/anton/C/lab/lab_NET/lab_12"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_NET/lab_11/Makefile",
+		"/home/anton/C/lab/lab_NET/lab_11/main.c",
 		"/home/anton/C/lab/lab_NET/lab_11",
 		"/home/anton/C/lab/OS/RGR/Makefile",
 		"/home/anton/C/lab/OS/lab_05/libs.c",
@@ -699,9 +702,7 @@
 		"/home/anton/C/lab/lab_28/main.c",
 		"/home/anton/C/lab/lab_15/a1.h",
 		"/home/anton/C/experiments/Mishanya/malloc_v2/Header.h",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Source1.cpp",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Source.cpp",
-		"/home/anton/C/experiments/pow/pow.c"
+		"/home/anton/C/experiments/Mishanya/malloc_v2/Source1.cpp"
 	],
 	"find":
 	{
@@ -764,24 +765,23 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_NET/lab_11/Makefile",
+					"file": "lab/lab_NET/lab_12/Makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 165,
+						"buffer_size": 189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								165,
-								165
+								189,
+								189
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
 							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -793,30 +793,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "lab/lab_NET/lab_11/main.c",
+					"file": "lab/lab_NET/lab_12/client.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7361,
+						"buffer_size": 14679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7361,
-								7361
+								4916,
+								4916
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5933.0,
+						"translation.y": 3657.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

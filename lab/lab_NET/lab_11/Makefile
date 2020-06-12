@@ -5,7 +5,7 @@ LDFLAGS =
 
 # Main part
 all: main.c
-	$(CC) main.c -o server $(LDFLAGS)
+	$(CC) $(CFLAGS) main.c -o server $(LDFLAGS)
 
 clean:
 	rm -f *.o server
