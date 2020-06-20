@@ -412,19 +412,23 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_NET/lab_12/Makefile",
+			"contents": "",
+			"file": "lab/OS/lab_08/first.c",
+			"file_size": 2730,
+			"file_write_time": 132367105249445770,
 			"settings":
 			{
-				"buffer_size": 189,
+				"buffer_size": 0,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Unix",
+				"name": "#include <pthread.h>"
 			}
 		},
 		{
-			"file": "lab/lab_NET/lab_12/client.c",
+			"file": "lab/OS/lab_08/second.c",
 			"settings":
 			{
-				"buffer_size": 14679,
+				"buffer_size": 946,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -568,13 +572,17 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_dev",
-		"/home/anton/C/lab/lab_NET",
-		"/home/anton/C/lab/lab_NET/lab_11",
-		"/home/anton/C/lab/lab_NET/lab_12"
+		"/home/anton/C/lab/OS",
+		"/home/anton/C/lab/OS/lab_08",
+		"/home/anton/C/lab/OS/lab_09"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/OS/lab_09/fifoserver.c",
+		"/home/anton/C/lab/OS/lab_09/fifoclient.c",
+		"/home/anton/C/lab/OS/lab_08/draw.c",
+		"/home/anton/C/lab/lab_NET/lab_12/Makefile",
+		"/home/anton/C/lab/lab_NET/lab_12/client.c",
 		"/home/anton/C/lab/lab_NET/lab_11/Makefile",
 		"/home/anton/C/lab/lab_NET/lab_11/main.c",
 		"/home/anton/C/lab/lab_NET/lab_11",
@@ -697,12 +705,7 @@
 		"/home/anton/C/c.sublime-project",
 		"/home/anton/ASM/training/polya_rivalry.s",
 		"/home/anton/C/lab/lab_24/lab_24_1/main.c",
-		"/home/anton/C/lab/lab_24/lab_24_1/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_1/source.c",
-		"/home/anton/C/lab/lab_28/main.c",
-		"/home/anton/C/lab/lab_15/a1.h",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Header.h",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Source1.cpp"
+		"/home/anton/C/lab/lab_24/lab_24_1/source.h"
 	],
 	"find":
 	{
@@ -760,65 +763,69 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_NET/lab_12/Makefile",
+					"file": "lab/OS/lab_08/first.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 189,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								189,
-								189
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+							"auto_name": "#include <pthread.h>",
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab/OS/lab_08/second.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								946,
+								946
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/lab_NET/lab_12/client.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14679,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4916,
-								4916
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3657.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
