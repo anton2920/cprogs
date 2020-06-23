@@ -13,24 +13,4 @@ stdlib.h
 -
 string.h
 -
-ctype.h
--
-errno.h
--
-time.h
--
-signal.h
--
-sys/socket.h
--
-netinet/in.h
--
-sys/mman.h
--
-zconf.h
--
-sys/fcntl.h
--
-sys/stat.h
--
 

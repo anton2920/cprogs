@@ -5,6 +5,8 @@
 
 /* New data types */
 
+
 /* Functions' declarations */
+
 
 #endif

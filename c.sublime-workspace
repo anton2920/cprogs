@@ -412,24 +412,10 @@
 	"buffers":
 	[
 		{
-			"contents": "",
-			"file": "lab/OS/lab_08/first.c",
-			"file_size": 2730,
-			"file_write_time": 132367105249445770,
+			"file": "lab/SAOD/lab_09_2/tree.c",
 			"settings":
 			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "#include <pthread.h>"
-			}
-		},
-		{
-			"file": "lab/OS/lab_08/second.c",
-			"settings":
-			{
-				"buffer_size": 946,
-				"encoding": "UTF-8",
+				"buffer_size": 8530,
 				"line_ending": "Unix"
 			}
 		}
@@ -572,12 +558,23 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/OS",
-		"/home/anton/C/lab/OS/lab_08",
-		"/home/anton/C/lab/OS/lab_09"
+		"/home/anton/C/lab/SAOD"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/SAOD/lab_12/input2.txt",
+		"/home/anton/C/lab/SAOD/lab_12/main.c",
+		"/home/anton/C/lab/SAOD/lab_12/Makefile",
+		"/home/anton/C/lab/SAOD/lab_11_2/main.c",
+		"/home/anton/C/lab/SAOD/lab_11_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_10_2/libs.c",
+		"/home/anton/C/lab/SAOD/lab_10_2/libs.h",
+		"/home/anton/C/lab/SAOD/lab_10_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_10_2/main.c",
+		"/home/anton/C/lab/SAOD/lab_11_2",
+		"/home/anton/C/lab/lab_NET/lab_13/client.c",
+		"/home/anton/C/lab/OS/lab_08/second.c",
+		"/home/anton/C/lab/OS/lab_08/first.c",
 		"/home/anton/C/lab/OS/lab_09/fifoserver.c",
 		"/home/anton/C/lab/OS/lab_09/fifoclient.c",
 		"/home/anton/C/lab/OS/lab_08/draw.c",
@@ -692,24 +689,11 @@
 		"/home/anton/C/home/STL/STL.h",
 		"/home/anton/C/home/STL/STL_build/configure.ac",
 		"/home/anton/C/home/STL/.gitignore",
-		"/home/anton/C/home/Sorting/Sorting_build/Makefile.am",
-		"/home/anton/C/home/Sorting/.gitignore",
-		"/home/anton/C/home/Sorting/Sorting_build/configure.ac",
-		"/home/anton/C/home/Sorting/sorting.h",
-		"/home/anton/C/lab/lab_30/Makefile",
-		"/home/anton/ProTest/src/Makefile.am",
-		"/home/anton/C/home/STL/STL_build/buid-aux/.init",
-		"/home/anton/C/home/Project/Makefile",
-		"/home/anton/C/experiments/Julia/lab_25.c",
-		"/home/anton/C/experiments/Julia/Makefile",
-		"/home/anton/C/c.sublime-project",
-		"/home/anton/ASM/training/polya_rivalry.s",
-		"/home/anton/C/lab/lab_24/lab_24_1/main.c",
-		"/home/anton/C/lab/lab_24/lab_24_1/source.h"
+		"/home/anton/C/home/Sorting/Sorting_build/Makefile.am"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -768,11 +752,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lab/OS/lab_08/first.c",
-					"semi_transient": false,
+					"file": "lab/SAOD/lab_09_2/tree.c",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 8530,
 						"regions":
 						{
 						},
@@ -785,47 +769,15 @@
 						],
 						"settings":
 						{
-							"auto_name": "#include <pthread.h>",
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1.0,
+						"translation.y": 1026.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/OS/lab_08/second.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 946,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								946,
-								946
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -833,7 +785,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -878,7 +830,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
