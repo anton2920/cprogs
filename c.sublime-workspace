@@ -412,10 +412,10 @@
 	"buffers":
 	[
 		{
-			"file": "lab/SAOD/lab_09_2/tree.c",
+			"file": "lab/SAOD/lab_12/main.c",
 			"settings":
 			{
-				"buffer_size": 8530,
+				"buffer_size": 1898,
 				"line_ending": "Unix"
 			}
 		}
@@ -558,7 +558,8 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/SAOD"
+		"/home/anton/C/lab/SAOD",
+		"/home/anton/C/lab/SAOD/lab_12"
 	],
 	"file_history":
 	[
@@ -693,7 +694,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -752,11 +753,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lab/SAOD/lab_09_2/tree.c",
+					"file": "lab/SAOD/lab_12/main.c",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 8530,
+						"buffer_size": 1898,
 						"regions":
 						{
 						},
@@ -774,7 +775,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1026.0,
+						"translation.y": 1242.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -785,7 +786,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 35.0
+		"height": 33.0
 	},
 	"input":
 	{
@@ -830,7 +831,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
