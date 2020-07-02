@@ -7,7 +7,5 @@ set(SOURCE_FILES main.c)
 set(LIBS libs/libs.c libs/libs.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS})
-add_executable(client client.c)
 
-target_link_libraries(lab_dev pthread)
-target_link_libraries(client pthread)
+target_link_libraries(lab_dev ssh)

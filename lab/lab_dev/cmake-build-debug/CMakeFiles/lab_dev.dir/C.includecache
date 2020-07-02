@@ -6,22 +6,18 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/libs/libs.c
-stdio.h
--
-stdlib.h
--
-assert.h
--
-libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-
 /home/anton/C/lab/lab_dev/libs/libs.h
 
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
 stdlib.h
+-
+string.h
+-
+sys/ioctl.h
+-
+libssh/libssh.h
 -
 libs/libs.h
 /home/anton/C/lab/lab_dev/libs/libs.h
