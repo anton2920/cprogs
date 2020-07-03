@@ -82,12 +82,12 @@ int interactive_shell_session(ssh_session session, ssh_channel channel) {
     return rc;
 }
 
-int main(int argc, const char *argv[]) {
+int main(int argc, char *argv[]) {
 
     /* Initializing variables */
     auto ssh_session my_ssh_session = ssh_new();
 
-    auto char *host = "localhost";
+    auto char *host = (argc >= 2) ? *(argv + 1) : "localhost";
 
     auto int verbosity = SSH_LOG_PROTOCOL;
     auto int port = 22;
