@@ -7,7 +7,7 @@
 /* Essential include */
 #include <libssh/libssh.h>
 
-#include "libs/libs.h"
+#include "libs.h"
 
 enum sizes {
     sizeof_buffer = 0xFFFF

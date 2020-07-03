@@ -412,10 +412,38 @@
 	"buffers":
 	[
 		{
-			"file": "lab/SAOD/lab_12/main.c",
+			"file": "lab/lab_NET/RGR/Makefile",
 			"settings":
 			{
-				"buffer_size": 1898,
+				"buffer_size": 276,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_NET/RGR/main.c",
+			"settings":
+			{
+				"buffer_size": 5036,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_NET/RGR/libs.c",
+			"settings":
+			{
+				"buffer_size": 4375,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_NET/RGR/libs.h",
+			"settings":
+			{
+				"buffer_size": 463,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -558,8 +586,9 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_12"
+		"/home/anton/C/lab/lab_NET",
+		"/home/anton/C/lab/lab_NET/lab_12",
+		"/home/anton/C/lab/lab_NET/RGR"
 	],
 	"file_history":
 	[
@@ -694,7 +723,7 @@
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 32.0
 	},
 	"find_in_files":
 	{
@@ -748,37 +777,127 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lab/SAOD/lab_12/main.c",
-					"semi_transient": true,
+					"file": "lab/lab_NET/RGR/Makefile",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1898,
+						"buffer_size": 276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								276,
+								276
 							]
 						],
 						"settings":
 						{
+							"open_with_edit": true,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab/lab_NET/RGR/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1242.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lab/lab_NET/RGR/libs.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3456,
+								3456
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2553.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lab/lab_NET/RGR/libs.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								463,
+								463
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -786,7 +905,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 33.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -831,7 +950,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 60.0
 	},
 	"save_all_on_build": true,
 	"select_file":

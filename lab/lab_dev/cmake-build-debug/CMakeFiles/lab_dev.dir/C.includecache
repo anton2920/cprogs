@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/libs/libs.c
-errno.h
--
-string.h
--
-stdio.h
--
-libssh/libssh.h
--
-sys/socket.h
--
-libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-
 /home/anton/C/lab/lab_dev/libs/libs.h
 stdio.h
 -
