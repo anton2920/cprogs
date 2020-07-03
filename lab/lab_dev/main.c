@@ -9,12 +9,6 @@
 
 #include "libs/libs.h"
 
-#define handle_error(msg)   \
-    do {                    \
-        perror(msg);        \
-        exit(EXIT_FAILURE); \
-    } while (0);
-
 enum sizes {
     sizeof_buffer = 0xFFFF
 };
@@ -133,32 +127,38 @@ int main(int argc, char *argv[]) {
     }
     printf("Tushuno SSH is connected to %s\n", host);
 
-    auto ssh_channel channel = ssh_channel_new(my_ssh_session);
-    if (channel == NULL) {
-        fprintf(stderr, "Error with creating channel: %s\n",
-                ssh_get_error(my_ssh_session));
-        ssh_disconnect(my_ssh_session);
-        ssh_free(my_ssh_session);
-        exit(EXIT_FAILURE);
-    }
+    if (argc <= 2) {
+        auto ssh_channel channel = ssh_channel_new(my_ssh_session);
+        if (channel == NULL) {
+            fprintf(stderr, "Error with creating channel: %s\n",
+                    ssh_get_error(my_ssh_session));
+            ssh_disconnect(my_ssh_session);
+            ssh_free(my_ssh_session);
+            exit(EXIT_FAILURE);
+        }
 
-    if (ssh_channel_open_session(channel) != SSH_OK) {
-        fprintf(stderr, "Error with opening session: %s\n",
-                ssh_get_error(my_ssh_session));
+        if (ssh_channel_open_session(channel) != SSH_OK) {
+            fprintf(stderr, "Error with opening session: %s\n",
+                    ssh_get_error(my_ssh_session));
+            ssh_channel_free(channel);
+            ssh_disconnect(my_ssh_session);
+            ssh_free(my_ssh_session);
+            exit(EXIT_FAILURE);
+        }
+
+        rc = interactive_shell_session(my_ssh_session, channel);
+        if (rc == SSH_OK) {
+            printf("Connection to %s closed\n", host);
+        }
+
+        ssh_channel_send_eof(channel);
+        ssh_channel_close(channel);
         ssh_channel_free(channel);
-        ssh_disconnect(my_ssh_session);
-        ssh_free(my_ssh_session);
-        exit(EXIT_FAILURE);
+    } else if (!strcmp(*(argv + 2), "-f")) {
+        rc = direct_forwarding(my_ssh_session, *(argv + 3),
+                atoi(*(argv + 4)), atoi(*(argv + 5)));
     }
 
-    rc = interactive_shell_session(my_ssh_session, channel);
-    if (rc == SSH_OK) {
-        printf("Connection to %s closed\n", host);
-    }
-
-    ssh_channel_send_eof(channel);
-    ssh_channel_close(channel);
-    ssh_channel_free(channel);
     ssh_disconnect(my_ssh_session);
     ssh_free(my_ssh_session);
 

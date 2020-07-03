@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <libssh/libssh.h>
 
+#include <sys/socket.h>
+
 #include "libs.h"
 
 int verify_knownhost(ssh_session session) {
@@ -89,4 +91,29 @@ int verify_knownhost(ssh_session session) {
 
     ssh_clean_pubkey_hash(&hash);
     return 0;
+}
+
+int direct_forwarding(ssh_session session, const char *remotehost, int remoteport, int localport) {
+
+    /* Initializing variables */
+    auto ssh_channel forwarding_channel;
+    auto int rc = -1;
+
+    forwarding_channel = ssh_channel_new(session);
+    if (forwarding_channel == NULL) {
+        return rc;
+    }
+
+    rc = ssh_channel_open_forward(forwarding_channel,
+                                  remotehost, remoteport,
+                                  "31.132.156.7", localport);
+    if (rc != SSH_OK) {
+        ssh_channel_free(forwarding_channel);
+        return rc;
+    }
+
+    /* Some stuff goes here */
+
+    ssh_channel_free(forwarding_channel);
+    return SSH_OK;
 }
