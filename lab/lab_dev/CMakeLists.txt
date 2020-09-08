@@ -3,9 +3,11 @@ project(lab_dev)
 
 set(CMAKE_C_STANDARD 90)
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp")
+
 set(SOURCE_FILES main.c)
 set(LIBS libs/libs.c libs/libs.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS})
 
-target_link_libraries(lab_dev ssh)
+target_link_libraries(lab_dev)

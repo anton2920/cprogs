@@ -15,7 +15,6 @@
 /* New data types */
 
 /* Functions' declarations */
-int verify_knownhost(ssh_session session);
-int direct_forwarding(ssh_session session, const char *remotehost, int remoteport, int localport);
+
 
 #endif
