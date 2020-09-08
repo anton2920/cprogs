@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/anton/C/lab/lab_dev/libs/libs.h
+stdio.h
+-
+stdlib.h
+-
+
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
@@ -13,24 +19,10 @@ stdlib.h
 -
 string.h
 -
-ctype.h
+sys/ioctl.h
 -
-errno.h
+libssh/libssh.h
 -
-time.h
--
-signal.h
--
-sys/socket.h
--
-netinet/in.h
--
-sys/mman.h
--
-zconf.h
--
-sys/fcntl.h
--
-sys/stat.h
--
+libs/libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
 

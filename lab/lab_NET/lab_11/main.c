@@ -180,6 +180,8 @@ void get_type_by_ext(char *buf) {
         strcpy(buf, "image/gif");
     } else if (!strcmp(s, "wav")) {
         strcpy(buf, "audio/wav");
+    } else if (!strcmp(s, "avi")) {
+        strcpy(buf, "video/x-msvideo");
     } else {
         if (strlen(s) > 1) {
             strcat(buf, "application/");
