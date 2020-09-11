@@ -10,6 +10,8 @@
 stdio.h
 -
 omp.h
+<<<<<<< HEAD
+=======
 -
 stdlib.h
 -
@@ -18,5 +20,6 @@ string.h
 time.h
 -
 pthread.h
+>>>>>>> 08fc763306358fe0eb5663329da84ff38ebfbaf2
 -
 
