@@ -11,7 +11,7 @@ void task6(void);
 void task7(void);
 void task8(void);
 
-int main(int argc, const char *argv[]) {
+int main() {
 
     /* Task #1 */
     /*task1();*/
