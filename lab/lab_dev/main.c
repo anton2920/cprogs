@@ -22,7 +22,7 @@ int main(int argc, const char *argv[]) {
     /*task2();*/
 
     /* Task #3 */
-    task3();
+    /*task3();*/
 
     /* Task #4 */
     /*task4();*/
@@ -34,8 +34,10 @@ int main(int argc, const char *argv[]) {
     /*task6();*/
 
     /* Task #7 */
+    /*task7();*/
 
     /* Task #8 */
+    task8();
 
     /* Returning value */
     return 0;
@@ -136,4 +138,110 @@ void task3(void) {
 
     printf("End %d\n", omp_get_thread_num());
 }
+}
+
+void task4(void) {
+
+    /* Main part */
+    omp_set_num_threads(3);
+
+    /* Parallel region */
+#pragma omp parallel
+{
+    printf("Begin %d\n", omp_get_thread_num());
+#pragma omp master
+{
+    printf("Master thread\n");
+}
+    printf("Middle %d\n", omp_get_thread_num());
+#pragma omp master
+{
+    printf("Master thread\n");
+}
+    printf("End %d\n", omp_get_thread_num());
+}
+}
+
+void task5(void) {
+
+    /* Main part */
+    auto int n = 5;
+    omp_set_num_threads(2);
+
+    /* I/O flow */
+    printf("n = %d\n", n);
+
+    /* Parallel region */
+#pragma omp parallel private(n)
+{
+    printf("Thread #%d, n = %d\n", omp_get_thread_num(), n);
+#pragma omp barrier
+    n = omp_get_thread_num();
+#pragma omp single
+    printf("Assignment done!\n");
+    printf("Thread #%d, n = %d\n", omp_get_thread_num(), n);
+}
+
+    /* Final output */
+    printf("n = %d\n", n);
+}
+
+void task6(void) {
+
+    /* Initializing variables */
+    auto int m[5] = {};
+    register int i;
+
+    /* I/O flow */
+    for (i = 0; i < 5; ++i) {
+        printf("m[%d] = %d\n", i, *(m + i));
+    }
+    printf("\nParallel region: \n");
+
+    /* Main part */
+    omp_set_num_threads(2);
+
+    /* Parallel region */
+#pragma omp parallel
+{
+    *(m + omp_get_thread_num()) = 1;
+}
+
+    for (i = 0; i < 5; ++i) {
+        printf("m[%d] = %d\n", i, *(m + i));
+    }
+}
+
+void task7(void) {
+
+    /* Initializing variables */
+    auto int i = 0;
+
+    /* Main part */
+
+    /* Parallel region */
+    printf("Before: i = %d\n", i);
+#pragma omp parallel num_threads(4) reduction(+:i)
+{
+    i = 1;
+}
+    printf("After: i = %d\n", i);
+}
+
+void task8(void) {
+
+    /* Initializing variables */
+    auto int sum = 0;
+
+    /* Main part */
+
+    /* Parallel region */
+#pragma omp parallel num_threads(9) reduction(+:sum)
+{
+    register int num;
+    if (!((num = omp_get_thread_num()) & 1)) {
+        sum = num;
+    }
+}
+    printf("Sum = %d\n", sum);
 }
