@@ -6,27 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/libs/libs.c
-libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-
-/home/anton/C/lab/lab_dev/libs/libs.h
-stdio.h
--
-stdlib.h
--
-
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
 omp.h
 -
-stdlib.h
--
-string.h
--
 time.h
 -
-pthread.h
+stdlib.h
 -
 
