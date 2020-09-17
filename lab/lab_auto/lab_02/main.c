@@ -38,10 +38,11 @@ main() {
 
     /* Debug case */
     auto FILE *fp = fopen("testCase.txt", "r");
+    assert(fp != NULL);
 
     /* Main part */
     printf("Type lexical expression: ");
-    fgets(buf, N, (fp == NULL) ? stdout : fp);
+    fgets(buf, N, fp);
     *(buf + strlen(buf) - 1) = '\0';
 
     printf("\nExpression: %s\n", buf);

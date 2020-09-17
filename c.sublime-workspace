@@ -412,19 +412,10 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_omp/lab_03/main.c",
+			"file": "lab/lab_auto/lab_02/main.c",
 			"settings":
 			{
-				"buffer_size": 2834,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/lab_omp/lab_03/Makefile",
-			"settings":
-			{
-				"buffer_size": 180,
+				"buffer_size": 4892,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -568,12 +559,19 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
+		"/home/anton/C/lab/lab_auto",
+		"/home/anton/C/lab/lab_auto/lab_02",
 		"/home/anton/C/lab/lab_omp",
-		"/home/anton/C/lab/lab_omp/lab_02",
-		"/home/anton/C/lab/lab_omp/lab_03"
+		"/home/anton/C/lab/lab_omp/lab_02"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_auto/lab_02/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_02/testCase.txt",
+		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_04/main.c",
+		"/home/anton/C/lab/lab_omp/lab_03/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_03/main.c",
 		"/home/anton/C/lab/lab_omp/lab_02/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_02/main.c",
 		"/home/anton/C/lab/lab_NET/RGR/Makefile",
@@ -695,13 +693,7 @@
 		"/home/anton/C/lab/SAOD/lab_01/libs.c",
 		"/home/anton/C/home/AlinaSudoku/AlinaSudoku_dev/Header.h",
 		"/home/anton/C/experiments/memPage/a1.c",
-		"/home/anton/C/lab/lab_28/source.c",
-		"/home/anton/C/lab/lab_30/main.c",
-		"/home/anton/C/lab/lab_31/main.c",
-		"/home/anton/C/lab/lab_32/main.c",
-		"/home/anton/C/lab/lab_33/main.c",
-		"/home/anton/C/lab/lab_23/source.h",
-		"/home/anton/C/lab/lab_23/main.c"
+		"/home/anton/C/lab/lab_28/source.c"
 	],
 	"find":
 	{
@@ -764,19 +756,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_omp/lab_03/main.c",
+					"file": "lab/lab_auto/lab_02/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2834,
+						"buffer_size": 4892,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2834,
-								2834
+								1056,
+								1056
 							]
 						],
 						"settings":
@@ -787,39 +779,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2989.0,
+						"translation.y": 671.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/lab_omp/lab_03/Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 180,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								180,
-								180
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
