@@ -10,4 +10,4 @@ set(LIBS libs/libs.c libs/libs.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS})
 
-target_link_libraries(lab_dev)
+target_link_libraries(lab_dev m)
