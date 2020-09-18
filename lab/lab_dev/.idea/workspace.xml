@@ -18,41 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): SSH_Client (some changes #2)">
-      <change beforePath="$PROJECT_DIR$/../../c.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../c.sublime-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_auto/lab_02/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_auto/lab_02/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_dev.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_dev" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/3.17.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/lab_dev.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/lab_dev.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/testCase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/testCase.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,8 +44,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/input/input.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/input/input.c" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1PHcG9ZyOWNqwb8SHrY7hlhtSii" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -111,12 +80,12 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.lab_dev">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab_dev" TARGET_NAME="lab_dev" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab_dev" RUN_TARGET_NAME="lab_dev">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab_dev" TARGET_NAME="lab_dev" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab_dev" RUN_TARGET_NAME="lab_dev">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -312,6 +281,7 @@
       <workItem from="1600109268369" duration="63000" />
       <workItem from="1600184950899" duration="9874000" />
       <workItem from="1600360639828" duration="9370000" />
+      <workItem from="1600420776917" duration="399000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>
@@ -570,25 +540,25 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="295" width="424" height="491" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593279436873" />
-    <state width="1872" height="351" key="GridCell.Tab.0.bottom" timestamp="1600370710598">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1872" height="427" key="GridCell.Tab.0.bottom" timestamp="1600421175866">
+      <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1872" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1600248502162" />
+    <state width="1872" height="427" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1600421175866" />
     <state width="1872" height="351" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1600370710598" />
-    <state width="1872" height="351" key="GridCell.Tab.0.center" timestamp="1600370710598">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1872" height="427" key="GridCell.Tab.0.center" timestamp="1600421175866">
+      <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1872" height="285" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1600248502160" />
+    <state width="1872" height="427" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1600421175866" />
     <state width="1872" height="351" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1600370710598" />
-    <state width="1872" height="351" key="GridCell.Tab.0.left" timestamp="1600370710598">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1872" height="427" key="GridCell.Tab.0.left" timestamp="1600421175856">
+      <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1872" height="285" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1600248502159" />
+    <state width="1872" height="427" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1600421175856" />
     <state width="1872" height="351" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1600370710598" />
-    <state width="1872" height="351" key="GridCell.Tab.0.right" timestamp="1600370710598">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1872" height="427" key="GridCell.Tab.0.right" timestamp="1600421175866">
+      <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1872" height="285" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1600248502160" />
+    <state width="1872" height="427" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1600421175866" />
     <state width="1872" height="351" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1600370710598" />
     <state width="1872" height="351" key="GridCell.Tab.1.bottom" timestamp="1600370710598">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -623,9 +593,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2403" y="133" width="944" height="814" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591813102356" />
-    <state x="2701" y="148" width="556" height="726" key="refactoring.ChangeSignatureDialog" timestamp="1600368415214">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="781" y="142" width="556" height="726" key="refactoring.ChangeSignatureDialog" timestamp="1600420940725">
+      <screen x="0" y="0" width="1920" height="1038" />
     </state>
+    <state x="781" y="142" key="refactoring.ChangeSignatureDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1600420940725" />
     <state x="2701" y="148" width="556" height="726" key="refactoring.ChangeSignatureDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1600368415214" />
     <state x="2544" y="244" key="run.anything.popup" timestamp="1600362038540">
       <screen x="1920" y="0" width="1920" height="1080" />

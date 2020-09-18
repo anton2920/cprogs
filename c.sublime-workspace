@@ -415,7 +415,7 @@
 			"file": "lab/lab_auto/lab_02/main.c",
 			"settings":
 			{
-				"buffer_size": 4892,
+				"buffer_size": 5265,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -560,23 +560,15 @@
 		"/home/anton/C",
 		"/home/anton/C/lab",
 		"/home/anton/C/lab/lab_auto",
-		"/home/anton/C/lab/lab_auto/lab_02",
-		"/home/anton/C/lab/lab_omp",
-		"/home/anton/C/lab/lab_omp/lab_02"
+		"/home/anton/C/lab/lab_auto/lab_02"
 	],
 	"file_history":
 	[
-		"/home/anton/C/lab/lab_auto/lab_02/Makefile",
-		"/home/anton/C/lab/lab_auto/lab_02/testCase.txt",
-		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
-		"/home/anton/C/lab/lab_omp/lab_04/main.c",
-		"/home/anton/C/lab/lab_omp/lab_03/Makefile",
-		"/home/anton/C/lab/lab_omp/lab_03/main.c",
-		"/home/anton/C/lab/lab_omp/lab_02/Makefile",
-		"/home/anton/C/lab/lab_omp/lab_02/main.c",
-		"/home/anton/C/lab/lab_NET/RGR/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_01/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_01/main.c",
 		"/home/anton/C/lab/lab_NET/RGR/libs.h",
 		"/home/anton/C/lab/lab_NET/RGR/libs.c",
+		"/home/anton/C/lab/lab_NET/RGR/Makefile",
 		"/home/anton/C/lab/lab_NET/RGR/main.c",
 		"/home/anton/C/lab/SAOD/lab_12/input2.txt",
 		"/home/anton/C/lab/SAOD/lab_12/main.c",
@@ -693,11 +685,17 @@
 		"/home/anton/C/lab/SAOD/lab_01/libs.c",
 		"/home/anton/C/home/AlinaSudoku/AlinaSudoku_dev/Header.h",
 		"/home/anton/C/experiments/memPage/a1.c",
-		"/home/anton/C/lab/lab_28/source.c"
+		"/home/anton/C/lab/lab_28/source.c",
+		"/home/anton/C/lab/lab_30/main.c",
+		"/home/anton/C/lab/lab_31/main.c",
+		"/home/anton/C/lab/lab_32/main.c",
+		"/home/anton/C/lab/lab_33/main.c",
+		"/home/anton/C/lab/lab_23/source.h",
+		"/home/anton/C/lab/lab_23/main.c"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -760,26 +758,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4892,
+						"buffer_size": 5265,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1056,
-								1056
+								4483,
+								4483
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 671.0,
+						"translation.y": 4961.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -790,7 +787,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -835,7 +832,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":

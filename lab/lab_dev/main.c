@@ -28,6 +28,7 @@ char *lexer(char *str, STL_Vector *vec);
 lexema * contains(STL_Vector *vec, const identifier *tk);
 identifier getLexToken(char *);
 void printTable(STL_Vector *);
+int containsLetters(const char *);
 
 main() {
 
@@ -129,7 +130,7 @@ char *lexer(char *str, STL_Vector *vec) {
             continue;
         }
 
-        assert(!(isdigit(*token.value) && token.size > 1));
+        assert(!(isdigit(*token.value) && token.size > 1 && containsLetters(token.value)));
         if ((ret = contains(vec, &token)) == NULL) {
             elem.value = token;
             elem.id = lastId++;
@@ -170,11 +171,28 @@ identifier getLexToken(char *str) {
     return token;
 }
 
-int containsLetters(char *str) {
+int containsLetters(const char *str) {
 
     /* Main part */
     for ( ; *str; ++str) {
         if (isalpha(*str)) {
+            return 1;
+        }
+    }
+
+    /* Returning value */
+    return 0;
+}
+
+int isDouble(const char *str) {
+
+    /* Main part */
+    if (containsLetters(str)) {
+        return 1;
+    }
+
+    for ( ; *str; ++str) {
+        if (*str == '.') {
             return 1;
         }
     }
@@ -195,8 +213,9 @@ void printTable(STL_Vector *table) {
            "├───────────┼────────────┼──────────────┤\n");
     for (i = 0; i < STL_Vector_size(table); ++i) {
         iter = STL_Vector_at(table, i);
-        printf("│    %4d   │   %6s   │     %3s_D    │\n", iter->id,
-            iter->value.value, (containsLetters(iter->value.value)) ? "VAR" : "IMM");
+        printf("│    %4d   │   %6s   │     %3s_%c    │\n", iter->id,
+            iter->value.value, (containsLetters(iter->value.value)) ? "VAR" : "IMM",
+            isDouble(iter->value.value) ? 'D' : 'I');
         if (i != STL_Vector_size(table) - 1) {
             printf("├───────────┼────────────┼──────────────┤\n");
         }
