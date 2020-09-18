@@ -415,7 +415,16 @@
 			"file": "lab/lab_auto/lab_02/main.c",
 			"settings":
 			{
-				"buffer_size": 5265,
+				"buffer_size": 5277,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_auto/lab_02/testCase.txt",
+			"settings":
+			{
+				"buffer_size": 16,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -758,15 +767,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5265,
+						"buffer_size": 5277,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4483,
-								4483
+								5277,
+								5277
 							]
 						],
 						"settings":
@@ -776,10 +785,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4961.0,
+						"translation.y": 5851.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab/lab_auto/lab_02/testCase.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

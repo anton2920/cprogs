@@ -157,7 +157,7 @@ identifier getLexToken(char *str) {
     auto identifier token;
 
     /* Main part */
-    for (currStr = str; !isSpecialChar(*currStr); ++currStr)
+    for (currStr = str; !isSpecialChar(*currStr) && *currStr; ++currStr)
         ;
 
     if (!(token.size = currStr - str)) {
