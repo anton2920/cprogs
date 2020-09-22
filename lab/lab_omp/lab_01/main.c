@@ -14,22 +14,22 @@ void task6(void);
 int main(int argc, const char *argv[]) {
 
     /* Task #1 */
-    /*task1();*/
+    /* task1(); */
 
     /* Task #2 */
-    /*task2();*/
+    /* task2(); */
 
     /* Task #3 */
-    /*task3();*/
+    /* task3(); */
 
     /* Task #4 */
-    /*task4();*/
+    /* task4(); */
 
     /* Task #5 */
-    /*task5(*(argv + 1));*/
+    task5(*(argv + 1));
 
     /* Task #6 */
-    task6();
+    /* task6(); */
 
     /* Returning value */
     return 0;
