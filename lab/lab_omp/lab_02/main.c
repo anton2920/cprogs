@@ -26,7 +26,7 @@ int main() {
     /*task4();*/
 
     /* Task #5 */
-    /*task5();*/
+    task5();
 
     /* Task #6 */
     /*task6();*/
@@ -35,7 +35,7 @@ int main() {
     /*task7();*/
 
     /* Task #8 */
-    task8();
+    /* task8(); */
 
     /* Returning value */
     return 0;
