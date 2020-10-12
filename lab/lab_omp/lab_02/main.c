@@ -26,7 +26,11 @@ int main() {
     /* task4(); */
 
     /* Task #5 */
+<<<<<<< HEAD
     /* task5(); */
+=======
+    task5();
+>>>>>>> baf0112b73e3486b9b403f77c97c63cb6844ed51
 
     /* Task #6 */
     /* task6(); */
@@ -35,7 +39,7 @@ int main() {
     /* task7(); */
 
     /* Task #8 */
-    task8();
+    /* task8(); */
 
     /* Returning value */
     return 0;
