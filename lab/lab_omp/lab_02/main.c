@@ -14,25 +14,25 @@ void task8(void);
 int main() {
 
     /* Task #1 */
-    /*task1();*/
+    /* task1(); */
 
     /* Task #2 */
-    /*task2();*/
+	/* task2(); */
 
     /* Task #3 */
-    /*task3();*/
+    /* task3(); */
 
     /* Task #4 */
-    /*task4();*/
+    /* task4(); */
 
     /* Task #5 */
-    /*task5();*/
+    /* task5(); */
 
     /* Task #6 */
-    /*task6();*/
+    /* task6(); */
 
     /* Task #7 */
-    /*task7();*/
+    /* task7(); */
 
     /* Task #8 */
     task8();
