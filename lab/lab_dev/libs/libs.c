@@ -5,6 +5,10 @@
 #define isdelim(x) ((x == ',') ? true : false)
 #define isskip(x)   ((x) == '{' || (x) == '\n')
 
+static void searchTilMap(FILE *fp);
+static struct DataItem *searchValue(STL_Vector *vec, int value);
+static void getRidOfKeys(STL_Vector *vec);
+
 /* Function reads next JSON KVP from file stream */
 void readNextToken(FILE *fp, STL_String *tok) {
 
@@ -240,7 +244,7 @@ void restoreOriginalFile(const char *inputFileName) {
             handle_error("malloc");
         }
 
-        if (fread(mapKey, sizeof(char), pred.length, fin) != pred.length) {
+        if (fread(mapKey, sizeof(char), pred.length, fin) != (size_t) pred.length) {
             handle_error("fread");
         }
 
@@ -268,7 +272,7 @@ void restoreOriginalFile(const char *inputFileName) {
                 if ((tempString = calloc(pred.length + 1, sizeof(char))) == NULL) {
                     handle_error("calloc");
                 }
-                if (fread(tempString, sizeof(char), pred.length, fin) != pred.length) {
+                if (fread(tempString, sizeof(char), pred.length, fin) != (size_t) pred.length) {
                     handle_error("fread");
                 }
                 fprintf(fout, "{ \"%s\": \"%s\" }\n", mapEntry->key, tempString);

@@ -45,8 +45,5 @@ char *getKeyValue(STL_String *tok);
 void writeMapToFile(hashMap *map, size_t size, FILE *fp);
 
 void restoreOriginalFile(const char *inputFileName);
-static void searchTilMap(FILE *fp);
-static struct DataItem *searchValue(STL_Vector *vec, int value);
-static void getRidOfKeys(STL_Vector *vec);
 
 #endif
