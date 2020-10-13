@@ -1,1 +1,1 @@
-/usr/bin/cc  -fopenmp -g   CMakeFiles/lab_dev.dir/main.c.o CMakeFiles/lab_dev.dir/libs/libs.c.o CMakeFiles/lab_dev.dir/libs/hash_map.c.o  -o lab_dev  -lSTL_String 
+/usr/bin/cc  -fopenmp -g   CMakeFiles/lab_dev.dir/main.c.o CMakeFiles/lab_dev.dir/libs/libs.c.o CMakeFiles/lab_dev.dir/libs/hash_map.c.o  -o lab_dev  -lSTL_String -lSTL_Vector 

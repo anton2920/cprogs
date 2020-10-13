@@ -7,6 +7,7 @@
 #include <stdbool.h>
 
 #include <STL/STL_String.h>
+#include <STL/STL_Vector.h>
 
 #include "hash_map.h"
 
@@ -27,15 +28,25 @@ enum JSON_types {
 
 struct tlv {
     int key;
-    enum JSON_types type;
-    size_t length;
+    enum JSON_types type : 8;
+    int length : 24;
     char value[];
 };
 
+/* Arbitrary constant to fix hashmap size */
+enum {
+    hashMap_size = 0xFFFF
+};
+
 /* Functions' declarations */
-bool readNextToken(FILE *fp, STL_String *tok);
+void readNextToken(FILE *fp, STL_String *tok);
 struct tlv *parseToken(STL_String *tok, int tokNum);
 char *getKeyValue(STL_String *tok);
 void writeMapToFile(hashMap *map, size_t size, FILE *fp);
+
+void restoreOriginalFile(const char *inputFileName);
+static void searchTilMap(FILE *fp);
+static struct DataItem *searchValue(STL_Vector *vec, int value);
+static void getRidOfKeys(STL_Vector *vec);
 
 #endif

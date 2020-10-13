@@ -11,4 +11,4 @@ set(MAP libs/hash_map.c libs/hash_map.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS} ${MAP})
 
-target_link_libraries(lab_dev STL_String)
+target_link_libraries(lab_dev STL_String STL_Vector)

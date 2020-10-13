@@ -49,10 +49,14 @@ void insert(hashMap *hashArray, size_t size, char *key, int data) {
     item->key = key;
     item->value = data;
 
-    for (hashIndex = hashCode(key, size); hashArray[hashIndex] != NULL; hashIndex = (hashIndex + 1) % size)
-        ;
-
-    hashArray[hashIndex] = item;
+    /* Inserting unique key */
+    hashIndex = hashCode(key, size);
+    if (hashArray[hashIndex] == NULL) {
+        hashArray[hashIndex] = item;
+    } else {
+        free(key);
+        free(item);
+    }
 }
 
 void cleanMap(hashMap *map, size_t size) {
