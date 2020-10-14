@@ -19,8 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ffd8a94c-2050-4e10-809d-f366da732e87" name="Default" comment="PC: (lab_dev): SSH_Client (some changes #2)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/libs.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/libs.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +91,6 @@
       </envs>
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -276,6 +269,7 @@
       <workItem from="1602539661363" duration="840000" />
       <workItem from="1602579044234" duration="12836000" />
       <workItem from="1602596427255" duration="19000" />
+      <workItem from="1602673040650" duration="1274000" />
     </task>
     <task id="LOCAL-00001" summary="PC: 10.2 done in a tricky way">
       <created>1542223133686</created>

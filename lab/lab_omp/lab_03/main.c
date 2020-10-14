@@ -10,16 +10,16 @@ void task4(void);
 int main(int argc, const char *argv[]) {
 
     /* Task #1 */
-    /*task1();*/
+	/* task1(); */
 
     /* Task #2 */
-    /*task2();*/
+    /* task2(); */
 
     /* Task #3 */
-    /*task3();*/
+    /* task3(); */
 
     /* Task #4 */
-    task4();
+	task4();
 
     /* Returning value */
     return 0;
