@@ -42,7 +42,7 @@ main() {
 
     /* Main part */
     printf("Type lexical expression: ");
-    fgets(buf, N, (fp == NULL) ? stdout : fp);
+    fgets(buf, N, (fp == NULL) ? stdin : fp);
     *(buf + strlen(buf) - 1) = '\0';
 
     printf("\nExpression: %s\n", buf);
