@@ -1,93 +1,229 @@
-#include <stdio.h>
+﻿#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <STL/STL_Vector.h>
+#include <stdlib.h>
+#include <assert.h>
 
-#include "libs/libs.h"
+#define isSpecialChar(x) ((x) == '+' || (x) == '-' || (x) == '*' \
+                            || (x) == '/' || (x) == '^' || (x) == '=' \
+                            || (x) == '(' || (x) == ')')
 
-static const char *outputFileName = "result.bin";
+typedef struct identifier {
+    char *value;
+    size_t size;
+} identifier;
 
-int main(int argc, const char *argv[]) {
+typedef struct lexema {
+    unsigned int id;
+    identifier value;
+} lexema;
+
+enum buf_size {
+    N = 100
+};
+
+void removeWhitespaces(char *);
+char *lexer(char *str, STL_Vector *vec);
+lexema * contains(STL_Vector *vec, const identifier *tk);
+identifier getLexToken(char *);
+void printTable(STL_Vector *);
+int containsLetters(const char *);
+
+main() {
 
     /* Initializing variables */
-    auto FILE *fin, *fout; /* Files */
+    auto STL_Vector expression_lexems;
+    auto char buf[N], *finalStr;
+    STL_Vector_init(&expression_lexems, sizeof(lexema));
 
-    /* Place to hold one KVP */
-    auto STL_String tok;
-    STL_String_init(&tok);
-    auto char *keyValue;
+    /* Debug case */
+    auto FILE *fp = fopen("testCase.txt", "r");
 
-    /* Hashmap and Dictionary */
-    auto int tokNum = 1;
-    auto hashMap dict[hashMap_size] = {};
-    auto struct DataItem *result;
+    /* Main part */
+    printf("Type lexical expression: ");
+    fgets(buf, N, (fp == NULL) ? stdout : fp);
+    *(buf + strlen(buf) - 1) = '\0';
+
+    printf("\nExpression: %s\n", buf);
+
+    removeWhitespaces(buf);
+
+    finalStr = lexer(buf, &expression_lexems);
+
+    printf("Lexer's output: %s\n", finalStr);
+    free(finalStr);
+
+    printTable(&expression_lexems);
+
+    STL_Vector_delete(&expression_lexems);
+}
+
+void removeWhitespaces(char *str) {
+
+    /* Initializing variables */
+    register int i, j, len = strlen(str);
+    auto int removed = 0, len2 = len;
+
+    /* Main part */
+    for (i = 0; i < len2; ++i) {
+        if (isspace(*(str + i))) {
+            ++removed;
+            --len2;
+            for (j = i; j < len - 1; ++j) {
+                *(str + j) = *(str + j + 1);
+            }
+            --i;
+        }
+    }
+
+    *(str + len - removed) = '\0';
+}
+
+lexema *contains(STL_Vector *vec, const identifier *tk) {
+
+    /* Initializing varibles */
+    register size_t i;
+    lexema *iter;
 
     /* VarCheck */
-    if (argc < 2) {
-        fprintf(stderr, "json: you must provide a file path\n");
-        exit(-1);
-    } else if (argc > 2) {
-        fprintf(stderr, "json: you must provide one argument only\n");
-        exit(-1);
+    if (STL_Vector_empty(vec)) {
+        return 0;
     }
 
     /* Main part */
-
-    /* Opening files */
-    if ((fin = fopen(*(argv + 1), "r")) == NULL) {
-        handle_error("fopen");
+    for (i = 0; i < STL_Vector_size(vec); ++i) {
+        iter = STL_Vector_at(vec, i);
+        if (!strncmp(iter->value.value, tk->value, iter->value.size)) {
+            return iter;
+        }
     }
 
-    if ((fout = fopen(outputFileName, "wb")) == NULL) {
-        handle_error("fopen");
-    }
+    /* Returning value */
+    return NULL;
+}
 
-    /* Reading tokens */
-    for ( ;; ) {
+/* Rules:
+ * Identifier should be started with latin letter
+ * Between identifiers should be some actions
+ */
 
-        /* Obtaining token from file stream */
-        readNextToken(fin, &tok);
+char *lexer(char *str, STL_Vector *vec) {
 
-        /* Parse our token into TLV format */
-        struct tlv *parsedToken = parseToken(&tok, tokNum); /* Function uses calloc(3) */
+    /* Initializing variables */
+    auto lexema elem, *ret;
+    auto unsigned int lastId = 0;
+    auto identifier token;
+    auto char *currStr = str;
 
-        /* Inserting unique string-int pair */
-        if ((result = search(dict, hashMap_size,
-                             keyValue = getKeyValue(&tok))) == NULL) { /* getKeyValue() uses calloc(3) */
-            insert(dict, hashMap_size, keyValue , tokNum++);
+    /* For string purposes */
+    auto char *bigBuf = calloc(2048, sizeof(char));
+    auto char smallBuf[20];
+
+    /* Main part */
+    for ( ; *currStr; currStr += token.size) {
+        token = getLexToken(currStr);
+        if (token.value == NULL) {
+            /* String purposes */
+            sprintf(smallBuf, "%c ", *currStr);
+            strcat(bigBuf, smallBuf);
+
+            ++currStr;
+            continue;
+        }
+
+        assert(!(isdigit(*token.value) && token.size > 1 && containsLetters(token.value)));
+        if ((ret = contains(vec, &token)) == NULL) {
+            elem.value = token;
+            elem.id = lastId++;
+            STL_Vector_push_back(vec, &elem);
+        }
+
+        /* String purposes */
+        if (ret == NULL) {
+            sprintf(smallBuf, "<id%u> ", elem.id);
         } else {
-            /* If pair is presented in dict, get it's int value */
-            parsedToken->key = result->value;
-
-            /* Key value is not in use. We can free(3) it */
-            free(keyValue);
+            sprintf(smallBuf, "<id%u> ", ret->id);
         }
-
-        if (fwrite(parsedToken, sizeof(struct tlv) + parsedToken->length, 1, fout) != 1) {
-            handle_error("fwrite");
-        }
-        free(parsedToken); /* Cleaning up */
-
-        /* Clearing the token-string for the next run */
-        STL_String_clear(&tok);
-
-        /* Checking whether we need to change the file */
-        if (feof(fin)) {
-
-            /* Storing our dictionary */
-            writeMapToFile(dict, hashMap_size, fout);
-
-            /* We're done, no more data left in the original file */
-            break;
-        }
+        strcat(bigBuf, smallBuf);
     }
 
-    /* Cleaning up the mess... */
-    fclose(fin);
-    fclose(fout);
-    cleanMap(dict, hashMap_size);
-    STL_String_delete(&tok);
+    /* Returning value */
+    return bigBuf;
+}
 
-    /* Parsing resulted file */
-    restoreOriginalFile(outputFileName);
+identifier getLexToken(char *str) {
+
+    /* Initializing variables */
+    auto char *currStr;
+    auto identifier token;
+
+    /* Main part */
+    for (currStr = str; !isSpecialChar(*currStr) && *currStr; ++currStr)
+        ;
+
+    if (!(token.size = currStr - str)) {
+        token.value = NULL;
+    } else {
+        token.value = calloc(token.size + 1, sizeof(char));
+        strncpy(token.value, str, token.size);
+    }
+
+    /* Returning value */
+    return token;
+}
+
+int containsLetters(const char *str) {
+
+    /* Main part */
+    for ( ; *str; ++str) {
+        if (isalpha(*str)) {
+            return 1;
+        }
+    }
 
     /* Returning value */
     return 0;
+}
+
+int isDouble(const char *str) {
+
+    /* Main part */
+    if (containsLetters(str)) {
+        return 1;
+    }
+
+    for ( ; *str; ++str) {
+        if (*str == '.') {
+            return 1;
+        }
+    }
+
+    /* Returning value */
+    return 0;
+}
+
+void printTable(STL_Vector *table) {
+
+    /* Initializing variables */
+    register size_t i;
+    lexema *iter;
+
+    /* Main part */
+    printf("┌───────────┬────────────┬──────────────┐\n"
+           "│     ID    │   Lexeme   │     TYPE     │\n"
+           "├───────────┼────────────┼──────────────┤\n");
+    for (i = 0; i < STL_Vector_size(table); ++i) {
+        iter = STL_Vector_at(table, i);
+        printf("│    %4d   │   %6s   │     %3s_%c    │\n", iter->id,
+               iter->value.value, (containsLetters(iter->value.value)) ? "VAR" : "IMM",
+               isDouble(iter->value.value) ? 'D' : 'I');
+        if (i != STL_Vector_size(table) - 1) {
+            printf("├───────────┼────────────┼──────────────┤\n");
+        }
+        free(iter->value.value);
+    }
+
+    /* Final output */
+    printf("└───────────┴────────────┴──────────────┘\n");
 }

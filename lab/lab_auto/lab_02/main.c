@@ -55,6 +55,8 @@ main() {
     free(finalStr);
 
     printTable(&expression_lexems);
+
+    STL_Vector_delete(&expression_lexems);
 }
 
 void removeWhitespaces(char *str) {
@@ -163,7 +165,7 @@ identifier getLexToken(char *str) {
     if (!(token.size = currStr - str)) {
         token.value = NULL;
     } else {
-        token.value = malloc(token.size);
+        token.value = calloc(token.size + 1, sizeof(char));
         strncpy(token.value, str, token.size);
     }
 
@@ -214,11 +216,12 @@ void printTable(STL_Vector *table) {
     for (i = 0; i < STL_Vector_size(table); ++i) {
         iter = STL_Vector_at(table, i);
         printf("│    %4d   │   %6s   │     %3s_%c    │\n", iter->id,
-            iter->value.value, (containsLetters(iter->value.value)) ? "VAR" : "IMM",
-            isDouble(iter->value.value) ? 'D' : 'I');
+               iter->value.value, (containsLetters(iter->value.value)) ? "VAR" : "IMM",
+               isDouble(iter->value.value) ? 'D' : 'I');
         if (i != STL_Vector_size(table) - 1) {
             printf("├───────────┼────────────┼──────────────┤\n");
         }
+        free(iter->value.value);
     }
 
     /* Final output */

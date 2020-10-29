@@ -84,18 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/anton/C/lab/lab_dev/libs/hash_map.c">
-			<Option target="lab_dev"/>
-		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/libs/hash_map.h">
-			<Option target="lab_dev"/>
-		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/libs/libs.c">
-			<Option target="lab_dev"/>
-		</Unit>
-		<Unit filename="/home/anton/C/lab/lab_dev/libs/libs.h">
-			<Option target="lab_dev"/>
-		</Unit>
 		<Unit filename="/home/anton/C/lab/lab_dev/main.c">
 			<Option target="lab_dev"/>
 		</Unit>

@@ -143,60 +143,6 @@ lab_dev/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
 .PHONY : lab_dev/fast
 
-libs/hash_map.o: libs/hash_map.c.o
-
-.PHONY : libs/hash_map.o
-
-# target to build an object file
-libs/hash_map.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/hash_map.c.o
-.PHONY : libs/hash_map.c.o
-
-libs/hash_map.i: libs/hash_map.c.i
-
-.PHONY : libs/hash_map.i
-
-# target to preprocess a source file
-libs/hash_map.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/hash_map.c.i
-.PHONY : libs/hash_map.c.i
-
-libs/hash_map.s: libs/hash_map.c.s
-
-.PHONY : libs/hash_map.s
-
-# target to generate assembly for a file
-libs/hash_map.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/hash_map.c.s
-.PHONY : libs/hash_map.c.s
-
-libs/libs.o: libs/libs.c.o
-
-.PHONY : libs/libs.o
-
-# target to build an object file
-libs/libs.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.o
-.PHONY : libs/libs.c.o
-
-libs/libs.i: libs/libs.c.i
-
-.PHONY : libs/libs.i
-
-# target to preprocess a source file
-libs/libs.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.i
-.PHONY : libs/libs.c.i
-
-libs/libs.s: libs/libs.c.s
-
-.PHONY : libs/libs.s
-
-# target to generate assembly for a file
-libs/libs.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
-.PHONY : libs/libs.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -233,12 +179,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
-	@echo "... libs/hash_map.o"
-	@echo "... libs/hash_map.i"
-	@echo "... libs/hash_map.s"
-	@echo "... libs/libs.o"
-	@echo "... libs/libs.i"
-	@echo "... libs/libs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

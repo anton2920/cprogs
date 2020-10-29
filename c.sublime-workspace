@@ -415,23 +415,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "lab/lab_omp/lab_02/main.c",
-			"settings":
-			{
-				"buffer_size": 4340,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/lab_omp/lab_02/main.s",
-			"settings":
-			{
-				"buffer_size": 9095,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -477,6 +460,10 @@
 		"selected_items":
 		[
 			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
 				"install ",
 				"Package Control: Install Package"
 			],
@@ -511,10 +498,6 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"list",
-				"Package Control: List Packages"
 			],
 			[
 				"update",
@@ -570,13 +553,11 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
-		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_omp",
-		"/home/anton/C/lab/lab_omp/lab_01",
-		"/home/anton/C/lab/lab_omp/lab_02"
+		"/home/anton/C/lab"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_omp/lab_02/main.c",
 		"/home/anton/C/lab/lab_omp/lab_02/Makefile",
 		"/home/anton/C/lab/lab_auto/lab_02/main.c",
 		"/home/anton/C/lab/lab_auto/lab_02/Makefile",
@@ -585,7 +566,6 @@
 		"/home/anton/C/lab/lab_omp/lab_04/main.c",
 		"/home/anton/C/lab/lab_omp/lab_03/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_03/main.c",
-		"/home/anton/C/lab/lab_omp/lab_02/main.c",
 		"/home/anton/C/lab/lab_NET/RGR/Makefile",
 		"/home/anton/C/lab/lab_NET/RGR/libs.h",
 		"/home/anton/C/lab/lab_NET/RGR/libs.c",
@@ -762,68 +742,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "lab/lab_omp/lab_02/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4340,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								285,
-								285
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/lab_omp/lab_02/main.s",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 9095,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2844,
-								2844
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GAS-x86 (or x64) highlighting scheme/Assembly x86 AT&T.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3105.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
