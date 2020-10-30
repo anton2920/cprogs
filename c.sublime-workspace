@@ -421,6 +421,17 @@
 			}
 		},
 		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 3.4.0 Release Notes\n  \n   -----------------------------------------------------------------------\n  | NOTICE: This will be the final release of Package Control supporting  |\n  | - Sublime Text 2                                                      |\n  | - Sublime Text 3 beta builds (<3143)                                  |\n   -----------------------------------------------------------------------\n  | Please see https://sublimetext.com for an updated build               |\n   -----------------------------------------------------------------------\n  \n  New features include:\n  \n   - Support for repositories hosted on https://gitlab.com - by TheSecEng\n  \n   - An alternative TLS implementation based on the oscrypto Python\n     library, which uses native operating system TLS libraries and\n     certificate handling. See the \"downloader_precedence\" setting to enable.\n  \n   - Preferences now use the side-by-side edit mode\n  \n   - Added command palette entries to enable and disable debug mode for\n     troubleshooting and bug reports\n  \n  Bug fixes include:\n  \n   - Fixed operation on macOS 11.0 Big Sur - by TheSecEng\n  \n   - Improved handling of invalid dependencies - by deathaxe\n  \n   - Corrected handling of unsuccessful downloads with wget - by deathaxe\n  \n   - Fixed various issues with the HTTP caching - by deathaxe\n  \n   - Updated the BitBucket provider to use the 2.0 API - deathaxe\n  \n   - Packages installed via symlinks are now unlinked instead of being\n     deleted when being removed or cleaned up - by rchl\n  \n   - Improved install performance of packages with large numbers of\n     files - by BenjaminSchaaf\n  \n   - Fixed handling of auth with the wininet downloader - by NicholasBuse\n  \n   - Fixed handling BitBucket repositories without a nickname\n  \n   - Resolved deadlocks and ignored packages occuring when removing multiple\n     dependencies at once\n  \n   - Package messages are no longer printed with trailing whitespace on lines\n     with no text - by dnicolson\n\n\nGAS-x86 (or x64) highlighting scheme\n------------------------------------\n\n  Added a couple new pseudo-ops (.nops, .func, .dc, .dcb, and some others)\n  Fixed word boundary issues with preprocs.\n  The highlighter no longer flags preprocessor directives with spaces between the # and directive as an error. It will just show up as a regular preprocessor directive from now on. Hope that helps!\n\n  Thanks, and happy assembling.\n  --calculuswhiz",
+			"settings":
+			{
+				"buffer_size": 2530,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
 			"file": "lab/lab_auto/lab_02/testCase.txt",
 			"settings":
 			{
@@ -758,7 +769,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -785,14 +796,45 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5851.0,
+						"translation.y": 4094.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2530,
+								2530
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "/home/anton/C/lab/lab_auto/lab_02",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "lab/lab_auto/lab_02/testCase.txt",
 					"semi_transient": false,
 					"settings":
@@ -816,7 +858,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
