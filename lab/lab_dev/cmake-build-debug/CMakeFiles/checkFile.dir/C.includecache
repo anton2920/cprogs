@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anton/C/lab/lab_dev/checkFile.c
+stdio.h
+-
+string.h
+-
+libs/libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
+
+/home/anton/C/lab/lab_dev/libs/hash_map.h
+stddef.h
+-
+
+/home/anton/C/lab/lab_dev/libs/libs.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+STL/STL_String.h
+-
+hash_map.h
+/home/anton/C/lab/lab_dev/libs/hash_map.h
+

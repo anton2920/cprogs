@@ -14,25 +14,25 @@ void task8(void);
 int main() {
 
     /* Task #1 */
-    /*task1();*/
+    /* task1(); */
 
     /* Task #2 */
-    /*task2();*/
+	/* task2(); */
 
     /* Task #3 */
-    /*task3();*/
+    /* task3(); */
 
     /* Task #4 */
-    /*task4();*/
+    /* task4(); */
 
     /* Task #5 */
-    task5();
+    /* task5(); */
 
     /* Task #6 */
-    /*task6();*/
+    /* task6(); */
 
     /* Task #7 */
-    /*task7();*/
+    /* task7(); */
 
     /* Task #8 */
     /* task8(); */
@@ -45,7 +45,7 @@ int main() {
 struct twodbls {
     double a;
     double b;
-    int maxIter;
+    size_t maxIter;
 };
 
 void *multiplicationTest(void *__arg) {
@@ -68,11 +68,11 @@ void task1(void) {
     /* Initializing varibles */
     auto double a, b;
     enum consts {
-        iterations = 1000000,
-        iterations2 = iterations / 2
+        iterations = 1000000000,
+        iterations2 = iterations / 8
     };
     register int i;
-    auto clock_t t0, t1, t2;
+    auto double t0, t1, t2;
 
     /* I/O flow */
     printf("Type a: ");
@@ -81,44 +81,47 @@ void task1(void) {
     printf("Type b: ");
     scanf("%lf", &b);
 
-    for (i = 0, t0 = clock(); i < iterations; ++i) {
+    for (i = 0, t0 = omp_get_wtime(); i < iterations; ++i) {
         auto double c = a * b;
     }
-    t1 = clock() - t0;
-    printf("Sequential time: %ld\n", t1);
+    t1 = omp_get_wtime() - t0;
+    printf("Sequential time: %lf\n", t1);
 
     /* Parallel region */
-    t0 = clock();
-#pragma omp parallel
+    t0 = omp_get_wtime();
+#pragma omp parallel num_threads(8)
 {
     for (i = 0; i < iterations2; ++i) {
         auto double c = a * b;
     }
 }
 /*    struct twodbls arg = {a, b, iterations2};
-    pthread_t t[2];
-    pthread_create(t, NULL, multiplicationTest, &arg);
-    pthread_create(t + 1, NULL, multiplicationTest, &arg);
+    pthread_t t[8];
 
-    pthread_join(*t, 0);
-    pthread_join(*(t + 1), 0);*/
+    for (i = 0; i < 8; ++i) {
+        pthread_create(t + i, NULL, multiplicationTest, &arg);
+    }
 
-    t2 = clock() - t0;
-    printf("Parallel time: %ld\n", t2);
+    for (i = 0; i < 8; ++i) {
+        pthread_join(*(t + i), 0);
+    }*/
+
+    t2 = omp_get_wtime() - t0;
+    printf("Parallel time: %lf\n", t2);
 }
 
 void task2(void) {
 
     /* Initializing variables */
-    auto clock_t t0, t1;
+    auto double t0, t1;
 
     /* Parallel region */
-    t0 = clock();
+    t0 = omp_get_wtime();
 #pragma omp parallel
 {}
-    t1 = clock() - t0;
+    t1 = omp_get_wtime() - t0;
 
-    printf("Parallel region costs: %ld\n", t1);
+    printf("Parallel region costs: %lf\n", t1);
 }
 
 void task3(void) {

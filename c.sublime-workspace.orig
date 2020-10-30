@@ -4,7 +4,18 @@
 		"selected_items":
 		[
 			[
-<<<<<<< HEAD
+				"omp",
+				"omp_get_wtime\tabc"
+			],
+			[
+				"di",
+				"dir_name\tabc"
+			],
+			[
+				"visu",
+				"visual.c\tabc"
+			],
+			[
 				"le",
 				"left\tabc"
 			],
@@ -15,6 +26,10 @@
 			[
 				"Tre",
 				"Tree_print_counter\tabc"
+			],
+			[
+				"le",
+				"level\tabc"
 			],
 			[
 				"bala",
@@ -53,8 +68,6 @@
 				"key\tabc"
 			],
 			[
-=======
->>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
 				"in",
 				"include\tabc"
 			],
@@ -75,10 +88,6 @@
 				"s_right\tabc"
 			],
 			[
-				"s",
-				"s_right\tabc"
-			],
-			[
 				"no",
 				"node\tabc"
 			],
@@ -95,16 +104,8 @@
 				"search_rod\tabc"
 			],
 			[
-				"head",
-				"headTree\tabc"
-			],
-			[
 				"add",
 				"addNode\tabc"
-			],
-			[
-				"ke",
-				"key\tabc"
 			],
 			[
 				"k",
@@ -117,10 +118,6 @@
 			[
 				"he",
 				"headTree\tabc"
-			],
-			[
-				"node",
-				"node_pointer\tabc"
 			],
 			[
 				"tree",
@@ -287,10 +284,6 @@
 				"source.c\t(source.h)"
 			],
 			[
-				"le",
-				"left_x"
-			],
-			[
 				"C",
 				"CENTER_X"
 			],
@@ -367,10 +360,6 @@
 				"n"
 			],
 			[
-				"r",
-				"r"
-			],
-			[
 				"b",
 				"b"
 			],
@@ -415,10 +404,6 @@
 				"IntToStr"
 			],
 			[
-				"di",
-				"divisor"
-			],
-			[
 				"tru",
 				"true"
 			],
@@ -431,44 +416,42 @@
 	"buffers":
 	[
 		{
+			"file": "lab/lab_auto/lab_02/main.c",
+			"settings":
+			{
+				"buffer_size": 5377,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 <<<<<<< HEAD
-			"file": "lab/SAOD/lab_07/tree.c",
+			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 3.4.0 Release Notes\n  \n   -----------------------------------------------------------------------\n  | NOTICE: This will be the final release of Package Control supporting  |\n  | - Sublime Text 2                                                      |\n  | - Sublime Text 3 beta builds (<3143)                                  |\n   -----------------------------------------------------------------------\n  | Please see https://sublimetext.com for an updated build               |\n   -----------------------------------------------------------------------\n  \n  New features include:\n  \n   - Support for repositories hosted on https://gitlab.com - by TheSecEng\n  \n   - An alternative TLS implementation based on the oscrypto Python\n     library, which uses native operating system TLS libraries and\n     certificate handling. See the \"downloader_precedence\" setting to enable.\n  \n   - Preferences now use the side-by-side edit mode\n  \n   - Added command palette entries to enable and disable debug mode for\n     troubleshooting and bug reports\n  \n  Bug fixes include:\n  \n   - Fixed operation on macOS 11.0 Big Sur - by TheSecEng\n  \n   - Improved handling of invalid dependencies - by deathaxe\n  \n   - Corrected handling of unsuccessful downloads with wget - by deathaxe\n  \n   - Fixed various issues with the HTTP caching - by deathaxe\n  \n   - Updated the BitBucket provider to use the 2.0 API - deathaxe\n  \n   - Packages installed via symlinks are now unlinked instead of being\n     deleted when being removed or cleaned up - by rchl\n  \n   - Improved install performance of packages with large numbers of\n     files - by BenjaminSchaaf\n  \n   - Fixed handling of auth with the wininet downloader - by NicholasBuse\n  \n   - Fixed handling BitBucket repositories without a nickname\n  \n   - Resolved deadlocks and ignored packages occuring when removing multiple\n     dependencies at once\n  \n   - Package messages are no longer printed with trailing whitespace on lines\n     with no text - by dnicolson\n\n\nGAS-x86 (or x64) highlighting scheme\n------------------------------------\n\n  Added a couple new pseudo-ops (.nops, .func, .dc, .dcb, and some others)\n  Fixed word boundary issues with preprocs.\n  The highlighter no longer flags preprocessor directives with spaces between the # and directive as an error. It will just show up as a regular preprocessor directive from now on. Hope that helps!\n\n  Thanks, and happy assembling.\n  --calculuswhiz",
 			"settings":
 			{
-				"buffer_size": 8523,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 2530,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
 			}
 		},
 		{
-			"file": "lab/SAOD/lab_07/main.c",
-			"settings":
-			{
-				"buffer_size": 552,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_07/libs.h",
-			"settings":
-			{
-				"buffer_size": 375,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lab/SAOD/lab_07/libs.c",
-			"settings":
-			{
-				"buffer_size": 1396,
+			"file": "lab/lab_auto/lab_02/testCase.txt",
 =======
-			"file": "lab/SAOD/lab_06/tree.c",
+			"file": "lab/lab_auto/lab_03/main.c",
+>>>>>>> f9562ccf88d0bdabc1eab33cf3cededa08a2d0e1
 			"settings":
 			{
-				"buffer_size": 4162,
->>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_auto/lab_03/Makefile",
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -517,6 +500,30 @@
 		"selected_items":
 		[
 			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"font",
+				"FontCycler - Prev Font"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
 				"instal",
 				"Package Control: Install Package"
 			],
@@ -525,24 +532,12 @@
 				"UI: Select Color Scheme"
 			],
 			[
-				"colo",
-				"UI: Select Color Scheme"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"Package Control: ",
 				"Package Control: Remove Package"
 			],
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"list",
-				"Package Control: List Packages"
 			],
 			[
 				"update",
@@ -598,32 +593,79 @@
 	"expanded_folders":
 	[
 		"/home/anton/C",
-		"/home/anton/C/experiments",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_dev",
-		"/home/anton/C/lab/lab_dev/tree",
-		"/home/anton/C/lab/SAOD",
-		"/home/anton/C/lab/SAOD/lab_06"
+		"/home/anton/C/lab/lab_auto",
+		"/home/anton/C/lab/lab_auto/lab_02",
+		"/home/anton/C/lab/lab_auto/lab_03"
 	],
 	"file_history":
 	[
-		"/home/anton/C/experiments/GVK_Tree/Makefile",
-		"/home/anton/C/experiments/GVK_Tree/tree.c",
-		"/home/anton/C/experiments/GVK_Tree/tree.h",
-		"/home/anton/C/experiments/GVK_Tree/main.c",
-		"/home/anton/C/experiments/GVK_Tree/Errors.html",
-		"/home/anton/C/lab/SAOD/lab_07/libs.c",
+		"/home/anton/C/lab/lab_omp/lab_02/main.c",
+		"/home/anton/C/lab/lab_omp/lab_02/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_02/main.c",
+		"/home/anton/C/lab/lab_auto/lab_02/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_02/testCase.txt",
+		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_04/main.c",
+		"/home/anton/C/lab/lab_omp/lab_03/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_03/main.c",
+		"/home/anton/C/lab/lab_NET/RGR/Makefile",
+		"/home/anton/C/lab/lab_NET/RGR/libs.h",
+		"/home/anton/C/lab/lab_NET/RGR/libs.c",
+		"/home/anton/C/lab/lab_NET/RGR/main.c",
+		"/home/anton/C/lab/SAOD/lab_12/input2.txt",
+		"/home/anton/C/lab/SAOD/lab_12/main.c",
+		"/home/anton/C/lab/SAOD/lab_12/Makefile",
+		"/home/anton/C/lab/SAOD/lab_11_2/main.c",
+		"/home/anton/C/lab/SAOD/lab_11_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_10_2/libs.c",
+		"/home/anton/C/lab/SAOD/lab_10_2/libs.h",
+		"/home/anton/C/lab/SAOD/lab_10_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_10_2/main.c",
+		"/home/anton/C/lab/SAOD/lab_11_2",
+		"/home/anton/C/lab/lab_NET/lab_13/client.c",
+		"/home/anton/C/lab/OS/lab_08/second.c",
+		"/home/anton/C/lab/OS/lab_08/first.c",
+		"/home/anton/C/lab/OS/lab_09/fifoserver.c",
+		"/home/anton/C/lab/OS/lab_09/fifoclient.c",
+		"/home/anton/C/lab/OS/lab_08/draw.c",
+		"/home/anton/C/lab/lab_NET/lab_12/Makefile",
+		"/home/anton/C/lab/lab_NET/lab_12/client.c",
+		"/home/anton/C/lab/lab_NET/lab_11/Makefile",
+		"/home/anton/C/lab/lab_NET/lab_11/main.c",
+		"/home/anton/C/lab/lab_NET/lab_11",
+		"/home/anton/C/lab/OS/RGR/Makefile",
+		"/home/anton/C/lab/OS/lab_05/libs.c",
+		"/home/anton/C/lab/OS/lab_06/main.c",
+		"/home/anton/C/lab/OS/lab_06/Makefile",
+		"/home/anton/C/lab/SAOD/lab_09_2/Makefile",
+		"/home/anton/C/lab/SAOD/lab_09_2/main.c",
+		"/home/anton/C/lab/OS/lab_05/main.c",
+		"/home/anton/C/lab/OS/lab_05/Makefile",
+		"/home/anton/C/lab/OS/lab_05/visual.h",
+		"/home/anton/C/lab/OS/lab_05/process.h",
+		"/home/anton/C/lab/lab_dev/libs/visual.c",
+		"/home/anton/C/lab/lab_dev/libs/libs.h",
+		"/home/anton/C/lab/lab_dev/libs/libs.c",
+		"/home/anton/C/lab/SAOD/lab_08/libs.c",
+		"/home/anton/C/lab/SAOD/lab_08/main.c",
+		"/home/anton/C/lab/SAOD/lab_08/Makefile",
+		"/home/anton/C/experiments/GVK_Tree/input.txt",
 		"/home/anton/C/lab/SAOD/lab_07/libs.h",
-		"/home/anton/C/lab/SAOD/lab_07/tree.c",
-		"/home/anton/C/lab/SAOD/lab_07/tree.h",
 		"/home/anton/C/lab/SAOD/lab_07/main.c",
+		"/home/anton/C/experiments/GVK_Tree/main.c",
+		"/home/anton/C/experiments/GVK_Tree/Makefile",
+		"/home/anton/C/lab/SAOD/lab_07/libs.c",
+		"/home/anton/C/lab/SAOD/lab_07/tree.c",
+		"/home/anton/C/lab/SAOD/lab_06/input.txt",
+		"/home/anton/C/experiments/GVK_Tree/Errors.html",
+		"/home/anton/C/lab/SAOD/lab_07/tree.h",
 		"/home/anton/C/lab/SAOD/lab_06/main.c",
 		"/home/anton/C/lab/SAOD/lab_06/tree.c",
 		"/home/anton/C/lab/SAOD/lab_06/tree.h",
 		"/home/anton/C/lab/SAOD/lab_06/libs.c",
 		"/home/anton/C/lab/SAOD/lab_06/libs.h",
 		"/home/anton/C/lab/SAOD/lab_06/input2.txt",
-		"/home/anton/C/lab/SAOD/lab_06/input.txt",
 		"/home/anton/C/lab/SAOD/lab_05/tree.h",
 		"/home/anton/C/lab/SAOD/lab_05/tree.c",
 		"/home/anton/C/lab/SAOD/lab_05/input.txt",
@@ -685,64 +727,11 @@
 		"/home/anton/C/lab/SAOD/lab_02/test.txt",
 		"/home/anton/C/lab/SAOD/lab_01/libs.c",
 		"/home/anton/C/home/AlinaSudoku/AlinaSudoku_dev/Header.h",
-		"/home/anton/C/experiments/memPage/a1.c",
-		"/home/anton/C/lab/lab_28/source.c",
-		"/home/anton/C/lab/lab_30/main.c",
-		"/home/anton/C/lab/lab_31/main.c",
-		"/home/anton/C/lab/lab_32/main.c",
-		"/home/anton/C/lab/lab_33/main.c",
-		"/home/anton/C/lab/lab_23/source.h",
-		"/home/anton/C/lab/lab_23/main.c",
-		"/home/anton/C/lab/lab_23/source.c",
-		"/home/anton/C/home/STL/STL_build/Makefile.am",
-		"/home/anton/C/home/STL/STL.h",
-		"/home/anton/C/home/STL/STL_build/configure.ac",
-		"/home/anton/C/home/STL/.gitignore",
-		"/home/anton/C/home/Sorting/Sorting_build/Makefile.am",
-		"/home/anton/C/home/Sorting/.gitignore",
-		"/home/anton/C/home/Sorting/Sorting_build/configure.ac",
-		"/home/anton/C/home/Sorting/sorting.h",
-		"/home/anton/C/lab/lab_30/Makefile",
-		"/home/anton/ProTest/src/Makefile.am",
-		"/home/anton/C/home/STL/STL_build/buid-aux/.init",
-		"/home/anton/C/home/Project/Makefile",
-		"/home/anton/C/experiments/Julia/lab_25.c",
-		"/home/anton/C/experiments/Julia/Makefile",
-		"/home/anton/C/c.sublime-project",
-		"/home/anton/ASM/training/polya_rivalry.s",
-		"/home/anton/C/lab/lab_24/lab_24_1/main.c",
-		"/home/anton/C/lab/lab_24/lab_24_1/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_1/source.c",
-		"/home/anton/C/lab/lab_28/main.c",
-		"/home/anton/C/lab/lab_15/a1.h",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Header.h",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Source1.cpp",
-		"/home/anton/C/experiments/Mishanya/malloc_v2/Source.cpp",
-		"/home/anton/C/experiments/pow/pow.c",
-		"/home/anton/C/experiments/pow/lpow.s",
-		"/home/anton/C/lab/lab_29/source.h",
-		"/home/anton/C/lab/lab_29/main.c",
-		"/home/anton/C/lab/lab_29/source.c",
-		"/home/anton/C/lab/lab_28/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_2/main.c",
-		"/home/anton/C/lab/lab_24/lab_24_2/source.c",
-		"/home/anton/C/lab/lab_24/lab_24_2/source.h",
-		"/home/anton/C/lab/lab_24/lab_24_1/Makefile",
-		"/home/anton/C/lab/lab_22/main.c",
-		"/home/anton/C/lab/lab_21/main.h",
-		"/home/anton/C/lab/lab_22/main.h",
-		"/home/anton/C/lab/lab_21/routines.c",
-		"/home/anton/C/lab/lab_21/main.c",
-<<<<<<< HEAD
-		"/home/anton/C/lab/lab_20/Makefile"
-=======
-		"/home/anton/C/lab/lab_20/Makefile",
-		"/home/anton/C/lab/lab_20/routines.c"
->>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
+		"/home/anton/C/experiments/memPage/a1.c"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 32.0
 	},
 	"find_in_files":
 	{
@@ -756,6 +745,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"checkTree",
+			"checkNode",
+			"high_p",
+			"high",
 			"Make",
 			"getch()",
 			"Malloc",
@@ -792,33 +785,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-<<<<<<< HEAD
-					"file": "lab/SAOD/lab_07/tree.c",
+					"file": "lab/lab_auto/lab_02/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8523,
-=======
-					"file": "lab/SAOD/lab_06/tree.c",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 4162,
->>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
+						"buffer_size": 5377,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-<<<<<<< HEAD
-								5722,
-								5722
+								5377,
+								5377
 							]
 						],
 						"settings":
@@ -828,106 +812,107 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5280.0,
+<<<<<<< HEAD
+						"translation.y": 4094.0,
+=======
+						"translation.y": 5245.0,
+>>>>>>> f9562ccf88d0bdabc1eab33cf3cededa08a2d0e1
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+<<<<<<< HEAD
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2530,
+								2530
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "/home/anton/C/lab/lab_auto/lab_02",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "lab/SAOD/lab_07/main.c",
+					"buffer": 2,
+					"file": "lab/lab_auto/lab_02/testCase.txt",
+=======
+					"file": "lab/lab_auto/lab_03/main.c",
+>>>>>>> f9562ccf88d0bdabc1eab33cf3cededa08a2d0e1
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 552,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								252,
-								252
-=======
-								617,
-								617
->>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"open_with_edit": true,
+							"syntax": "Packages/C Improved/C Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-<<<<<<< HEAD
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "lab/SAOD/lab_07/libs.h",
+					"file": "lab/lab_auto/lab_03/Makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 375,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								207,
-								207
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"open_with_edit": true,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "lab/SAOD/lab_07/libs.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1396,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1013,
-								1013
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 511.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-=======
-					"stack_index": 0,
->>>>>>> e924f88cca87d5d0f73e5057fdf8a28154248194
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -935,7 +920,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -980,7 +965,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 60.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1022,7 +1007,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 219.0,
+	"side_bar_width": 263.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

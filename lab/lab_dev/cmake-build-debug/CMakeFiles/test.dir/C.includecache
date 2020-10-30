@@ -6,17 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/main.c
-stdio.h
--
-string.h
--
-ctype.h
--
-STL/STL_Vector.h
--
+/home/anton/C/lab/lab_dev/test.c
 stdlib.h
--
-assert.h
 -
 

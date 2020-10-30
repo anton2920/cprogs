@@ -1,0 +1,1 @@
+/usr/bin/cc  -fopenmp -g   CMakeFiles/test.dir/test.c.o  -o test 
