@@ -2,57 +2,74 @@
 #include <string.h>
 #include <ctype.h>
 #include <STL/STL_Vector.h>
+#include <STL/STL_String.h>
 #include <stdlib.h>
 #include <assert.h>
 
 #define isSpecialChar(x) ((x) == '+' || (x) == '-' || (x) == '*' \
                             || (x) == '/' || (x) == '^' || (x) == '=' \
-                            || (x) == '(' || (x) == ')')
+                            || (x) == '(' || (x) == ')' || (x) == ';')
+
+static char *digits_allowed_chars = "0123456789.e-+";
+static char *letters = "abcdefghijklmnopqrstuvwxyz";
+static char *romans = "XVI";
+static char *comparison_operators = "<=>";
+
+typedef enum language_types {
+    IMMEDIATE_INTEGER,
+    IMMEDIATE_DOUBLE,
+    VARIABLE,
+    ROMAN_NUMBER,
+    CONDITIONAL_STATEMENT,
+    COMPARISON_OPERATOR,
+    ASSIGNMENT_OPERATOR
+} lang_type_t;
 
 typedef struct identifier {
-    char *value;
-    size_t size;
-} identifier;
+    STL_String name;
+    STL_String type;
+    lang_type_t etype;
+} identifier_t;
 
 typedef struct lexema {
     unsigned int id;
-    identifier value;
-} lexema;
+    identifier_t value;
+} lexema_t;
 
-enum buf_size {
+enum {
     N = 100
 };
 
 void removeWhitespaces(char *);
-char *lexer(char *str, STL_Vector *vec);
-lexema * contains(STL_Vector *vec, const identifier *tk);
-identifier getLexToken(char *);
+
+void lexer(FILE *fp, STL_Vector *vec, STL_String *final_string);
+
+lexema_t *contains(STL_Vector *vec, identifier_t *tk);
+
+identifier_t getLexToken(char *);
+
 void printTable(STL_Vector *);
+
 int containsLetters(const char *);
 
 main() {
 
     /* Initializing variables */
     auto STL_Vector expression_lexems;
-    auto char buf[N], *finalStr;
-    STL_Vector_init(&expression_lexems, sizeof(lexema));
+    STL_Vector_init(&expression_lexems, sizeof(lexema_t));
+    auto STL_String final_string;
+    STL_String_init(&final_string);
 
     /* Debug case */
     auto FILE *fp = fopen("testCase.txt", "r");
+    assert(fp != NULL);
 
     /* Main part */
-    printf("Type lexical expression: ");
-    fgets(buf, N, (fp == NULL) ? stdin : fp);
-    *(buf + strlen(buf) - 1) = '\0';
+    lexer(fp, &expression_lexems, &final_string);
 
-    printf("\nExpression: %s\n", buf);
+    printf("Lexer's output: %s\n", STL_String_c_str(&final_string));
 
-    removeWhitespaces(buf);
-
-    finalStr = lexer(buf, &expression_lexems);
-
-    printf("Lexer's output: %s\n", finalStr);
-    free(finalStr);
+    STL_String_delete(&final_string);
 
     printTable(&expression_lexems);
 
@@ -62,7 +79,8 @@ main() {
 void removeWhitespaces(char *str) {
 
     /* Initializing variables */
-    register int i, j, len = strlen(str);
+    register int i, j;
+    register size_t len = strlen(str);
     auto int removed = 0, len2 = len;
 
     /* Main part */
@@ -80,11 +98,11 @@ void removeWhitespaces(char *str) {
     *(str + len - removed) = '\0';
 }
 
-lexema *contains(STL_Vector *vec, const identifier *tk) {
+lexema_t *contains(STL_Vector *vec, identifier_t *tk) {
 
     /* Initializing varibles */
     register size_t i;
-    lexema *iter;
+    lexema_t *iter;
 
     /* VarCheck */
     if (STL_Vector_empty(vec)) {
@@ -94,7 +112,7 @@ lexema *contains(STL_Vector *vec, const identifier *tk) {
     /* Main part */
     for (i = 0; i < STL_Vector_size(vec); ++i) {
         iter = STL_Vector_at(vec, i);
-        if (!strncmp(iter->value.value, tk->value, iter->value.size)) {
+        if (STL_String_compare(&tk->name, &iter->value.name)) {
             return iter;
         }
     }
@@ -104,124 +122,155 @@ lexema *contains(STL_Vector *vec, const identifier *tk) {
 }
 
 /* Rules:
- * Identifier should be started with latin letter
- * Between identifiers should be some actions
+ * Identifiers can't begin with digit
+ * There are if–then and if–then–else statements, which are separated by ;
+ * Allowed operators are: <, >, = and :=
+ * If token consists only of X, V, and/or I, than it's a Roman number
  */
 
-char *lexer(char *str, STL_Vector *vec) {
+void lexer(FILE *fp, STL_Vector *vec, STL_String *final_string) {
 
     /* Initializing variables */
-    auto lexema elem, *ret;
+    auto lexema_t elem, *ret;
     auto unsigned int lastId = 0;
-    auto identifier token;
-    auto char *currStr = str;
+    auto identifier_t token;
+    auto char *currStr;
 
     /* For string purposes */
     auto char *bigBuf = calloc(2048, sizeof(char));
     auto char smallBuf[20];
 
     /* Main part */
-    for ( ; *currStr; currStr += token.size) {
-        token = getLexToken(currStr);
-        if (token.value == NULL) {
+    printf("Program: \n");
+    while (!feof(fp)) {
+        fgets(bigBuf, N, (fp == NULL) ? stdin : fp);
+        *(bigBuf + strlen(bigBuf) - 1) = '\0';
+
+        printf("%s\n", bigBuf);
+
+        removeWhitespaces(bigBuf);
+        for (currStr = bigBuf; *currStr; currStr += STL_String_length(&token.name)) {
+            token = getLexToken(currStr);
+            if (STL_String_empty(&token.name)) {
+                /* String purposes */
+                sprintf(smallBuf, "%c ", *currStr);
+                STL_String_append_str(final_string, smallBuf);
+
+                ++currStr;
+                continue;
+            }
+
+            if ((ret = contains(vec, &token)) == NULL) {
+                elem.value = token;
+                elem.id = lastId++;
+                STL_Vector_push_back(vec, &elem);
+            }
+
             /* String purposes */
-            sprintf(smallBuf, "%c ", *currStr);
-            strcat(bigBuf, smallBuf);
-
-            ++currStr;
-            continue;
+            if (ret == NULL) {
+                sprintf(smallBuf, "<id%u> ", elem.id);
+            } else {
+                sprintf(smallBuf, "<id%u> ", ret->id);
+            }
+            STL_String_append_str(final_string, smallBuf);
         }
-
-        assert(!(isdigit(*token.value) && token.size > 1 && containsLetters(token.value)));
-        if ((ret = contains(vec, &token)) == NULL) {
-            elem.value = token;
-            elem.id = lastId++;
-            STL_Vector_push_back(vec, &elem);
-        }
-
-        /* String purposes */
-        if (ret == NULL) {
-            sprintf(smallBuf, "<id%u> ", elem.id);
-        } else {
-            sprintf(smallBuf, "<id%u> ", ret->id);
-        }
-        strcat(bigBuf, smallBuf);
     }
-
-    /* Returning value */
-    return bigBuf;
 }
 
-identifier getLexToken(char *str) {
+void get_token_type(identifier_t *token) {
+
+    /* Main part */
+    do {
+        if (STL_String_find_first_of(&token->name, digits_allowed_chars) == 0) {
+            if (STL_String_find_first_not_of(&token->name, digits_allowed_chars) == STL_String_npos()) {
+                if (STL_String_find(&token->name, ".") != STL_String_npos()) {
+                    STL_String_append_str(&token->type, "IMMEDIATE_DOUBLE");
+                    token->etype = IMMEDIATE_DOUBLE;
+                    break;
+                } else {
+                    STL_String_append_str(&token->type, "IMMEDIATE_INTEGER");
+                    token->etype = IMMEDIATE_INTEGER;
+                    break;
+                }
+            } else {
+                fprintf(stderr, "%s: WRONG VARIABLE NAME!\n", STL_String_c_str(&token->name));
+                exit(-1);
+            }
+        }
+
+        if (STL_String_find_first_of(&token->name, romans) != STL_String_npos() &&
+            STL_String_find_first_not_of(&token->name, romans) != STL_String_npos() ) {
+            STL_String_append_str(&token->type, "ROMAN_NUMBER");
+            token->etype = ROMAN_NUMBER;
+            break;
+        } else if (STL_String_find_first_of(&token->name, comparison_operators) != STL_String_npos() &&
+                   STL_String_length(&token->name) == 1) {
+            STL_String_append_str(&token->type, "COMPARISON_OPERATOR");
+            token->etype = COMPARISON_OPERATOR;
+            break;
+        } else if (STL_String_find(&token->name, ":=") != STL_String_npos() &&
+                   STL_String_length(&token->name) == 1) {
+            STL_String_append_str(&token->type, "ASSIGNMENT_OPERATOR");
+            token->etype = ASSIGNMENT_OPERATOR;
+            break;
+        } else if ((STL_String_find(&token->name, "if") != STL_String_npos() &&
+                    STL_String_length(&token->name) == 2) ||
+                   ((STL_String_find(&token->name, "else") != STL_String_npos() ||
+                     STL_String_find(&token->name, "then") != STL_String_npos()) &&
+                    STL_String_length(&token->name) == 4)) {
+            STL_String_append_str(&token->type, "CONDITIONAL_STATEMENT");
+            token->etype = CONDITIONAL_STATEMENT;
+            break;
+        } else {
+            STL_String_append_str(&token->type, "VARIABLE");
+            token->etype = VARIABLE;
+        }
+    } while (0);
+}
+
+identifier_t getLexToken(char *str) {
 
     /* Initializing variables */
-    auto char *currStr;
-    auto identifier token;
+    auto char *currStr, tmp;
+    auto identifier_t token;
+    STL_String_init(&token.name);
+    STL_String_init(&token.type);
 
     /* Main part */
     for (currStr = str; !isSpecialChar(*currStr) && *currStr; ++currStr)
         ;
 
-    if (!(token.size = currStr - str)) {
-        token.value = NULL;
-    } else {
-        token.value = calloc(token.size + 1, sizeof(char));
-        strncpy(token.value, str, token.size);
+    tmp = *currStr;
+    *currStr = '\0';
+    STL_String_append_str(&token.name, str);
+    if (!STL_String_empty(&token.name)) {
+        get_token_type(&token);
     }
+    *currStr = tmp;
 
     /* Returning value */
     return token;
-}
-
-int containsLetters(const char *str) {
-
-    /* Main part */
-    for ( ; *str; ++str) {
-        if (isalpha(*str)) {
-            return 1;
-        }
-    }
-
-    /* Returning value */
-    return 0;
-}
-
-int isDouble(const char *str) {
-
-    /* Main part */
-    if (containsLetters(str)) {
-        return 1;
-    }
-
-    for ( ; *str; ++str) {
-        if (*str == '.') {
-            return 1;
-        }
-    }
-
-    /* Returning value */
-    return 0;
 }
 
 void printTable(STL_Vector *table) {
 
     /* Initializing variables */
     register size_t i;
-    lexema *iter;
+    lexema_t *iter;
 
     /* Main part */
-    printf("┌───────────┬────────────┬──────────────┐\n"
-           "│     ID    │   Lexeme   │     TYPE     │\n"
-           "├───────────┼────────────┼──────────────┤\n");
+    printf("┌───────────┬────────────┬────────────────────┐\n"
+           "│     ID    │   Lexeme   │        TYPE        │\n"
+           "├───────────┼────────────┼────────────────────┤\n");
     for (i = 0; i < STL_Vector_size(table); ++i) {
         iter = STL_Vector_at(table, i);
-        printf("│    %4d   │   %6s   │     %3s_%c    │\n", iter->id,
-               iter->value.value, (containsLetters(iter->value.value)) ? "VAR" : "IMM",
-               isDouble(iter->value.value) ? 'D' : 'I');
+        printf("│    %4d   │   %6s   │         %s         │\n", iter->id,
+               STL_String_c_str(&iter->value.name), STL_String_c_str(&iter->value.type));
         if (i != STL_Vector_size(table) - 1) {
             printf("├───────────┼────────────┼──────────────┤\n");
         }
-        free(iter->value.value);
+        STL_String_delete(&iter->value.name);
+        STL_String_delete(&iter->value.type);
     }
 
     /* Final output */
