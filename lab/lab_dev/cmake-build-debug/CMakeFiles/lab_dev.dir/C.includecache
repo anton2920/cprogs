@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/anton/C/lab/lab_dev/libs/libs.c
+stdlib.h
+-
+libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
+
+/home/anton/C/lab/lab_dev/libs/libs.h
+
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -

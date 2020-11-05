@@ -76,9 +76,8 @@ main() {
 void removeWhitespaces(char *str) {
 
     /* Initializing variables */
-    register int i, j;
-    register size_t len = strlen(str);
-    auto int removed = 0, len2 = len;
+    register size_t i, j, len = strlen(str);
+    auto size_t removed = 0, len2 = len;
 
     /* Main part */
     for (i = 0; i < len2; ++i) {
@@ -230,8 +229,8 @@ void get_token_type(identifier_t *token) {
                     STL_String_length(&token->name) == 2) ||
                    ((STL_String_find(&token->name, "else") != STL_String_npos() &&
                     STL_String_length(&token->name) == 4) ||
-                   (STL_String_find(&token->name, "then") != STL_String_npos()) &&
-                    STL_String_length(&token->name) == 4)) {
+                   (STL_String_find(&token->name, "then") != STL_String_npos() &&
+                    STL_String_length(&token->name) == 4))) {
             STL_String_append_str(&token->type, "CONDITIONAL_STATEMENT");
             token->etype = CONDITIONAL_STATEMENT;
             break;
@@ -292,6 +291,7 @@ void printTable(STL_Vector *table) {
     printf("└───────────┴────────────┴────────────────────────┘\n");
 }
 
+/* TODO: implement roman numerals check */
 int is_roman(STL_String *str) {
 
     /* Initializing variables */
