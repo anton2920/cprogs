@@ -1,49 +1,22 @@
 #ifndef LAB_DEV_LIBS_H
 #define LAB_DEV_LIBS_H
 
-/* Header inclusion */
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-
-#include <STL/STL_String.h>
-#include <STL/STL_Vector.h>
-
-#include "hash_map.h"
-
-/* Macros */
-#define handle_error(msg)   \
-    do {                    \
-        perror(msg);        \
-        exit(EXIT_FAILURE); \
-    } while (0)
-
 /* New value types */
-enum JSON_types {
-    string,
-    number,
-    boolean,
-    null
-};
+typedef struct list_node {
+    int data;
+    struct list_node *next;
+} list_node_t;
 
-struct tlv {
-    int key;
-    enum JSON_types type : 8;
-    int length : 24;
-    char value[];
-};
-
-/* Arbitrary constant to fix hashmap size */
-enum {
-    hashMap_size = 0xFFFF
-};
+typedef struct list {
+    list_node_t *head;
+    int nelem;
+} list_t;
 
 /* Functions' declarations */
-void readNextToken(FILE *fp, STL_String *tok);
-struct tlv *parseToken(STL_String *tok, int tokNum);
-char *getKeyValue(STL_String *tok);
-void writeMapToFile(hashMap *map, size_t size, FILE *fp);
-
-void restoreOriginalFile(const char *inputFileName);
+void list_init(list_t *self);
+void list_clear(list_t *self);
+void list_delete(list_t *self);
+void list_insert(list_t *self, list_node_t *before, int data);
+void list_remove(list_t *self, list_node_t *before);
 
 #endif
