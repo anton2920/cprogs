@@ -419,7 +419,7 @@
 			"file": "lab/lab_auto/lab_03/main.c",
 			"settings":
 			{
-				"buffer_size": 9426,
+				"buffer_size": 9954,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -718,7 +718,7 @@
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -781,15 +781,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9426,
+						"buffer_size": 9954,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9426,
-								9426
+								9954,
+								9954
 							]
 						],
 						"settings":
@@ -799,7 +799,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7259.0,
+						"translation.y": 8607.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -867,7 +867,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -912,7 +912,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
