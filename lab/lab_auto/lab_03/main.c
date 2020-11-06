@@ -291,15 +291,28 @@ void printTable(STL_Vector *table) {
     printf("└───────────┴────────────┴────────────────────────┘\n");
 }
 
-/* TODO: implement roman numerals check */
 int is_roman(STL_String *str) {
 
-    /* Initializing variables */
-    char *iter;
-
     /* Main part */
-    for (iter = STL_String_begin(str); iter != STL_String_end(str); ++iter) {
+    /* Rule 1. The roman digits I and X
+     * are repeated upto three times in succession to form the numbers.
+     */
+    if (STL_String_find(str, "XXXX") != STL_String_npos() ||
+        STL_String_find(str, "IIII") != STL_String_npos()) {
+        return 0;
+    }
 
+    /* The digits V, L and D are not repeated.
+     * The repetition of V, L and D is invalid in the formation of numbers.
+     */
+    if (strchr(STL_String_c_str(str), 'V') != strrchr(STL_String_c_str(str), 'V')) {
+        return 0;
+    }
+
+    /* Rule 3. V is never written to the left of X. */
+    if (STL_String_find(str, "IXX") != STL_String_npos() ||
+        STL_String_find(str, "VX") != STL_String_npos()) {
+        return 0;
     }
 
     /* Returnining value */
