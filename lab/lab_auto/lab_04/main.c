@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "libs/libs.h"
-#include "libs/hash_map.h"
+#include "libs.h"
+#include "hash_map.h"
 
 #define isSpecialChar(x) ((x) == '+' || (x) == '-' || (x) == '*'        \
                             || (x) == '/' || (x) == '^' || (x) == '('   \

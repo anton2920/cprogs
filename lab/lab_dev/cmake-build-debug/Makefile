@@ -143,6 +143,33 @@ lab_dev/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/build
 .PHONY : lab_dev/fast
 
+libs/hash_map.o: libs/hash_map.c.o
+
+.PHONY : libs/hash_map.o
+
+# target to build an object file
+libs/hash_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/hash_map.c.o
+.PHONY : libs/hash_map.c.o
+
+libs/hash_map.i: libs/hash_map.c.i
+
+.PHONY : libs/hash_map.i
+
+# target to preprocess a source file
+libs/hash_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/hash_map.c.i
+.PHONY : libs/hash_map.c.i
+
+libs/hash_map.s: libs/hash_map.c.s
+
+.PHONY : libs/hash_map.s
+
+# target to generate assembly for a file
+libs/hash_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/hash_map.c.s
+.PHONY : libs/hash_map.c.s
+
 libs/libs.o: libs/libs.c.o
 
 .PHONY : libs/libs.o
@@ -206,6 +233,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
+	@echo "... libs/hash_map.o"
+	@echo "... libs/hash_map.i"
+	@echo "... libs/hash_map.s"
 	@echo "... libs/libs.o"
 	@echo "... libs/libs.i"
 	@echo "... libs/libs.s"
