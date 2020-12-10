@@ -20,7 +20,6 @@ static char *comparison_operators = "<=>";
 
 void remove_whitespaces(char *str);
 void lexer(FILE *fp, hashMap *map, STL_String *final_string);
-lexema_t *contains(STL_Vector *vec, identifier_t *tk);
 identifier_t getLexToken(char *str);
 void printTable(hashMap *map);
 int is_roman(STL_String *str);
@@ -43,7 +42,7 @@ main() {
     /* Main part */
     lexer(fp, expression_lexems, &final_string);
 
-    printf("\nLexer's output:\n\n%s\n", STL_String_c_str(&final_string));
+    printf("\nLexer's output:\n%s\n", STL_String_c_str(&final_string));
 
     STL_String_delete(&final_string);
 
