@@ -6,31 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/libs/hash_map.h
-stddef.h
--
-libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-
-/home/anton/C/lab/lab_dev/libs/libs.h
-STL/STL_String.h
--
-
 /home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
-string.h
+omp.h
 -
-ctype.h
+math.h
 -
-STL/STL_Vector.h
--
-stdlib.h
--
-assert.h
--
-libs/libs.h
-/home/anton/C/lab/lab_dev/libs/libs.h
-libs/hash_map.h
-/home/anton/C/lab/lab_dev/libs/hash_map.h
 
