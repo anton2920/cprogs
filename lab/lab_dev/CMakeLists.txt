@@ -11,4 +11,4 @@ set(HASH_MAP libs/hash_map.c libs/hash_map.h)
 
 add_executable(lab_dev ${SOURCE_FILES} ${LIBS} ${HASH_MAP})
 
-target_link_libraries(lab_dev m)
+#target_link_libraries(lab_dev m)

@@ -1,0 +1,3 @@
+/home/anton/C/lab/lab_dev/cmake-build-debug-mpi/CMakeFiles/edit_cache.dir
+/home/anton/C/lab/lab_dev/cmake-build-debug-mpi/CMakeFiles/rebuild_cache.dir
+/home/anton/C/lab/lab_dev/cmake-build-debug-mpi/CMakeFiles/lab_dev.dir
