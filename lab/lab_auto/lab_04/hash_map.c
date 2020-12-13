@@ -50,7 +50,7 @@ void hash_insert(hashMap *hashArray, size_t size, const char *key, lexema_t *dat
     item->key = strdup(key);
     assert(key != NULL);
 
-    item->value = calloc(1, sizeof(lexema_t));;
+    item->value = calloc(1, sizeof(lexema_t));
     assert(item->value != NULL);
 
     memcpy(item->value, data, sizeof(lexema_t));
@@ -59,10 +59,11 @@ void hash_insert(hashMap *hashArray, size_t size, const char *key, lexema_t *dat
     hashIndex = hash_code(key, size);
     if (hashArray[hashIndex] == NULL) {
         hashArray[hashIndex] = item;
-    } /*else {
-        free(key);
+    } else {
+        free(item->key);
+        free(item->value);
         free(item);
-    }*/
+    }
 }
 
 void hash_cleanup(hashMap *map, size_t size) {

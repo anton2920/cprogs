@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <STL/STL_Vector.h>
 #include <stdlib.h>
 #include <assert.h>
 
@@ -20,17 +19,14 @@ static char *comparison_operators = "<=>";
 
 void remove_whitespaces(char *str);
 void lexer(FILE *fp, hashMap *map, STL_String *final_string);
-lexema_t *contains(STL_Vector *vec, identifier_t *tk);
-identifier_t getLexToken(char *str);
+void getLexToken(char *str, identifier_t *token);
 void printTable(hashMap *map);
 int is_roman(STL_String *str);
 void insert_whitespaces(STL_String *dest, const char *src);
 
-main() {
-
+main()
+{
     /* Initializing variables */
-    /*auto STL_Vector expression_lexems;
-    STL_Vector_init(&expression_lexems, sizeof(lexema_t));*/
     hashMap expression_lexems[MAP_SIZE] = {};
 
     auto STL_String final_string;
@@ -52,8 +48,8 @@ main() {
     hash_cleanup(expression_lexems, MAP_SIZE);
 }
 
-void remove_whitespaces(char *str) {
-
+void remove_whitespaces(char *str)
+{
     /* Initializing variables */
     register size_t i, j, len = strlen(str);
     auto size_t removed = 0, len2 = len;
@@ -73,38 +69,14 @@ void remove_whitespaces(char *str) {
     *(str + len - removed) = '\0';
 }
 
-/*lexema_t *contains(STL_Vector *vec, identifier_t *tk) {
-
-    *//* Initializing varibles *//*
-    register size_t i;
-    lexema_t *iter;
-
-    *//* VarCheck *//*
-    if (STL_Vector_empty(vec)) {
-        return 0;
-    }
-
-    *//* Main part *//*
-    for (i = 0; i < STL_Vector_size(vec); ++i) {
-        iter = STL_Vector_at(vec, i);
-        if (!STL_String_compare(&tk->name, &iter->value.name)) {
-            return iter;
-        }
-    }
-
-    *//* Returning value *//*
-    return NULL;
-}*/
-
 /* Rules:
  * Identifiers can't begin with digit
  * There are if–then and if–then–else statements, which are separated by ;
  * Allowed operators are: <, >, = and :=
  * If token consists only of X, V, and/or I, than it's a Roman number
  */
-
-void lexer(FILE *fp, hashMap *map, STL_String *final_string) {
-
+void lexer(FILE *fp, hashMap *map, STL_String *final_string)
+{
     /* Initializing variables */
     struct DataItem *search;
     auto lexema_t elem, *ret;
@@ -113,7 +85,7 @@ void lexer(FILE *fp, hashMap *map, STL_String *final_string) {
     auto char *currStr;
 
     /* For string purposes */
-    auto char *bigBuf = calloc(2048, sizeof(char));
+    auto char *bigBuf = calloc(N, sizeof(char));
     auto char smallBuf[20];
 
     /* Main part */
@@ -135,7 +107,7 @@ void lexer(FILE *fp, hashMap *map, STL_String *final_string) {
 
         remove_whitespaces(bigBuf);
         for (currStr = bigBuf; *currStr; currStr += STL_String_length(&token.name)) {
-            token = getLexToken(currStr);
+            getLexToken(currStr, &token);
             if (STL_String_empty(&token.name)) {
                 /* String purposes */
                 char *fmt = (*currStr == ';') ? "\b%c" : (*currStr == ':') ? "%c" : "%c ";
@@ -143,17 +115,15 @@ void lexer(FILE *fp, hashMap *map, STL_String *final_string) {
                 STL_String_append_str(final_string, smallBuf);
 
                 STL_String_delete(&token.name);
-                STL_String_delete(&token.type);
 
                 ++currStr;
                 continue;
-            }
-
-            if ((search = hash_search(map, MAP_SIZE, STL_String_c_str(&token.name))) == NULL)
-            {
+            } else if ((search = hash_search(map, MAP_SIZE, STL_String_c_str(&token.name))) == NULL) {
                 elem.value = token;
                 elem.id = lastId++;
                 hash_insert(map, MAP_SIZE, STL_String_c_str(&token.name), &elem);
+            } else {
+                STL_String_delete(&token.name);
             }
 
             /* String purposes */
@@ -170,7 +140,11 @@ void lexer(FILE *fp, hashMap *map, STL_String *final_string) {
     free(bigBuf);
 }
 
-void get_token_type(identifier_t *token) {
+void get_token_type(identifier_t *token)
+{
+    /* Initializing variables */
+    const char *types[] = { "IMMEDIATE_INTEGER", "IMMEDIATE_DOUBLE", "VARIABLE", "ROMAN_NUMBER",
+                            "CONDITIONAL_STATEMENT" };
 
     /* Main part */
     do {
@@ -178,11 +152,9 @@ void get_token_type(identifier_t *token) {
             *STL_String_c_str(&token->name) != 'e') {
             if (STL_String_find_first_not_of(&token->name, digits_allowed_chars) == STL_String_npos()) {
                 if (STL_String_find(&token->name, ".") != STL_String_npos()) {
-                    STL_String_append_str(&token->type, "IMMEDIATE_DOUBLE");
                     token->etype = IMMEDIATE_DOUBLE;
                     break;
                 } else {
-                    STL_String_append_str(&token->type, "IMMEDIATE_INTEGER");
                     token->etype = IMMEDIATE_INTEGER;
                     break;
                 }
@@ -193,62 +165,53 @@ void get_token_type(identifier_t *token) {
         }
 
         if (STL_String_find_first_not_of(&token->name, romans) == STL_String_npos() &&
-                is_roman(&token->name)) {
-            STL_String_append_str(&token->type, "ROMAN_NUMBER");
+            is_roman(&token->name)) {
             token->etype = ROMAN_NUMBER;
             break;
-        /*} else if (STL_String_find_first_of(&token->name, comparison_operators) != STL_String_npos() &&
-                   STL_String_length(&token->name) == 1) {
-            STL_String_append_str(&token->type, "COMPARISON_OPERATOR");
-            token->etype = COMPARISON_OPERATOR;
-            break;
-        } else if (STL_String_find(&token->name, ":=") != STL_String_npos() &&
-                   STL_String_length(&token->name) == 1) {
-            STL_String_append_str(&token->type, "ASSIGNMENT_OPERATOR");
-            token->etype = ASSIGNMENT_OPERATOR;
-            break;*/
+            /*} else if (STL_String_find_first_of(&token->name, comparison_operators) != STL_String_npos() &&
+                       STL_String_length(&token->name) == 1) {
+                token->etype = COMPARISON_OPERATOR;
+                break;
+            } else if (STL_String_find(&token->name, ":=") != STL_String_npos() &&
+                       STL_String_length(&token->name) == 1) {
+                token->etype = ASSIGNMENT_OPERATOR;
+                break;*/
         } else if ((STL_String_find(&token->name, "if") != STL_String_npos() &&
                     STL_String_length(&token->name) == 2) ||
                    ((STL_String_find(&token->name, "else") != STL_String_npos() &&
-                    STL_String_length(&token->name) == 4) ||
-                   (STL_String_find(&token->name, "then") != STL_String_npos() &&
-                    STL_String_length(&token->name) == 4))) {
-            STL_String_append_str(&token->type, "CONDITIONAL_STATEMENT");
+                     STL_String_length(&token->name) == 4) ||
+                    (STL_String_find(&token->name, "then") != STL_String_npos() &&
+                     STL_String_length(&token->name) == 4))) {
             token->etype = CONDITIONAL_STATEMENT;
             break;
         } else {
-            STL_String_append_str(&token->type, "VARIABLE");
             token->etype = VARIABLE;
         }
     } while (0);
+
+    token->type = types[token->etype];
 }
 
-identifier_t getLexToken(char *str) {
-
+void getLexToken(char *str, identifier_t *token)
+{
     /* Initializing variables */
     auto char *currStr, tmp;
-    auto identifier_t token;
-    STL_String_init(&token.name);
-    STL_String_init(&token.type);
+    STL_String_init(&token->name);
 
     /* Main part */
-    for (currStr = str; !isSpecialChar(*currStr) && *currStr; ++currStr)
-        ;
+    for (currStr = str; !isSpecialChar(*currStr) && *currStr; ++currStr);
 
     tmp = *currStr;
     *currStr = '\0';
-    STL_String_append_str(&token.name, str);
-    if (!STL_String_empty(&token.name)) {
-        get_token_type(&token);
+    STL_String_append_str(&token->name, str);
+    if (!STL_String_empty(&token->name)) {
+        get_token_type(token);
     }
     *currStr = tmp;
-
-    /* Returning value */
-    return token;
 }
 
-void printTable(hashMap *map) {
-
+void printTable(hashMap *map)
+{
     /* Initializing variables */
     register size_t i;
     struct DataItem *itm;
@@ -265,9 +228,8 @@ void printTable(hashMap *map) {
             }
             iter = itm->value;
             printf("│    %4d   │   %6s   │  %-21s │\n", iter->id,
-                   STL_String_c_str(&iter->value.name), STL_String_c_str(&iter->value.type));
+                   STL_String_c_str(&iter->value.name), iter->value.type);
             STL_String_delete(&iter->value.name);
-            STL_String_delete(&iter->value.type);
         }
     }
 
@@ -275,8 +237,8 @@ void printTable(hashMap *map) {
     printf("└───────────┴────────────┴────────────────────────┘\n");
 }
 
-int is_roman(STL_String *str) {
-
+int is_roman(STL_String *str)
+{
     /* Main part */
     /* Rule 1. The roman digits I and X
      * are repeated upto three times in succession to form the numbers.
@@ -303,14 +265,14 @@ int is_roman(STL_String *str) {
     return 1;
 }
 
-void insert_whitespaces(STL_String *dest, const char *src) {
-
+void insert_whitespaces(STL_String *dest, const char *src)
+{
     /* Main part */
     if (*src == '\n') {
         ++src;
     }
 
-    for ( ; isspace(*src) && *src; ++src) {
+    for (; isspace(*src) && *src; ++src) {
         STL_String_push_back(dest, *src);
     }
 }

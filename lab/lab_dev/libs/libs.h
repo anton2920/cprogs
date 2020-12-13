@@ -16,7 +16,7 @@ typedef enum language_types {
 
 typedef struct identifier {
     STL_String name;
-    STL_String type;
+    const char *type;
     lang_type_t etype;
 } identifier_t;
 
