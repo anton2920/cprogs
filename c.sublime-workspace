@@ -424,19 +424,28 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_mpi/lab_01/Makefile",
+			"file": "lab/lab_auto/lab_04/main.c",
 			"settings":
 			{
-				"buffer_size": 182,
+				"buffer_size": 8698,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/lab_mpi/lab_01/main.c",
+			"file": "lab/lab_auto/lab_04/hash_map.c",
 			"settings":
 			{
-				"buffer_size": 141,
+				"buffer_size": 1911,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab/lab_auto/lab_04/hash_map.h",
+			"settings":
+			{
+				"buffer_size": 487,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -580,18 +589,20 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_mpi",
-		"/home/anton/C/lab/lab_mpi/lab_01"
+		"/home/anton/C/lab/lab_auto",
+		"/home/anton/C/lab/lab_auto/lab_04"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_auto/lab_04/libs.h",
+		"/home/anton/C/lab/lab_mpi/lab_01/main.c",
+		"/home/anton/C/lab/lab_mpi/lab_01/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_05/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_05/main.c",
 		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_04/main.c",
 		"/home/anton/C/lab/lab_auto/lab_04/hash_map.h",
 		"/home/anton/C/lab/lab_auto/lab_04/hash_map.c",
-		"/home/anton/C/lab/lab_auto/lab_04/libs.h",
 		"/home/anton/C/lab/lab_auto/lab_04/Makefile",
 		"/home/anton/C/lab/lab_auto/lab_04/main.c",
 		"/home/anton/C/lab/lab_auto/lab_04/testCase.txt",
@@ -710,9 +721,7 @@
 		"/home/anton/C/training/OOC/string/new.r",
 		"/home/anton/C/training/OOC/string/class.h",
 		"/home/anton/C/training/OOC/string",
-		"/home/anton/C/training/OOC/sets/Makefile",
-		"/home/anton/C/training/OOC/sets/main.c",
-		"/home/anton/C/training/OOC/sets/Set.c"
+		"/home/anton/C/training/OOC/sets/Makefile"
 	],
 	"find":
 	{
@@ -770,65 +779,95 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_mpi/lab_01/Makefile",
+					"file": "lab/lab_auto/lab_04/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 182,
+						"buffer_size": 8698,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								147,
-								147
+								127,
+								127
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lab/lab_auto/lab_04/hash_map.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1911,
+								1911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1126.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lab/lab_auto/lab_04/hash_map.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								487,
+								487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lab/lab_mpi/lab_01/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 141,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								141
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
