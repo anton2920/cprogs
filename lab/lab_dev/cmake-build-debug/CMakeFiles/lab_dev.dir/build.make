@@ -77,18 +77,18 @@ include CMakeFiles/lab_dev.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/lab_dev.dir/flags.make
 
-CMakeFiles/lab_dev.dir/main.c.o: CMakeFiles/lab_dev.dir/flags.make
-CMakeFiles/lab_dev.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab_dev.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab_dev.dir/main.c.o   -c /home/anton/C/lab/lab_dev/main.c
+CMakeFiles/lab_dev.dir/main_2.c.o: CMakeFiles/lab_dev.dir/flags.make
+CMakeFiles/lab_dev.dir/main_2.c.o: ../main_2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab_dev.dir/main_2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab_dev.dir/main_2.c.o   -c /home/anton/C/lab/lab_dev/main_2.c
 
-CMakeFiles/lab_dev.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab_dev.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/lab/lab_dev/main.c > CMakeFiles/lab_dev.dir/main.c.i
+CMakeFiles/lab_dev.dir/main_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab_dev.dir/main_2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/anton/C/lab/lab_dev/main_2.c > CMakeFiles/lab_dev.dir/main_2.c.i
 
-CMakeFiles/lab_dev.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab_dev.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/lab/lab_dev/main.c -o CMakeFiles/lab_dev.dir/main.c.s
+CMakeFiles/lab_dev.dir/main_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab_dev.dir/main_2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/anton/C/lab/lab_dev/main_2.c -o CMakeFiles/lab_dev.dir/main_2.c.s
 
 CMakeFiles/lab_dev.dir/libs/libs.c.o: CMakeFiles/lab_dev.dir/flags.make
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.c
@@ -118,14 +118,14 @@ CMakeFiles/lab_dev.dir/libs/hash_map.c.s: cmake_force
 
 # Object files for target lab_dev
 lab_dev_OBJECTS = \
-"CMakeFiles/lab_dev.dir/main.c.o" \
+"CMakeFiles/lab_dev.dir/main_2.c.o" \
 "CMakeFiles/lab_dev.dir/libs/libs.c.o" \
 "CMakeFiles/lab_dev.dir/libs/hash_map.c.o"
 
 # External object files for target lab_dev
 lab_dev_EXTERNAL_OBJECTS =
 
-lab_dev: CMakeFiles/lab_dev.dir/main.c.o
+lab_dev: CMakeFiles/lab_dev.dir/main_2.c.o
 lab_dev: CMakeFiles/lab_dev.dir/libs/libs.c.o
 lab_dev: CMakeFiles/lab_dev.dir/libs/hash_map.c.o
 lab_dev: CMakeFiles/lab_dev.dir/build.make

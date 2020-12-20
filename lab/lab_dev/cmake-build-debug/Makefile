@@ -197,32 +197,32 @@ libs/libs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
 .PHONY : libs/libs.c.s
 
-main.o: main.c.o
+main_2.o: main_2.c.o
 
-.PHONY : main.o
+.PHONY : main_2.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.o
-.PHONY : main.c.o
+main_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main_2.c.o
+.PHONY : main_2.c.o
 
-main.i: main.c.i
+main_2.i: main_2.c.i
 
-.PHONY : main.i
+.PHONY : main_2.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.i
-.PHONY : main.c.i
+main_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main_2.c.i
+.PHONY : main_2.c.i
 
-main.s: main.c.s
+main_2.s: main_2.c.s
 
-.PHONY : main.s
+.PHONY : main_2.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
-.PHONY : main.c.s
+main_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main_2.c.s
+.PHONY : main_2.c.s
 
 # Help Target
 help:
@@ -239,9 +239,9 @@ help:
 	@echo "... libs/libs.o"
 	@echo "... libs/libs.i"
 	@echo "... libs/libs.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... main_2.o"
+	@echo "... main_2.i"
+	@echo "... main_2.s"
 .PHONY : help
 
 
