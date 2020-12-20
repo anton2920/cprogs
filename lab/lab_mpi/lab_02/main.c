@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
     if (!rank) {
         printf("Number of iterations:\t%d\n", NITER);
-        printf("Message size:\t\t\t%.1lf KB\n\n", BToKiB(msg_size));
+        printf("Message size:\t\t%.1lf KB\n\n", BToKiB(msg_size));
     }
 
     /* Main part */
@@ -88,8 +88,8 @@ void blocking_bandwidth(int rank, int nbytes)
         endwtime = MPI_Wtime();
         totaltime = endwtime - startwtime;
         bandw = 2.0 * NITER * nbytes / (totaltime * MiB);
-        printf("Blocking bandwidth:\t\t%.6f MB/s\n", bandw);
-        printf("Total time:\t\t\t\t%.6lf seconds\n\n", totaltime);
+        printf("Blocking bandwidth:\t%.6f MB/s\n", bandw);
+        printf("Total time:\t\t%.6lf seconds\n\n", totaltime);
     }
 
     free(sendbuf);
@@ -124,7 +124,7 @@ void nonblocking_bandwidth(int rank, int msg_size)
         totaltime = endwtime - startwtime;
         bandw = 2.0 * NITER * msg_size / (totaltime * MiB);
         printf("Nonblocking bandwidth:\t%.3lf MiB/s\n", bandw);
-        printf("Total time:\t\t\t\t%.6lf seconds\n\n", totaltime);
+        printf("Total time:\t\t%.6lf seconds\n\n", totaltime);
     }
 
     free(sendbuf);
@@ -159,7 +159,7 @@ void latency(int rank)
     if (!rank) {
         endwtime = MPI_Wtime();
         totaltime = endwtime - startwtime;
-        printf("Latency:\t\t\t\t%.6lf mcs\n", SecToMcsec(totaltime / (2.0 * NITER)));
+        printf("Latency:\t\t%.6lf mcs\n", SecToMcsec(totaltime / (2.0 * NITER)));
     }
 }
 

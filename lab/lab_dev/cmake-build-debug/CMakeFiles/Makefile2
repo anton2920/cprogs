@@ -73,6 +73,7 @@ CMAKE_BINARY_DIR = /home/anton/C/lab/lab_dev/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/mpi_prog.dir/all
 all: CMakeFiles/lab_dev.dir/all
 
 .PHONY : all
@@ -83,9 +84,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/mpi_prog.dir/clean
 clean: CMakeFiles/lab_dev.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mpi_prog.dir
+
+# All Build rule for target.
+CMakeFiles/mpi_prog.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target mpi_prog"
+.PHONY : CMakeFiles/mpi_prog.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mpi_prog.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mpi_prog.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/mpi_prog.dir/rule
+
+# Convenience name for target.
+mpi_prog: CMakeFiles/mpi_prog.dir/rule
+
+.PHONY : mpi_prog
+
+# clean rule for target.
+CMakeFiles/mpi_prog.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/clean
+.PHONY : CMakeFiles/mpi_prog.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/lab_dev.dir

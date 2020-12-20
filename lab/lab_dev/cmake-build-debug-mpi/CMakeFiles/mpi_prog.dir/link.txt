@@ -1,0 +1,1 @@
+/usr/mpich/bin/mpicc  -fopenmp -g   CMakeFiles/mpi_prog.dir/main.c.o  -o mpi_prog 
