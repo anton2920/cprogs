@@ -416,42 +416,50 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_auto/lab_02/main.c",
+<<<<<<< HEAD
+			"file": "lab/lab_auto/lab_03/main.c",
 			"settings":
 			{
-				"buffer_size": 5377,
+				"buffer_size": 9954,
+=======
+			"file": "lab/lab_mpi/lab_03/run.sh",
+			"settings":
+			{
+				"buffer_size": 94,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
 <<<<<<< HEAD
-			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 3.4.0 Release Notes\n  \n   -----------------------------------------------------------------------\n  | NOTICE: This will be the final release of Package Control supporting  |\n  | - Sublime Text 2                                                      |\n  | - Sublime Text 3 beta builds (<3143)                                  |\n   -----------------------------------------------------------------------\n  | Please see https://sublimetext.com for an updated build               |\n   -----------------------------------------------------------------------\n  \n  New features include:\n  \n   - Support for repositories hosted on https://gitlab.com - by TheSecEng\n  \n   - An alternative TLS implementation based on the oscrypto Python\n     library, which uses native operating system TLS libraries and\n     certificate handling. See the \"downloader_precedence\" setting to enable.\n  \n   - Preferences now use the side-by-side edit mode\n  \n   - Added command palette entries to enable and disable debug mode for\n     troubleshooting and bug reports\n  \n  Bug fixes include:\n  \n   - Fixed operation on macOS 11.0 Big Sur - by TheSecEng\n  \n   - Improved handling of invalid dependencies - by deathaxe\n  \n   - Corrected handling of unsuccessful downloads with wget - by deathaxe\n  \n   - Fixed various issues with the HTTP caching - by deathaxe\n  \n   - Updated the BitBucket provider to use the 2.0 API - deathaxe\n  \n   - Packages installed via symlinks are now unlinked instead of being\n     deleted when being removed or cleaned up - by rchl\n  \n   - Improved install performance of packages with large numbers of\n     files - by BenjaminSchaaf\n  \n   - Fixed handling of auth with the wininet downloader - by NicholasBuse\n  \n   - Fixed handling BitBucket repositories without a nickname\n  \n   - Resolved deadlocks and ignored packages occuring when removing multiple\n     dependencies at once\n  \n   - Package messages are no longer printed with trailing whitespace on lines\n     with no text - by dnicolson\n\n\nGAS-x86 (or x64) highlighting scheme\n------------------------------------\n\n  Added a couple new pseudo-ops (.nops, .func, .dc, .dcb, and some others)\n  Fixed word boundary issues with preprocs.\n  The highlighter no longer flags preprocessor directives with spaces between the # and directive as an error. It will just show up as a regular preprocessor directive from now on. Hope that helps!\n\n  Thanks, and happy assembling.\n  --calculuswhiz",
+			"file": "lab/lab_auto/lab_03/testCase.txt",
 			"settings":
 			{
-				"buffer_size": 2530,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "lab/lab_auto/lab_02/testCase.txt",
+				"buffer_size": 108,
 =======
-			"file": "lab/lab_auto/lab_03/main.c",
->>>>>>> f9562ccf88d0bdabc1eab33cf3cededa08a2d0e1
+			"file": "lab/lab_mpi/lab_03/matrix",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 94,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "lab/lab_auto/lab_03/Makefile",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 197,
+=======
+			"file": "lab/lab_mpi/lab_03/vector",
+			"settings":
+			{
+				"buffer_size": 26,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -594,19 +602,46 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
+<<<<<<< HEAD
 		"/home/anton/C/lab/lab_auto",
 		"/home/anton/C/lab/lab_auto/lab_02",
 		"/home/anton/C/lab/lab_auto/lab_03"
 	],
 	"file_history":
 	[
-		"/home/anton/C/lab/lab_omp/lab_02/main.c",
-		"/home/anton/C/lab/lab_omp/lab_02/Makefile",
-		"/home/anton/C/lab/lab_auto/lab_02/main.c",
-		"/home/anton/C/lab/lab_auto/lab_02/Makefile",
-		"/home/anton/C/lab/lab_auto/lab_02/testCase.txt",
+=======
+		"/home/anton/C/lab/lab_mpi",
+		"/home/anton/C/lab/lab_mpi/lab_01",
+		"/home/anton/C/lab/lab_mpi/lab_02",
+		"/home/anton/C/lab/lab_mpi/lab_03"
+	],
+	"file_history":
+	[
+		"/home/anton/C/lab/lab_mpi/lab_02/Makefile",
+		"/home/anton/C/lab/lab_mpi/lab_02/run.sh",
+		"/home/anton/C/lab/lab_mpi/lab_02/machinefile",
+		"/home/anton/C/lab/lab_mpi/lab_03/main.c",
+		"/home/anton/C/lab/lab_mpi/lab_02/main.c",
+		"/home/anton/C/lab/lab_mpi/lab_01/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_04/main.c",
+		"/home/anton/C/lab/lab_auto/lab_04/hash_map.c",
+		"/home/anton/C/lab/lab_auto/lab_04/hash_map.h",
+		"/home/anton/C/lab/lab_auto/lab_04/libs.h",
+		"/home/anton/C/lab/lab_mpi/lab_01/main.c",
+		"/home/anton/C/lab/lab_omp/lab_05/Makefile",
+		"/home/anton/C/lab/lab_omp/lab_05/main.c",
 		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_04/main.c",
+		"/home/anton/C/lab/lab_auto/lab_04/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_04/testCase.txt",
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
+		"/home/anton/C/lab/lab_auto/lab_03/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_03/main.c",
+		"/home/anton/C/lab/lab_auto/lab_02/main.c",
+		"/home/anton/C/lab/lab_omp/lab_02/main.c",
+		"/home/anton/C/lab/lab_omp/lab_02/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_02/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_02/testCase.txt",
 		"/home/anton/C/lab/lab_omp/lab_03/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_03/main.c",
 		"/home/anton/C/lab/lab_NET/RGR/Makefile",
@@ -709,6 +744,7 @@
 		"/home/anton/C/training/OOC/string/Makefile",
 		"/home/anton/C/training/OOC/string/String.h",
 		"/home/anton/C/training/OOC/string/main.c",
+<<<<<<< HEAD
 		"/home/anton/C/training/OOC/string/String.c",
 		"/home/anton/C/training/OOC/string/new.s",
 		"/home/anton/C/training/OOC/string/new.r",
@@ -725,13 +761,14 @@
 		"/home/anton/C/lab/SAOD/lab_02/Makefile",
 		"/home/anton/C/lab/SAOD/lab_02/main.c",
 		"/home/anton/C/lab/SAOD/lab_02/test.txt",
-		"/home/anton/C/lab/SAOD/lab_01/libs.c",
-		"/home/anton/C/home/AlinaSudoku/AlinaSudoku_dev/Header.h",
-		"/home/anton/C/experiments/memPage/a1.c"
+		"/home/anton/C/lab/SAOD/lab_01/libs.c"
+=======
+		"/home/anton/C/training/OOC/string/String.c"
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -785,99 +822,54 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 1,
+=======
+			"selected": 2,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_auto/lab_02/main.c",
+<<<<<<< HEAD
+					"file": "lab/lab_auto/lab_03/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5377,
+						"buffer_size": 9954,
+=======
+					"file": "lab/lab_mpi/lab_03/run.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 94,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5377,
-								5377
+<<<<<<< HEAD
+								9954,
+								9954
+=======
+								83,
+								83
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
 							"syntax": "Packages/C Improved/C Improved.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-<<<<<<< HEAD
-						"translation.y": 4094.0,
+						"translation.y": 8607.0,
 =======
-						"translation.y": 5245.0,
->>>>>>> f9562ccf88d0bdabc1eab33cf3cededa08a2d0e1
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-<<<<<<< HEAD
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2530,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2530,
-								2530
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"default_dir": "/home/anton/C/lab/lab_auto/lab_02",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "lab/lab_auto/lab_02/testCase.txt",
-=======
-					"file": "lab/lab_auto/lab_03/main.c",
->>>>>>> f9562ccf88d0bdabc1eab33cf3cededa08a2d0e1
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/C Improved/C Improved.tmLanguage"
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -887,25 +879,98 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "lab/lab_auto/lab_03/Makefile",
+					"buffer": 1,
+					"file": "lab/lab_mpi/lab_03/matrix",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 94,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								94,
+								94
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+<<<<<<< HEAD
+					"buffer": 1,
+					"file": "lab/lab_auto/lab_03/testCase.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 108,
+=======
+					"buffer": 2,
+					"file": "lab/lab_mpi/lab_03/vector",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26,
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								108,
+								108
+=======
+								26,
+								26
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+<<<<<<< HEAD
+				},
+				{
+					"buffer": 2,
+					"file": "lab/lab_auto/lab_03/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -914,13 +979,15 @@
 					},
 					"stack_index": 2,
 					"type": "text"
+=======
+>>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -965,7 +1032,7 @@
 	"project": "c.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":

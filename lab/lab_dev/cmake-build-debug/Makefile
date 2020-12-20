@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named mpi_prog
+
+# Build rule for target.
+mpi_prog: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mpi_prog
+.PHONY : mpi_prog
+
+# fast build rule for target.
+mpi_prog/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/build
+.PHONY : mpi_prog/fast
+
+#=============================================================================
 # Target rules for targets named lab_dev
 
 # Build rule for target.
@@ -197,32 +210,32 @@ libs/libs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
 .PHONY : libs/libs.c.s
 
-main_2.o: main_2.c.o
+main.o: main.c.o
 
-.PHONY : main_2.o
+.PHONY : main.o
 
 # target to build an object file
-main_2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main_2.c.o
-.PHONY : main_2.c.o
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.o
+.PHONY : main.c.o
 
-main_2.i: main_2.c.i
+main.i: main.c.i
 
-.PHONY : main_2.i
+.PHONY : main.i
 
 # target to preprocess a source file
-main_2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main_2.c.i
-.PHONY : main_2.c.i
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.i
+.PHONY : main.c.i
 
-main_2.s: main_2.c.s
+main.s: main.c.s
 
-.PHONY : main_2.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-main_2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main_2.c.s
-.PHONY : main_2.c.s
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -239,9 +252,9 @@ help:
 	@echo "... libs/libs.o"
 	@echo "... libs/libs.i"
 	@echo "... libs/libs.s"
-	@echo "... main_2.o"
-	@echo "... main_2.i"
-	@echo "... main_2.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
