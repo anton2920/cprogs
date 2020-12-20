@@ -7,10 +7,12 @@
 #IncludeRegexTransform: 
 
 /home/anton/C/lab/lab_dev/main.c
-mpi.h
--
 stdio.h
 -
 stdlib.h
+-
+mpi.h
+-
+assert.h
 -
 

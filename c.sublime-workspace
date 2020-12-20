@@ -424,28 +424,28 @@
 	"buffers":
 	[
 		{
-			"file": "lab/lab_auto/lab_04/main.c",
+			"file": "lab/lab_mpi/lab_03/run.sh",
 			"settings":
 			{
-				"buffer_size": 8698,
+				"buffer_size": 94,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/lab_auto/lab_04/hash_map.c",
+			"file": "lab/lab_mpi/lab_03/matrix",
 			"settings":
 			{
-				"buffer_size": 1911,
+				"buffer_size": 94,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lab/lab_auto/lab_04/hash_map.h",
+			"file": "lab/lab_mpi/lab_03/vector",
 			"settings":
 			{
-				"buffer_size": 487,
+				"buffer_size": 26,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -589,22 +589,29 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_auto",
-		"/home/anton/C/lab/lab_auto/lab_04"
+		"/home/anton/C/lab/lab_mpi",
+		"/home/anton/C/lab/lab_mpi/lab_01",
+		"/home/anton/C/lab/lab_mpi/lab_02",
+		"/home/anton/C/lab/lab_mpi/lab_03"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_mpi/lab_02/Makefile",
+		"/home/anton/C/lab/lab_mpi/lab_02/run.sh",
+		"/home/anton/C/lab/lab_mpi/lab_02/machinefile",
+		"/home/anton/C/lab/lab_mpi/lab_03/main.c",
+		"/home/anton/C/lab/lab_mpi/lab_02/main.c",
+		"/home/anton/C/lab/lab_mpi/lab_01/Makefile",
+		"/home/anton/C/lab/lab_auto/lab_04/main.c",
+		"/home/anton/C/lab/lab_auto/lab_04/hash_map.c",
+		"/home/anton/C/lab/lab_auto/lab_04/hash_map.h",
 		"/home/anton/C/lab/lab_auto/lab_04/libs.h",
 		"/home/anton/C/lab/lab_mpi/lab_01/main.c",
-		"/home/anton/C/lab/lab_mpi/lab_01/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_05/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_05/main.c",
 		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
 		"/home/anton/C/lab/lab_omp/lab_04/main.c",
-		"/home/anton/C/lab/lab_auto/lab_04/hash_map.h",
-		"/home/anton/C/lab/lab_auto/lab_04/hash_map.c",
 		"/home/anton/C/lab/lab_auto/lab_04/Makefile",
-		"/home/anton/C/lab/lab_auto/lab_04/main.c",
 		"/home/anton/C/lab/lab_auto/lab_04/testCase.txt",
 		"/home/anton/C/lab/lab_auto/lab_03/Makefile",
 		"/home/anton/C/lab/lab_auto/lab_03/testCase.txt",
@@ -716,12 +723,7 @@
 		"/home/anton/C/training/OOC/string/Makefile",
 		"/home/anton/C/training/OOC/string/String.h",
 		"/home/anton/C/training/OOC/string/main.c",
-		"/home/anton/C/training/OOC/string/String.c",
-		"/home/anton/C/training/OOC/string/new.s",
-		"/home/anton/C/training/OOC/string/new.r",
-		"/home/anton/C/training/OOC/string/class.h",
-		"/home/anton/C/training/OOC/string",
-		"/home/anton/C/training/OOC/sets/Makefile"
+		"/home/anton/C/training/OOC/string/String.c"
 	],
 	"find":
 	{
@@ -784,26 +786,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lab/lab_auto/lab_04/main.c",
+					"file": "lab/lab_mpi/lab_03/run.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8698,
+						"buffer_size": 94,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								127,
-								127
+								83,
+								83
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -814,29 +814,28 @@
 				},
 				{
 					"buffer": 1,
-					"file": "lab/lab_auto/lab_04/hash_map.c",
+					"file": "lab/lab_mpi/lab_03/matrix",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1911,
+						"buffer_size": 94,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1911,
-								1911
+								94,
+								94
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C Improved/C Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1126.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -844,24 +843,25 @@
 				},
 				{
 					"buffer": 2,
-					"file": "lab/lab_auto/lab_04/hash_map.h",
+					"file": "lab/lab_mpi/lab_03/vector",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 487,
+						"buffer_size": 26,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								244,
-								244
+								26,
+								26
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
