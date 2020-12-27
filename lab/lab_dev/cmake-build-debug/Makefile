@@ -216,6 +216,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/main.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.o
 .PHONY : main.c.o
 
@@ -225,6 +226,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/main.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.i
 .PHONY : main.c.i
 
@@ -234,6 +236,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mpi_prog.dir/build.make CMakeFiles/mpi_prog.dir/main.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/main.c.s
 .PHONY : main.c.s
 
@@ -246,6 +249,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab_dev"
+	@echo "... mpi_prog"
 	@echo "... libs/hash_map.o"
 	@echo "... libs/hash_map.i"
 	@echo "... libs/hash_map.s"

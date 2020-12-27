@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/anton/C/lab/lab_dev/libs/hash_map.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/libs/hash_map.c.o"
   "/home/anton/C/lab/lab_dev/libs/libs.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/libs/libs.c.o"
-  "/home/anton/C/lab/lab_dev/main_2.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/main_2.c.o"
+  "/home/anton/C/lab/lab_dev/main.c" "/home/anton/C/lab/lab_dev/cmake-build-debug/CMakeFiles/lab_dev.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

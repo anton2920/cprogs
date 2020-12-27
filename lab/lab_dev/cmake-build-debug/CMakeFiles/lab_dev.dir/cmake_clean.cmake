@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lab_dev.dir/libs/hash_map.c.o"
   "CMakeFiles/lab_dev.dir/libs/libs.c.o"
-  "CMakeFiles/lab_dev.dir/main_2.c.o"
+  "CMakeFiles/lab_dev.dir/main.c.o"
   "lab_dev"
   "lab_dev.pdb"
 )

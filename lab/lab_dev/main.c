@@ -1,244 +1,278 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #include <stdlib.h>
-#include <mpi.h>
 #include <assert.h>
 
-int error(const char *msg);
-size_t count_rows(int rank, size_t size, size_t w_size);
-void data_distribution(double *matrix, double *pProcRows, double *pVector, size_t size, int procNum, int rank);
-void read_data(double *matrix, double *vector, size_t size);
-void write_data(const double *res, size_t size);
-void parallelResultCalculation(const double *pProcRows, const double *pVector, double *pProcResult, size_t size, size_t rowNum);
-void resultReplication(double *pProcResult, double *pResult, size_t size, int procNum, int rank);
-void print_data(const double *matrix, const double *vector, size_t size);
-void print_result(const double *result, size_t size);
+#include "libs.h"
+#include "hash_map.h"
 
-int main(int argc, char **argv)
+#define isSpecialChar(x) ((x) == '+' || (x) == '-' || (x) == '*'        \
+                            || (x) == '/' || (x) == '^' || (x) == '('   \
+                            || (x) == ')' || (x) == ';' || (x) == ':'   \
+                            || (x) == '<' || (x) == '>' || (x) == '=')
+
+static char *digits_allowed_chars = "0123456789.e-+";
+static char *letters = "abcdefghijklmnopqrstuvwxyz";
+static char *romans = "XVI";
+static char *comparison_operators = "<=>";
+
+void remove_whitespaces(char *str);
+void lexer(FILE *fp, hashMap *map, STL_String *final_string);
+void getLexToken(char *str, identifier_t *token);
+void printTable(hashMap *map);
+int is_roman(STL_String *str);
+void insert_whitespaces(STL_String *dest, const char *src);
+
+main()
 {
     /* Initializing variables */
-    int world_size;
-    int rank;
-    char *remainder;
-    size_t size, nrows;
-    double starttime, totaltime, endtime;
-    double *matrix, *vector;
-    double *pProcRows, *pProcResult, *pResult;
+    hashMap expression_lexems[MAP_SIZE] = {};
 
-    /* MPI */
-    MPI_Init(&argc, &argv);
-    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    auto STL_String final_string;
+    STL_String_init(&final_string);
 
-    /* VarCheck */
-    if (argc < 2) {
-        return error("message size is not provided");
-    }
-
-    if ((size = strtoul(*(argv + 1), &remainder, 10)) <= 0) {
-        return error("incorrect data size");
-    }
+    /* Debug case */
+    auto FILE *fp = fopen("testCase.txt", "r");
+    assert(fp != NULL);
 
     /* Main part */
-    matrix = calloc(size * size, sizeof(double)),
-    vector = calloc(size, sizeof(double));
+    lexer(fp, expression_lexems, &final_string);
 
-    if (!rank) {
-        read_data(matrix, vector, size);
-        printf("Data read successful!\n");
-    }
+    printf("\nLexer's output:\n\n%s\n", STL_String_c_str(&final_string));
 
-    nrows = count_rows(rank, size, world_size);
-    /*printf("rows to process %lu = %d \n", nrows, rank);*/
-    pProcRows = malloc(nrows * size * sizeof(double));
-    pProcResult = malloc(nrows * sizeof(double));
-    pResult = malloc(size * sizeof(double));
+    STL_String_delete(&final_string);
 
-    starttime = MPI_Wtime();
+    printTable(expression_lexems); /* This clears STL_String memory */
 
-    data_distribution(matrix, pProcRows, vector, size, world_size, rank);
-    parallelResultCalculation(pProcRows, vector, pProcResult, size, nrows);
-    resultReplication(pProcResult, pResult, size, world_size, rank);
-
-    endtime = MPI_Wtime();
-    totaltime = endtime - starttime;
-
-    if (!rank) {
-        write_data(pResult, size);
-        printf("Time taken (parallel calc): %.3lf sec\n", totaltime);
-    }
-
-    free(matrix);
-    free(vector);
-    free(pResult);
-    free(pProcRows);
-    free(pProcResult);
-
-    MPI_Finalize();
+    hash_cleanup(expression_lexems, MAP_SIZE);
 }
 
-int error(const char *msg)
-{
-    fprintf(stderr, "MPI error: %s\n", msg);
-    MPI_Finalize();
-    return -1;
-}
-
-size_t count_rows(int rank, size_t size, size_t w_size)
+void remove_whitespaces(char *str)
 {
     /* Initializing variables */
-    register size_t i;
-    size_t nrows = size;
+    register size_t i, j, len = strlen(str);
+    auto size_t removed = 0, len2 = len;
 
     /* Main part */
-    for (i = 0; i < rank; ++i)
-        nrows -= nrows / (w_size - i);
-    return nrows / (w_size - rank);
-}
-
-void data_distribution(double *matrix, double *pProcRows, double *pVector, size_t size, int procNum, int rank)
-{
-    /* Initializing variables */
-    register size_t i;
-    int *pSendNum, *pSendInd;
-    size_t restRows, rowNum;
-
-    /* MPI */
-    MPI_Bcast(pVector, size, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
-    /* Main part */
-    pSendNum = malloc(procNum * sizeof(int));
-    pSendInd = malloc(procNum * sizeof(int));
-
-    restRows = size;
-    rowNum = (size / procNum);
-    *pSendNum = (int) (rowNum * size);
-    *pSendInd = 0;
-    for (i = 1; i < procNum; ++i) {
-        restRows -= rowNum;
-        rowNum = restRows / (procNum - i);
-
-        *(pSendNum + i) = (int) (rowNum * size);
-        *(pSendInd + i) = *(pSendInd + i - 1) + *(pSendNum + i - 1);
-    }
-
-    MPI_Scatterv(matrix, pSendNum, pSendInd, MPI_DOUBLE, pProcRows, *(pSendNum + rank), MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
-    free(pSendNum);
-    free(pSendInd);
-}
-
-void read_data(double *matrix, double *vector, size_t size)
-{
-    /* Initializing variables */
-    register size_t i, j;
-    FILE *file;
-
-    file = fopen("/home/anton/C/lab/lab_dev/cmake-build-debug-mpi/matrix", "r");
-    assert(file != NULL);
-
-    for (i = 0; i < size && !feof(file); ++i) {
-        for (j = 0; j < size && !feof(file); ++j) {
-            fscanf(file, "%lf", matrix + (i * size + j));
+    for (i = 0; i < len2; ++i) {
+        if (isspace(*(str + i))) {
+            ++removed;
+            --len2;
+            for (j = i; j < len - 1; ++j) {
+                *(str + j) = *(str + j + 1);
+            }
+            --i;
         }
     }
-    fclose(file);
 
-    file = fopen("/home/anton/C/lab/lab_dev/cmake-build-debug-mpi/vector", "r");
-    assert(file != NULL);
-
-    for (j = 0; j < size && !feof(file); ++j) {
-        fscanf(file, "%lf", vector + j);
-    }
-    fclose(file);
+    *(str + len - removed) = '\0';
 }
 
-void write_data(const double *res, size_t size)
+/* Rules:
+ * Identifiers can't begin with digit
+ * There are if–then and if–then–else statements, which are separated by ;
+ * Allowed operators are: <, >, = and :=
+ * If token consists only of X, V, and/or I, than it's a Roman number
+ */
+void lexer(FILE *fp, hashMap *map, STL_String *final_string)
+{
+    /* Initializing variables */
+    struct DataItem *search;
+    auto lexema_t elem, *ret;
+    auto unsigned int lastId = 0;
+    auto identifier_t token;
+    auto char *currStr;
+
+    /* For string purposes */
+    auto char *bigBuf = calloc(N, sizeof(char));
+    auto char smallBuf[20];
+
+    /* Main part */
+    printf("Program: \n");
+    while (!feof(fp)) {
+        if (lastId) {
+            STL_String_push_back(final_string, '\n');
+        }
+        if (fgets(bigBuf, N, (fp == NULL) ? stdin : fp) == NULL) {
+            break;
+        }
+        *(bigBuf + strlen(bigBuf)) = '\0';
+
+        printf("%s", bigBuf);
+
+        if (isspace(*bigBuf)) {
+            insert_whitespaces(final_string, bigBuf);
+        }
+
+        remove_whitespaces(bigBuf);
+        for (currStr = bigBuf; *currStr; currStr += STL_String_length(&token.name)) {
+            getLexToken(currStr, &token);
+            if (STL_String_empty(&token.name)) {
+                /* String purposes */
+                char *fmt = (*currStr == ';') ? "\b%c" : (*currStr == ':') ? "%c" : "%c ";
+                sprintf(smallBuf, fmt, *currStr);
+                STL_String_append_str(final_string, smallBuf);
+
+                STL_String_delete(&token.name);
+
+                ++currStr;
+                continue;
+            } else if ((search = hash_search(map, MAP_SIZE, STL_String_c_str(&token.name))) == NULL) {
+                elem.value = token;
+                elem.id = lastId++;
+                hash_insert(map, MAP_SIZE, STL_String_c_str(&token.name), &elem);
+            } else {
+                STL_String_delete(&token.name);
+            }
+
+            /* String purposes */
+            if (search == NULL) {
+                sprintf(smallBuf, "<id%u> ", elem.id);
+            } else {
+                ret = search->value;
+                sprintf(smallBuf, "<id%u> ", ret->id);
+            }
+            STL_String_append_str(final_string, smallBuf);
+        }
+    }
+
+    free(bigBuf);
+}
+
+void get_token_type(identifier_t *token)
+{
+    /* Initializing variables */
+    const char *types[] = { "IMMEDIATE_INTEGER", "IMMEDIATE_DOUBLE", "VARIABLE", "ROMAN_NUMBER",
+                            "CONDITIONAL_STATEMENT" };
+
+    /* Main part */
+    do {
+        if (STL_String_find_first_of(&token->name, digits_allowed_chars) == 0 &&
+            *STL_String_c_str(&token->name) != 'e') {
+            if (STL_String_find_first_not_of(&token->name, digits_allowed_chars) == STL_String_npos()) {
+                if (STL_String_find(&token->name, ".") != STL_String_npos()) {
+                    token->etype = IMMEDIATE_DOUBLE;
+                    break;
+                } else {
+                    token->etype = IMMEDIATE_INTEGER;
+                    break;
+                }
+            } else {
+                fprintf(stderr, "%s: WRONG VARIABLE NAME!\n", STL_String_c_str(&token->name));
+                exit(-1);
+            }
+        }
+
+        if (STL_String_find_first_not_of(&token->name, romans) == STL_String_npos() &&
+            is_roman(&token->name)) {
+            token->etype = ROMAN_NUMBER;
+            break;
+            /*} else if (STL_String_find_first_of(&token->name, comparison_operators) != STL_String_npos() &&
+                       STL_String_length(&token->name) == 1) {
+                token->etype = COMPARISON_OPERATOR;
+                break;
+            } else if (STL_String_find(&token->name, ":=") != STL_String_npos() &&
+                       STL_String_length(&token->name) == 1) {
+                token->etype = ASSIGNMENT_OPERATOR;
+                break;*/
+        } else if ((STL_String_find(&token->name, "if") != STL_String_npos() &&
+                    STL_String_length(&token->name) == 2) ||
+                   ((STL_String_find(&token->name, "else") != STL_String_npos() &&
+                     STL_String_length(&token->name) == 4) ||
+                    (STL_String_find(&token->name, "then") != STL_String_npos() &&
+                     STL_String_length(&token->name) == 4))) {
+            token->etype = CONDITIONAL_STATEMENT;
+            break;
+        } else {
+            token->etype = VARIABLE;
+        }
+    } while (0);
+
+    token->type = types[token->etype];
+}
+
+void getLexToken(char *str, identifier_t *token)
+{
+    /* Initializing variables */
+    auto char *currStr, tmp;
+    STL_String_init(&token->name);
+
+    /* Main part */
+    for (currStr = str; !isSpecialChar(*currStr) && *currStr; ++currStr);
+
+    tmp = *currStr;
+    *currStr = '\0';
+    STL_String_append_str(&token->name, str);
+    if (!STL_String_empty(&token->name)) {
+        get_token_type(token);
+    }
+    *currStr = tmp;
+}
+
+void printTable(hashMap *map)
 {
     /* Initializing variables */
     register size_t i;
-    FILE *file = fopen("/home/anton/C/lab/lab_dev/cmake-build-debug-mpi/parallel.out", "w+");
-    assert(file != NULL);
+    struct DataItem *itm;
+    lexema_t *iter;
 
     /* Main part */
-    for (i = 0; i < size; ++i) {
-        fprintf(file, "%5.5lf ", *(res + i));
-    }
-    fclose(file);
-}
-
-void parallelResultCalculation(const double *pProcRows, const double *pVector, double *pProcResult, size_t size, size_t rowNum)
-{
-    /* Initializing variables */
-    register size_t i, j;
-
-    /* Main part */
-    for (i = 0; i < rowNum; ++i) {
-        *(pProcResult + i) = 0;
-        for (j = 0; j < size; ++j) {
-            *(pProcResult + i) += *(pProcRows + (i * size + j)) * *(pVector + j);
+    printf("┌───────────┬────────────┬────────────────────────┐\n"
+           "│     ID    │   Lexeme   │          TYPE          │\n");
+    for (i = 0; i < MAP_SIZE; ++i) {
+        itm = map[i];
+        if (itm != NULL) {
+            if (i != MAP_SIZE - 1) {
+                printf("├───────────┼────────────┼────────────────────────┤\n");
+            }
+            iter = itm->value;
+            printf("│    %4d   │   %6s   │  %-21s │\n", iter->id,
+                   STL_String_c_str(&iter->value.name), iter->value.type);
+            STL_String_delete(&iter->value.name);
         }
-    }
-}
-
-void resultReplication(double *pProcResult, double *pResult, size_t size, int procNum, int rank)
-{
-    /* Initializing variables */
-    register size_t i;
-    int pReceiveNum[procNum];
-    int pReceiveInd[procNum];
-    int restRows = size;
-
-    *pReceiveInd = 0;
-    *pReceiveNum = (int) (size / procNum);
-
-    /* Main part */
-    for (i = 1; i < procNum; i++) {
-        restRows -= *(pReceiveNum + i - 1);
-        *(pReceiveNum + i) = (int) (restRows / (procNum - i));
-        *(pReceiveInd + i) = *(pReceiveInd + i - 1) + *(pReceiveNum + i - 1);
-    }
-
-    MPI_Allgatherv(pProcResult, *(pReceiveNum + rank), MPI_DOUBLE, pResult, pReceiveNum, pReceiveInd, MPI_DOUBLE, MPI_COMM_WORLD);
-}
-
-void print_data(const double *matrix, const double *vector, size_t size)
-{
-    /* Initializing variables */
-    register size_t i, j;
-
-    /* I/O flow */
-    printf("Matrix: \n");
-
-    /* Main part */
-    for (i = 0; i < size; ++i) {
-        for (j = 0; j < size; ++j) {
-            printf("%3.3lf ", *(matrix + (i * size + j)));
-        }
-        printf("\n");
-    }
-
-    printf("Vector: \n");
-    for (i = 0; i < size; ++i) {
-        printf("%3.3lf ", *(vector + i));
     }
 
     /* Final output */
-    printf("\n");
+    printf("└───────────┴────────────┴────────────────────────┘\n");
 }
 
-void print_result(const double *result, size_t size)
+int is_roman(STL_String *str)
 {
-    /* Initializing variables */
-    register size_t i;
-
-    /* I/O flow */
-    printf("Result: \n");
-
     /* Main part */
-    for (i = 0; i < size; i++) {
-        printf("%3.3lf ", result[i]);
+    /* Rule 1. The roman digits I and X
+     * are repeated upto three times in succession to form the numbers.
+     */
+    if (STL_String_find(str, "XXXX") != STL_String_npos() ||
+        STL_String_find(str, "IIII") != STL_String_npos()) {
+        return 0;
     }
 
-    /* Final output */
-    printf("\n");
+    /* The digits V, L and D are not repeated.
+     * The repetition of V, L and D is invalid in the formation of numbers.
+     */
+    if (strchr(STL_String_c_str(str), 'V') != strrchr(STL_String_c_str(str), 'V')) {
+        return 0;
+    }
+
+    /* Rule 3. V is never written to the left of X. */
+    if (STL_String_find(str, "IXX") != STL_String_npos() ||
+        STL_String_find(str, "VX") != STL_String_npos()) {
+        return 0;
+    }
+
+    /* Returnining value */
+    return 1;
+}
+
+void insert_whitespaces(STL_String *dest, const char *src)
+{
+    /* Main part */
+    if (*src == '\n') {
+        ++src;
+    }
+
+    for (; isspace(*src) && *src; ++src) {
+        STL_String_push_back(dest, *src);
+    }
 }
