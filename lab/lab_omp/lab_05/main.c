@@ -2,6 +2,7 @@
 #include <omp.h>
 #include <stdlib.h>
 #include <time.h>
+#include <assert.h>
 
 void task_1(void);
 void task_2(void);
@@ -332,13 +333,15 @@ void task_3(void)
     enum {
         N = 1000000,
     };
-    int a[N];
+    int *a;
     long sum;
     double t1, t2;
     const char *estr;
     size_t i;
 
     /* Main part */
+    a = malloc(N * sizeof(int));
+    assert(a != NULL);
     setv(a, N);
     sum = find_sum(a, N);
 

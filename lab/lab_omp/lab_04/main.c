@@ -5,7 +5,7 @@
 #define A       0.0
 #define B       2.0
 
-#define EPS     1e-7
+#define EPS     1e-6
 
 double func(double x);
 double lrect(double (*f)(double), long n);
