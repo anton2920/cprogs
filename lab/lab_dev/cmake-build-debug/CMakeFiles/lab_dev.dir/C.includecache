@@ -6,18 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/anton/C/lab/lab_dev/main_2.c
+/home/anton/C/lab/lab_dev/libs/hash_map.h
+stddef.h
+-
+libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
+
+/home/anton/C/lab/lab_dev/libs/libs.h
+STL/STL_String.h
+-
+
+/home/anton/C/lab/lab_dev/main.c
 stdio.h
 -
-<<<<<<< HEAD
-=======
+stdlib.h
+-
 string.h
 -
 ctype.h
 -
-stdlib.h
--
->>>>>>> c69182e3c886b2b0dbe759760b3e7b302e431fa2
 assert.h
 -
+STL/STL_List.h
+-
+libs/libs.h
+/home/anton/C/lab/lab_dev/libs/libs.h
+libs/hash_map.h
+/home/anton/C/lab/lab_dev/libs/hash_map.h
 

@@ -197,6 +197,33 @@ libs/libs.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/libs.c.s
 .PHONY : libs/libs.c.s
 
+libs/tree.o: libs/tree.c.o
+
+.PHONY : libs/tree.o
+
+# target to build an object file
+libs/tree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/tree.c.o
+.PHONY : libs/tree.c.o
+
+libs/tree.i: libs/tree.c.i
+
+.PHONY : libs/tree.i
+
+# target to preprocess a source file
+libs/tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/tree.c.i
+.PHONY : libs/tree.c.i
+
+libs/tree.s: libs/tree.c.s
+
+.PHONY : libs/tree.s
+
+# target to generate assembly for a file
+libs/tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_dev.dir/build.make CMakeFiles/lab_dev.dir/libs/tree.c.s
+.PHONY : libs/tree.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -239,6 +266,9 @@ help:
 	@echo "... libs/libs.o"
 	@echo "... libs/libs.i"
 	@echo "... libs/libs.s"
+	@echo "... libs/tree.o"
+	@echo "... libs/tree.i"
+	@echo "... libs/tree.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

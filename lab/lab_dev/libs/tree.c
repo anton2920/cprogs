@@ -1,10 +1,9 @@
-#include "tree.h"
 #include <stdlib.h>
 #include <string.h>
 
 #include "tree.h"
 
-int Tree_init(tree *t)
+int Tree_init(tree_t *t)
 {
     /* VarCheck */
     if (t == NULL) {
@@ -12,7 +11,7 @@ int Tree_init(tree *t)
     }
 
     /* Main part */
-    if ((t->root = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
+    if ((t->root = (tree_node_t *) calloc(1, sizeof(tree_node_t))) == NULL) {
         return Tree_memory_error;
     }
 
@@ -20,7 +19,7 @@ int Tree_init(tree *t)
     t->root->nbytes = 0lu;
 }
 
-int Tree_delete(tree *t)
+int Tree_delete(tree_t *t)
 {
     /* VarCheck */
     if (t == NULL) {
@@ -31,7 +30,7 @@ int Tree_delete(tree *t)
     return Tree_Node_delete(t->root);
 }
 
-int Tree_isEmpty(const tree *t)
+int Tree_isEmpty(const tree_t *t)
 {
     /* VarCheck */
     if (t == NULL) {
@@ -42,7 +41,7 @@ int Tree_isEmpty(const tree *t)
     return t->root->value == NULL ? 1 : 0;
 }
 
-int Tree_Node_delete(tree_node *t)
+int Tree_Node_delete(tree_node_t *t)
 {
     /* Main part */
     if (t == NULL) {
@@ -61,7 +60,7 @@ int Tree_Node_delete(tree_node *t)
     return Tree_OK;
 }
 
-tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int (*cmp)(const void *, const void *))
+tree_node_t *Tree_Node_insert(tree_node_t *node, const void *item, size_t size, int (*cmp)(const void *, const void *))
 {
     /* VarCheck */
     if (node == NULL) {
@@ -70,7 +69,7 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int 
 
     /* Initializing variables */
     auto int res = cmp(item, node->value);
-    auto tree_node *tmp;
+    auto tree_node_t *tmp;
 
     /* Main part */
     if (!res) {
@@ -80,7 +79,7 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int 
     } else if (res == 1 && node->right != NULL) {
         return Tree_Node_insert(node->right, item, size, cmp);
     } else {
-        if ((tmp = (tree_node *) calloc(1, sizeof(tree_node))) == NULL) {
+        if ((tmp = (tree_node_t *) calloc(1, sizeof(tree_node_t))) == NULL) {
             return NULL;
         }
         if ((tmp->value = malloc(size)) == NULL) {
@@ -101,7 +100,7 @@ tree_node *Tree_Node_insert(tree_node *node, const void *item, size_t size, int 
     return tmp;
 }
 
-tree_node *Tree_insert(tree *t, const void *item, size_t size, int (*cmp)(const void *, const void *))
+tree_node_t *Tree_insert(tree_t *t, const void *item, size_t size, int (*cmp)(const void *, const void *))
 {
     /* VarCheck */
     if (t == NULL) {
@@ -123,7 +122,7 @@ tree_node *Tree_insert(tree *t, const void *item, size_t size, int (*cmp)(const 
     return NULL;
 }
 
-tree_node *Tree_begin(const tree *t)
+tree_node_t *Tree_begin(const tree_t *t)
 {
     /* VarCheck */
     if (t == NULL) {
@@ -134,7 +133,7 @@ tree_node *Tree_begin(const tree *t)
     return t->root;
 }
 
-tree_node *Tree_get_left_child(const tree_node *node)
+tree_node_t *Tree_get_left_child(const tree_node_t *node)
 {
     /* VarCheck */
     if (node == NULL) {
@@ -145,7 +144,7 @@ tree_node *Tree_get_left_child(const tree_node *node)
     return node->left;
 }
 
-tree_node *Tree_get_right_child(const tree_node *node)
+tree_node_t *Tree_get_right_child(const tree_node_t *node)
 {
     /* VarCheck */
     if (node == NULL) {
@@ -156,7 +155,7 @@ tree_node *Tree_get_right_child(const tree_node *node)
     return node->right;
 }
 
-void *Tree_get_value(const tree_node *node)
+void *Tree_get_value(const tree_node_t *node)
 {
     /* VarCheck */
     if (node == NULL) {
@@ -167,7 +166,7 @@ void *Tree_get_value(const tree_node *node)
     return node->value;
 }
 
-static void Tree_Node_print(const tree_node *node, size_t Tree_print_counter, void (*print_node_value)(const tree_node *))
+static void Tree_Node_print(const tree_node_t *node, size_t Tree_print_counter, void (*print_node_value)(const tree_node_t *))
 {
     /* VarCheck */
     if (node == NULL) {
@@ -184,7 +183,7 @@ static void Tree_Node_print(const tree_node *node, size_t Tree_print_counter, vo
     Tree_Node_print(node->right, Tree_print_counter + 1, print_node_value);
 }
 
-void Tree_print(const tree *t, void (*print_node_value)(const tree_node *))
+void Tree_print(const tree_t *t, void (*print_node_value)(const tree_node_t *))
 {
     /* Main part */
     Tree_Node_print(Tree_begin(t), 0lu, print_node_value);

@@ -5,8 +5,14 @@ CMakeFiles/lab_dev.dir/libs/hash_map.c.o: ../libs/hash_map.c
 CMakeFiles/lab_dev.dir/libs/hash_map.c.o: ../libs/hash_map.h
 CMakeFiles/lab_dev.dir/libs/hash_map.c.o: ../libs/libs.h
 
+CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/hash_map.h
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.c
 CMakeFiles/lab_dev.dir/libs/libs.c.o: ../libs/libs.h
 
-CMakeFiles/lab_dev.dir/main_2.c.o: ../main_2.c
+CMakeFiles/lab_dev.dir/libs/tree.c.o: ../libs/tree.c
+CMakeFiles/lab_dev.dir/libs/tree.c.o: ../libs/tree.h
+
+CMakeFiles/lab_dev.dir/main.c.o: ../libs/hash_map.h
+CMakeFiles/lab_dev.dir/main.c.o: ../libs/libs.h
+CMakeFiles/lab_dev.dir/main.c.o: ../main.c
 

@@ -562,13 +562,14 @@
 	[
 		"/home/anton/C",
 		"/home/anton/C/lab",
-		"/home/anton/C/lab/lab_mpi",
-		"/home/anton/C/lab/lab_mpi/lab_01",
-		"/home/anton/C/lab/lab_mpi/lab_02",
-		"/home/anton/C/lab/lab_mpi/lab_03"
+		"/home/anton/C/lab/SAOD",
+		"/home/anton/C/lab/SAOD/lab_06"
 	],
 	"file_history":
 	[
+		"/home/anton/C/lab/lab_omp/lab_05/main.c",
+		"/home/anton/Downloads/mpich-3.3.2/examples/cpi.c",
+		"/home/anton/C/lab/lab_omp/lab_04/main.c",
 		"/home/anton/C/lab/lab_mpi/lab_03/run.sh",
 		"/home/anton/C/lab/lab_mpi/lab_03/matrix",
 		"/home/anton/C/lab/lab_mpi/lab_03/vector",
@@ -584,9 +585,7 @@
 		"/home/anton/C/lab/lab_auto/lab_04/libs.h",
 		"/home/anton/C/lab/lab_mpi/lab_01/main.c",
 		"/home/anton/C/lab/lab_omp/lab_05/Makefile",
-		"/home/anton/C/lab/lab_omp/lab_05/main.c",
 		"/home/anton/C/lab/lab_omp/lab_04/Makefile",
-		"/home/anton/C/lab/lab_omp/lab_04/main.c",
 		"/home/anton/C/lab/lab_auto/lab_04/Makefile",
 		"/home/anton/C/lab/lab_auto/lab_04/testCase.txt",
 		"/home/anton/C/lab/lab_auto/lab_03/Makefile",
@@ -695,8 +694,7 @@
 		"/home/anton/C/training/OOC/point/Point.c",
 		"/home/anton/C/training/OOC/point/new.r",
 		"/home/anton/C/training/OOC/string/new.c",
-		"/home/anton/C/training/OOC/string/new.h",
-		"/home/anton/C/training/OOC/string/Makefile"
+		"/home/anton/C/training/OOC/string/new.h"
 	],
 	"find":
 	{
