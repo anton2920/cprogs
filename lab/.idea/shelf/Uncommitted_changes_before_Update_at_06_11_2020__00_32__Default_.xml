@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Update_at_06_11_2020,_00_32_[Default]" date="1604611927628" recycled="false" toDelete="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_11_2020,_00_32_[Default]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06/11/2020, 00:32 [Default]" />
-  <binary>
-    <option name="BEFORE_PATH" value="cmake-build-debug/lab_dev" />
-    <option name="AFTER_PATH" value="cmake-build-debug/lab_dev" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_11_2020,_00_32_[Default]/lab_dev" />
-  </binary>
-</changelist>
