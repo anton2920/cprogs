@@ -1,1 +1,5 @@
 /**/*.o
+c.sublime-project
+c.sublime-workspace
+.idea
+cmake-build-debug
