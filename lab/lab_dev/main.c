@@ -12,6 +12,10 @@
 double task1_1(double start_velocity, double start_angle);
 double task1_2(double start_velocity, double start_angle, double time_step);
 
+/* TODO: task_2 */
+double task2_1();
+double task2_2();
+
 main()
 {
     /* Initializing variables */
