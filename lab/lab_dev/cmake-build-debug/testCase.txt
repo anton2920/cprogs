@@ -1,7 +1,0 @@
-a := 32.65;
-b := 453;
-
-if (a > b) then
-    z := 54.67 + XXVI + IXX * 748;
-else
-    z := 748 + dmitr + oleg;

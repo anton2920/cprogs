@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 #include "libs.h"
-#include "hash_map.h"
+#include "tree.h"
 
 #define isSpecialChar(x) ((x) == '+' || (x) == '-' || (x) == '*'        \
                             || (x) == '/' || (x) == '^' || (x) == '('   \
@@ -168,7 +168,7 @@ size_t get_parse_token(const char *str, char **tok)
     return len;
 }
 
-void line_list_to_tree(struct tree *tree, STL_List *line_list)
+void line_list_to_tree(tree_t *tree, STL_List *line_list)
 {
     /* Initializing variables */
 

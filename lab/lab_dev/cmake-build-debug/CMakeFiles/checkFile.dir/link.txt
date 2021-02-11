@@ -1,1 +1,0 @@
-/usr/bin/cc  -fopenmp -g   CMakeFiles/checkFile.dir/checkFile.c.o CMakeFiles/checkFile.dir/libs/libs.c.o CMakeFiles/checkFile.dir/libs/hash_map.c.o  -o checkFile  -lSTL_String -lSTL_Vector 

@@ -1,4 +1,0 @@
-/home/anton/Downloads/clion-2019.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/mpich/bin/mpicc -DCMAKE_CXX_COMPILER=/usr/mpich/bin/mpic++ -G "CodeBlocks - Unix Makefiles" /home/anton/C/lab/lab_dev
--- Configuring done
--- Generating done
--- Build files have been written to: /home/anton/C/lab/lab_dev/cmake-build-debug-mpi

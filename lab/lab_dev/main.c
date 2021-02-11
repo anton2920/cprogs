@@ -1,187 +1,73 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <assert.h>
 
-#include "libs/libs.h"
-#include "libs/hash_map.h"
-#include "libs/tree.h"
+#define ENDING(x) (((x) == 1) ? "st" : ((x) == 2) ? "nd" : ((x) == 3) ? "rd" : "th")
 
-void printTable(hashMap *map);
-void lexer(FILE *fp, hashMap *map, STL_String *final_string);
-void parser(STL_List *ast_list, STL_String *str);
+enum sizes {
+    LAST_NAME_SIZE = 20,
+    NSCORES = 5,
+    NTABLEROWS = 5
+};
+
+typedef int id_t;
+
+typedef struct table_elem {
+    id_t id;
+    char last_name[LAST_NAME_SIZE];
+    int score[NSCORES];
+} table_elem_t;
+
+typedef table_elem_t table[NTABLEROWS];
+
+void read_table_elem(table_elem_t *e);
 
 main()
 {
     /* Initializing variables */
-    hashMap expression_lexems[MAP_SIZE] = {};
-
-    STL_String final_string;
-    STL_String_init(&final_string);
-
-    STL_List ast_list;
-    STL_List_init(&ast_list);
-
-    /* Debug case */
-    FILE *fp = fopen("testCase.txt", "r");
-    /*assert(fp != NULL);*/
+    FILE *fp;
+    register size_t i;
+    table t, t1 = {};
 
     /* Main part */
+    /*fp = fopen("database.dat", "wb");
+    assert(fp != NULL);
+    for (i = 0; i < NTABLEROWS; ++i) {
+        read_table_elem(t + i);
+    }
 
-    /* Lexical analysis */
-    lexer(fp, expression_lexems, &final_string);
+    fwrite(&t, sizeof(table_elem_t), NTABLEROWS, fp);
+    fclose(fp);*/
+
+    /* Reading */
+    fp = fopen("database.dat", "rb");
+    fseek(fp, 3 * sizeof(table_elem_t), SEEK_SET);
+    size_t nread = fread(&t1, sizeof(table_elem_t), NTABLEROWS, fp);
+
+    for (i = 0; i < NTABLEROWS; ++i) {
+        printf("ID: %d; Last name: %s; Score#1: %d; Score #2: %d; Score#3: %d; Score #4: %d; Score#5: %d;\n",
+               (t1 + i)->id, (t1 + i)->last_name, (t1 + i)->score[0], (t1 + i)->score[1], (t1 + i)->score[2],
+               (t1 + i)->score[3], (t1 + i)->score[4]);
+    }
+    printf("\nRead %lu bytes\n", nread * sizeof(table_elem_t));
     fclose(fp);
-
-    printf("\nLexer's output:\n\n%s\n", STL_String_c_str(&final_string));
-    printTable(expression_lexems); /* This clears STL_String memory */
-
-    /* Parsing */
-    parser(&ast_list, &final_string);
-    STL_String_delete(&final_string);
-    hash_cleanup(expression_lexems, MAP_SIZE);
-    /* print_tree() */
-
-    /* Generating code */
-    /* TODO: codegen() */
-
-    /*AST_Cleanup(&ast_list);*/
-    STL_List_delete(&ast_list);
-
-    /* Optimizing */
-
-    /* Returning value */
-    return 0;
 }
 
-void printTable(hashMap *map)
+void read_table_elem(table_elem_t *e)
 {
     /* Initializing variables */
+    static id_t last_id = 0;
     register size_t i;
-    struct DataItem *itm;
-    lexema_t *iter;
 
-    /* Main part */
-    printf("┌───────────┬────────────┬────────────────────────┐\n"
-           "│     ID    │   Lexeme   │          TYPE          │\n");
-    for (i = 0; i < MAP_SIZE; ++i) {
-        itm = map[i];
-        if (itm != NULL) {
-            if (i != MAP_SIZE - 1) {
-                printf("├───────────┼────────────┼────────────────────────┤\n");
-            }
-            iter = itm->value;
-            printf("│    %4d   │   %6s   │  %-21s │\n", iter->id,
-                   STL_String_c_str(&iter->value.name), iter->value.type);
-            STL_String_delete(&iter->value.name);
-        }
+    /* I/O flow */
+    printf("Type last name: ");
+    scanf("%s", e->last_name);
+
+    for (i = 0; i < NSCORES; ++i) {
+        printf("Type %lu%s score: ", i + 1, ENDING(i + 1));
+        scanf("%d", e->score + i);
     }
+    e->id = last_id++;
 
     /* Final output */
-    printf("└───────────┴────────────┴────────────────────────┘\n");
-}
-
-/* Rules:
- * Identifiers can't begin with digit
- * There are if–then and if–then–else statements, which are separated by ;
- * Allowed operators are: <, >, = and :=
- * If token consists only of X, V, and/or I, than it's a Roman number
- */
-void lexer(FILE *fp, hashMap *map, STL_String *final_string)
-{
-    /* Initializing variables */
-    struct DataItem *search;
-    auto lexema_t elem, *ret;
-    auto unsigned int lastId = 0;
-    auto identifier_t token;
-    auto char *currStr;
-
-    /* For string purposes */
-    auto char *bigBuf = calloc(N, sizeof(char));
-    auto char smallBuf[20];
-
-    /* Main part */
-    printf("Program: \n");
-    while (!feof(fp)) {
-        if (lastId) {
-            STL_String_push_back(final_string, '\n');
-        }
-        if (fgets(bigBuf, N, (fp == NULL) ? stdin : fp) == NULL) {
-            break;
-        }
-        *(bigBuf + strlen(bigBuf)) = '\0';
-
-        printf("%s", bigBuf);
-
-        if (isspace(*bigBuf)) {
-            insert_whitespaces(final_string, bigBuf);
-        }
-
-        remove_whitespaces(bigBuf);
-        for (currStr = bigBuf; *currStr; currStr += STL_String_length(&token.name)) {
-            getLexToken(currStr, &token);
-            if (STL_String_empty(&token.name)) {
-                /* String purposes */
-                char *fmt = (*currStr == ';') ? "\b%c" : (*currStr == ':') ? "%c" : "%c ";
-                sprintf(smallBuf, fmt, *currStr);
-                STL_String_append_str(final_string, smallBuf);
-
-                STL_String_delete(&token.name);
-
-                ++currStr;
-                continue;
-            } else if ((search = hash_search(map, MAP_SIZE, STL_String_c_str(&token.name))) == NULL) {
-                elem.value = token;
-                elem.id = lastId++;
-                hash_insert(map, MAP_SIZE, STL_String_c_str(&token.name), &elem);
-            } else {
-                STL_String_delete(&token.name);
-            }
-
-            /* String purposes */
-            if (search == NULL) {
-                sprintf(smallBuf, "<id%u> ", elem.id);
-            } else {
-                ret = search->value;
-                sprintf(smallBuf, "<id%u> ", ret->id);
-            }
-            STL_String_append_str(final_string, smallBuf);
-        }
-    }
-
-    free(bigBuf);
-}
-
-void parser(STL_List *ast_list, STL_String *str)
-{
-    /* Initializing variables */
-    STL_List line_list;
-    tree_t tree;
-    size_t len;
-    char line[N], *curr_line, *tok;
-    const char *curr_str;
-
-    STL_List_init(&line_list);
-    Tree_init(&tree);
-
-    /* Main part */
-    for (curr_str = STL_String_c_str(str); curr_str > STL_String_end(str); curr_str += curr_line - line) {
-        while (isspace(*curr_str++))
-            ;
-        if (curr_str > STL_String_end(str)) {
-            break;
-        }
-        sscanf(curr_str, "%[^\n]", line);
-        for (curr_line = line; *curr_line; curr_line += len) {
-            len = get_parse_token(curr_line, &tok);
-            if (!len) {
-                ++curr_line;
-            } else {
-                STL_List_push_back(&line_list, &tok, len);
-                free(tok);
-            }
-        }
-
-        line_list_to_tree(&tree, &line_list);
-        STL_List_push_back(ast_list, &tree, sizeof(tree_t));
-    }
+    printf("\n");
 }
