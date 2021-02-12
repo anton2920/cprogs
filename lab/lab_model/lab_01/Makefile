@@ -1,7 +1,7 @@
 # Initializing variables
 CC = gcc
 CFLAGS = -std=c90 -Wall -Wextra -O2
-LDFLAGS =
+LDFLAGS = -lm
 
 # Main part
 all: main

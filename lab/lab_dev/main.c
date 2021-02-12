@@ -15,6 +15,7 @@
 #define CONVERT_RAD_TO_DEG(_radians) ((_radians) / M_PI * 180)
 
 #define min(_x, _y) (((_x) < (_y)) ? (_x) : (_y))
+#define max(_x, _y) (((_x) > (_y)) ? (_x) : (_y))
 
 #define ERROR_EXIT(fmt, ...)                        \
         do {                                        \
@@ -243,8 +244,8 @@ double task2_2(double radius, rect_t *rect, size_t niter, size_t *hit_points)
     /* Main part */
     ensure_rectange_is_correct(rect);
 
-    x_limit = min(radius, rect->width / 2);
-    y_limit = min(radius, rect->height / 2);
+    x_limit = max(radius, rect->width / 2);
+    y_limit = max(radius, rect->height / 2);
 
     bounding_search_value = 2 * x_limit * 2 * y_limit;
 
