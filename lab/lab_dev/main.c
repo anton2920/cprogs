@@ -39,6 +39,8 @@ double task1_2(double start_velocity, double start_angle, double time_step);
 double task2_1(double radius, rect_t *rect);
 double task2_2(double radius, rect_t *rect, size_t niter, size_t *hit_points);
 
+extern double drand48(void);
+
 int main(int argc, const char *argv[])
 {
     /* Initializing variables */
